@@ -8,4 +8,4 @@ Description: An OpenGL Extensions library using SDL
 Requires: @SAGE_REQUIRES@
 Version: @VERSION@
 Libs: -L${libdir} -lsage
-Cflags: -I${includedir}/sage
+Cflags: -I${includedir}

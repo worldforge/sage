@@ -1,3 +1,6 @@
+4th December 2003 Al Riddoch <alriddoch@zepler.org>
+ * Fix include path in pkgconfig file.
+
 1st December 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Added a GLU.h file like GL.h file to find correct header
 
