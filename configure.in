@@ -95,6 +95,9 @@ AC_ARG_ENABLE(debug,
   ]
 )
 
+dnl Set compile only flag
+CFLAGS="$CFLAGS -DSAGE_COMPILE"
+
 dnl Check SDL
 SDL_VERSION=1.2.2
 AC_SUBST(SDL_VERSION)
