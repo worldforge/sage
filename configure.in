@@ -37,31 +37,32 @@ case "$target" in
   *-*-linux*)
     AC_PATH_X
     AC_PATH_XTRA
+    LIBS="$LIBS -lGL"
 esac
 
 case "$target" in
   *-*-darwin* | *-*-macos*)
-    LIBS="$LIBS -framework OpenGL -framework AGL"
-    ;;
-  *)
   AC_TRY_COMPILE([
     #include <OpenGL/gl.h>
   ],[
   ],[
-    case "$target" in
-      *-*-cygwin* | *-*-mingw32*)
-        LIBS="$LIBS -lopengl32"
-        ;;
-      *)
-        SYSTEM_LIBS="$SYSTEM_LIBS -lGL"
-        ;;
-    esac
+   LIBS="$LIBS -framework OpenGL -framework AGL"
   ],[
-    AC_MSG_ERROR(Cannot find OpenGL)
+    AC_TRY_COMPILE([
+      #include <GL/gl.h>
+    ],[
+    ],[
+     LIBS="$LIBS -GL"
+    ],[
+      AC_MSG_ERROR(Cannot find OpenGL)
+    ])
   ])
 esac
 
-
+case "$target" in
+  *-*-cygwin* | *-*-mingw32*)
+    LIBS="$LIBS -lopengl32"
+esac
 
 if test "x$CYGWIN" = xyes -o "x$MINGW32" = xyes; then
   SAGE_DLL=sage.dll
@@ -69,6 +70,7 @@ if test "x$CYGWIN" = xyes -o "x$MINGW32" = xyes; then
   AC_CHECK_TOOL(DLLWRAP, dllwrap)
   AC_CHECK_TOOL(DLLTOOL, dlltool)
 fi
+
 AM_CONDITIONAL(BUILD_DLL, test  "$SAGE_DLL"="sage.dll")
 
 AC_ARG_ENABLE(debug,
@@ -100,8 +102,8 @@ LIBS="$LIBS $SDL_LIBS"
 #AM_CONDITIONAL(BUILD_WGL, test "$ac_cv_header_windows_h" == "yes")
 AM_CONDITIONAL(BUILD_WGL, false)
 
-#AC_CHECK_HEADER(X11/Xlib.h, [], [])
-#AM_CONDITIONAL(BUILD_GLX, test "$ac_cv_header_X11_Xlib_h" == "yes")
+AC_CHECK_HEADER(X11/Xlib.h, [], [])
+AM_CONDITIONAL(BUILD_GLX, test "$ac_cv_header_X11_Xlib_h" == "yes")
 AM_CONDITIONAL(BUILD_GLX, false)
 
 SAGE_LIBS="-lsage"

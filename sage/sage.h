@@ -223,18 +223,18 @@
 #define GL_ATI_MAP_OBJECT_BUFFER 215
 #define GL_ATI_SEPARATE_STENCIL 216
 #define GL_ATI_VERTEX_ATTRIB_ARRAY_OBJECT 217
-#define LAST_EXTENSION 218
+#define SAGE_LAST_EXTENSION 218
 
 #include "sage/header.h"
 #ifdef __glext_h_
 #error sage.h needs to be included before gl.h
 #endif
 #define __glext_h_ 1
-#include "GL.h"
+#include <GL/gl.h>
 #undef __glext_h_
 #include <sage/glext_sage.h>
 
-SAGEAPI int sage_ext[LAST_EXTENSION];
+SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 
 #define GL_VERSION_1_2 1
 #ifdef SAGE_GL_VERSION_1_2

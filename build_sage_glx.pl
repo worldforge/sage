@@ -32,9 +32,16 @@ while (<GLXEXT>) {
   if ($_ =~ m|$FUNCTION_REGEXP|) {
     ($FUNCTION) = ($_ =~ m|$FUNCTION_REGEXP|); # Extract function name
     $PFN_FUNCTION = "PFN".uc($FUNCTION)."PROC"; # make the typedef name
-    push(@FUNCTION_HEADER , "SAGEAPI $PFN_FUNCTION $FUNCTION;\n"); # declare function for header
-    push (@FUNCTION_CODE, "$PFN_FUNCTION $FUNCTION = NULL;\n"); # declaraion of function in c file
-    push (@FUNCTION_INIT,"  $FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
+
+
+    push(@FUNCTION_HEADER , "SAGEAPI $PFN_FUNCTION SAGE_$FUNCTION;\n"); # declare function for header
+    push(@FUNCTION_HEADER, "#ifndef $FUNCTION\n");
+    push(@FUNCTION_HEADER, "#define $FUNCTION SAGE_$FUNCTION\n");
+    push(@FUNCTION_HEADER, "#endif\n");
+
+
+    push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = NULL;\n"); # declaraion of function in c file
+    push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
   # Grab #defines
   } elsif  ($_ =~ m|$DEFINE_REGEXP|) {
     ($DEF) = ($_ =~ m|$DEFINE_REGEXP|); # extract #define name
@@ -89,7 +96,7 @@ for (@BOOLS_ENUM) {
   $INDEX = $INDEX + 1; # increment counter
 }
 # This allows use to determine the size of the extensions array
-print SAGE_HEADER "#define LAST_EXTENSION ".$INDEX."\n\n";
+print SAGE_HEADER "#define SAGE_GLX_LAST_EXTENSION ".$INDEX."\n\n";
 
 #include the SAGEAPI stuff
 print SAGE_HEADER "#include \"sage/header.h\"\n";
@@ -105,7 +112,7 @@ print SAGE_HEADER "#include <GL/glx.h>\n";
 print SAGE_HEADER "#undef __glxext_h_\n"; # undef this so we can use our own glext.h
 print SAGE_HEADER "#include <$GLXEXT_SAGE_FILE>\n\n";
 #define the extensions array
-print SAGE_HEADER "SAGEAPI int sage_glx_ext[LAST_EXTENSION];\n\n";
+print SAGE_HEADER "SAGEAPI int sage_glx_ext[SAGE_GLX_LAST_EXTENSION];\n\n";
 
 
 #print the function declarations and #if's generated from glext.h
@@ -144,7 +151,7 @@ for (@FUNCTION_CODE) {
 print SAGE_CODE "\n";
 
 #start writing the init function
-print SAGE_CODE "int sage_glx_ext[LAST_EXTENSION];\n\n";
+print SAGE_CODE "int sage_glx_ext[SAGE_GLX_LAST_EXTENSION];\n\n";
 print SAGE_CODE "void sage_glx_init(void) {\n";
 for (@FUNCTION_INIT) {
   print SAGE_CODE $_;

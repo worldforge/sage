@@ -89,7 +89,7 @@ for (@BOOLS_ENUM) {
   $INDEX = $INDEX + 1; # increment counter
 }
 # This allows use to determine the size of the extensions array
-print SAGE_HEADER "#define LAST_EXTENSION ".$INDEX."\n\n";
+print SAGE_HEADER "#define SAGE_WGL_LAST_EXTENSION ".$INDEX."\n\n";
 
 #include the SAGEAPI stuff
 print SAGE_HEADER "#include \"sage/header.h\"\n";
@@ -102,7 +102,7 @@ print SAGE_HEADER "#include <windows.h>\n";
 
 print SAGE_HEADER "#include <$WGLEXT_SAGE_FILE>\n\n";
 #define the extensions array
-print SAGE_HEADER "SAGEAPI int sage_wgl_ext[LAST_EXTENSION];\n\n";
+print SAGE_HEADER "SAGEAPI int sage_wgl_ext[SAGE_WGL_LAST_EXTENSION];\n\n";
 
 
 #print the function declarations and #if's generated from glext.h
@@ -141,7 +141,7 @@ for (@FUNCTION_CODE) {
 print SAGE_CODE "\n";
 
 #start writing the init function
-print SAGE_CODE "int sage_wgl_ext[LAST_EXTENSION];\n\n";
+print SAGE_CODE "int sage_wgl_ext[SAGE_WGL_LAST_EXTENSION];\n\n";
 print SAGE_CODE "void sage_wgl_init(void) {\n";
 for (@FUNCTION_INIT) {
   print SAGE_CODE $_;
