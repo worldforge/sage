@@ -2,19 +2,17 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
-#ifndef GL_EXT_abgr_H
-#define GL_EXT_abgr_H 1
+#ifndef GL_EXT_shadow_funcs_H
+#define GL_EXT_shadow_funcs_H 1
 
 #include <sage/sage.h>
 
-#ifndef GL_EXT_abgr
-#define GL_EXT_abgr 1
-
-#define GL_ABGR_EXT 0x8000
+#ifndef GL_EXT_shadow_funcs
+#define GL_EXT_shadow_funcs 1
 
 #endif
 
-SAGEAPI int GL_EXT_abgr_initialised;
-SAGEAPI int initialise_GL_EXT_abgr();
+SAGEAPI int GL_EXT_shadow_funcs_initialised;
+SAGEAPI int initialise_GL_EXT_shadow_funcs();
 
 #endif
