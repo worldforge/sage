@@ -5,7 +5,7 @@
 #include "GL_NV_register_combiners2.h"
 #include "utility.h"
 
-static int initialised_GL_NV_register_combiners2() {
+int initialised_GL_NV_register_combiners2() {
  if (isExtensionSupported(str_GL_NV_register_combiners2)) {
    return 0;
  }

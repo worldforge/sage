@@ -5,7 +5,7 @@
 #include "GL_ATI_element_array.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_element_array() {
+int initialise_GL_ATI_element_array() {
   if (!isExtensionSupported(str_GL_ATI_element_array)) return 0;
 
   glElementPointerATI = (PFNGLELEMENTPOINTERATIPROC)SDL_GL_GetProcAddress("glElementPointerATI");

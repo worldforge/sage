@@ -5,7 +5,7 @@
 #include "GL_ATI_draw_buffers.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_draw_buffers() {
+int initialise_GL_ATI_draw_buffers() {
   if (!isExtensionSupported(str_GL_ATI_draw_buffers)) return 0;
 
   glDrawBuffersATI = (PFNGLDRAWBUFFERSATIPROC)SDL_GL_GetProcAddress("glDrawBuffersATI");

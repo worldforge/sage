@@ -5,7 +5,7 @@
 #include "GL_APPLE_specular_vector.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_specular_vector() {
+int initialise_GL_APPLE_specular_vector() {
   GL_APPLE_specular_vector_initialised = isExtensionSupported(str_GL_APPLE_specular_vector);
   return GL_APPLE_specular_vector_initialised;
 }

@@ -5,7 +5,7 @@
 #include "GL_ARB_vertex_blend.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_vertex_blend() {
+int initialise_GL_ARB_vertex_blend() {
   if (!isExtensionSupported(str_GL_ARB_vertex_blend)) return 0;
   
   glWeightbvARB = (PFNGLWEIGHTBVARBPROC)SDL_GL_GetProcAddress("glWeightbvARB");

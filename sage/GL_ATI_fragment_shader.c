@@ -5,7 +5,7 @@
 #include "GL_ATI_fragment_shader.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_fragment_shader() {
+int initialise_GL_ATI_fragment_shader() {
   if (!isExtensionSupported(str_GL_ATI_fragment_shader)) return 0;
  
   glGenFragmentShadersATI = (PFNGLGENFRAGMENTSHADERSATIPROC)SDL_GL_GetProcAddress("glGenFragmentShadersATI");

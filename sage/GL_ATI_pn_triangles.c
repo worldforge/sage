@@ -5,7 +5,7 @@
 #include "GL_ATI_pn_triangles.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_pn_triangles() {
+int initialise_GL_ATI_pn_triangles() {
   if (!isExtensionSupported(str_GL_ATI_pn_triangles)) return 0;
 
   glPNTrianglesiATI = (PFNGLPNTRIANGLESIATIPROC)SDL_GL_GetProcAddress("glPNTrianglesiATI");

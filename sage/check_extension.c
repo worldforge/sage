@@ -25,6 +25,8 @@ int isExtensionSupported(const char *extension) {
   
   if (!extensions) extensions = glGetString(GL_EXTENSIONS);
   
+  if (!extensions) return 0;
+  
   /* It takes a bit of care to be fool-proof about parsing the
      OpenGL extensions string. Don't be fooled by sub-strings,
      etc. */

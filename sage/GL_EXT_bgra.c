@@ -5,7 +5,7 @@
 #include "GL_EXT_bgra.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_bgra() {
+int initialise_GL_EXT_bgra() {
   GL_EXT_bgra_initialised = isExtensionSupported(str_GL_EXT_bgra);
   return GL_EXT_bgra_initialised;
 }

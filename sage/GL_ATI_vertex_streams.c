@@ -5,7 +5,7 @@
 #include "GL_ATI_vertex_streams.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_vertex_streams() {
+int initialise_GL_ATI_vertex_streams() {
   if (!isExtensionSupported(str_GL_ATI_vertex_streams)) return 0;
 
   glVertexStream1sATI = (PFNGLVERTEXSTREAM1SATIPROC)SDL_GL_GetProcAddress("glVertexStream1sATI");

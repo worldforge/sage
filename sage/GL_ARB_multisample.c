@@ -5,7 +5,7 @@
 #include "GL_ARB_multisample.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_multisample() {
+int initialise_GL_ARB_multisample() {
   GL_ARB_multisample_initialised = isExtensionSupported(str_GL_ARB_multisample);
 
   glSampleCoverageARB = (PFNGLSAMPLECOVERAGEARBPROC)SDL_GL_GetProcAddress("glSampleCoverageARB");

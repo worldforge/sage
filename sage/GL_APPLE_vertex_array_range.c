@@ -5,7 +5,7 @@
 #include "GL_APPLE_vertex_array_range.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_vertex_array_range() {
+int initialise_GL_APPLE_vertex_array_range() {
   if (!isExtensionSupported(str_GL_APPLE_vertex_array_range)) return 0;
   
   glVertexArrayRangeAPPLE = (PFNGLVERTEXARRAYRANGEAPPLEPROC)SDL_GL_GetProcAddress("glVertexArrayRangeAPPLE");

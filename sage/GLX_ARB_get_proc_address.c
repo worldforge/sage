@@ -5,7 +5,7 @@
 #include "GLX_ARB_get_proc_address.h"
 #include "utility.h"
 
-static int initialise_GLX_ARB_get_proc_address() {
+int initialise_GLX_ARB_get_proc_address() {
   if (!isExtensionSupported(str_GLX_ARB_get_proc_address)) return 0;
 
   // TODO Link up function

@@ -5,7 +5,7 @@
 #include "WGL_ARB_pbuffer.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_pbuffer() {
+int initialise_WGL_ARB_pbuffer() {
   if (!isExtensionSupported(str_WGL_ARB_pbuffer)) return 0;
 
   wglCreatePbufferARB = (PFNWGLCREATEPBUFFERARBPROC)SDL_GL_GetProcAddress("wglCreatePbufferARB");

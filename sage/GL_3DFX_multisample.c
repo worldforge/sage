@@ -5,7 +5,7 @@
 #include "GL_3DFX_multisample.h"
 #include "utility.h"
 
-static int initialise_GL_3DFX_multisample() {
+int initialise_GL_3DFX_multisample() {
   GL_3DFX_multisample_initialised = isExtensionSupported(str_GL_3DFX_multisample);
   return GL_3DFX_multisample_initialised;
 }

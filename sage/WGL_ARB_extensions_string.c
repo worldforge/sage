@@ -5,7 +5,7 @@
 #include "WGL_ARB_extensions_string.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_extensions_string() {
+int initialise_WGL_ARB_extensions_string() {
   if (!isExtensionSupported(str_WGL_ARB_extensions_string)) return 0;
 
   wglGetExtensionsStringARB = (PFNWGLGETEXTENSIONSSTRINGARBPROC)SDL_GL_GetProcAddress("wglGetExtensionsStringARB");

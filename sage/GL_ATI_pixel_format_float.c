@@ -5,7 +5,7 @@
 #include "GL_ATI_pixel_format_float.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_pixel_format_float() {
+int initialise_GL_ATI_pixel_format_float() {
   GL_ATI_pixel_format_float_initialised = isExtensionSupported(str_GL_ATI_pixel_format_float);
   return GL_ATI_pixel_format_float_initialised;
 }

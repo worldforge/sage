@@ -5,7 +5,7 @@
 #include "WGL_ARB_render_texture.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_render_texture() {
+int initialise_WGL_ARB_render_texture() {
   if (!isExtensionSupported(str_WGL_ARB_render_texture)) return 0;
 
   wglBindTexImageARB = (PFNWGLBINDTEXIMAGEARBPROC)SDL_GL_GetProcAddress("wglBindTexImageARB");

@@ -5,7 +5,7 @@
 #include "GL_3DFX_tbuffer.h"
 #include "utility.h"
 
-static int initialise_GL_3DFX_tbuffer() {
+int initialise_GL_3DFX_tbuffer() {
   if (!sExtensionSupported(str_GL_3DFX_tbuffer)) return 0;
 
   glTbufferMask3DFX = (PFNGLTBUFFERMASK3DFXPROC)SDL_GL_GetProcAddress("glTbufferMask3DFX");

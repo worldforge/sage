@@ -5,7 +5,7 @@
 #include "GL_EXT_clip_volume_hint.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_clip_volume_hint() {
+int initialise_GL_EXT_clip_volume_hint() {
   GL_EXT_clip_volume_hint_initialised = isExtensionSupported(str_GL_EXT_clip_volume_hint);
   return GL_EXT_clip_volume_hint_initialised;
 }

@@ -5,7 +5,7 @@
 #include "GL_EXT_polygon_offset.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_polygon_offset() {
+int initialise_GL_EXT_polygon_offset() {
   if (isExtensionSupported(str_GL_EXT_polygon_offset)) {
     return 0;
   }

@@ -5,7 +5,7 @@
 #include "GL_EXT_color_subtable.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_color_subtable() {
+int initialise_GL_EXT_color_subtable() {
   if (!isExtensionSupported(str_GL_EXT_color_subtable)) return 0;
 
   glColorSubTableEXT = (PFNGLCOLORSUBTABLEEXTPROC)SDL_GL_GetProcAddress("glColorSubTableEXT");

@@ -5,7 +5,7 @@
 #include "GL_ARB_fragment_program.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_fragment_program() {
+int initialise_GL_ARB_fragment_program() {
   if (!isExtensionSupported(str_GL_ARB_fragment_program)) return 0;
 
   glProgramStringARB = (PFNGLPROGRAMSTRINGARBPROC)SDL_GL_GetProcAddress("glProgramStringARB");

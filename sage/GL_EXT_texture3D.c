@@ -5,7 +5,7 @@
 #include "GL_EXT_texture3D.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_texture3D() {
+int initialise_GL_EXT_texture3D() {
   if (isExtensionSupported(str_GL_EXT_texture3D)) {
     return 0;
   }

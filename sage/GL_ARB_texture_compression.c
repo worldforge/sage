@@ -5,7 +5,7 @@
 #include "GL_ARB_texture_compression.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_texture_compression() {
+int initialise_GL_ARB_texture_compression() {
   if (isExtensionSupported(str_GL_ARB_texture_compression)) {
     return 0;
   }

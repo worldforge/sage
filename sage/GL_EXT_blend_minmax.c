@@ -5,7 +5,7 @@
 #include "GL_EXT_blend_minmax.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_blend_minmax() {
+int initialise_GL_EXT_blend_minmax() {
   if (!isExtensionSupported(str_GL_EXT_blend_minmax)) return 0;
 
   glBlendEquationEXT = (PFNGLBLENDEQUATIONEXTPROC)SDL_GL_GetProcAddress("glBlendEquationEXT");

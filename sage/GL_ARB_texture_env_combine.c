@@ -5,7 +5,7 @@
 #include "GL_ARB_texture_env_combine.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_texture_env_combine() {
+int initialise_GL_ARB_texture_env_combine() {
   GL_ARB_texture_env_combine_initialised = isExtensionSupported(str_GL_ARB_texture_env_combine);
   return GL_ARB_texture_env_combine_initialised;
 }

@@ -5,7 +5,7 @@
 #include "GL_NV_vertex_program.h"
 #include "utility.h"
 
-static int initialise_GL_NV_vertex_program() {
+int initialise_GL_NV_vertex_program() {
   if (isExtensionSupported(str_GL_NV_vertex_program)) {
     return 0;
   }

@@ -5,7 +5,7 @@
 #include "GL_ATI_vertex_array_object.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_vertex_array_object() {
+int initialise_GL_ATI_vertex_array_object() {
   if (!isExtensionSupported(str_GL_ATI_vertex_array_object)) return 0;
  
   glNewObjectBufferATI = (PFNGLNEWOBJECTBUFFERATIPROC)SDL_GL_GetProcAddress("glNewObjectBufferATI");

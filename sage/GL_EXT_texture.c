@@ -5,7 +5,7 @@
 #include "GL_EXT_texture.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_texture() {
+int initialise_GL_EXT_texture() {
   GL_EXT_texture_initialised = isExtensionSupported(str_GL_EXT_texture);
   return GL_EXT_texture_initialised;
 }

@@ -6,7 +6,7 @@
 #include "utility.h"
 
 
-static int initialise_GL_ARB_texture_border_clamp() {
+int initialise_GL_ARB_texture_border_clamp() {
   GL_ARB_texture_border_clamp_initialised = isExtensionSupported(str_GL_ARB_texture_border_clamp);
   return GL_ARB_texture_border_clamp_initialised;
 }

@@ -5,7 +5,7 @@
 #include "GL_APPLE_element_array.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_element_array() {
+int initialise_GL_APPLE_element_array() {
   if (!isExtensionSupported(str_GL_APPLE_element_array)) return 0;
 
   glElementPointerAPPLE = (PFNGLELEMENTPOINTERAPPLEPROC)SDL_GL_GetProcAddress("glElementPointerAPPLE");

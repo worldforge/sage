@@ -5,7 +5,7 @@
 #include "GL_ATI_envmap_bumpmap.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_envmap_bumpmap() {
+int initialise_GL_ATI_envmap_bumpmap() {
   if (!isExtensionSupported(str_GL_ATI_envmap_bumpmap)) return 0;
   
   glTexBumpParameterivATI = (PFNGLTEXBUMPPARAMETERIVATIPROC)SDL_GL_GetProcAddress("glTexBumpParameterivATI");

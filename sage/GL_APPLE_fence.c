@@ -5,7 +5,7 @@
 #include "GL_APPLE_fence.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_fence() {
+int initialise_GL_APPLE_fence() {
   if (!isExtensionSupported(str_GL_APPLE_fence)) return 0;
 
   glGenFencesAPPLE = (PFNGLGENFENCESAPPLEPROC)SDL_GL_GetProcAddress("glGenFencesAPPLE");

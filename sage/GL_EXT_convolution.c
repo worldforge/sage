@@ -5,7 +5,7 @@
 #include "GL_EXT_convolution.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_convolution() {
+int initialise_GL_EXT_convolution() {
   if (!isExtensionSupported(str_GL_EXT_convolution)) return 0;
 
   glConvolutionFilter1DEXT = (PFNGLCONVOLUTIONFILTER1DEXTPROC)SDL_GL_GetProcAddress("glConvolutionFilter1DEXT");

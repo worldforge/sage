@@ -5,7 +5,7 @@
 #include "GL_ARB_window_pos.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_window_pos() {
+int initialise_GL_ARB_window_pos() {
   if (!isExtensionSupported(str_GL_ARB_window_pos)) {
     return 0;
   }

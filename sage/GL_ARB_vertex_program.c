@@ -5,7 +5,7 @@
 #include "GL_ARB_vertex_program.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_vertex_program() {
+int initialise_GL_ARB_vertex_program() {
   if (!isExtensionSupported(str_GL_ARB_vertex_program)) return 0;
 
   glVertexAttrib1sARB = (PFNGLVERTEXATTRIB1SARBPROC)SDL_GL_GetProcAddress("glVertexAttrib1sARB");

@@ -5,7 +5,7 @@
 #include "GL_EXT_coordinate_frame.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_coordinate_frame() {
+int initialise_GL_EXT_coordinate_frame() {
   if (!isExtensionSupported(str_GL_EXT_coordinate_frame)) return 0;
  
   glTangent3bEXT = (PFNGLTANGENT3BEXTPROC)SDL_GL_GetProcAddress("glTangent3bEXT");

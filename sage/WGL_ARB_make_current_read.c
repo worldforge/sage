@@ -5,7 +5,7 @@
 #include "WGL_ARB_make_current_read.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_make_current_read() {
+int initialise_WGL_ARB_make_current_read() {
   if (!isExtensionSupported(str_WGL_ARB_make_current_read)) return 0;
 
   wglMakeContextCurrentARB = (wglMakeContextCurrentARB)SDL_GL_GetProcAddress("glwglMakeContextCurrentARB");

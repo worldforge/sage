@@ -5,7 +5,7 @@
 #include "GL_APPLE_vertex_array_object.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_vertex_array_object() {
+int initialise_GL_APPLE_vertex_array_object() {
   if(!isExtensionSupported(str_GL_APPLE_vertex_array_object)) return 0;
   
   glBindVertexArrayAPPLE = (PFNGLBINDVERTEXARRAYAPPLEPROC)SDL_GL_GetProcAddress("glBindVertexArrayAPPLE");

@@ -5,7 +5,7 @@
 #include "GL_EXT_compiled_vertex_array.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_compiled_vertex_array() {
+int initialise_GL_EXT_compiled_vertex_array() {
   if (!isExtensionSupported(str_GL_EXT_compiled_vertex_array)) return 0;
 
   glLockArraysEXT = (PFNGLLOCKARRAYSEXTPROC)SDL_GL_GetProcAddress("glLockArraysEXT");

@@ -5,7 +5,7 @@
 #include "GL_ARB_transpose_matrix.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_transpose_matrix() {
+int initialise_GL_ARB_transpose_matrix() {
   if (isExtensionSupported(str_GL_ARB_transpose_matrix)) {
     return 0;
   }

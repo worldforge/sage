@@ -5,7 +5,7 @@
 #include "GL_EXT_blend_subtract.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_blend_subtract() {
+int initialise_GL_EXT_blend_subtract() {
   GL_EXT_blend_subtract_initialised = isExtensionSupported(str_GL_EXT_blend_subtract);
   return GL_EXT_blend_subtract_initialised;
 }

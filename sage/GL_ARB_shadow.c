@@ -5,7 +5,7 @@
 #include "GL_ARB_shadow.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_shadow() {
+int initialise_GL_ARB_shadow() {
   GL_ARB_shadow_initialised = isExtensionSupported(str_GL_ARB_shadow);
   return GL_ARB_shadow_initialised;
 }

@@ -5,7 +5,7 @@
 #include "WGL_ARB_pixel_format.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_pixel_format() {
+int initialise_WGL_ARB_pixel_format() {
   if (!isExtensionSupported(str_WGL_ARB_pixel_format)) return 0;
 
   wglGetPixelFormatAttribivARB = (PFNWGLGETPIXELFORMATATTRIBIVARBPROC)SDL_GL_GetProcAddress("wglGetPixelFormatAttribivARB");

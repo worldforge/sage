@@ -6,7 +6,7 @@
 #include "utility.h"
 
 
-static int initialise_GL_ARB_point_parameters() {
+int initialise_GL_ARB_point_parameters() {
   GL_ARB_point_parameters_initialised = isExtensionSupported(str_GL_ARB_point_parameters);
 
   glPointParameterfARB = (PFNGLPOINTPARAMETERFARBPROC)SDL_GL_GetProcAddress("glPointParameterfARB");

@@ -5,7 +5,7 @@
 #include "GL_APPLE_transform_hint.h"
 #include "utility.h"
 
-static int initialise_GL_APPLE_transform_hint() {
+int initialise_GL_APPLE_transform_hint() {
   GL_APPLE_transform_hint_initialised = isExtensionSupported(str_GL_APPLE_transform_hint);
   return GL_APPLE_transform_hint_initialised;
 }

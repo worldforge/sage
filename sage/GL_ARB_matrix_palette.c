@@ -5,7 +5,7 @@
 #include "GL_ARB_matrix_palette.h"
 #include "utility.h"
 
-static int initialise_GL_ARB_matrix_palette() {
+int initialise_GL_ARB_matrix_palette() {
   if (!isExtensionSupported(str_GL_ARB_matrix_palette) ) {
     return 0;
   }

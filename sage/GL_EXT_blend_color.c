@@ -6,7 +6,7 @@
 #include "SDL.h"
 #include "utility.h"
 
-static int initialise_GL_EXT_blend_color() {
+int initialise_GL_EXT_blend_color() {
   if (isExtensionSupported(str_GL_EXT_blend_color)) {
     return 0;
   }

@@ -5,7 +5,7 @@
 #include "GL_ATI_text_fragment_shader.h"
 #include "utility.h"
 
-static int initialise_GL_ATI_text_fragment_shader() {
+int initialise_GL_ATI_text_fragment_shader() {
   GL_ATI_text_fragment_shader_initialised = isExtensionSupported(str_GL_ATI_text_fragment_shader);
   return GL_ATI_text_fragment_shader_initialised;
 }

@@ -5,7 +5,7 @@
 #include "WGL_ARB_buffer_region.h"
 #include "utility.h"
 
-static int initialise_WGL_ARB_buffer_region() {
+int initialise_WGL_ARB_buffer_region() {
   if (!isExtensionSupported(str_WGL_ARB_buffer_region)) return 0;
 
   wglCreateBufferRegionARB = (PFNWGLCREATEBUFFERREGIONARBPROC)SDL_GL_GetProcAddress("wglCreateBufferRegionARB");
