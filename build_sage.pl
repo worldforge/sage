@@ -4,8 +4,8 @@
 
 $GLEXT_SAGE="sage/glext_sage.h";
 
-open (GLEXT, "<glext.h") or die "Cannout open glext.h\n";
-open (GLEXT_O, ">".$GLEXT_SAGE) or die "Cannout open glext.h\n";
+open (GLEXT, "<glext.h") or die "Cannot open glext.h\n";
+open (GLEXT_O, ">".$GLEXT_SAGE) or die "Cannot open glext.h\n";
 
 $WAIT_FOR_ENDIF="false";
 
