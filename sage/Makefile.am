@@ -46,8 +46,8 @@ bin_SCRIPTS= @SAGE_DLL@
 EXTRA_SCRIPTS = sage.dll
 
 %.dll : lib%.la
-	$(DLLWRAP) --output-def $*.def --driver-name=g++ -o $@ `ar t .libs/lib$*.a` $(LDFLAGS) $(LIBS)
-	$(DLLTOOL) --dllname $@ --def $*.def --output-lib .libs/lib$*.a
+	$(DLLWRAP) --output-def $*.def --driver-name=$(CXX) -o $@ `ar t .libs/lib$*.dll.a` $(LDFLAGS) $(LIBS)
+	$(DLLTOOL) --dllname $@ --def $*.def --output-lib .libs/lib$*.dll.a
 
 clean-local:
 	rm -f sage.dll sage.def

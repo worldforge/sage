@@ -1,3 +1,7 @@
+2004-08-26 Simon Goodall <sage@simongoodall.co.uk>
+        * sage/Makefile.am: Updates for dll building
+
+
 29th June 2004, Simon Goodall <sage@simongoodall.co.uk>
 
 	* build_sage.pl, build_sage_glx.pl, build_sage_wgl.pl, sage/Makefile.am, sage/check_extension.c, sage/sage.c, sage/sage_glx.c, sage/sage_wgl.c: Fixes so make distcheck works.
