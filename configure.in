@@ -1,0 +1,85 @@
+dnl Initialise autoconf
+
+AC_INIT()
+AM_CONFIG_HEADER(config.h)
+
+dnl Detect the canonical host and target build environment
+AC_CANONICAL_HOST
+AC_CANONICAL_TARGET
+
+dnl Initialise automake
+SAGE_MAJOR_VERSION=0
+SAGE_MINOR_VERSION=0
+SAGE_MICRO_VERSION=1
+SAGE_VERSION=$SAGE_MAJOR_VERSION.$SAGE_MINOR_VERSION.$SAGE_MICRO_VERSION
+
+AC_SUBST(SAGE_VERSION)
+
+SAGE_CURRENT=0
+SAGE_REVISION=0
+SAGE_AGE=0
+SAGE_VERSION_INFO=$SAGE_CURRENT:$SAGE_REVISION:$SAGE_AGE
+
+AC_SUBST(SAGE_VERSION_INFO)
+
+AM_INIT_AUTOMAKE(sage, $SAGE_VERSION)
+
+dnl Need libtool
+AM_PROG_LIBTOOL
+AC_PROG_CC
+
+if test $cross_compiling == no; then
+  dnl FLAGS='-Wall -ansi -I/usr/X11R6/include -I/usr/include'
+  CFLAGS="$CPPFLAGS -I/usr/X11R6/include -Wall"
+  LIBS="$LIBS -L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib"
+fi
+
+
+AC_ARG_ENABLE(debug,
+  [  --enable-debug	enable debug information [default=no]],
+  [
+    if test "$enableval" = "yes"; then
+      CFLAGS="$CFLAGS -ggdb -O0 -DDEBUG"
+    else
+      CFLAGS="$CFLAGS -O3 -DNDEBUG"
+    fi
+  ],[
+    CFLAGS="$CFLAGS -O3 -DNDEBUG"
+  ]
+)
+
+dnl Check SDL
+SDL_VERSION=1.2.2
+AM_PATH_SDL($SDL_VERSION, [
+  CFLAGS="$CFLAGS $SDL_CFLAGS"
+  LIBS="$LIBS $SDL_LIBS"
+],
+[
+  AC_MSG_ERROR(Couldn't find SDL or insufficent version found. Please goto http://www.libsdl.org/ and get at least version $SDL_VERSION)
+])
+
+
+if test $cross_compiling == yes; then
+  LIBS="$LIBS -lwsock32"
+fi
+
+dnl Check other libs
+
+if test $cross_compiling == no; then
+  AC_CHECK_LIB(GL,glViewport)
+else 
+  AC_CHECK_HEADER(GL/gl.h,
+	[found_gl=yes break],
+	[found_gl=no])
+  if test $found_gl == yes; then
+	LIBS="$LIBS -lopengl32"
+  else
+	AC_MSG_ERROR(Error could not find OpenGL)
+  fi
+fi
+
+dnl Generate files
+AC_OUTPUT([
+	Makefile
+	sage/Makefile
+])
