@@ -357,6 +357,7 @@ PFNGLGETSHADERSOURCEARBPROC SAGE_glGetShaderSourceARB = NULL;
 PFNGLBINDATTRIBLOCATIONARBPROC SAGE_glBindAttribLocationARB = NULL;
 PFNGLGETACTIVEATTRIBARBPROC SAGE_glGetActiveAttribARB = NULL;
 PFNGLGETATTRIBLOCATIONARBPROC SAGE_glGetAttribLocationARB = NULL;
+PFNGLDRAWBUFFERSARBPROC SAGE_glDrawBuffersARB = NULL;
 PFNGLBLENDCOLOREXTPROC SAGE_glBlendColorEXT = NULL;
 PFNGLPOLYGONOFFSETEXTPROC SAGE_glPolygonOffsetEXT = NULL;
 PFNGLTEXIMAGE3DEXTPROC SAGE_glTexImage3DEXT = NULL;
@@ -1400,6 +1401,11 @@ void sage_init(void) {
 #endif
 #ifdef SAGE_GL_ARB_fragment_program_shadow
 #endif
+#ifdef SAGE_GL_ARB_draw_buffers
+  SAGE_glDrawBuffersARB = (PFNGLDRAWBUFFERSARBPROC)SDL_GL_GetProcAddress("glDrawBuffersARB");
+#endif
+#ifdef SAGE_GL_ARB_texture_rectangle
+#endif
 #ifdef SAGE_GL_EXT_abgr
 #endif
 #ifdef SAGE_GL_EXT_blend_color
@@ -2328,6 +2334,8 @@ void sage_init(void) {
 #ifdef SAGE_GL_ATI_draw_buffers
   SAGE_glDrawBuffersATI = (PFNGLDRAWBUFFERSATIPROC)SDL_GL_GetProcAddress("glDrawBuffersATI");
 #endif
+#ifdef SAGE_GL_ATI_pixel_format_float
+#endif
 #ifdef SAGE_GL_ATI_texture_env_combine3
 #endif
 #ifdef SAGE_GL_ATI_texture_float
@@ -2427,6 +2435,16 @@ void sage_init(void) {
 #endif
 #ifdef SAGE_GL_MESA_ycbcr_texture
 #endif
+#ifdef SAGE_GL_EXT_pixel_buffer_object
+#endif
+#ifdef SAGE_GL_NV_fragment_program_option
+#endif
+#ifdef SAGE_GL_NV_fragment_program2
+#endif
+#ifdef SAGE_GL_NV_vertex_program2_option
+#endif
+#ifdef SAGE_GL_NV_vertex_program3
+#endif
  sage_ext[GL_ARB_MULTITEXTURE] = isExtensionSupported("GL_ARB_multitexture");
  sage_ext[GL_ARB_TRANSPOSE_MATRIX] = isExtensionSupported("GL_ARB_transpose_matrix");
  sage_ext[GL_ARB_MULTISAMPLE] = isExtensionSupported("GL_ARB_multisample");
@@ -2456,6 +2474,8 @@ void sage_init(void) {
  sage_ext[GL_ARB_TEXTURE_NON_POWER_OF_TWO] = isExtensionSupported("GL_ARB_texture_non_power_of_two");
  sage_ext[GL_ARB_POINT_SPRITE] = isExtensionSupported("GL_ARB_point_sprite");
  sage_ext[GL_ARB_FRAGMENT_PROGRAM_SHADOW] = isExtensionSupported("GL_ARB_fragment_program_shadow");
+ sage_ext[GL_ARB_DRAW_BUFFERS] = isExtensionSupported("GL_ARB_draw_buffers");
+ sage_ext[GL_ARB_TEXTURE_RECTANGLE] = isExtensionSupported("GL_ARB_texture_rectangle");
  sage_ext[GL_EXT_ABGR] = isExtensionSupported("GL_EXT_abgr");
  sage_ext[GL_EXT_BLEND_COLOR] = isExtensionSupported("GL_EXT_blend_color");
  sage_ext[GL_EXT_POLYGON_OFFSET] = isExtensionSupported("GL_EXT_polygon_offset");
@@ -2641,6 +2661,7 @@ void sage_init(void) {
  sage_ext[GL_APPLE_YCBCR_422] = isExtensionSupported("GL_APPLE_ycbcr_422");
  sage_ext[GL_S3_S3TC] = isExtensionSupported("GL_S3_s3tc");
  sage_ext[GL_ATI_DRAW_BUFFERS] = isExtensionSupported("GL_ATI_draw_buffers");
+ sage_ext[GL_ATI_PIXEL_FORMAT_FLOAT] = isExtensionSupported("GL_ATI_pixel_format_float");
  sage_ext[GL_ATI_TEXTURE_ENV_COMBINE3] = isExtensionSupported("GL_ATI_texture_env_combine3");
  sage_ext[GL_ATI_TEXTURE_FLOAT] = isExtensionSupported("GL_ATI_texture_float");
  sage_ext[GL_NV_FLOAT_BUFFER] = isExtensionSupported("GL_NV_float_buffer");
@@ -2658,4 +2679,9 @@ void sage_init(void) {
  sage_ext[GL_EXT_BLEND_EQUATION_SEPARATE] = isExtensionSupported("GL_EXT_blend_equation_separate");
  sage_ext[GL_MESA_PACK_INVERT] = isExtensionSupported("GL_MESA_pack_invert");
  sage_ext[GL_MESA_YCBCR_TEXTURE] = isExtensionSupported("GL_MESA_ycbcr_texture");
+ sage_ext[GL_EXT_PIXEL_BUFFER_OBJECT] = isExtensionSupported("GL_EXT_pixel_buffer_object");
+ sage_ext[GL_NV_FRAGMENT_PROGRAM_OPTION] = isExtensionSupported("GL_NV_fragment_program_option");
+ sage_ext[GL_NV_FRAGMENT_PROGRAM2] = isExtensionSupported("GL_NV_fragment_program2");
+ sage_ext[GL_NV_VERTEX_PROGRAM2_OPTION] = isExtensionSupported("GL_NV_vertex_program2_option");
+ sage_ext[GL_NV_VERTEX_PROGRAM3] = isExtensionSupported("GL_NV_vertex_program3");
 }

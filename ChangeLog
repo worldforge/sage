@@ -1,4 +1,11 @@
+2004-11-29 Simon Goodall <sage@simongoodall.co.uk>
+
+	* autogen.sh: Use autoreconf if possible
+	* configure.in: Fix some warnings. Correctly use -lGL instead of -GL
+	* sage/glext_sage.h, sage/sage.c, sage/sage.h: Update to glext.h ver 24
+
 2004-08-26 Simon Goodall <sage@simongoodall.co.uk>
+
         * sage/Makefile.am: Updates for dll building
 
 

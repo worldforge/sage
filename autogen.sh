@@ -2,6 +2,13 @@
 
 rm -f config.cache
 
+## Try new method
+
+(/usr/bin/autoreconf --install) || {
+
+## Otherwise fallback to older method
+
+
 echo aclocal...
 (aclocal --version) < /dev/null > /dev/null 2>&1 || {
     echo aclocal not found
@@ -35,5 +42,5 @@ echo autoconf...
 }
 
 autoconf
-
+}
 exit 0

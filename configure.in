@@ -29,8 +29,8 @@ dnl Need libtool
 AC_LIBTOOL_WIN32_DLL
 AM_PROG_LIBTOOL
 AC_PROG_CC
-AC_MINGW32
-AC_CYGWIN
+#AC_MINGW32
+#AC_CYGWIN
 AC_EXEEXT
 
 case "$target" in
@@ -52,15 +52,15 @@ case "$target" in
       #include <GL/gl.h>
     ],[
     ],[
-     LIBS="$LIBS -GL"
+     LIBS="$LIBS -lGL"
     ],[
       AC_MSG_ERROR(Cannot find OpenGL)
     ])
   ])
 esac
 
-case "$target" in
-  *-*-cygwin* | *-*-mingw32*)
+case "$host_os" in
+  *cygwin* | *mingw32*)
     LIBS="$LIBS -lopengl32"
 esac
 
