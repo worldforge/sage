@@ -1,3 +1,6 @@
+2nd March 2004, Simon Goodall <sage@simongoodall.co.uk>
+ * Bumped version number to 0.1.1
+
 9th December 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Fixed problems on win32 builds for static library versions.
 
