@@ -2,29 +2,20 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_matrix_palette_H
+#define GL_ARB_matrix_palette_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ARB_matrix_palette
 #define GL_ARB_matrix_palette 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ARB_matrix_palette = "GL_ARB_matrix_palette";
-static int GL_ARB_matrix_palette_initialised = 0;
-
 typedef void (*PFNGLCURRENTPALETTEMATRIXARBPROC)(GLint index);
-static PFNGLCURRENTPALETTEMATRIXARBPROC glCurrentPaletteMatrixARB = 0;
-    
 typedef void (*PFNGLMATRIXINDEXUBVARBPROC)(GLint size, GLubyte *indices);
-static PFNGLMATRIXINDEXUBVARBPROC glMatrixIndexubvARB = 0;
-    
 typedef void (*PFNGLMATRIXINDEXUSVARBPROC)(GLint size, GLushort *indices);
-static PFNGLMATRIXINDEXUSVARBPROC glMatrixIndexusvARB = 0;
-
 typedef void (*PFNGLMATRIXINDEXUIVARBPROC)(GLint size, GLuint *indices);
-static PFNGLMATRIXINDEXUIVARBPROC glMatrixIndexuivARB = 0;
-
 typedef void (*PFNGLMATRIXINDEXPOINTERARBPROC)(GLint size, GLenum type, GLsizei stride, void *pointer);
-static PFNGLMATRIXINDEXPOINTERARBPROC glMatrixIndexPointerARB = 0;
-
  
 #define GL_MATRIX_PALETTE_ARB                    0x8840
 #define GL_MAX_MATRIX_PALETTE_STACK_DEPTH_ARB    0x8841
@@ -37,7 +28,15 @@ static PFNGLMATRIXINDEXPOINTERARBPROC glMatrixIndexPointerARB = 0;
 #define GL_MATRIX_INDEX_ARRAY_STRIDE_ARB         0x8848
 #define GL_MATRIX_INDEX_ARRAY_POINTER_ARB        0x8849
 
-static int initialise_GL_ARB_matrix_palette();
-#else
-static int GL_ARB_matrix_palette_initialised = 1;
+#endif
+
+SAGEAPI PFNGLCURRENTPALETTEMATRIXARBPROC glCurrentPaletteMatrixARB;
+SAGEAPI PFNGLMATRIXINDEXUBVARBPROC glMatrixIndexubvARB;
+SAGEAPI PFNGLMATRIXINDEXUSVARBPROC glMatrixIndexusvARB;
+SAGEAPI PFNGLMATRIXINDEXUIVARBPROC glMatrixIndexuivARB;
+SAGEAPI PFNGLMATRIXINDEXPOINTERARBPROC glMatrixIndexPointerARB;
+
+SAGEAPI int GL_ARB_matrix_palette_initialised;
+SAGEAPI int initialise_GL_ARB_matrix_palette();
+
 #endif

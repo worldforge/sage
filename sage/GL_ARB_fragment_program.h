@@ -2,71 +2,34 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_fragment_program_H
+#define GL_ARB_fragment_program_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ARB_fragment_program
 #define GL_ARB_fragment_program 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ARB_fragment_program = "GL_ARB_fragment_program";
-static int GL_ARB_fragment_program_initialised = 0;
-
 typedef void (*PFNGLPROGRAMSTRINGARBPROC)(GLenum target, GLenum format, GLsizei len, const void *string);
-static PFNGLPROGRAMSTRINGARBPROC glProgramStringARB = 0;
-
 typedef void (*PFNGLBINDPROGRAMARBPROC)(GLenum target, GLuint program);
-static PFNGLBINDPROGRAMARBPROC glBindProgramARB = 0;
-
 typedef void (*PFNGLDELETEPROGRAMSARBPROC)(GLsizei n, const GLuint *programs);
-static PFNGLDELETEPROGRAMSARBPROC glDeleteProgramsARB = 0;
-
 typedef void (*PFNGLGENPROGRAMSARBPROC)(GLsizei n, GLuint *programs);
-static PFNGLGENPROGRAMSARBPROC glGenProgramsARB = 0;
-
 typedef void (*PFNGLPROGRAMENVPARAMETER4DARBPROC)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-static PFNGLPROGRAMENVPARAMETER4DARBPROC glProgramEnvParameter4dARB = 0;
-
 typedef void (*PFNGLPROGRAMENVPARAMETER4DVARBPROC)(GLenum target, GLuint index, const GLdouble *params);
-static PFNGLPROGRAMENVPARAMETER4DVARBPROC glProgramEnvParameter4dvARB = 0;
-
 typedef void (*PFNGLPROGRAMENVPARAMETER4FARBPROC)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-static PFNGLPROGRAMENVPARAMETER4FARBPROC glProgramEnvParameter4fARB = 0;
-
 typedef void (*PFNGLPROGRAMENVPARAMETER4FVARBPROC)(GLenum target, GLuint index, const GLfloat *params);
-static PFNGLPROGRAMENVPARAMETER4FVARBPROC glProgramEnvParameter4fvARB = 0;
-
 typedef void (*PFNGLPROGRAMLOCALPARAMETER4DARBPROC)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-static PFNGLPROGRAMLOCALPARAMETER4DARBPROC glProgramLocalParameter4dARB = 0;
-
 typedef void (*PFNGLPROGRAMLOCALPARAMETER4DVARBPROC)(GLenum target, GLuint index, const GLdouble *params);
-static PFNGLPROGRAMLOCALPARAMETER4DVARBPROC glProgramLocalParameter4dvARB = 0;
-
 typedef void (*PFNGLPROGRAMLOCALPARAMETER4FARBPROC)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-static PFNGLPROGRAMLOCALPARAMETER4FARBPROC glProgramLocalParameter4fARB = 0;
-
 typedef void (*PFNGLPROGRAMLOCALPARAMETER4FVARBPROC)(GLenum target, GLuint index, const GLfloat *params);
-static PFNGLPROGRAMLOCALPARAMETER4FVARBPROC glProgramLocalParameter4fvARB = 0;
-
 typedef void (*PFNGLGETPROGRAMENVPARAMETERDVARBPROC)(GLenum target, GLuint index, GLdouble *params);
-static PFNGLGETPROGRAMENVPARAMETERDVARBPROC glGetProgramEnvParameterdvARB = 0;
-
 typedef void (*PFNGLGETPROGRAMENVPARAMETERFVARBPROC)(GLenum target, GLuint index, GLfloat *params);
-static PFNGLGETPROGRAMENVPARAMETERFVARBPROC glGetProgramEnvParameterfvARB = 0;
-
 typedef void (*PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC)(GLenum target, GLuint index, GLdouble *params);
-static PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC glGetProgramLocalParameterdvARB = 0;
-
 typedef void (*PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC)(GLenum target, GLuint index, GLfloat *params);
-static PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC glGetProgramLocalParameterfvARB = 0;
-
 typedef void (*PFNGLGETPROGRAMIVARBPROC)(GLenum target, GLenum pname, GLint *params);
-static PFNGLGETPROGRAMIVARBPROC glGetProgramivARB = 0;
-
 typedef void (*PFNGLGETPROGRAMSTRINGARBPROC)(GLenum target, GLenum pname, void *string);
-static PFNGLGETPROGRAMSTRINGARBPROC glGetProgramStringARB = 0;
-
 typedef GLboolean (*PFNGLISPROGRAMARBPROC)(GLuint program);
-static PFNGLISPROGRAMARBPROC glIsProgramARB = 0;
-
 
 #define GL_FRAGMENT_PROGRAM_ARB                            0x8804
 #define GL_PROGRAM_FORMAT_ASCII_ARB                        0x8875
@@ -93,7 +56,6 @@ static PFNGLISPROGRAMARBPROC glIsProgramARB = 0;
 #define GL_MAX_PROGRAM_ENV_PARAMETERS_ARB                  0x88B5
 #define GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB                 0x88B6
 #define GL_PROGRAM_ALU_INSTRUCTIONS_ARB                    0x8805
-
 #define GL_PROGRAM_TEX_INSTRUCTIONS_ARB                    0x8806
 #define GL_PROGRAM_TEX_INDIRECTIONS_ARB                    0x8807
 #define GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB             0x8808
@@ -105,20 +67,16 @@ static PFNGLISPROGRAMARBPROC glIsProgramARB = 0;
 #define GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB         0x880E
 #define GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB         0x880F
 #define GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB         0x8810
-
 #define GL_PROGRAM_STRING_ARB                              0x8628
-
 #define GL_PROGRAM_ERROR_POSITION_ARB                      0x864B
 #define GL_CURRENT_MATRIX_ARB                              0x8641
 #define GL_TRANSPOSE_CURRENT_MATRIX_ARB                    0x88B7
 #define GL_CURRENT_MATRIX_STACK_DEPTH_ARB                  0x8640
 #define GL_MAX_PROGRAM_MATRICES_ARB                        0x862F
 #define GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB              0x862E
-
 #define GL_MAX_TEXTURE_COORDS_ARB                          0x8871
 #define GL_MAX_TEXTURE_IMAGE_UNITS_ARB                     0x8872
 #define GL_PROGRAM_ERROR_STRING_ARB                        0x8874
-
 #define GL_MATRIX0_ARB                                     0x88C0
 #define GL_MATRIX1_ARB                                     0x88C1
 #define GL_MATRIX2_ARB                                     0x88C2
@@ -152,11 +110,29 @@ static PFNGLISPROGRAMARBPROC glIsProgramARB = 0;
 #define GL_MATRIX30_ARB                                    0x88DE
 #define GL_MATRIX31_ARB                                    0x88DF
 
+#endif
 
+SAGEAPI PFNGLPROGRAMSTRINGARBPROC glProgramStringARB;
+SAGEAPI PFNGLBINDPROGRAMARBPROC glBindProgramARB;
+SAGEAPI PFNGLDELETEPROGRAMSARBPROC glDeleteProgramsARB;
+SAGEAPI PFNGLGENPROGRAMSARBPROC glGenProgramsARB;
+SAGEAPI PFNGLPROGRAMENVPARAMETER4DARBPROC glProgramEnvParameter4dARB;
+SAGEAPI PFNGLPROGRAMENVPARAMETER4DVARBPROC glProgramEnvParameter4dvARB;
+SAGEAPI PFNGLPROGRAMENVPARAMETER4FARBPROC glProgramEnvParameter4fARB;
+SAGEAPI PFNGLPROGRAMENVPARAMETER4FVARBPROC glProgramEnvParameter4fvARB;
+SAGEAPI PFNGLPROGRAMLOCALPARAMETER4DARBPROC glProgramLocalParameter4dARB;
+SAGEAPI PFNGLPROGRAMLOCALPARAMETER4DVARBPROC glProgramLocalParameter4dvARB;
+SAGEAPI PFNGLPROGRAMLOCALPARAMETER4FARBPROC glProgramLocalParameter4fARB;
+SAGEAPI PFNGLPROGRAMLOCALPARAMETER4FVARBPROC glProgramLocalParameter4fvARB;
+SAGEAPI PFNGLGETPROGRAMENVPARAMETERDVARBPROC glGetProgramEnvParameterdvARB;
+SAGEAPI PFNGLGETPROGRAMENVPARAMETERFVARBPROC glGetProgramEnvParameterfvARB;
+SAGEAPI PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC glGetProgramLocalParameterdvARB;
+SAGEAPI PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC glGetProgramLocalParameterfvARB;
+SAGEAPI PFNGLGETPROGRAMIVARBPROC glGetProgramivARB;
+SAGEAPI PFNGLGETPROGRAMSTRINGARBPROC glGetProgramStringARB;
+SAGEAPI PFNGLISPROGRAMARBPROC glIsProgramARB;
 
+SAGEAPI int GL_ARB_fragment_program_initialised;
+SAGEAPI int initialise_GL_ARB_fragment_program();
 
-static int initialise_GL_ARB_fragment_program();
-
-#else
-static int GL_ARB_fragment_program_initialised = 1;
 #endif

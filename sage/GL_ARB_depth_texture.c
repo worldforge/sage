@@ -5,6 +5,10 @@
 #include "GL_ARB_depth_texture.h"
 #include "utility.h"
 
+static const char * const str_GL_ARB_depth_texture = "GL_ARB_depth_texture";
+
+int GL_ARB_depth_texture_initialised = 0;
+
 int initialise_GL_ARB_depth_texture() {
   GL_ARB_depth_texture_initialised = isExtensionSupported(str_GL_ARB_depth_texture);
   return GL_ARB_depth_texture_initialised;

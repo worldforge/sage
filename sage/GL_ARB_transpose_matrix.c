@@ -5,6 +5,17 @@
 #include "GL_ARB_transpose_matrix.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_transpose_matrix = "GL_ARB_transpose_matrix";
+
+PFNGLLOADTRANSPOSEMATRIXFARBPROC glLoadTransposeMatrixfARB = 0;
+PFNGLLOADTRANSPOSEMATRIXDARBPROC glLoadTransposeMatrixdARB = 0;
+PFNGLMULTTRANSPOSEMATRIXFARBPROC glMultTransposeMatrixfARB = 0;
+PFNGLMULTTRANSPOSEMATRIXDARBPROC glMultTransposeMatrixdARB = 0;
+
+int GL_ARB_transpose_matrix_initialised = 0;
+
 int initialise_GL_ARB_transpose_matrix() {
   if (isExtensionSupported(str_GL_ARB_transpose_matrix)) {
     return 0;

@@ -5,6 +5,15 @@
 #include "GL_ATI_pn_triangles.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_pn_triangles = "GL_ATI_pn_triangles";
+
+PFNGLPNTRIANGLESIATIPROC glPNTrianglesiATI = 0;
+PFNGLPNTRIANGLESFATIPROC glPNTrianglesfATI = 0;
+
+int GL_ATI_pn_triangles_initialised = 0;
+
 int initialise_GL_ATI_pn_triangles() {
   if (!isExtensionSupported(str_GL_ATI_pn_triangles)) return 0;
 

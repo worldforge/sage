@@ -5,6 +5,10 @@
 #include "GL_EXT_abgr.h"
 #include "utility.h"
 
+static const char * const str_GL_EXT_abgr = "GL_EXT_abgr";
+
+int GL_EXT_abgr_initialised = 0;
+
 int initialise_GL_EXT_abgr() {
   GL_EXT_abgr_initialised = isExtensionSupported(str_GL_EXT_abgr);
   return GL_EXT_abgr_initialised;

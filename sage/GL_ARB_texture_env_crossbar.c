@@ -5,6 +5,11 @@
 #include "GL_ARB_texture_env_crossbar.h"
 #include "utility.h"
 
+
+static const char * const str_GL_ARB_texture_env_crossbar = "GL_ARB_texture_env_crossbar";
+
+int GL_ARB_texture_env_crossbar_initialised = 0;
+
 int initialise_GL_ARB_texture_env_crossbar() {
   GL_ARB_texture_env_crossbar_initialised = isExtensionSupported(str_GL_ARB_texture_env_crossbar);
   return GL_ARB_texture_env_crossbar_initialised;

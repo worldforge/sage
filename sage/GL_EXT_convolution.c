@@ -5,6 +5,26 @@
 #include "GL_EXT_convolution.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_EXT_convolution = "GL_EXT_convolution";
+
+PFNGLCONVOLUTIONFILTER1DEXTPROC glConvolutionFilter1DEXT = 0;
+PFNGLCONVOLUTIONFILTER2DEXTPROC glConvolutionFilter2DEXT = 0;
+PFNGLCOPYCONVOLUTIONFILTER1DEXTPROC glCopyConvolutionFilter1DEXT = 0;
+PFNGLCOPYCONVOLUTIONFILTER2DEXTPROC glCopyConvolutionFilter2DEXT = 0;
+PFNGLGETCONVOLUTIONFILTEREXTPROC glGetConvolutionFilterEXT = 0;
+PFNGLSEPARABLEFILTER2DEXTPROC glSeparableFilter2DEXT = 0;
+PFNGLGETSEPARABLEFILTEREXTPROC glGetSeparableFilterEXT = 0;
+PFNGLCONVOLUTIONPARAMETERIEXTPROC glConvolutionParameteriEXT = 0;
+PFNGLCONVOLUTIONPARAMETERIVEXTPROC glConvolutionParameterivEXT = 0;
+PFNGLCONVOLUTIONPARAMETERFEXTPROC glConvolutionParameterfEXT = 0;
+PFNGLCONVOLUTIONPARAMETERFVEXTPROC glConvolutionParameterfvEXT = 0; 
+PFNGLGETCONVOLUTIONPARAMETERIVEXTPROC glGetConvolutionParameterivEXT = 0;
+PFNGLGETCONVOLUTIONPARAMETERFVEXTPROC glGetConvolutionParameterfvEXT = 0;
+
+int GL_EXT_convolution_initialised = 0;
+
 int initialise_GL_EXT_convolution() {
   if (!isExtensionSupported(str_GL_EXT_convolution)) return 0;
 

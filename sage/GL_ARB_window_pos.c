@@ -5,6 +5,29 @@
 #include "GL_ARB_window_pos.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_window_pos = "GL_ARB_window_pos";
+
+PFNGLWINDOWPOS2DARBPROC glWindowPos2dARB = 0;
+PFNGLWINDOWPOS2FARBPROC glWindowPos2fARB = 0;
+PFNGLWINDOWPOS2IARBPROC glWindowPos2iARB = 0;
+PFNGLWINDOWPOS2SARBPROC glWindowPos2sARB = 0;
+PFNGLWINDOWPOS2DVARBPROC glWindowPos2dvARB = 0;
+PFNGLWINDOWPOS2FVARBPROC glWindowPos2fvARB = 0;
+PFNGLWINDOWPOS2IVARBPROC glWindowPos2ivARB = 0;
+PFNGLWINDOWPOS2SVARBPROC glWindowPos2svARB = 0;
+PFNGLWINDOWPOS3DARBPROC glWindowPos3dARB = 0;
+PFNGLWINDOWPOS3FARBPROC glWindowPos3fARB = 0;
+PFNGLWINDOWPOS3IARBPROC glWindowPos3iARB = 0;
+PFNGLWINDOWPOS3SARBPROC glWindowPos3sARB = 0;
+PFNGLWINDOWPOS3DVARBPROC glWindowPos3dvARB = 0;
+PFNGLWINDOWPOS3FVARBPROC glWindowPos3fvARB = 0;
+PFNGLWINDOWPOS3IVARBPROC glWindowPos3ivARB = 0;
+PFNGLWINDOWPOS3SVARBPROC glWindowPos3svARB = 0;
+
+int GL_ARB_window_pos_initialised = 0;
+
 int initialise_GL_ARB_window_pos() {
   if (!isExtensionSupported(str_GL_ARB_window_pos)) {
     return 0;

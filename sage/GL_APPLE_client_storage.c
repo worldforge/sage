@@ -5,6 +5,10 @@
 #include "GL_APPLE_client_storage.h"
 #include "utility.h"
 
+static const char * const str_GL_APPLE_client_storage = "GL_APPLE_client_storage";
+
+int GL_APPLE_client_storage_initialised = 0;
+
 int initialise_GL_APPLE_client_storage() {
   GL_APPLE_client_storage_initialised = isExtensionSupported(str_GL_APPLE_client_storage);
   return GL_APPLE_client_storage_initialised;

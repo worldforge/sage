@@ -2,16 +2,16 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_EXT_blend_color_H
+#define GL_EXT_blend_color_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_EXT_blend_color
 #define GL_EXT_blend_color 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_EXT_blend_color = "GL_EXT_blend_color";
-static int GL_EXT_blend_color_initialised = 0;
-
 typedef void (*PFNGLBLENDCOLOREXTPROC)(GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha);
-static PFNGLBLENDCOLOREXTPROC glBlendColorEXT = 0;
 
 #define GL_CONSTANT_COLOR_EXT               0x8001
 #define GL_ONE_MINUS_CONSTANT_COLOR_EXT     0x8002
@@ -19,8 +19,11 @@ static PFNGLBLENDCOLOREXTPROC glBlendColorEXT = 0;
 #define GL_ONE_MINUS_CONSTANT_ALPHA_EXT     0x8004
 #define GL_BLEND_COLOR_EXT                  0x8005
 
-static int initialise_GL_EXT_blend_color();
+#endif
 
-#else
-static int GL_EXT_blend_color_initialised = 1;
+SAGEAPI PFNGLBLENDCOLOREXTPROC glBlendColorEXT;
+
+SAGEAPI int GL_EXT_blend_color_initialised;
+SAGEAPI int initialise_GL_EXT_blend_color();
+
 #endif

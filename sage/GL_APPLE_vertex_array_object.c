@@ -5,6 +5,17 @@
 #include "GL_APPLE_vertex_array_object.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_APPLE_vertex_array_object = "GL_APPLE_vertex_array_object";
+
+PFNGLBINDVERTEXARRAYAPPLEPROC glBindVertexArrayAPPLE = 0;
+PFNGLDELETEVERTEXARRAYSAPPLEPROC glDeleteVertexArraysAPPLE = 0;
+PFNGLGENVERTEXARRAYSAPPLEPROC glGenVertexArraysAPPLE = 0;
+PFNGLISVERTEXARRAYAPPLEPROC glIsVertexArrayAPPLE = 0;
+
+int GL_APPLE_vertex_array_object_initialised = 0;
+
 int initialise_GL_APPLE_vertex_array_object() {
   if(!isExtensionSupported(str_GL_APPLE_vertex_array_object)) return 0;
   

@@ -5,6 +5,23 @@
 #include "GL_ARB_vertex_blend.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_vertex_blend = "GL_ARB_vertex_blend";
+
+PFNGLWEIGHTBVARBPROC glWeightbvARB = 0;
+PFNGLWEIGHTSVARBPROC glWeightsvARB = 0;
+PFNGLWEIGHTIVARBPROC glWeightivARB = 0;
+PFNGLWEIGHTFVARBPROC glWeightfvARB = 0;
+PFNGLWEIGHTDVARBPROC glWeightdvARB = 0;
+PFNGLWEIGHTUBVARBPROC glWeightubvARB = 0;
+PFNGLWEIGHTUSVARBPROC glWeightusvARB = 0;
+PFNGLWEIGHTUIVARBPROC glWeightuivARB = 0;
+PFNGLWEIGHTPOINTERARBPROC glWeightPointerARB = 0;
+PFNGLVERTEXBLENDARBPROC glVertexBlendARB = 0;
+
+int GL_ARB_vertex_blend_initialised = 0;
+
 int initialise_GL_ARB_vertex_blend() {
   if (!isExtensionSupported(str_GL_ARB_vertex_blend)) return 0;
   

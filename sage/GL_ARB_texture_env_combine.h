@@ -2,11 +2,13 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_texture_env_combine_H
+#define GL_ARB_texture_env_combine_H 1
+
+#include <sage/sage.h>
+
 #ifndef GL_ARB_texture_env_combine
 #define GL_ARB_texture_env_combine 1
-
-static const char * const str_GL_ARB_texture_env_combine = "GL_ARB_texture_env_combine";
-static int GL_ARB_texture_env_combine_initialised = 0;
 
 #define GL_COMBINE_ARB                                     0x8570
 #define GL_COMBINE_RGB_ARB                                 0x8571
@@ -31,7 +33,9 @@ static int GL_ARB_texture_env_combine_initialised = 0;
 #define GL_PRIMARY_COLOR_ARB                               0x8577
 #define GL_PREVIOUS_ARB                                    0x8578
 
-static int initialise_GL_ARB_texture_env_combine();
-#else
-static int GL_ARB_texture_env_combine_initialised = 1;
+#endif
+
+SAGEAPI int GL_ARB_texture_env_combine_initialised;
+SAGEAPI int initialise_GL_ARB_texture_env_combine();
+
 #endif

@@ -2,56 +2,31 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_NV_register_combiners_H
+#define GL_NV_register_combiners_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_NV_register_combiners
 #define GL_NV_register_combiners 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_NV_register_combiners = "GL_NV_register_combiners";
-static int GL_NV_register_combiners_initialised = 0;
-
 // Function pointers
 typedef void (*PFNGLCOMBINERPARAMETERFVNVPROC)(GLenum pname, const GLfloat *params);
-static PFNGLCOMBINERPARAMETERFVNVPROC glCombinerParameterfvNV = 0;
-
 typedef void (*PFNGLCOMBINERPARAMETERIVNVPROC)(GLenum pname, const GLint *params);
-static PFNGLCOMBINERPARAMETERIVNVPROC glCombinerParameterivNV =0;
-
 typedef void (*PFNGLCOMBINERPARAMETERFNVPROC)(GLenum pname, GLfloat param);
-static PFNGLCOMBINERPARAMETERFNVPROC glCombinerParameterfNV = 0;
-
 typedef void (*PFNGLCOMBINERPARAMETERINVPROC)(GLenum pname, GLint param);
-static PFNGLCOMBINERPARAMETERINVPROC glCombinerParameteriNV = 0;
-
 typedef void (*PFNGLCOMBINERINPUTNVPROC)(GLenum stage, GLenum portion, GLenum variable, GLenum input, GLenum mapping, GLenum componentUsage);
-static PFNGLCOMBINERINPUTNVPROC glCombinerInputNV = 0;
-
 typedef void (*PFNGLCOMBINEROUTPUTNVPROC)(GLenum stage, GLenum portion, GLenum abOutput, GLenum cdOutput, GLenum sumOutput, GLenum scale, GLenum bias, GLboolean abDotProduct, GLboolean cdDotProduct, GLboolean muxSum);
-static PFNGLCOMBINEROUTPUTNVPROC glCombinerOutputNV = 0;
-
 typedef void (*PFNGLFINALCOMBINERINPUTNVPROC)(GLenum variable, GLenum input, GLenum mapping, GLenum componentUsage);
-static PFNGLFINALCOMBINERINPUTNVPROC glFinalCombinerInputNV = 0;
-
 typedef void (*PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC)(GLenum stage, GLenum portion, GLenum variable, GLenum pname, GLfloat *params);
-static PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC glGetCombinerInputParameterfvNV = 0;
-
 typedef void (*PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC)(GLenum stage, GLenum portion, GLenum variable, GLenum pname,	GLint *params);
-static PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC glGetCombinerInputParameterivNV = 0;
-
 typedef void (*PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC)(GLenum stage, GLenum portion, GLenum pname,GLfloat *params);
-static PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC glGetCombinerOutputParameterfvNV = 0;
-
 typedef void (*PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC)(GLenum stage,GLenum portion, GLenum pname,GLint *params);
-static PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC glGetCombinerOutputParameterivNV = 0;
-
 typedef void (*PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC)(GLenum variable,GLenum pname,GLfloat *params);
-static PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC glGetFinalCombinerInputParameterfvNV = 0;
-
 typedef void (*PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC)(GLenum variable,GLenum pname,GLint *params);
-static PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC glGetFinalCombinerInputParameterivNV = 0;
 
 // Constants
-
 #define GL_REGISTER_COMBINERS_NV              0x8522
 #define GL_COMBINER0_NV                       0x8550
 #define GL_COMBINER1_NV                       0x8551
@@ -103,8 +78,23 @@ static PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC glGetFinalCombinerInputParame
 #define GL_COLOR_SUM_CLAMP_NV                 0x854F
 #define GL_MAX_GENERAL_COMBINERS_NV           0x854D
 
-static int initialise_GL_NV_register_combiners();
+#endif
 
-#else
-static int GL_NV_register_combiners_initialised = 1;
-#endif /* GL_NV_register_combiners */
+SAGEAPI PFNGLCOMBINERPARAMETERFVNVPROC glCombinerParameterfvNV;
+SAGEAPI PFNGLCOMBINERPARAMETERIVNVPROC glCombinerParameterivNV;
+SAGEAPI PFNGLCOMBINERPARAMETERFNVPROC glCombinerParameterfNV;
+SAGEAPI PFNGLCOMBINERPARAMETERINVPROC glCombinerParameteriNV;
+SAGEAPI PFNGLCOMBINERINPUTNVPROC glCombinerInputNV;
+SAGEAPI PFNGLCOMBINEROUTPUTNVPROC glCombinerOutputNV;
+SAGEAPI PFNGLFINALCOMBINERINPUTNVPROC glFinalCombinerInputNV;
+SAGEAPI PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC glGetCombinerInputParameterfvNV;
+SAGEAPI PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC glGetCombinerInputParameterivNV;
+SAGEAPI PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC glGetCombinerOutputParameterfvNV;
+SAGEAPI PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC glGetCombinerOutputParameterivNV;
+SAGEAPI PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC glGetFinalCombinerInputParameterfvNV;
+SAGEAPI PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC glGetFinalCombinerInputParameterivNV;
+
+SAGEAPI int GL_NV_register_combiners_initialised;
+SAGEAPI int initialise_GL_NV_register_combiners();
+
+#endif

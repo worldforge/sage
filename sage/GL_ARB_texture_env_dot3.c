@@ -5,6 +5,10 @@
 #include "GL_ARB_texture_env_dot3.h"
 #include "utility.h"
 
+static const char * const str_GL_ARB_texture_env_dot3 = "GL_ARB_texture_env_dot3";
+
+int GL_ARB_texture_env_dot3_initialised = 0;
+
 int initialise_GL_ARB_texture_env_dot3() {
   GL_ARB_texture_env_dot3_initialised = isExtensionSupported(str_GL_ARB_texture_env_dot3);
   return GL_ARB_texture_env_dot3_initialised;

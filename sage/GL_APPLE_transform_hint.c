@@ -5,6 +5,10 @@
 #include "GL_APPLE_transform_hint.h"
 #include "utility.h"
 
+static const char * const str_GL_APPLE_transform_hint = "GL_APPLE_transform_hint";
+
+int GL_APPLE_transform_hint_initialised = 0;
+
 int initialise_GL_APPLE_transform_hint() {
   GL_APPLE_transform_hint_initialised = isExtensionSupported(str_GL_APPLE_transform_hint);
   return GL_APPLE_transform_hint_initialised;

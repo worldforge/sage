@@ -2,4 +2,11 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
-extern int isExtensionSupported(const char *);
+#ifndef UTILITY_H
+#define UTILITY_H 1
+
+#include <sage/sage.h>
+
+SAGEAPI int isExtensionSupported(const char *);
+
+#endif

@@ -5,6 +5,14 @@
 #include "GL_EXT_blend_minmax.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_EXT_blend_minmax = "GL_EXT_blend_minmax";
+
+PFNGLBLENDEQUATIONEXTPROC glBlendEquationEXT = 0;
+
+int GL_EXT_blend_minmax_initialised = 0;
+
 int initialise_GL_EXT_blend_minmax() {
   if (!isExtensionSupported(str_GL_EXT_blend_minmax)) return 0;
 

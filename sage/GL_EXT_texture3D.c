@@ -5,6 +5,14 @@
 #include "GL_EXT_texture3D.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_EXT_texture3D = "GL_EXT_texture3D";
+
+PFNGLTEXIMAGE3DEXTPROC glTexImage3DEXT = 0;
+
+int GL_EXT_texture3D_initialised = 0;
+
 int initialise_GL_EXT_texture3D() {
   if (isExtensionSupported(str_GL_EXT_texture3D)) {
     return 0;

@@ -5,6 +5,14 @@
 #include "GL_ATI_draw_buffers.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_draw_buffers = "GL_ATI_draw_buffers";
+
+PFNGLDRAWBUFFERSATIPROC glDrawBuffersATI = 0;
+
+int GL_ATI_draw_buffers_initialised = 0;
+
 int initialise_GL_ATI_draw_buffers() {
   if (!isExtensionSupported(str_GL_ATI_draw_buffers)) return 0;
 

@@ -2,16 +2,16 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ATI_draw_buffers_H
+#define GL_ATI_draw_buffers_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ATI_draw_buffers
 #define GL_ATI_draw_buffers 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ATI_draw_buffers = "GL_ATI_draw_buffers";
-static int GL_ATI_draw_buffers_initialised = 0;
-
 typedef void (*PFNGLDRAWBUFFERSATIPROC)(GLsizei n, const GLenum *bufs);
-static PFNGLDRAWBUFFERSATIPROC glDrawBuffersATI = 0;
 
 #define GL_MAX_DRAW_BUFFERS_ATI                    0x8824
 #define GL_DRAW_BUFFER0_ATI                        0x8825
@@ -31,8 +31,11 @@ static PFNGLDRAWBUFFERSATIPROC glDrawBuffersATI = 0;
 #define GL_DRAW_BUFFER14_ATI                       0x8833
 #define GL_DRAW_BUFFER15_ATI                       0x8834
 
-static int initialise_GL_ATI_draw_buffers();
+#endif
 
-#else
-static int GL_ATI_draw_buffers_initialised = 1;
+SAGEAPI PFNGLDRAWBUFFERSATIPROC glDrawBuffersATI;
+
+SAGEAPI int GL_ATI_draw_buffers_initialised;
+SAGEAPI int initialise_GL_ATI_draw_buffers();
+
 #endif

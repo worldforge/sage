@@ -2,6 +2,11 @@ lib_LTLIBRARIES = libsage.la
 
 libsage_la_LDFLAGS = -version-info @SAGE_VERSION_INFO@
 
+if BUILD_DLL
+libsage_la_CFLAGS=-DBUILD_SAGE_DLL
+endif
+
+
 libsage_la_SOURCES = \
 	check_extension.c \
 	GL_3DFX_multisample.c \
@@ -16,7 +21,6 @@ libsage_la_SOURCES = \
 	GL_APPLE_vertex_array_range.c \
 	GL_APPLE_ycbcr_422.c \
 	GL_ARB_depth_texture.c \
-	GL_ARB_fragment_program.c \
 	GL_ARB_matrix_palette.c \
 	GL_ARB_multisample.c \
 	GL_ARB_point_parameters.c \
@@ -37,7 +41,6 @@ libsage_la_SOURCES = \
 	GL_ATI_draw_buffers.c \
 	GL_ATI_element_array.c \
 	GL_ATI_envmap_bumpmap.c \
-	GL_ATI_fragment_shader.c \
 	GL_ATI_pixel_format_float.c \
 	GL_ATI_pn_triangles.c \
 	GL_ATI_text_fragment_shader.c \
@@ -72,6 +75,7 @@ libsage_la_SOURCES = \
 libsagedir = $(includedir)/sage
 
 libsage_HEADERS=\
+	sage.h \
 	utility.h \
 	GL_3DFX_multisample.h \
 	GL_3DFX_tbuffer.h \
@@ -129,7 +133,6 @@ libsage_HEADERS=\
 	GL_EXT_compiled_vertex_array.h \
 	GL_EXT_convolution.h \
 	GL_EXT_coordinate_frame.h \
-	GL_EXT_evolution.h \
 	GL_EXT_polygon_offset.h \
 	GL_EXT_rescale_normal.h \
 	GL_EXT_texture3D.h \

@@ -5,6 +5,18 @@
 #include "GL_APPLE_element_array.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_APPLE_element_array = "GL_APPLE_element_array";
+
+PFNGLELEMENTPOINTERAPPLEPROC glElementPointerAPPLE = 0;
+PFNGLDRAWELEMENTARRAYAPPLEPROC glDrawElementArrayAPPLE = 0;
+PFNGLDRAWRANGEELEMENTARRAYAPPLEPROC glDrawRangeElementArrayAPPLE = 0;
+PFNGLMULTIDRAWELEMENTARRAYAPPLEPROC glMultiDrawElementArrayAPPLE = 0;
+PFNGLMULTIDRAWRANGEELEMENTARRAYAPPLEPROC glMultiDrawRangeElementArrayAPPLE = 0;
+
+int GL_APPLE_element_array_initialised = 0;
+
 int initialise_GL_APPLE_element_array() {
   if (!isExtensionSupported(str_GL_APPLE_element_array)) return 0;
 

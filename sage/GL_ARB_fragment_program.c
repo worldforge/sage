@@ -5,6 +5,32 @@
 #include "GL_ARB_fragment_program.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_fragment_program = "GL_ARB_fragment_program";
+
+PFNGLPROGRAMSTRINGARBPROC glProgramStringARB = 0;
+PFNGLBINDPROGRAMARBPROC glBindProgramARB = 0;
+PFNGLDELETEPROGRAMSARBPROC glDeleteProgramsARB = 0;
+PFNGLGENPROGRAMSARBPROC glGenProgramsARB = 0;
+PFNGLPROGRAMENVPARAMETER4DARBPROC glProgramEnvParameter4dARB = 0;
+PFNGLPROGRAMENVPARAMETER4DVARBPROC glProgramEnvParameter4dvARB = 0;
+PFNGLPROGRAMENVPARAMETER4FARBPROC glProgramEnvParameter4fARB = 0;
+PFNGLPROGRAMENVPARAMETER4FVARBPROC glProgramEnvParameter4fvARB = 0;
+PFNGLPROGRAMLOCALPARAMETER4DARBPROC glProgramLocalParameter4dARB = 0;
+PFNGLPROGRAMLOCALPARAMETER4DVARBPROC glProgramLocalParameter4dvARB = 0;
+PFNGLPROGRAMLOCALPARAMETER4FARBPROC glProgramLocalParameter4fARB = 0;
+PFNGLPROGRAMLOCALPARAMETER4FVARBPROC glProgramLocalParameter4fvARB = 0;
+PFNGLGETPROGRAMENVPARAMETERDVARBPROC glGetProgramEnvParameterdvARB = 0;
+PFNGLGETPROGRAMENVPARAMETERFVARBPROC glGetProgramEnvParameterfvARB = 0;
+PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC glGetProgramLocalParameterdvARB = 0;
+PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC glGetProgramLocalParameterfvARB = 0;
+PFNGLGETPROGRAMIVARBPROC glGetProgramivARB = 0;
+PFNGLGETPROGRAMSTRINGARBPROC glGetProgramStringARB = 0;
+PFNGLISPROGRAMARBPROC glIsProgramARB = 0;
+
+int GL_ARB_fragment_program_initialised = 0;
+
 int initialise_GL_ARB_fragment_program() {
   if (!isExtensionSupported(str_GL_ARB_fragment_program)) return 0;
 

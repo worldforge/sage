@@ -2,15 +2,16 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_texture_env_crossbar_H
+#define GL_ARB_texture_env_crossbar_H 1
+
+#include <sage/sage.h>
+
 #ifndef GL_ARB_texture_env_crossbar
 #define GL_ARB_texture_env_crossbar 1
 
-static const char * const str_GL_ARB_texture_env_crossbar = "GL_ARB_texture_env_crossbar";
-static int GL_ARB_texture_env_crossbar_initialised = 0;
-
 // These can go from 0 to MAX_TEXTURE_UNITS_ARB
 // Defined 32 initially
-
 #define GL_TEXTURE0_ARB                        0x84C0
 #define GL_TEXTURE1_ARB                        0x84C1
 #define GL_TEXTURE2_ARB                        0x84C2
@@ -44,10 +45,9 @@ static int GL_ARB_texture_env_crossbar_initialised = 0;
 #define GL_TEXTURE30_ARB                        0x84DE
 #define GL_TEXTURE31_ARB                        0x84DF
 
+#endif
 
+SAGEAPI int GL_ARB_texture_env_crossbar_initialised;
+SAGEAPI int initialise_GL_ARB_texture_env_crossbar();
 
-static int initialise_GL_ARB_texture_env_crossbar();
-
-#else
-static int GL_ARB_texture_env_crossbar_initialised = 1;
 #endif

@@ -5,6 +5,17 @@
 #include "GL_ATI_envmap_bumpmap.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_envmap_bumpmap = "GL_ATI_envmap_bumpmap";
+
+PFNGLTEXBUMPPARAMETERIVATIPROC glTexBumpParameterivATI = 0;
+PFNGLTEXBUMPPARAMETERFVATIPROC glTexBumpParameterfvATI = 0;
+PFNGLGETTEXBUMPPARAMETERIVATIPROC glGetTexBumpParameterivATI = 0;
+PFNGLGETTEXBUMPPARAMETERFVATIPROC glGetTexBumpParameterfvATI = 0;
+
+int GL_ATI_envmap_bumpmap_initialised = 0;
+
 int initialise_GL_ATI_envmap_bumpmap() {
   if (!isExtensionSupported(str_GL_ATI_envmap_bumpmap)) return 0;
   

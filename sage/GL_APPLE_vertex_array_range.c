@@ -5,6 +5,16 @@
 #include "GL_APPLE_vertex_array_range.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_APPLE_vertex_array_range = "GL_APPLE_vertex_array_range";
+
+PFNGLVERTEXARRAYRANGEAPPLEPROC glVertexArrayRangeAPPLE = 0;
+PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC glFlushVertexArrayRangeAPPLE = 0;
+PFNGLVERTEXARRAYPARAMETERIAPPLEPROC glVertexArrayParameteriAPPLE = 0;
+
+int GL_APPLE_vertex_array_range_initialised = 0;
+
 int initialise_GL_APPLE_vertex_array_range() {
   if (!isExtensionSupported(str_GL_APPLE_vertex_array_range)) return 0;
   

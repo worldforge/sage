@@ -5,6 +5,14 @@
 #include "GL_ARB_multisample.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_multisample = "GL_ARB_multisample";
+
+PFNGLSAMPLECOVERAGEARBPROC glSampleCoverageARB = 0;
+
+int GL_ARB_multisample_initialised = 0;
+
 int initialise_GL_ARB_multisample() {
   GL_ARB_multisample_initialised = isExtensionSupported(str_GL_ARB_multisample);
 

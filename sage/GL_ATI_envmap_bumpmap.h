@@ -2,26 +2,19 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ATI_envmap_bumpmap_H
+#define GL_ATI_envmap_bumpmap_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ATI_envmap_bumpmap
 #define GL_ATI_envmap_bumpmap 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ATI_envmap_bumpmap = "GL_ATI_envmap_bumpmap";
-static int GL_ATI_envmap_bumpmap_initialised = 0;
-
 typedef void (*PFNGLTEXBUMPPARAMETERIVATIPROC)(GLenum pname, GLint *param);
-static PFNGLTEXBUMPPARAMETERIVATIPROC glTexBumpParameterivATI = 0;
-
 typedef void (*PFNGLTEXBUMPPARAMETERFVATIPROC)(GLenum pname, GLfloat *param);
-static PFNGLTEXBUMPPARAMETERFVATIPROC glTexBumpParameterfvATI = 0;
-
 typedef void (*PFNGLGETTEXBUMPPARAMETERIVATIPROC)(GLenum pname, GLint *param);
-static PFNGLGETTEXBUMPPARAMETERIVATIPROC glGetTexBumpParameterivATI = 0;
-
 typedef void (*PFNGLGETTEXBUMPPARAMETERFVATIPROC)(GLenum pname, GLfloat *param);
-static PFNGLGETTEXBUMPPARAMETERFVATIPROC glGetTexBumpParameterfvATI = 0;
-
 
 #define GL_BUMP_ROT_MATRIX_ATI            0x8775
 #define GL_BUMP_ROT_MATRIX_SIZE_ATI       0x8776
@@ -32,8 +25,14 @@ static PFNGLGETTEXBUMPPARAMETERFVATIPROC glGetTexBumpParameterfvATI = 0;
 #define GL_BUMP_ENVMAP_ATI                0x877B
 #define GL_BUMP_TARGET_ATI                0x877C
 
-static int initialise_GL_ATI_envmap_bumpmap();
+#endif
 
-#else
-static int GL_ATI_envmap_bumpmap_initialised = 1;
+SAGEAPI PFNGLTEXBUMPPARAMETERIVATIPROC glTexBumpParameterivATI;
+SAGEAPI PFNGLTEXBUMPPARAMETERFVATIPROC glTexBumpParameterfvATI;
+SAGEAPI PFNGLGETTEXBUMPPARAMETERIVATIPROC glGetTexBumpParameterivATI;
+SAGEAPI PFNGLGETTEXBUMPPARAMETERFVATIPROC glGetTexBumpParameterfvATI;
+
+SAGEAPI int GL_ATI_envmap_bumpmap_initialised;
+SAGEAPI int initialise_GL_ATI_envmap_bumpmap();
+
 #endif

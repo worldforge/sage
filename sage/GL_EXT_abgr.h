@@ -5,13 +5,16 @@
 #ifndef GL_EXT_abgr
 #define GL_EXT_abgr 1
 
-static const char * const str_GL_EXT_abgr = "GL_EXT_abgr";
-static int GL_EXT_abgr_initialised = 0;
+#include <sage/sage.h>
+
+#ifndef GL_EXT_abgr
+#define GL_EXT_abgr 1
 
 #define GL_ABGR_EXT 0x8000
 
-static int initialise_GL_EXT_abgr();
+#endif
 
-#else
-static int GL_EXT_abgr_initialised = 1;
+SAGEAPI int GL_EXT_abgr_initialised;
+SAGEAPI int initialise_GL_EXT_abgr();
+
 #endif

@@ -2,55 +2,29 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ATI_fragment_shader_H
+#define GL_ATI_fragment_shader_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ATI_fragment_shader
 #define GL_ATI_fragment_shader 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ATI_fragment_shader = "GL_ATI_fragment_shader";
-static int GL_ATI_fragment_shader_initialised = 0;
-
 typedef GLuint (*PFNGLGENFRAGMENTSHADERSATIPROC)(GLuint range);
-static PFNGLGENFRAGMENTSHADERSATIPROC glGenFragmentShadersATI = 0;
-
 typedef void (*PFNGLBINDFRAGMENTSHADERATIPROC)(GLuint id);
-static PFNGLBINDFRAGMENTSHADERATIPROC glBindFragmentShaderATI = 0;
-
 typedef void (*PFNGLDELETEFRAGMENTSHADERATIPROC)(GLuint id);
-static PFNGLDELETEFRAGMENTSHADERATIPROC glDeleteFragmentShaderATI = 0;
-
 typedef void (*PFNGLBEGINFRAGMENTSHADERATIPROC)(void);
-static PFNGLBEGINFRAGMENTSHADERATIPROC glBeginFragmentShaderATI = 0;
-
 typedef void (*PFNGLENDFRAGMENTSHADERATIPROC)(void);
-static PFNGLENDFRAGMENTSHADERATIPROC glEndFragmentShaderATI = 0;
-
 typedef void (*PFNGLPASSTEXCOORDATIPROC)(GLuint dst, GLuint coord, GLenum swizzle);
-static PFNGLPASSTEXCOORDATIPROC glPassTexCoordATI = 0;
-
 typedef void (*PFNGLSAMPLEMAPATIPROC)(GLuint dst, GLuint interp, GLenum swizzle);
-static PFNGLSAMPLEMAPATIPROC glSampleMapATI = 0;
-
 typedef void (*PFNGLCOLORFRAGMENTOP1ATIPROC)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod);
-static PFNGLCOLORFRAGMENTOP1ATIPROC glColorFragmentOp1ATI = 0;
-
 typedef void (*PFNGLCOLORFRAGMENTOP2ATIPROC)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod);
-static PFNGLCOLORFRAGMENTOP2ATIPROC glColorFragmentOp2ATI = 0;
-
 typedef void (*PFNGLCOLORFRAGMENTOP3ATIPROC)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod, GLuint arg3, GLuint arg3Rep, GLuint arg3Mod);
-static PFNGLCOLORFRAGMENTOP3ATIPROC glColorFragmentOp3ATI = 0;
-
 typedef void (*PFNGLALPHAFRAGMENTOP1ATIPROC)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod);
-static PFNGLALPHAFRAGMENTOP1ATIPROC glAlphaFragmentOp1ATI = 0;
-
 typedef void (*PFNGLALPHAFRAGMENTOP2ATIPROC)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod);
-static PFNGLALPHAFRAGMENTOP2ATIPROC glAlphaFragmentOp2ATI = 0;
-
 typedef void (*PFNGLALPHAFRAGMENTOP3ATIPROC)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod, GLuint arg3, GLuint arg3Rep, GLuint arg3Mod);
-static PFNGLALPHAFRAGMENTOP3ATIPROC glAlphaFragmentOp3ATI = 0;
-
 typedef void (*PFNGLSETFRAGMENTSHADERCONSTANTATIPROC)(GLuint dst, const GLfloat *value);
-static PFNGLSETFRAGMENTSHADERCONSTANTATIPROC glSetFragmentShaderConstantATI = 0;
 
 #define GL_FRAGMENT_SHADER_ATI                   0x8920
 #define GL_REG_0_ATI                             0x8921
@@ -98,8 +72,24 @@ static PFNGLSETFRAGMENTSHADERCONSTANTATIPROC glSetFragmentShaderConstantATI = 0;
 #define GL_NEGATE_BIT_ATI                        0x00000004
 #define GL_BIAS_BIT_ATI                          0x00000008
 
-static int initialise_GL_ATI_fragment_shader();
+#endif
 
-#else
-static int GL_ATI_fragment_shader_initialised = 1;
+SAGEAPI PFNGLGENFRAGMENTSHADERSATIPROC glGenFragmentShadersATI;
+SAGEAPI PFNGLBINDFRAGMENTSHADERATIPROC glBindFragmentShaderATI;
+SAGEAPI PFNGLDELETEFRAGMENTSHADERATIPROC glDeleteFragmentShaderATI;
+SAGEAPI PFNGLBEGINFRAGMENTSHADERATIPROC glBeginFragmentShaderATI;
+SAGEAPI PFNGLENDFRAGMENTSHADERATIPROC glEndFragmentShaderATI;
+SAGEAPI PFNGLPASSTEXCOORDATIPROC glPassTexCoordATI;
+SAGEAPI PFNGLSAMPLEMAPATIPROC glSampleMapATI;
+SAGEAPI PFNGLCOLORFRAGMENTOP1ATIPROC glColorFragmentOp1ATI;
+SAGEAPI PFNGLCOLORFRAGMENTOP2ATIPROC glColorFragmentOp2ATI;
+SAGEAPI PFNGLCOLORFRAGMENTOP3ATIPROC glColorFragmentOp3ATI;
+SAGEAPI PFNGLALPHAFRAGMENTOP1ATIPROC glAlphaFragmentOp1ATI;
+SAGEAPI PFNGLALPHAFRAGMENTOP2ATIPROC glAlphaFragmentOp2ATI;
+SAGEAPI PFNGLALPHAFRAGMENTOP3ATIPROC glAlphaFragmentOp3ATI;
+SAGEAPI PFNGLSETFRAGMENTSHADERCONSTANTATIPROC glSetFragmentShaderConstantATI;
+
+SAGEAPI int GL_ATI_fragment_shader_initialised;
+SAGEAPI int initialise_GL_ATI_fragment_shader();
+
 #endif

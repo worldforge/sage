@@ -5,6 +5,21 @@
 #include "GL_APPLE_fence.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_APPLE_fence = "GL_APPLE_fence";
+
+PFNGLGENFENCESAPPLEPROC glGenFencesAPPLE = 0;
+PFNGLDELETEFENCESAPPLEPROC glDeleteFencesAPPLE = 0;
+PFNGLSETFENCEAPPLEPROC glSetFenceAPPLE = 0;
+PFNGLISFENCEAPPLEPROC glIsFenceAPPLE = 0;
+PFNGLTESTFENCEAPPLEPROC glTestFenceAPPLE = 0;
+PFNGLFINISHFENCEAPPLEPROC glFinishFenceAPPLE = 0;
+PFNGLTESTOBJECTAPPLEPROC glTestObjectAPPLE = 0;
+PFNGLFINISHOBJECTAPPLEPROC glFinishObjectAPPLE = 0;
+
+int GL_APPLE_fence_initialised = 0;
+
 int initialise_GL_APPLE_fence() {
   if (!isExtensionSupported(str_GL_APPLE_fence)) return 0;
 

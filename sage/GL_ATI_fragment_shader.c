@@ -5,6 +5,27 @@
 #include "GL_ATI_fragment_shader.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_fragment_shader = "GL_ATI_fragment_shader";
+
+PFNGLGENFRAGMENTSHADERSATIPROC glGenFragmentShadersATI = 0;
+PFNGLBINDFRAGMENTSHADERATIPROC glBindFragmentShaderATI = 0;
+PFNGLDELETEFRAGMENTSHADERATIPROC glDeleteFragmentShaderATI = 0;
+PFNGLBEGINFRAGMENTSHADERATIPROC glBeginFragmentShaderATI = 0;
+PFNGLENDFRAGMENTSHADERATIPROC glEndFragmentShaderATI = 0;
+PFNGLPASSTEXCOORDATIPROC glPassTexCoordATI = 0;
+PFNGLSAMPLEMAPATIPROC glSampleMapATI = 0;
+PFNGLCOLORFRAGMENTOP1ATIPROC glColorFragmentOp1ATI = 0;
+PFNGLCOLORFRAGMENTOP2ATIPROC glColorFragmentOp2ATI = 0;
+PFNGLCOLORFRAGMENTOP3ATIPROC glColorFragmentOp3ATI = 0;
+PFNGLALPHAFRAGMENTOP1ATIPROC glAlphaFragmentOp1ATI = 0;
+PFNGLALPHAFRAGMENTOP2ATIPROC glAlphaFragmentOp2ATI = 0;
+PFNGLALPHAFRAGMENTOP3ATIPROC glAlphaFragmentOp3ATI = 0;
+PFNGLSETFRAGMENTSHADERCONSTANTATIPROC glSetFragmentShaderConstantATI = 0;
+
+int GL_ATI_fragment_shader_initialised = 0;
+
 int initialise_GL_ATI_fragment_shader() {
   if (!isExtensionSupported(str_GL_ATI_fragment_shader)) return 0;
  

@@ -1,4 +1,7 @@
 4th February 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Changes to allow cross-compiling
+
+4th February 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Removed static keyword from .c files as it shuldn't have been there and wsa breaking my lib.
 
 3rd February 2003 Simon Goodall <sage@simongoodall.co.uk>

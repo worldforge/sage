@@ -5,6 +5,11 @@
 #include "GL_ATI_texture_env_combine3.h"
 #include "utility.h"
 
+
+static const char * const str_GL_ATI_texture_env_combine3 = "GL_ATI_texture_env_combine3";
+
+int GL_ATI_texture_env_combine3_initialised = 0;
+
 int initialise_GL_ATI_texture_env_combine3() {
   GL_ATI_texture_env_combine3_initialised = isExtensionSupported(str_GL_ATI_texture_env_combine3);
   return GL_ATI_texture_env_combine3_initialised;

@@ -5,6 +5,10 @@
 #include "GL_ATI_texture_mirror_once.h"
 #include "utility.h"
 
+static const char * const str_GL_ATI_texture_mirror_once = "GL_ATI_texture_mirror_once";
+
+int GL_ATI_texture_mirror_once_initialised = 0;
+
 int initialise_GL_ATI_texture_mirror_once() {
   GL_ATI_texture_mirror_once_initialised = isExtensionSupported(str_GL_ATI_texture_mirror_once);
   return GL_ATI_texture_mirror_once_initialised;

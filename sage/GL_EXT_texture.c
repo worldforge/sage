@@ -5,6 +5,10 @@
 #include "GL_EXT_texture.h"
 #include "utility.h"
 
+static const char * const str_GL_EXT_texture = "GL_EXT_texture";
+
+int GL_EXT_texture_initialised = 0;
+
 int initialise_GL_EXT_texture() {
   GL_EXT_texture_initialised = isExtensionSupported(str_GL_EXT_texture);
   return GL_EXT_texture_initialised;

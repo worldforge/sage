@@ -5,6 +5,15 @@
 #include "GL_NV_register_combiners2.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_NV_register_combiners2 = "GL_NV_register_combiners2";
+
+PFNGLCOMBINERSTAGEPARAMETERFVNVPROC glCombinerStageParameterfvNV = 0;
+PFNGLGETCOMBINERSTAGEPARAMETERFVNVPROC glGetCombinerStageParameterfvNV = 0;
+
+int GL_NV_register_combiners2_initialised = 0;
+
 int initialised_GL_NV_register_combiners2() {
  if (isExtensionSupported(str_GL_NV_register_combiners2)) {
    return 0;

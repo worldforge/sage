@@ -2,11 +2,13 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_texture_cube_map_H
+#define GL_ARB_texture_cube_map_H 1
+
+#include <sage/sage.h>
+
 #ifndef GL_ARB_texture_cube_map
 #define GL_ARB_texture_cube_map 1
-
-static const char * const str_GL_ARB_texture_cube_map = "GL_ARB_texture_cube_map";
-static int GL_ARB_texture_cube_map_initialised = 0;
 
 #define GL_NORMAL_MAP_ARB		0x8511
 #define GL_REFLECTION_MAP_ARB		0x8512
@@ -21,7 +23,9 @@ static int GL_ARB_texture_cube_map_initialised = 0;
 #define GL_PROXY_TEXTURE_CUBE_MAP_ARB	0x851B
 #define GL_MAX_CUBE_TEXTURE_SIZE_ARB	0x851C
 
-static int initialise_GL_ARB_texture_cube_map();
-#else
-static int GL_ARB_texture_cube_map_initialised = 1;
+#endif
+
+SAGEAPI int GL_ARB_texture_cube_map_initialised;
+SAGEAPI int initialise_GL_ARB_texture_cube_map();
+
 #endif

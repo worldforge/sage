@@ -1,3 +1,3 @@
 SUBDIRS=sage
 
-EXTRA_DIST = sage.spec sage.pc
+EXTRA_DIST = sage.spec sage.pc autogen.sh

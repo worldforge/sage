@@ -5,6 +5,26 @@
 #include "GL_NV_register_combiners.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_NV_register_combiners = "GL_NV_register_combiners";
+
+PFNGLCOMBINERPARAMETERFVNVPROC glCombinerParameterfvNV = 0;
+PFNGLCOMBINERPARAMETERIVNVPROC glCombinerParameterivNV = 0;
+PFNGLCOMBINERPARAMETERFNVPROC glCombinerParameterfNV = 0;
+PFNGLCOMBINERPARAMETERINVPROC glCombinerParameteriNV = 0;
+PFNGLCOMBINERINPUTNVPROC glCombinerInputNV = 0;
+PFNGLCOMBINEROUTPUTNVPROC glCombinerOutputNV = 0;
+PFNGLFINALCOMBINERINPUTNVPROC glFinalCombinerInputNV = 0;
+PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC glGetCombinerInputParameterfvNV = 0;
+PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC glGetCombinerInputParameterivNV = 0;
+PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC glGetCombinerOutputParameterfvNV = 0;
+PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC glGetCombinerOutputParameterivNV = 0;
+PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC glGetFinalCombinerInputParameterfvNV = 0;
+PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC glGetFinalCombinerInputParameterivNV = 0;
+
+int GL_NV_register_combiners_initialised = 0;
+
 int initialise_GL_NV_register_combiners() {
   if (isExtensionSupported(str_GL_NV_register_combiners)) {
     return 0;

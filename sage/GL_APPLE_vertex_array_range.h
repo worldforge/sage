@@ -2,23 +2,18 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_APPLE_vertex_array_range_H
+#define GL_APPLE_vertex_array_range_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_APPLE_vertex_array_range
 #define GL_APPLE_vertex_array_range 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_APPLE_vertex_array_range = "GL_APPLE_vertex_array_range";
-static int GL_APPLE_vertex_array_range_initialised = 0;
-
 typedef void (*PFNGLVERTEXARRAYRANGEAPPLEPROC)(GLsizei length, void *pointer);
-static PFNGLVERTEXARRAYRANGEAPPLEPROC glVertexArrayRangeAPPLE = 0;
-
 typedef void (*PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC)(GLsizei length, void *pointer);
-static PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC glFlushVertexArrayRangeAPPLE = 0;
-
 typedef void (*PFNGLVERTEXARRAYPARAMETERIAPPLEPROC)(GLenum pname, GLint param);
-static PFNGLVERTEXARRAYPARAMETERIAPPLEPROC glVertexArrayParameteriAPPLE = 0;
-
 
 #define GL_VERTEX_ARRAY_RANGE_APPLE              0x851D
 #define GL_VERTEX_ARRAY_RANGE_LENGTH_APPLE       0x851E
@@ -28,8 +23,13 @@ static PFNGLVERTEXARRAYPARAMETERIAPPLEPROC glVertexArrayParameteriAPPLE = 0;
 #define GL_STORAGE_CACHED_APPLE                  0x85BE
 #define GL_STORAGE_SHARED_APPLE                  0x85BF
 
-static int initialise_GL_APPLE_vertex_array_range();
+#endif
 
-#else
-static int GL_APPLE_vertex_array_range_initialised = 1;
+SAGEAPI PFNGLVERTEXARRAYRANGEAPPLEPROC glVertexArrayRangeAPPLE;
+SAGEAPI PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC glFlushVertexArrayRangeAPPLE;
+SAGEAPI PFNGLVERTEXARRAYPARAMETERIAPPLEPROC glVertexArrayParameteriAPPLE;
+
+SAGEAPI int GL_APPLE_vertex_array_range_initialised;
+SAGEAPI int initialise_GL_APPLE_vertex_array_range();
+
 #endif

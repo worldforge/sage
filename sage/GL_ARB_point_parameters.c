@@ -5,6 +5,14 @@
 #include "GL_ARB_point_parameters.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ARB_point_parameters = "GL_ARB_point_parameters";
+
+PFNGLPOINTPARAMETERFARBPROC glPointParameterfARB = 0;
+PFNGLPOINTPARAMETERFVARBPROC glPointParameterfvARB = 0;
+
+int GL_ARB_point_parameters_initialised = 0;
 
 int initialise_GL_ARB_point_parameters() {
   GL_ARB_point_parameters_initialised = isExtensionSupported(str_GL_ARB_point_parameters);

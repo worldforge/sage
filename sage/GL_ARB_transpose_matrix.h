@@ -2,33 +2,33 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_transpose_matrix_H
+#define GL_ARB_transpose_matrix_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ARB_transpose_matrix
 #define GL_ARB_transpose_matrix 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ARB_transpose_matrix = "GL_ARB_transpose_matrix";
-static int GL_ARB_transpose_matrix_initialised = 0;
+typedef void (*PFNGLLOADTRANSPOSEMATRIXFARBPROC)(GLfloat *m);
+typedef void (*PFNGLLOADTRANSPOSEMATRIXDARBPROC)(GLdouble *m);
+typedef void (*PFNGLMULTTRANSPOSEMATRIXFARBPROC)(GLfloat *m);
+typedef void (*PFNGLMULTTRANSPOSEMATRIXDARBPROC)(GLdouble *m);
 
 #define GL_TRANSPOSE_MODELVIEW_MATRIX_ARB	0x84E3
 #define GL_TRANSPOSE_PROJECTION_MATRIX_ARB	0x84E4
 #define GL_TRANSPOSE_TEXTURE_MATRIX_ARB		0x84E5
 #define GL_TRANSPOSE_COLOR_MATRIX_ARB		0x84E6
 
-typedef void (*PFNGLLOADTRANSPOSEMATRIXFARBPROC)(GLfloat *m);
-static PFNGLLOADTRANSPOSEMATRIXFARBPROC glLoadTransposeMatrixfARB = 0;
+#endif
 
-typedef void (*PFNGLLOADTRANSPOSEMATRIXDARBPROC)(GLdouble *m);
-static PFNGLLOADTRANSPOSEMATRIXDARBPROC glLoadTransposeMatrixdARB = 0;
+SAGEAPI PFNGLLOADTRANSPOSEMATRIXFARBPROC glLoadTransposeMatrixfARB;
+SAGEAPI PFNGLLOADTRANSPOSEMATRIXDARBPROC glLoadTransposeMatrixdARB;
+SAGEAPI PFNGLMULTTRANSPOSEMATRIXFARBPROC glMultTransposeMatrixfARB;
+SAGEAPI PFNGLMULTTRANSPOSEMATRIXDARBPROC glMultTransposeMatrixdARB;
 
-typedef void (*PFNGLMULTTRANSPOSEMATRIXFARBPROC)(GLfloat *m);
-static PFNGLMULTTRANSPOSEMATRIXFARBPROC glMultTransposeMatrixfARB = 0;
+SAGEAPI int GL_ARB_transpose_matrix_initialised;
+SAGEAPI int initialise_GL_ARB_transpose_matrix();
 
-typedef void (*PFNGLMULTTRANSPOSEMATRIXDARBPROC)(GLdouble *m);
-static PFNGLMULTTRANSPOSEMATRIXDARBPROC glMultTransposeMatrixdARB = 0;
-
-static int initialise_GL_ARB_transpose_matrix();
-
-#else
-static int GL_ARB_transpose_matrix_initialised = 1;
 #endif

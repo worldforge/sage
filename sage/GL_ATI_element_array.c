@@ -5,6 +5,16 @@
 #include "GL_ATI_element_array.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_element_array = "GL_ATI_element_array";
+
+PFNGLELEMENTPOINTERATIPROC glElementPointerATI = 0;
+PFNGLDRAWELEMENTARRAYATIPROC glDrawElementArrayATI = 0;
+PFNGLDRAWRANGEELEMENTARRAYATIPROC glDrawRangeElementArrayATI = 0;
+
+int GL_ATI_element_array_initialised = 0;
+
 int initialise_GL_ATI_element_array() {
   if (!isExtensionSupported(str_GL_ATI_element_array)) return 0;
 

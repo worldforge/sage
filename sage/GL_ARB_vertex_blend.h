@@ -2,44 +2,25 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_ARB_vertex_blend_H
+#define GL_ARB_vertex_blend_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_ARB_vertex_blend
 #define GL_ARB_vertex_blend 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_ARB_vertex_blend = "GL_ARB_vertex_blend";
-static int GL_ARB_vertex_blend_initialised = 0;
-
 typedef void (*PFNGLWEIGHTBVARBPROC)(GLint size, GLbyte* weights);
-static PFNGLWEIGHTBVARBPROC glWeightbvARB = 0;
-
 typedef void (*PFNGLWEIGHTSVARBPROC)(GLint size, GLshort* weights);
-static PFNGLWEIGHTSVARBPROC glWeightsvARB = 0;
-
 typedef void (*PFNGLWEIGHTIVARBPROC)(GLint size, GLint* weights);
-static PFNGLWEIGHTIVARBPROC glWeightivARB = 0;
-
 typedef void (*PFNGLWEIGHTFVARBPROC)(GLint size, GLfloat* weights);
-static PFNGLWEIGHTFVARBPROC glWeightfvARB = 0;
-
 typedef void (*PFNGLWEIGHTDVARBPROC)(GLint size, GLdouble* weights);
-static PFNGLWEIGHTDVARBPROC glWeightdvARB = 0;
-
 typedef void (*PFNGLWEIGHTUBVARBPROC)(GLint size, GLubyte* weights);
-static PFNGLWEIGHTUBVARBPROC glWeightubvARB = 0;
-
 typedef void (*PFNGLWEIGHTUSVARBPROC)(GLint size, GLushort* weights);
-static PFNGLWEIGHTUSVARBPROC glWeightusvARB = 0;
-
 typedef void (*PFNGLWEIGHTUIVARBPROC)(GLint size, GLuint* weights);
-static PFNGLWEIGHTUIVARBPROC glWeightuivARB = 0;
-
 typedef void (*PFNGLWEIGHTPOINTERARBPROC)(GLint size, GLenum type, GLsizei stride, void *pointer);
-static PFNGLWEIGHTPOINTERARBPROC glWeightPointerARB = 0;
-
 typedef void (*PFNGLVERTEXBLENDARBPROC)(GLint count);
-static PFNGLVERTEXBLENDARBPROC glVertexBlendARB = 0;
-
 
 #define GL_MODELVIEW0_ARB                 0x1700 //(alias to MODELVIEW)
 #define GL_MODELVIEW1_ARB                 0x850a
@@ -73,17 +54,26 @@ static PFNGLVERTEXBLENDARBPROC glVertexBlendARB = 0;
 #define GL_MODELVIEW29_ARB                0x873D
 #define GL_MODELVIEW30_ARB                0x873E
 #define GL_MODELVIEW31_ARB                0x873F
-
 #define GL_CURRENT_WEIGHT_ARB              0x86A8
 #define GL_WEIGHT_ARRAY_TYPE_ARB           0x86A9
 #define GL_WEIGHT_ARRAY_STRIDE_ARB         0x86AA
 #define GL_WEIGHT_ARRAY_SIZE_ARB           0x86AB
-
 #define GL_WEIGHT_ARRAY_ARB                0x86AD
 
+#endif
 
-static int initialise_GL_ARB_vertex_blend();
+SAGEAPI PFNGLWEIGHTBVARBPROC glWeightbvARB;
+SAGEAPI PFNGLWEIGHTSVARBPROC glWeightsvARB;
+SAGEAPI PFNGLWEIGHTIVARBPROC glWeightivARB;
+SAGEAPI PFNGLWEIGHTFVARBPROC glWeightfvARB;
+SAGEAPI PFNGLWEIGHTDVARBPROC glWeightdvARB;
+SAGEAPI PFNGLWEIGHTUBVARBPROC glWeightubvARB;
+SAGEAPI PFNGLWEIGHTUSVARBPROC glWeightusvARB;
+SAGEAPI PFNGLWEIGHTUIVARBPROC glWeightuivARB;
+SAGEAPI PFNGLWEIGHTPOINTERARBPROC glWeightPointerARB;
+SAGEAPI PFNGLVERTEXBLENDARBPROC glVertexBlendARB;
 
-#else
-static int GL_ARB_vertex_blend_initialised = 1;
+SAGEAPI int GL_ARB_vertex_blend_initialised;
+SAGEAPI int initialise_GL_ARB_vertex_blend();
+
 #endif

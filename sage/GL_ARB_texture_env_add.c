@@ -5,6 +5,11 @@
 #include "GL_ARB_texture_env_add.h"
 #include "utility.h"
 
+
+static const char * const str_GL_ARB_texture_env_add = "GL_ARB_texture_env_add";
+
+int GL_ARB_texture_env_add_initialised = 0;
+
 int initialise_GL_ARB_texture_env_add() {
   GL_ARB_texture_env_add_initialised = isExtensionSupported(str_GL_ARB_texture_env_add);
   return GL_ARB_texture_env_add_initialised;

@@ -5,6 +5,10 @@
 #include "GL_3DFX_texture_compression_FXT1.h"
 #include "utility.h"
 
+static const char * const str_GL_3DFX_texture_compression_FXT1 = "GL_3DFX_texture_compression_FXT1";
+
+int GL_3DFX_texture_compression_FXT1_initialised = 0;
+
 int initialise_GL_3DFX_texture_compression_FXT1() {
   GL_3DFX_texture_compression_FXT1_initialised = isExtensionSupported(str_GL_3DFX_texture_compression_FXT1);
   return GL_3DFX_texture_compression_FXT1_initialised;

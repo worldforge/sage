@@ -2,208 +2,80 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_NV_vertex_program_H
+#define GL_NV_vertex_program_H 1
+
+#include <GL/gl.h>
+#include <sage/sage.h>
+
 #ifndef GL_NV_vertex_program
 #define GL_NV_vertex_program 1
 
-#include <GL/gl.h>
-
-static const char * const str_GL_NV_vertex_program = "GL_NV_vertex_program";
-static int GL_NV_vertex_program_initialised = 0;
-
 // Function pointers
 typedef void (*PFNGLBINDPROGRAMNVPROC)(GLenum target, GLuint id);
-static PFNGLBINDPROGRAMNVPROC glBindProgramNV = 0;
-
 typedef void (*PFNGLDELETEPROGRAMSNVPROC)(GLsizei n, const GLuint *ids);
-static PFNGLDELETEPROGRAMSNVPROC glDeleteProgramsNV = 0;
-
 typedef void (*PFNGLEXECUTEPROGRAMNVPROC)(GLenum target, GLuint id, const GLfloat *params);
-static PFNGLEXECUTEPROGRAMNVPROC glExecuteProgramNV = 0;
-
 typedef void (*PFNGLGENPROGRAMSNVPROC)(GLsizei n, GLuint *ids);
-static PFNGLGENPROGRAMSNVPROC glGenProgramsNV = 0;
-
 typedef int (*PFNGLAREPROGRAMSRESIDENTNVPROC)(GLsizei n, const GLuint *ids, GLboolean *residences);
-static PFNGLAREPROGRAMSRESIDENTNVPROC glAreProgramsResidentNV = 0;
-
 typedef void (*PFNGLREQUESTRESIDENTPROGRAMSNVPROC)(GLsizei n, GLuint *ids);
-static PFNGLREQUESTRESIDENTPROGRAMSNVPROC glRequestResidentProgramsNV = 0;
-
 typedef void (*PFNGLGETPROGRAMPARAMETERFVNVPROC)(GLenum target, GLuint index, GLenum pname, GLfloat *params);
-static PFNGLGETPROGRAMPARAMETERFVNVPROC glGetProgramParameterfvNV = 0;
-
 typedef void (*PFNGLGETPROGRAMPARAMETERDVNVPROC)(GLenum target, GLuint index, GLenum pname, GLdouble *params);
-static PFNGLGETPROGRAMPARAMETERDVNVPROC glGetProgramParameterdvNV = 0;
-
 typedef void (*PFNGLGETPROGRAMIVNVPROC)(GLuint id, GLenum pname, GLint *params);
-static PFNGLGETPROGRAMIVNVPROC glGetProgramivNV = 0;
-
 typedef void (*PFNGLGETPROGRAMSTRINGNVPROC)(GLuint id, GLenum pname, GLubyte *program);
-static PFNGLGETPROGRAMSTRINGNVPROC glGetProgramStringNV = 0;
-
 typedef void (*PFNGLGETTRACKMATRIXIVNVPROC)(GLenum target, GLuint address, GLenum pname, GLint *params);
-static PFNGLGETTRACKMATRIXIVNVPROC glGetTrackMatrixivNV = 0;
-
 typedef void (*PFNGLGETVERTEXATTRIBDVNVPROC)(GLuint index, GLenum pname, GLdouble *params);
-static PFNGLGETVERTEXATTRIBDVNVPROC glGetVertexAttribdvNV = 0;
-
 typedef void (*PFNGLGETVERTEXATTRIBFVNVPROC)(GLuint index, GLenum pname, GLfloat *params);
-static PFNGLGETVERTEXATTRIBFVNVPROC glGetVertexAttribfvNV = 0;
-
 typedef void (*PFNGLGETVERTEXATTRIBIVNVPROC)(GLuint index, GLenum pname, GLint *params);
-static PFNGLGETVERTEXATTRIBIVNVPROC glGetVertexAttribivNV = 0;
-
 typedef void (*PFNGLGETVERTEXATTRIBPOINTERVNVPROC)(GLuint index, GLenum pname, void **pointer);
-static PFNGLGETVERTEXATTRIBPOINTERVNVPROC glGetVertexAttribPointervNV = 0;
-
 typedef int (*PFNGLISPROGRAMNVPROC)(GLuint id);
-static PFNGLISPROGRAMNVPROC glIsProgramNV = 0;
-
 typedef void (*PFNGLLOADPROGRAMNVPROC)(GLenum target, GLuint id, GLsizei len, const GLubyte *program);
-static PFNGLLOADPROGRAMNVPROC glLoadProgramNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETER4FNVPROC)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-static PFNGLPROGRAMPARAMETER4FNVPROC glProgramParameter4fNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETER4DNVPROC)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-static PFNGLPROGRAMPARAMETER4DNVPROC glProgramParameter4dNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETER4DVNVPROC)(GLenum target, GLuint index, const GLdouble *params);
-static PFNGLPROGRAMPARAMETER4DVNVPROC glProgramParameter4dvNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETER4FVNVPROC)(GLenum target, GLuint index, const GLfloat *params);
-static PFNGLPROGRAMPARAMETER4FVNVPROC glProgramParameter4fvNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETERS4DVNVPROC)(GLenum target, GLuint index, GLuint num, const GLdouble *params);
-static PFNGLPROGRAMPARAMETERS4DVNVPROC glProgramParameters4dvNV = 0;
-
 typedef void (*PFNGLPROGRAMPARAMETERS4FVNVPROC)(GLenum target, GLuint index, GLuint num, const GLfloat *params);
-static PFNGLPROGRAMPARAMETERS4FVNVPROC glProgramParameters4fvNV = 0;
-
 typedef void (*PFNGLTRACKMATRIXNVPROC)(GLenum target, GLuint address, GLsizei matrix, GLsizei transform);
-static PFNGLTRACKMATRIXNVPROC glTrackMatrixNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBPOINTERNVPROC)(GLuint index, GLint size, GLenum type, GLsizei stride, const void *pointer);
-static PFNGLVERTEXATTRIBPOINTERNVPROC glVertexAttribPointerNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1SNVPROC)(GLuint index, GLshort x);
-static PFNGLVERTEXATTRIB1SNVPROC glVertexAttrib1sNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1FNVPROC)(GLuint index, GLfloat x);
-static PFNGLVERTEXATTRIB1FNVPROC glVertexAttrib1fNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1DNVPROC)(GLuint index, GLdouble x);
-static PFNGLVERTEXATTRIB1DNVPROC glVertexAttrib1dNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2SNVPROC)(GLuint index, GLshort x, GLshort y);
-static PFNGLVERTEXATTRIB2SNVPROC glVertexAttrib2sNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2FNVPROC)(GLuint index, GLfloat x, GLfloat y);
-static PFNGLVERTEXATTRIB2FNVPROC glVertexAttrib2fNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2DNVPROC)(GLuint index, GLdouble x, GLdouble y);
-static PFNGLVERTEXATTRIB2DNVPROC glVertexAttrib2dNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3SNVPROC)(GLuint index, GLshort x, GLshort y, GLshort z);
-static PFNGLVERTEXATTRIB3SNVPROC glVertexAttrib3sNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3FNVPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
-static PFNGLVERTEXATTRIB3FNVPROC glVertexAttrib3fNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3DNVPROC)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
-static PFNGLVERTEXATTRIB3DNVPROC glVertexAttrib3dNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4SNVPROC)(GLuint index, GLshort x, GLshort y, GLshort z, GLshort w);
-static PFNGLVERTEXATTRIB4SNVPROC glVertexAttrib4sNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4FNVPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
-static PFNGLVERTEXATTRIB4FNVPROC glVertexAttrib4fNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4DNVPROC)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
-static PFNGLVERTEXATTRIB4DNVPROC glVertexAttrib4dNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4UBNVPROC)(GLuint index, GLubyte x, GLubyte y, GLubyte z, GLubyte w);
-static PFNGLVERTEXATTRIB4UBNVPROC glVertexAttrib4ubNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1SVNVPROC)(GLuint index, const GLshort *v);
-static PFNGLVERTEXATTRIB1SVNVPROC glVertexAttrib1svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1FVNVPROC)(GLuint index, const GLfloat *v);
-static PFNGLVERTEXATTRIB1FVNVPROC glVertexAttrib1fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB1DVNVPROC)(GLuint index, const GLdouble *v);
-static PFNGLVERTEXATTRIB1DVNVPROC glVertexAttrib1dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2SVNVPROC)(GLuint index, const GLshort *v);
-static PFNGLVERTEXATTRIB2SVNVPROC glVertexAttrib2svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2FVNVPROC)(GLuint index, const GLfloat *v);
-static PFNGLVERTEXATTRIB2FVNVPROC glVertexAttrib2fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB2DVNVPROC)(GLuint index, const GLdouble *v);
-static PFNGLVERTEXATTRIB2DVNVPROC glVertexAttrib2dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3SVNVPROC)(GLuint index, const GLshort *v);
-static PFNGLVERTEXATTRIB3SVNVPROC glVertexAttrib3svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3FVNVPROC)(GLuint index, const GLfloat *v);
-static PFNGLVERTEXATTRIB3FVNVPROC glVertexAttrib3fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB3DVNVPROC)(GLuint index, const GLdouble *v);
-static PFNGLVERTEXATTRIB3DVNVPROC glVertexAttrib3dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4SVNVPROC)(GLuint index, const GLshort *v);
-static PFNGLVERTEXATTRIB4SVNVPROC glVertexAttrib4svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4FVNVPROC)(GLuint index, const GLfloat *v);
-static PFNGLVERTEXATTRIB4FVNVPROC glVertexAttrib4fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4DVNVPROC)(GLuint index, const GLdouble *v);
-static PFNGLVERTEXATTRIB4DVNVPROC glVertexAttrib4dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIB4UBVNVPROC)(GLuint index, const GLubyte *v);
-static PFNGLVERTEXATTRIB4UBVNVPROC glVertexAttrib4ubvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS1SVNVPROC)(GLuint index, GLsizei n, const GLshort *v);
-static PFNGLVERTEXATTRIBS1SVNVPROC glVertexAttribs1svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS1FVNVPROC)(GLuint index, GLsizei n, const GLfloat *v);
-static PFNGLVERTEXATTRIBS1FVNVPROC glVertexAttribs1fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS1DVNVPROC)(GLuint index, GLsizei n, const GLdouble *v);
-static PFNGLVERTEXATTRIBS1DVNVPROC glVertexAttribs1dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS2SVNVPROC)(GLuint index, GLsizei n, const GLshort *v);
-static PFNGLVERTEXATTRIBS2SVNVPROC glVertexAttribs2svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS2FVNVPROC)(GLuint index, GLsizei n, const GLfloat *v);
-static PFNGLVERTEXATTRIBS2FVNVPROC glVertexAttribs2fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS2DVNVPROC)(GLuint index, GLsizei n, const GLdouble *v);
-static PFNGLVERTEXATTRIBS2DVNVPROC glVertexAttribs2dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS3SVNVPROC)(GLuint index, GLsizei n, const GLshort *v);
-static PFNGLVERTEXATTRIBS3SVNVPROC glVertexAttribs3svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS3FVNVPROC)(GLuint index, GLsizei n, const GLfloat *v);
-static PFNGLVERTEXATTRIBS3FVNVPROC glVertexAttribs3fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS3DVNVPROC)(GLuint index, GLsizei n, const GLdouble *v);
-static PFNGLVERTEXATTRIBS3DVNVPROC glVertexAttribs3dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS4SVNVPROC)(GLuint index, GLsizei n, const GLshort *v);
-static PFNGLVERTEXATTRIBS4SVNVPROC glVertexAttribs4svNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS4FVNVPROC)(GLuint index, GLsizei n, const GLfloat *v);
-static PFNGLVERTEXATTRIBS4FVNVPROC glVertexAttribs4fvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS4DVNVPROC)(GLuint index, GLsizei n, const GLdouble *v);
-static PFNGLVERTEXATTRIBS4DVNVPROC glVertexAttribs4dvNV = 0;
-
 typedef void (*PFNGLVERTEXATTRIBS4UBVNVPROC)(GLuint index, GLsizei n, const GLubyte *v);
-static PFNGLVERTEXATTRIBS4UBVNVPROC glVertexAttribs4ubvNV = 0;
-
-
 
 // Constants
 #define GL_VERTEX_PROGRAM_NV                              0x8620 
@@ -290,10 +162,74 @@ static PFNGLVERTEXATTRIBS4UBVNVPROC glVertexAttribs4ubvNV = 0;
 #define GL_MAP2_VERTEX_ATTRIB14_4_NV                      0x867E
 #define GL_MAP2_VERTEX_ATTRIB15_4_NV                      0x867F
 
+#endif
 
+SAGEAPI PFNGLBINDPROGRAMNVPROC glBindProgramNV;
+SAGEAPI PFNGLDELETEPROGRAMSNVPROC glDeleteProgramsNV;
+SAGEAPI PFNGLEXECUTEPROGRAMNVPROC glExecuteProgramNV;
+SAGEAPI PFNGLGENPROGRAMSNVPROC glGenProgramsNV;
+SAGEAPI PFNGLAREPROGRAMSRESIDENTNVPROC glAreProgramsResidentNV;
+SAGEAPI PFNGLREQUESTRESIDENTPROGRAMSNVPROC glRequestResidentProgramsNV;
+SAGEAPI PFNGLGETPROGRAMPARAMETERFVNVPROC glGetProgramParameterfvNV;
+SAGEAPI PFNGLGETPROGRAMPARAMETERDVNVPROC glGetProgramParameterdvNV;
+SAGEAPI PFNGLGETPROGRAMIVNVPROC glGetProgramivNV;
+SAGEAPI PFNGLGETPROGRAMSTRINGNVPROC glGetProgramStringNV;
+SAGEAPI PFNGLGETTRACKMATRIXIVNVPROC glGetTrackMatrixivNV;
+SAGEAPI PFNGLGETVERTEXATTRIBDVNVPROC glGetVertexAttribdvNV;
+SAGEAPI PFNGLGETVERTEXATTRIBFVNVPROC glGetVertexAttribfvNV;
+SAGEAPI PFNGLGETVERTEXATTRIBIVNVPROC glGetVertexAttribivNV;
+SAGEAPI PFNGLGETVERTEXATTRIBPOINTERVNVPROC glGetVertexAttribPointervNV;
+SAGEAPI PFNGLISPROGRAMNVPROC glIsProgramNV;
+SAGEAPI PFNGLLOADPROGRAMNVPROC glLoadProgramNV;
+SAGEAPI PFNGLPROGRAMPARAMETER4FNVPROC glProgramParameter4fNV;
+SAGEAPI PFNGLPROGRAMPARAMETER4DNVPROC glProgramParameter4dNV;
+SAGEAPI PFNGLPROGRAMPARAMETER4DVNVPROC glProgramParameter4dvNV;
+SAGEAPI PFNGLPROGRAMPARAMETER4FVNVPROC glProgramParameter4fvNV;
+SAGEAPI PFNGLPROGRAMPARAMETERS4DVNVPROC glProgramParameters4dvNV;
+SAGEAPI PFNGLPROGRAMPARAMETERS4FVNVPROC glProgramParameters4fvNV;
+SAGEAPI PFNGLTRACKMATRIXNVPROC glTrackMatrixNV;
+SAGEAPI PFNGLVERTEXATTRIBPOINTERNVPROC glVertexAttribPointerNV;
+SAGEAPI PFNGLVERTEXATTRIB1SNVPROC glVertexAttrib1sNV;
+SAGEAPI PFNGLVERTEXATTRIB1FNVPROC glVertexAttrib1fNV;
+SAGEAPI PFNGLVERTEXATTRIB1DNVPROC glVertexAttrib1dNV;
+SAGEAPI PFNGLVERTEXATTRIB2SNVPROC glVertexAttrib2sNV;
+SAGEAPI PFNGLVERTEXATTRIB2FNVPROC glVertexAttrib2fNV;
+SAGEAPI PFNGLVERTEXATTRIB2DNVPROC glVertexAttrib2dNV;
+SAGEAPI PFNGLVERTEXATTRIB3SNVPROC glVertexAttrib3sNV;
+SAGEAPI PFNGLVERTEXATTRIB3FNVPROC glVertexAttrib3fNV;
+SAGEAPI PFNGLVERTEXATTRIB3DNVPROC glVertexAttrib3dNV;
+SAGEAPI PFNGLVERTEXATTRIB4SNVPROC glVertexAttrib4sNV;
+SAGEAPI PFNGLVERTEXATTRIB4FNVPROC glVertexAttrib4fNV;
+SAGEAPI PFNGLVERTEXATTRIB4DNVPROC glVertexAttrib4dNV;
+SAGEAPI PFNGLVERTEXATTRIB4UBNVPROC glVertexAttrib4ubNV;
+SAGEAPI PFNGLVERTEXATTRIB1SVNVPROC glVertexAttrib1svNV;
+SAGEAPI PFNGLVERTEXATTRIB1FVNVPROC glVertexAttrib1fvNV;
+SAGEAPI PFNGLVERTEXATTRIB1DVNVPROC glVertexAttrib1dvNV;
+SAGEAPI PFNGLVERTEXATTRIB2SVNVPROC glVertexAttrib2svNV;
+SAGEAPI PFNGLVERTEXATTRIB2FVNVPROC glVertexAttrib2fvNV;
+SAGEAPI PFNGLVERTEXATTRIB2DVNVPROC glVertexAttrib2dvNV;
+SAGEAPI PFNGLVERTEXATTRIB3SVNVPROC glVertexAttrib3svNV;
+SAGEAPI PFNGLVERTEXATTRIB3FVNVPROC glVertexAttrib3fvNV;
+SAGEAPI PFNGLVERTEXATTRIB3DVNVPROC glVertexAttrib3dvNV;
+SAGEAPI PFNGLVERTEXATTRIB4SVNVPROC glVertexAttrib4svNV;
+SAGEAPI PFNGLVERTEXATTRIB4FVNVPROC glVertexAttrib4fvNV;
+SAGEAPI PFNGLVERTEXATTRIB4DVNVPROC glVertexAttrib4dvNV;
+SAGEAPI PFNGLVERTEXATTRIB4UBVNVPROC glVertexAttrib4ubvNV;
+SAGEAPI PFNGLVERTEXATTRIBS1SVNVPROC glVertexAttribs1svNV;
+SAGEAPI PFNGLVERTEXATTRIBS1FVNVPROC glVertexAttribs1fvNV;
+SAGEAPI PFNGLVERTEXATTRIBS1DVNVPROC glVertexAttribs1dvNV;
+SAGEAPI PFNGLVERTEXATTRIBS2SVNVPROC glVertexAttribs2svNV;
+SAGEAPI PFNGLVERTEXATTRIBS2FVNVPROC glVertexAttribs2fvNV;
+SAGEAPI PFNGLVERTEXATTRIBS2DVNVPROC glVertexAttribs2dvNV;
+SAGEAPI PFNGLVERTEXATTRIBS3SVNVPROC glVertexAttribs3svNV;
+SAGEAPI PFNGLVERTEXATTRIBS3FVNVPROC glVertexAttribs3fvNV;
+SAGEAPI PFNGLVERTEXATTRIBS3DVNVPROC glVertexAttribs3dvNV;
+SAGEAPI PFNGLVERTEXATTRIBS4SVNVPROC glVertexAttribs4svNV;
+SAGEAPI PFNGLVERTEXATTRIBS4FVNVPROC glVertexAttribs4fvNV;
+SAGEAPI PFNGLVERTEXATTRIBS4DVNVPROC glVertexAttribs4dvNV;
+SAGEAPI PFNGLVERTEXATTRIBS4UBVNVPROC glVertexAttribs4ubvNV;
 
-static int initialise_GL_NV_vertex_program();
-#else
-static int GL_NV_vertex_program_initialised = 1;
-	
-#endif /* NV_VERTEX_PROGRAM_H */
+SAGEAPI int GL_NV_vertex_program_initialised;
+SAGEAPI int initialise_GL_NV_vertex_program();
+
+#endif

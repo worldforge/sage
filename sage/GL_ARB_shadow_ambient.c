@@ -5,6 +5,10 @@
 #include "GL_ARB_shadow_ambient.h"
 #include "utility.h"
 
+static const char * const str_GL_ARB_shadow_ambient = "GL_ARB_shadow_ambient";
+
+int GL_ARB_shadow_ambient_initialised = 0;
+
 int initialise_GL_ARB_shadow_ambient() {
   GL_ARB_shadow_ambient_initialised = isExtensionSupported(str_GL_ARB_shadow_ambient);
   return GL_ARB_shadow_ambient_initialised;

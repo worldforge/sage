@@ -5,6 +5,25 @@
 #include "GL_ATI_vertex_array_object.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_ATI_vertex_array_object = "GL_ATI_vertex_array_object";
+
+PFNGLNEWOBJECTBUFFERATIPROC glNewObjectBufferATI = 0;
+PFNGLISOBJECTBUFFERATIPROC glIsObjectBufferATI = 0;
+PFNGLUPDATEOBJECTBUFFERATIPROC glUpdateObjectBufferATI = 0;
+PFNGLGETOBJECTBUFFERFVATIPROC glGetObjectBufferfvATI = 0;
+PFNGLGETOBJECTBUFFERIVATIPROC glGetObjectBufferivATI = 0;
+PFNGLDELETEOBJECTBUFFERATIPROC glDeleteObjectBufferATI = 0;
+PFNGLARRAYOBJECTATIPROC glArrayObjectATI = 0;
+PFNGLGETARRAYOBJECTFVATIPROC glGetArrayObjectfvATI = 0;
+PFNGLGETARRAYOBJECTIVATIPROC glGetArrayObjectivATI = 0;
+PFNGLVARIANTARRAYOBJECTATIPROC glVariantArrayObjectATI = 0;
+PFNGLGETVARIANTARRAYOBJECTFVATIPROC glGetVariantArrayObjectfvATI = 0;
+PFNGLGETVARIANTARRAYOBJECTIVATIPROC glGetVariantArrayObjectivATI = 0;
+
+int GL_ATI_vertex_array_object_initialised = 0;
+
 int initialise_GL_ATI_vertex_array_object() {
   if (!isExtensionSupported(str_GL_ATI_vertex_array_object)) return 0;
  

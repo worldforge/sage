@@ -11,7 +11,7 @@
  * function Taken from OpenGL FAQ
  */
 
-static GLubyte *extensions = 0;
+static GLubyte *extensions = NULL;
 
 int isExtensionSupported(const char *extension) {
 //  const GLubyte *extensions = NULL;
@@ -23,9 +23,9 @@ int isExtensionSupported(const char *extension) {
   if (where || *extension == '\0')
     return 0;
   
-  if (!extensions) extensions = glGetString(GL_EXTENSIONS);
+  if (extensions == NULL) extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
   
-  if (!extensions) return 0;
+  if (extensions == NULL) return 0;
   
   /* It takes a bit of care to be fool-proof about parsing the
      OpenGL extensions string. Don't be fooled by sub-strings,

@@ -5,6 +5,10 @@
 #include "GL_EXT_blend_logic_op.h"
 #include "utility.h"
 
+static const char * const str_GL_EXT_blend_logic_op = "GL_EXT_blend_logic_op";
+
+int GL_EXT_blend_logic_op_initialised = 0;
+
 int initialise_GL_EXT_blend_logic_op() {
   GL_EXT_blend_logic_op_initialised = isExtensionSupported(str_GL_EXT_blend_logic_op);
   return GL_EXT_blend_logic_op_initialised;

@@ -2,11 +2,13 @@
 // the GNU Lesser General Public License (See COPYING for details).
 // Copyright (C) 2003 Simon Goodall
 
+#ifndef GL_EXT_texture_H
+#define GL_EXT_texture_H 1
+
+#include <sage/sage.h>
+
 #ifndef GL_EXT_texture
 #define GL_EXT_texture 1
-
-static const char * const str_GL_EXT_texture = "GL_EXT_texture";
-static int GL_EXT_texture_initialised = 0;
 
 #define GL_ALPHA4_EXT                       0x803B
 #define GL_ALPHA8_EXT                       0x803C
@@ -51,7 +53,9 @@ static int GL_EXT_texture_initialised = 0;
 #define GL_PROXY_TEXTURE_1D_EXT             0x8063
 #define GL_PROXY_TEXTURE_2D_EXT             0x8064
 
-static int initialise_GL_EXT_texture();
-#else
-static int GL_EXT_texture_initialised = 1;
+#endif
+
+SAGEAPI int GL_EXT_texture_initialised;
+SAGEAPI int initialise_GL_EXT_texture();
+
 #endif

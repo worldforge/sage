@@ -5,6 +5,35 @@
 #include "GL_EXT_coordinate_frame.h"
 #include "utility.h"
 
+#include "SDL.h"
+
+static const char * const str_GL_EXT_coordinate_frame = "GL_EXT_coordinate_frame";
+
+PFNGLTANGENT3BEXTPROC glTangent3bEXT = 0;
+PFNGLTANGENT3DEXTPROC glTangent3dEXT = 0;
+PFNGLTANGENT3FEXTPROC glTangent3fEXT = 0;
+PFNGLTANGENT3IEXTPROC glTangent3iEXT = 0;
+PFNGLTANGENT3SEXTPROC glTangent3sEXT = 0;
+PFNGLTANGENT3BVEXTPROC glTangent3bvEXT = 0;
+PFNGLTANGENT3DVEXTPROC glTangent3dvEXT = 0;
+PFNGLTANGENT3FVEXTPROC glTangent3fvEXT = 0;
+PFNGLTANGENT3IVEXTPROC glTangent3ivEXT = 0;
+PFNGLTANGENT3SVEXTPROC glTangent3svEXT = 0;
+PFNGLBINORMAL3BEXTPROC glBinormal3bEXT = 0;
+PFNGLBINORMAL3DEXTPROC glBinormal3dEXT = 0;
+PFNGLBINORMAL3FEXTPROC glBinormal3fEXT = 0;
+PFNGLBINORMAL3IEXTPROC glBinormal3iEXT = 0;
+PFNGLBINORMAL3SEXTPROC glBinormal3sEXT = 0;
+PFNGLBINORMAL3BVEXTPROC glBinormal3bvEXT = 0;
+PFNGLBINORMAL3DVEXTPROC glBinormal3dvEXT = 0;
+PFNGLBINORMAL3FVEXTPROC glBinormal3fvEXT = 0;
+PFNGLBINORMAL3IVEXTPROC glBinormal3ivEXT = 0;
+PFNGLBINORMAL3SVEXTPROC glBinormal3svEXT = 0;
+PFNGLTANGENTPOINTEREXTPROC glTangentPointerEXT = 0;
+PFNGLBINORMALPOINTEREXTPROC glBinormalPointerEXT = 0;
+
+int GL_EXT_coordinate_frame_initialised = 0;
+
 int initialise_GL_EXT_coordinate_frame() {
   if (!isExtensionSupported(str_GL_EXT_coordinate_frame)) return 0;
  

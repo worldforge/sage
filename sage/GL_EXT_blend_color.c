@@ -3,8 +3,15 @@
 // Copyright (C) 2003 Simon Goodall
 
 #include "GL_EXT_blend_color.h"
-#include "SDL.h"
 #include "utility.h"
+
+#include "SDL.h"
+
+static const char * const str_GL_EXT_blend_color = "GL_EXT_blend_color";
+
+PFNGLBLENDCOLOREXTPROC glBlendColorEXT = 0;
+
+int GL_EXT_blend_color_initialised = 0;
 
 int initialise_GL_EXT_blend_color() {
   if (isExtensionSupported(str_GL_EXT_blend_color)) {
