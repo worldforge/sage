@@ -1,3 +1,6 @@
+26th April 2004, Simon Goodall <sage@simongoodall.co.uk>
+ * Added missing entry to Makefile.am
+
 22nd April 2004, Simon Goodall <sage@simongoodall.co.uk>
  * Changed build script to add all pointers to lib regardless of gl header
  * Build sage with glext.h version 22

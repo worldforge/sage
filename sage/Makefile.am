@@ -35,7 +35,8 @@ libsage_HEADERS=\
 	glext_sage.h \
 	GL.h GLU.h \
 	$(SAGE_GLX_H) $(SAGE_WGL_H) \
-	header.h
+	header.h \
+	undefs.h
 
 # Stuff to build dll
 
