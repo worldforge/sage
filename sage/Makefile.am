@@ -18,3 +18,13 @@ libsage_HEADERS=\
 	utility.h \
 	glext_sage.h \
 	header.h
+bin_SCRIPTS= @SAGE_DLL@
+EXTRA_SCRIPTS = sage.dll
+
+%.dll : lib%.la
+	$(DLLWRAP) --output-def $*.def --driver-name=g++ -o $@ `ar t .libs/lib$*.a` $(LDFLAGS) $(LIBS)
+	echo $(DLLTOOL)
+	$(DLLTOOL) --dllname $@ --def $*.def --output-lib .libs/lib$*.a
+
+clean-local:
+	rm -f sage.dll sage.def
