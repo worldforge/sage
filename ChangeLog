@@ -1,3 +1,7 @@
+29th March 2003 Simon Goodall <sage@simongoodall.co.uk>
+  * Added scripts to generate glx and wgl extensions
+  * rebuilt src using extensions files from opengl site
+
 23rd March 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Updated build_sage.pl to ues #error if included in wrong order
  * Includes for sage files now use "" instead of <>
