@@ -1,4 +1,8 @@
 4th May 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Removed glx and wgl from building due to some problems 
+ * Added SDL as a dependancy to spec file
+
+4th May 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Fixed bug in build_sage_glx.h that kept in GLX_VERSION in the gereneated file
 
 29th March 2003 Simon Goodall <sage@simongoodall.co.uk>
