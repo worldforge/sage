@@ -1,3 +1,6 @@
+15th February 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Added remaining EXT extensions
+
 4th February 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Updated sage.h to not use DLL stuff when compiled under mingw
 
