@@ -1,3 +1,6 @@
+9th December 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Fixed problems on win32 builds for static library versions.
+
 8th December 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Fix configure.in to check $enable_shared before building dll
 

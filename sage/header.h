@@ -15,7 +15,7 @@
 #define WINDOWS_BUILD 1
 #endif
 
-#if defined(WINDOWS_BUILD)
+#if defined(WINDOWS_BUILD) && false
   #ifdef BUILD_SAGE_DLL
     #define SAGEAPI EXTERN __declspec(dllexport)
   #else

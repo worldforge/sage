@@ -70,10 +70,17 @@ if test "$enable_shared" = yes; then
     AC_SUBST(SAGE_DLL)
     AC_CHECK_TOOL(DLLWRAP, dllwrap)
     AC_CHECK_TOOL(DLLTOOL, dlltool)
+    BUILD_IT=true
+  else
+    BUILD_IT=false
   fi
+else
+  BUILD_IT=false
 fi
 
-AM_CONDITIONAL(BUILD_DLL, test  "$SAGE_DLL"="sage.dll")
+AM_CONDITIONAL(BUILD_DLL, test x$SAGE_DLL = xsage.dll, true, false)
+AC_SUBST(BUILD_IT)
+
 
 AC_ARG_ENABLE(debug,
   [  --enable-debug	enable debug information [default=no]],
@@ -122,6 +129,7 @@ dnl Generate files
 AC_OUTPUT([
 	Makefile
 	sage/Makefile
+	sage/header.h
 	templates/Makefile
 	sage.spec
 	sage.pc
