@@ -13,8 +13,3 @@ Source file generation
 -----------------------
 
 If you want to update sage with a newer glext.h, then place glext.h into the top level sage dir, and run build_sage.pl. This will then generate the required source files. 
-
-Troubleshooting
----------------
-
-There are problems with some no standard glx header files. This is when the header has some of the extensions defined in it, but doesn't declare that it defines the extension. This causes problems with sage as sage then redeclares the extension. The solution seems to be to use the standard headers.
