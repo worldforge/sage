@@ -1,3 +1,8 @@
+23rd March 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Updated build_sage.pl to ues #error if included in wrong order
+ * Includes for sage files now use "" instead of <>
+ * Fixed bug caused by defining sage_ext in .h file and not .c
+
 13th March 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Updated configure.in and sage/Makefile.am to detect dlltool and dllwrap to build our dll file.
  * Removed sage.dll entry from Makefile.am in favour of one in sage/Makefile.am

@@ -22,7 +22,7 @@ Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to 
 %package devel
 Summary:	An OpenGL Extensions library using SDL
 Group:		Development/Libraries
-Requires:	%{name}-%{version}
+Requires:	%{name} = %{version}
 
 %description devel
 Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.

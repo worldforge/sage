@@ -153,13 +153,17 @@
 #define GL_EXT_TEXTURE_ENV_DOT3 145
 #define LAST_EXTENSION 146
 
-int sage_ext[LAST_EXTENSION];
-
-#include <sage/header.h>
+#include "sage/header.h"
+#ifdef __glext_h_
+#error sage.h needs to be included before gl.h
+#endif
 #define __glext_h_ 1
 #include <GL/gl.h>
 #undef __glext_h_
 #include <sage/glext_sage.h>
+
+SAGEAPI int sage_ext[LAST_EXTENSION];
+
 #define GL_VERSION_1_2 1
 #ifdef SAGE_GL_VERSION_1_2
 SAGEAPI PFNGLBLENDCOLORPROC glBlendColor;
@@ -1007,5 +1011,7 @@ SAGEAPI PFNGLIGLOOINTERFACESGIXPROC glIglooInterfaceSGIX;
 #define GL_EXT_texture_env_dot3 1
 #ifdef SAGE_GL_EXT_texture_env_dot3
 #endif
+
 SAGEAPI void sage_init(void);
+
 #endif

@@ -91,18 +91,21 @@ for (@BOOLS_ENUM) {
 # This allows use to determine the size of the extensions array
 print SAGE_HEADER "#define LAST_EXTENSION ".$INDEX."\n\n";
 
-#define the extensions array
-print SAGE_HEADER "int sage_ext[LAST_EXTENSION];\n\n";
-
 #include the SAGEAPI stuff
-print SAGE_HEADER "#include <sage/header.h>\n";
+print SAGE_HEADER "#include \"sage/header.h\"\n";
 #include GL for defs
 # define __glext_h_ so we dont pull in the standard glext.h file when
 # we include gl.h
+print SAGE_HEADER "#ifdef __glext_h_\n";
+print SAGE_HEADER "#error sage.h needs to be included before gl.h\n";
+print SAGE_HEADER "#endif\n";
 print SAGE_HEADER "#define __glext_h_ 1\n";
 print SAGE_HEADER "#include <GL/gl.h>\n";
 print SAGE_HEADER "#undef __glext_h_\n"; # undef this so we can use our own glext.h
 print SAGE_HEADER "#include <$GLEXT_SAGE_FILE>\n\n";
+#define the extensions array
+print SAGE_HEADER "SAGEAPI int sage_ext[LAST_EXTENSION];\n\n";
+
 
 #print the function declarations and #if's generated from glext.h
 for (@FUNCTION_HEADER) {
@@ -130,7 +133,7 @@ print SAGE_CODE "\n";
 #write the #includes
 print SAGE_CODE "#include <$SAGE_HEADER_FILE>\n";
 print SAGE_CODE "#include \"SDL.h\"\n";
-print SAGE_CODE "#include <sage/utility.h>\n";
+print SAGE_CODE "#include \"sage/utility.h\"\n";
 print SAGE_CODE "\n";
 
 #start writing the function inits
@@ -140,6 +143,7 @@ for (@FUNCTION_CODE) {
 print SAGE_CODE "\n";
 
 #start writing the init function
+print SAGE_CODE "int sage_ext[LAST_EXTENSION];\n\n";
 print SAGE_CODE "void sage_init(void) {\n";
 for (@FUNCTION_INIT) {
   print SAGE_CODE $_;

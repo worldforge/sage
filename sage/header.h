@@ -21,8 +21,4 @@
   #define SAGEAPI EXTERN
 #endif
 
-//#define __glext_h_ 1
-//#include <GL/gl.h>
-//#undef __glext_h_
-
 #endif
