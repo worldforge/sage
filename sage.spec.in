@@ -12,9 +12,10 @@ Serial:		%{serial}
 Copyright:	LGPL
 Group:		System Environment/Libraries
 Source:		%{name}-%{version}.tar.gz
-BuildRoot:	/var/temp/%{name}-%version}-buildroot
+BuildRoot:	/var/temp/%{name}-%{version}-buildroot
 Requires:	SDL >= @SDL_VERSION@
 BuildRequires:	SDL-devel >= @SDL_VERSION@
+Prefix:		%{prefix}
 
 %description
 Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.
