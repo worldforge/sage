@@ -4,8 +4,7 @@ AC_INIT()
 AM_CONFIG_HEADER(config.h)
 
 dnl Detect the canonical host and target build environment
-AC_CANONICAL_HOST
-AC_CANONICAL_TARGET
+AC_CANONICAL_SYSTEM
 
 dnl Initialise automake
 SAGE_MAJOR_VERSION=0
@@ -34,11 +33,34 @@ AC_MINGW32
 AC_CYGWIN
 AC_EXEEXT
 
+case "$target" in
+  *-*-linux*)
+    AC_PATH_X
+    AC_PATH_XTRA
+esac
 
-if test $cross_compiling == no; then
-  CFLAGS="$CFLAGS -I/usr/X11R6/include -Wall"
-  LIBS="$LIBS -L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib"
-fi
+case "$target" in
+  *-*-darwin* | *-*-macos*)
+    LIBS="$LIBS -framework OpenGL -framework AGL"
+    ;;
+  *)
+  AC_TRY_COMPILE([
+    #include <GL/gl.h>
+  ],[
+  ],[
+    case "$target" in
+      *-*-cygwin* | *-*-mingw32*)
+        LIBS="$LIBS -lopengl32"
+        ;;
+      *)
+        SYSTEM_LIBS="$SYSTEM_LIBS -lGL"
+        ;;
+    esac
+  ],[
+    AC_MSG_ERROR(Cannot find OpenGL)
+  ])
+esac
+
 
 
 if test "x$CYGWIN" = xyes -o "x$MINGW32" = xyes; then
@@ -74,25 +96,11 @@ LIBS="$LIBS $SDL_LIBS"
 ])
 
 
-dnl Check other libs
-if test $cross_compiling == no; then
-  AC_CHECK_LIB(GL,glViewport)
-else 
-  AC_CHECK_HEADER(GL/gl.h,
-	[found_gl=yes break],
-	[found_gl=no])
-  if test $found_gl == yes; then
-	LIBS="$LIBS -lopengl32"
-  else
-	AC_MSG_ERROR(Error could not find OpenGL)
-  fi
-fi
-
-AC_CHECK_HEADER(windows.h, [], [])
+#AC_CHECK_HEADER(windows.h, [], [])
 #AM_CONDITIONAL(BUILD_WGL, test "$ac_cv_header_windows_h" == "yes")
 AM_CONDITIONAL(BUILD_WGL, false)
 
-AC_CHECK_HEADER(X11/Xlib.h, [], [])
+#AC_CHECK_HEADER(X11/Xlib.h, [], [])
 #AM_CONDITIONAL(BUILD_GLX, test "$ac_cv_header_X11_Xlib_h" == "yes")
 AM_CONDITIONAL(BUILD_GLX, false)
 

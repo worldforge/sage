@@ -1,3 +1,8 @@
+1st July 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Changes to opengl detection code
+ * Uses AC_PATH_X and and AC_PATH_XTRA to pick up X11 dirs
+ * Updated build script to make libs function prefixed with SAGE_ and use defines to convert back to original names. This shoud avoid function name conflicts
+
 4th May 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Removed glx and wgl from building due to some problems 
  * Added SDL as a dependancy to spec file

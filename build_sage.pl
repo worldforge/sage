@@ -32,9 +32,12 @@ while (<GLEXT>) {
   if ($_ =~ m|$FUNCTION_REGEXP|) {
     ($FUNCTION) = ($_ =~ m|$FUNCTION_REGEXP|); # Extract function name
     $PFN_FUNCTION = "PFN".uc($FUNCTION)."PROC"; # make the typedef name
-    push(@FUNCTION_HEADER , "SAGEAPI $PFN_FUNCTION $FUNCTION;\n"); # declare function for header
-    push (@FUNCTION_CODE, "$PFN_FUNCTION $FUNCTION = NULL;\n"); # declaraion of function in c file
-    push (@FUNCTION_INIT,"  $FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
+    push(@FUNCTION_HEADER , "SAGEAPI $PFN_FUNCTION SAGE_$FUNCTION;\n"); # declare function for header
+    push(@FUNCTION_HEADER, "#ifndef $FUNCTION\n");
+    push(@FUNCTION_HEADER, "#define $FUNCTION SAGE_$FUNCTION\n");
+    push(@FUNCTION_HEADER, "#endif\n");
+    push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = NULL;\n"); # declaraion of function in c file
+    push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
   # Grab #defines
   } elsif  ($_ =~ m|$DEFINE_REGEXP|) {
     ($DEF) = ($_ =~ m|$DEFINE_REGEXP|); # extract #define name
