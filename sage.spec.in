@@ -47,7 +47,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(-,root,root)
-%{prefix}/include/sage
+%{prefix}/include/sage/sage.h
+%{prefix}/include/sage/header.h
+%{prefix}/include/sage/utility.h
+%{prefix}/include/sage/glext_sage.h
 %{prefix}/lib/libsage.a
 %{prefix}/lib/libsage.so
 %{prefix}/lib/libsage.la
+%{prefix}/lib/pkgconfig/sage.pc
