@@ -64,11 +64,13 @@ case "$target" in
     LIBS="$LIBS -lopengl32"
 esac
 
-if test "x$CYGWIN" = xyes -o "x$MINGW32" = xyes; then
-  SAGE_DLL=sage.dll
-  AC_SUBST(SAGE_DLL)
-  AC_CHECK_TOOL(DLLWRAP, dllwrap)
-  AC_CHECK_TOOL(DLLTOOL, dlltool)
+if test "$enable_shared" = yes; then
+  if test "x$CYGWIN" = xyes -o "x$MINGW32" = xyes; then
+    SAGE_DLL=sage.dll
+    AC_SUBST(SAGE_DLL)
+    AC_CHECK_TOOL(DLLWRAP, dllwrap)
+    AC_CHECK_TOOL(DLLTOOL, dlltool)
+  fi
 fi
 
 AM_CONDITIONAL(BUILD_DLL, test  "$SAGE_DLL"="sage.dll")
