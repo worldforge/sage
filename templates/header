@@ -1,0 +1,19 @@
+#ifdef __cplusplus
+#define EXTERN extern "C"
+#else
+#define EXTERN extern
+#endif
+
+#if defined(_WIN32) && !defined(__MINGW32__)
+  #ifdef BUILD_SAGE_DLL
+    #define SAGEAPI EXTERN __declspec(dllexport)
+  #else
+    #define SAGEAPI EXTERN __declspec(dllimport)
+  #endif
+#else
+  #define SAGEAPI EXTERN
+#endif
+
+#define __glext_h_ 1
+#include <GL/gl.h>
+#undef __glext_h_

@@ -1,7 +1,5 @@
 #! /usr/bin/perl -w
 
-#write headers
-
 $GLEXT_SAGE="sage/glext_sage.h";
 
 open (GLEXT, "<glext.h") or die "Cannot open glext.h\n";
@@ -33,57 +31,43 @@ while (<GLEXT>) {
       push(@FUNC_LINKUP, "#endif\n");
       $WAIT_FOR_ENDIF="false";
     }
-  } elsif ($_ =~ m|\#ifndef GL_[A-Za-z0-9_]*|) {
-#    push(@FUNC_DECLS_H, $_);
   }
 }
 
 $FUNC_HEADER_FILE="sage/sage.h";
 #Write header file
-open (HEADER, ">".$FUNC_HEADER_FILE) or die "Can't open:" . $FUNC_HEADER_FILE . "\n";
+open (HEADER_FILE, ">".$FUNC_HEADER_FILE) or die "Can't open:" . $FUNC_HEADER_FILE . "\n";
+open (LICENSE, "<templates/license") or die "Can't open: templates/license\n";
+open (HEADER, "<templates/header") or die "Can't open: templates/header\n";
 print "Writing $FUNC_HEADER_FILE\n";
 #Write license header
-print HEADER "// This file may be redistributed and modified only under the terms of\n";
-print HEADER "// the GNU Lesser General Public License (See COPYING for details).\n";
-print HEADER "// Copyright (C) 2003 Simon Goodall\n";
-print HEADER "\n";
-print HEADER "#ifndef SAGE_H\n";
-print HEADER "#define SAGE_H 1\n";
-print HEADER "\n";
-print HEADER "#ifdef __cplusplus\n";
-print HEADER "#define EXTERN extern \"C\"\n";
-print HEADER "#else\n";
-print HEADER "#define EXTERN extern\n";
-print HEADER "#endif\n";
-print HEADER "\n";
-print HEADER "#if defined(_WIN32) && !defined(__MINGW32__)\n";
-print HEADER "  #ifdef BUILD_SAGE_DLL\n";
-print HEADER "    #define SAGEAPI EXTERN __declspec(dllexport)\n";
-print HEADER "  #else\n";
-print HEADER "    #define SAGEAPI EXTERN __declspec(dllimport)\n";
-print HEADER "  #endif\n";
-print HEADER "#else\n";
-print HEADER "  #define SAGEAPI EXTERN\n";
-print HEADER "#endif\n";
-print HEADER "\n";
-print HEADER "#define __glext_h_ 1\n";
-print HEADER "#include <GL/gl.h>\n";
-print HEADER "#undef __glext_h_\n";
-print HEADER "#include <$GLEXT_SAGE>\n";
+while(<LICENSE>) { print HEADER_FILE $_; }
+
+print HEADER_FILE "\n";
+print HEADER_FILE "#ifndef SAGE_H\n";
+print HEADER_FILE "#define SAGE_H 1\n";
+print HEADER_FILE "\n";
+while(<HEADER>) { print HEADER_FILE $_; }
+print HEADER_FILE "#include <$GLEXT_SAGE>\n";
 for (@FUNC_DECLS_H) {
-  print HEADER $_;
+  print HEADER_FILE $_;
 #  next;
 }
-print HEADER "#endif\n";
+print HEADER_FILE "#endif\n";
+
+close HEADER_FILE;
+close LICENSE;
+close HEADER;
+
+open (LICENSE, "<templates/license") or die "Can't open: templates/license\n";
 #Write c file
 $FUNC_CODE_FILE="sage/sage.c";
 #Write header file
 open (CODE, ">".$FUNC_CODE_FILE) or die "Can't open:" . $FUNC_CODE_FILE . "\n";
 print "Writing $FUNC_CODE_FILE\n";
 #Write license header
-print CODE "// This file may be redistributed and modified only under the terms of\n";
-print CODE "// the GNU Lesser General Public License (See COPYING for details).\n";
-print CODE "// Copyright (C) 2003 Simon Goodall\n";
+
+while(<LICENSE>) { print CODE $_; }
 print CODE "\n";
 print CODE "#include <$FUNC_HEADER_FILE>\n";
 print CODE "#include  \"SDL.h\"\n";
@@ -96,3 +80,4 @@ for (@FUNC_LINKUP) {
   print CODE $_;
 }
 print CODE "}\n";
+close CODE;
