@@ -1,4 +1,7 @@
 4th February 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Updated sage.h to not use DLL stuff when compiled under mingw
+
+4th February 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Changes to allow cross-compiling
 
 4th February 2003 Simon Goodall <sage@simongoodall.co.uk>

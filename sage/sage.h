@@ -11,7 +11,7 @@
 #define EXTERN extern
 #endif
 
-#ifdef __WIN32__
+#if defined(_WIN32) && !defined(__MINGW32__)
   #ifdef BUILD_SAGE_DLL
     #define SAGEAPI EXTERN __declspec(dllexport)
   #else
