@@ -38,7 +38,7 @@ int initialise_GL_ATI_vertex_array_object() {
   glGetArrayObjectivATI = (PFNGLGETARRAYOBJECTIVATIPROC)SDL_GL_GetProcAddress("glGetArrayObjectivATI");
   glVariantArrayObjectATI = (PFNGLVARIANTARRAYOBJECTATIPROC)SDL_GL_GetProcAddress("glVariantArrayObjectATI");
   glGetVariantArrayObjectfvATI = (PFNGLGETVARIANTARRAYOBJECTFVATIPROC)SDL_GL_GetProcAddress("glGetVariantArrayObjectfvATI");
-  glGetVariantArrayObjectivATI = (PFNGLGETVARIANTARRAYOBJECTIVATIPROC)SDL_GL_GL_GetProcAddress("glGetVariantArrayObjectivATI");
+  glGetVariantArrayObjectivATI = (PFNGLGETVARIANTARRAYOBJECTIVATIPROC)SDL_GL_GetProcAddress("glGetVariantArrayObjectivATI");
 
  GL_ATI_vertex_array_object_initialised = (glNewObjectBufferATI && glIsObjectBufferATI && glUpdateObjectBufferATI && glGetObjectBufferfvATI && glGetObjectBufferivATI && glDeleteObjectBufferATI && glArrayObjectATI && glGetArrayObjectfvATI && glGetArrayObjectivATI && glVariantArrayObjectATI && glGetVariantArrayObjectfvATI && glGetVariantArrayObjectivATI); 
 
