@@ -224,8 +224,6 @@ void sage_glx_init(void) {
   glXWaitForMscOML = (PFNGLXWAITFORMSCOMLPROC)SDL_GL_GetProcAddress("glXWaitForMscOML");
   glXWaitForSbcOML = (PFNGLXWAITFORSBCOMLPROC)SDL_GL_GetProcAddress("glXWaitForSbcOML");
 #endif
- sage_glx_ext[GLX_VERSION_1_3] = isExtensionSupported("GLX_VERSION_1_3");
- sage_glx_ext[GLX_VERSION_1_4] = isExtensionSupported("GLX_VERSION_1_4");
  sage_glx_ext[GLX_ARB_GET_PROC_ADDRESS] = isExtensionSupported("GLX_ARB_get_proc_address");
  sage_glx_ext[GLX_ARB_MULTISAMPLE] = isExtensionSupported("GLX_ARB_multisample");
  sage_glx_ext[GLX_SGIS_MULTISAMPLE] = isExtensionSupported("GLX_SGIS_multisample");

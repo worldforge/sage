@@ -44,7 +44,7 @@ while (<GLXEXT>) {
     push (@FUNCTION_HEADER, "#ifdef SAGE_$DEF\n");
     push (@FUNCTION_CODE, "#ifdef SAGE_$DEF\n");
     push (@FUNCTION_INIT, "#ifdef SAGE_$DEF\n");
-    if ($DEF =~ m|GL_VERSION|) { # ignore GL_VERSION for BOOLS def
+    if ($DEF =~ m|GLX_VERSION|) { # ignore GL_VERSION for BOOLS def
     } else  {
       push (@BOOLS, $DEF);
     }
