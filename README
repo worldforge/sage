@@ -9,7 +9,12 @@ To use opengl extensions, call sage_init();
 
 To check if an extension is supported, query the array, sage_ext[EXT] where EXT is the upper case version of the extension, e.g. GL_ARB_MULTITEXTURE. This will return 1 if supported, 0 otherwise.
 
-Source file generateion
+Source file generation
 -----------------------
 
 If you want to update sage with a newer glext.h, then place glext.h into the top level sage dir, and run build_sage.pl. This will then generate the required source files. 
+
+Troubleshooting
+---------------
+
+There are problems with some no standard glx header files. This is when the header has some of the extensions defined in it, but doesn't declare that it defines the extension. This causes problems with sage as sage then redeclares the extension. The solution seems to be to use the standard headers.
