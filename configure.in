@@ -45,7 +45,7 @@ case "$target" in
     ;;
   *)
   AC_TRY_COMPILE([
-    #include <GL/gl.h>
+    #include <OpenGL/gl.h>
   ],[
   ],[
     case "$target" in

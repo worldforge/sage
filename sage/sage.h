@@ -230,7 +230,7 @@
 #error sage.h needs to be included before gl.h
 #endif
 #define __glext_h_ 1
-#include <GL/gl.h>
+#include "GL.h"
 #undef __glext_h_
 #include <sage/glext_sage.h>
 

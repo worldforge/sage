@@ -1,3 +1,6 @@
+6th August 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Commiting some Mac OSX changes from KingNato
+
 1st July 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Changes to opengl detection code
  * Uses AC_PATH_X and and AC_PATH_XTRA to pick up X11 dirs

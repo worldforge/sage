@@ -3,7 +3,7 @@
 // Copyright (C) 2003 Simon Goodall
 
 #define __glext_h_ 1
-#include <GL/gl.h>
+#include "GL.h"
 #undef __glext_h_
 #include <string.h>
 
