@@ -1,0 +1,53 @@
+%define name	@PACKAGE@
+%define version	@VERSION@
+%define release 1
+%define serial 1
+%define prefix /usr
+
+Summary:	An OpenGL Extensions library using SDL
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Serial:		%{serial}
+Copyright:	LGPL
+Group:		System Environment/Libraries
+Source:		%{name}-%{version}.tar.gz
+BuildRoot:	/var/temp/%{name}-%version}-buildroot
+#Requires:	SDL >= @SDL_VERSION@
+#BuildRequires:	SDL-devel >= @SDL_VERSION@
+
+%description
+Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.
+
+%package devel
+Summary:	An OpenGL Extensions library using SDL
+Group:		Development/Libraries
+Requires:	%{name}-%{version}
+
+%description devel
+Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.
+
+%prep
+%setup
+
+%build
+CXXFLAGS=$RPM_OPT_FLAGS ./configure --prefix=%{prefix}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make prefix=$RPM_BUILD_ROOT%{prefix} install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+%{prefix}/lib/libsage.so.*
+%doc AUTHORS README COPYING NEWS
+
+%files devel
+%defattr(-,root,root)
+%{prefix}/include/sage
+%{prefix}/lib/libsage.a
+%{prefix}/lib/libsage.so
+%{prefix}/lib/libsage.la

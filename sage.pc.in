@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Sage
+Description: An OpenGL Extensions library using SDL
+Requires: @SAGE_REQUIRES@
+Version: @VERSION@
+Libs: -L${libdir} -lsage
+Cflags: -I${includedir}/sage

@@ -1,2 +1,5 @@
 3rd February 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Added .spec file and .pc file to lib
+
+3rd February 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Initial version
