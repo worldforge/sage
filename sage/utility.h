@@ -5,7 +5,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H 1
 
-#include <sage/sage.h>
+#include <header.h>
 
 SAGEAPI int isExtensionSupported(const char *);
 

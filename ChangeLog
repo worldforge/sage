@@ -1,4 +1,7 @@
 13th March 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * updated build_sage.pl to include a array which can be queired to see if a particular extension is supported
+
+13th March 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Due to problems found with current design, there is now a build_sage.pl script which will generate the source files from a glext.h file. The existing extension files are now obsolete.
 
 15th February 2003 Simon Goodall <sage@simongoodall.co.uk>

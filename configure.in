@@ -33,7 +33,7 @@ AC_PROG_CC
 
 if test $cross_compiling == no; then
   dnl FLAGS='-Wall -ansi -I/usr/X11R6/include -I/usr/include'
-  CFLAGS="$CPPFLAGS -I/usr/X11R6/include -Wall"
+  CFLAGS="$CFLAGS -I/usr/X11R6/include -Wall"
   LIBS="$LIBS -L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib"
 fi
 
@@ -89,6 +89,7 @@ AC_SUBST(SAGE_CFLAGS)
 
 AC_SUBST(PREFIX)
 
+dnl this should check ofr win32 version, not cross-compiling
 AM_CONDITIONAL(BUILD_DLL, test $cross_compiling == yes)
 
 dnl Generate files
