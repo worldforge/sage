@@ -3,7 +3,6 @@ lib_LTLIBRARIES = libsage.la
 libsage_la_LDFLAGS = -version-info @SAGE_VERSION_INFO@
 
 libsage_la_SOURCES = \
-	utility.h \
 	check_extension.c \
 	GL_3DFX_multisample.c \
 	GL_3DFX_tbuffer.c \
@@ -73,6 +72,7 @@ libsage_la_SOURCES = \
 libsagedir = $(includedir)/sage
 
 libsage_HEADERS=\
+	utility.h \
 	GL_3DFX_multisample.h \
 	GL_3DFX_tbuffer.h \
 	GL_3DFX_texture_compression_FXT1.h \
