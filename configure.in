@@ -87,6 +87,13 @@ else
 	AC_MSG_ERROR(Error could not find OpenGL)
   fi
 fi
+
+AC_CHECK_HEADER(windows.h, [], [])
+AM_CONDITIONAL(BUILD_WGL, test "$ac_cv_header_windows_h" == "yes")
+
+AC_CHECK_HEADER(X11/Xlib.h, [], [])
+AM_CONDITIONAL(BUILD_GLX, test "$ac_cv_header_X11_Xlib_h" == "yes")
+
 SAGE_LIBS="-lsage"
 SAGE_CFLAGS=""
 
