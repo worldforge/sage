@@ -1,4 +1,7 @@
 1st December 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Added a GLU.h file like GL.h file to find correct header
+
+1st December 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Fixed missing GL.h include in Makefile.am
 
 1st December 2003 Simon Goodall <sage@simongoodall.co.uk>
