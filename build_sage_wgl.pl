@@ -136,7 +136,7 @@ print SAGE_CODE "\n";
 #write the #includes
 print SAGE_CODE "#include <$SAGE_HEADER_FILE>\n";
 print SAGE_CODE "#include \"SDL.h\"\n";
-print SAGE_CODE "#include \"sage/utility.h\"\n";
+print SAGE_CODE "#include <sage/utility.h>\n";
 print SAGE_CODE "\n";
 
 #start writing the function inits

@@ -5,7 +5,7 @@
 
 #include <sage/sage.h>
 #include "SDL.h"
-#include "sage/utility.h"
+#include <sage/utility.h>
 
 PFNGLBLENDCOLORPROC SAGE_glBlendColor = NULL;
 PFNGLBLENDEQUATIONPROC SAGE_glBlendEquation = NULL;

@@ -2,6 +2,8 @@ lib_LTLIBRARIES = libsage.la
 
 libsage_la_LDFLAGS = -version-info @SAGE_VERSION_INFO@
 
+INCLUDES=-I${top_srcdir}
+
 if BUILD_DLL
 libsage_la_CFLAGS=-DBUILD_SAGE_DLL
 endif

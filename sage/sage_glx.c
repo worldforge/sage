@@ -4,7 +4,7 @@
 
 #include <sage/sage_glx.h>
 #include "SDL.h"
-#include "sage/utility.h"
+#include <sage/utility.h>
 
 #ifdef SAGE_GLX_VERSION_1_3
 PFNGLXGETFBCONFIGATTRIBPROC SAGE_glXGetFBConfigAttrib = NULL;

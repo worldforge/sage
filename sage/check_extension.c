@@ -7,7 +7,7 @@
 #undef __glext_h_
 #include <string.h>
 
-#include "utility.h"
+#include <sage/utility.h>
 
 /*
  * function Taken from OpenGL FAQ

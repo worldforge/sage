@@ -4,7 +4,7 @@
 
 #include <sage/sage_wgl.h>
 #include "SDL.h"
-#include "sage/utility.h"
+#include <sage/utility.h>
 
 #ifdef SAGE_WGL_ARB_buffer_region
 PFNWGLCREATEBUFFERREGIONARBPROC wglCreateBufferRegionARB = NULL;
