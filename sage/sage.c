@@ -3,7 +3,7 @@
 // Copyright (C) 2003 Simon Goodall
 
 #include <sage/sage.h>
-#include "SDL.h"
+#include <SDL/SDL.h>
 #include "sage/utility.h"
 
 #ifdef SAGE_GL_VERSION_1_2

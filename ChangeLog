@@ -1,3 +1,12 @@
+22nd October 2003 James Turner <james@worldforge.org>
+ * ProjectBuilder project, to make a Sage framework on OS-X.
+   Depends on a SDL framework, which you can get from the SDL
+   site.
+ * Fix an SDL include to use the proper form, i.e <SDL/SDL.h>
+   instead of "SDL.h". However, older version of sdl-config
+   seem to incorrectly add the full path for CFLAGS - not
+   sure what the solution is.  
+
 6th August 2003 Simon Goodall <sage@simongoodall.co.uk>
  * Commiting some Mac OSX changes from KingNato
 

@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		C42DCF700547260900A800CF = {
+			children = (
+				C42DCF7E0547262300A800CF,
+				C42DD6640547264D00A800CF,
+				C42DD7130547297500A800CF,
+			);
+			isa = PBXGroup;
+			refType = 4;
+		};
+		C42DCF720547260900A800CF = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		C42DCF730547260900A800CF = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		C42DCF740547260900A800CF = {
+			buildStyles = (
+				C42DCF720547260900A800CF,
+				C42DCF730547260900A800CF,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = C42DCF700547260900A800CF;
+			productRefGroup = C42DCF7E0547262300A800CF;
+			projectDirPath = "";
+			targets = (
+				C42DCF7C0547262300A800CF,
+			);
+		};
+		C42DCF770547262300A800CF = {
+			buildActionMask = 2147483647;
+			files = (
+				C42DD6760547264E00A800CF,
+				C42DD6770547264E00A800CF,
+				C42DD6790547264E00A800CF,
+				C42DD67C0547264E00A800CF,
+				C42DD6810547264E00A800CF,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42DCF790547262300A800CF = {
+			buildActionMask = 2147483647;
+			files = (
+				C42DD6750547264E00A800CF,
+				C42DD67B0547264E00A800CF,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42DCF7A0547262300A800CF = {
+			buildActionMask = 2147483647;
+			files = (
+				C42DD7120547294600A800CF,
+				C42DD71D0547298D00A800CF,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42DCF7C0547262300A800CF = {
+			buildPhases = (
+				C42DCF770547262300A800CF,
+				C42DCF790547262300A800CF,
+				C42DCF7A0547262300A800CF,
+				C42DD720054729DA00A800CF,
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = /Users/jmt/Library/Frameworks;
+				FRAMEWORK_VERSION = A;
+				OPTIMIZATION_CFLAGS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRINCIPAL_CLASS = "";
+				PRODUCT_NAME = sage;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = framework;
+			};
+			dependencies = (
+			);
+			isa = PBXFrameworkTarget;
+			name = sage;
+			productInstallPath = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+			productName = sage;
+			productReference = C42DCF7D0547262300A800CF;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+</dict>
+</plist>
+";
+		};
+		C42DCF7D0547262300A800CF = {
+			isa = PBXFrameworkReference;
+			path = sage.framework;
+			refType = 3;
+		};
+		C42DCF7E0547262300A800CF = {
+			children = (
+				C42DCF7D0547262300A800CF,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+		C42DD6640547264D00A800CF = {
+			children = (
+				C42DD6660547264E00A800CF,
+				C42DD6670547264E00A800CF,
+				C42DD6680547264E00A800CF,
+				C42DD6690547264E00A800CF,
+				C42DD66A0547264E00A800CF,
+				C42DD66C0547264E00A800CF,
+				C42DD66D0547264E00A800CF,
+				C42DD66E0547264E00A800CF,
+				C42DD66F0547264E00A800CF,
+				C42DD6700547264E00A800CF,
+				C42DD6710547264E00A800CF,
+				C42DD6720547264E00A800CF,
+				C42DD6730547264E00A800CF,
+			);
+			isa = PBXGroup;
+			path = sage;
+			refType = 4;
+		};
+		C42DD6660547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = check_extension.c;
+			refType = 4;
+		};
+		C42DD6670547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = GL.h;
+			refType = 4;
+		};
+		C42DD6680547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = glext_sage.h;
+			refType = 4;
+		};
+		C42DD6690547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = glxext_sage.h;
+			refType = 4;
+		};
+		C42DD66A0547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = header.h;
+			refType = 4;
+		};
+		C42DD66C0547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage.c;
+			refType = 4;
+		};
+		C42DD66D0547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage.h;
+			refType = 4;
+		};
+		C42DD66E0547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage_glx.c;
+			refType = 4;
+		};
+		C42DD66F0547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage_glx.h;
+			refType = 4;
+		};
+		C42DD6700547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage_wgl.c;
+			refType = 4;
+		};
+		C42DD6710547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = sage_wgl.h;
+			refType = 4;
+		};
+		C42DD6720547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = utility.h;
+			refType = 4;
+		};
+		C42DD6730547264E00A800CF = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = wglext_sage.h;
+			refType = 4;
+		};
+		C42DD6750547264E00A800CF = {
+			fileRef = C42DD6660547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD6760547264E00A800CF = {
+			fileRef = C42DD6670547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD6770547264E00A800CF = {
+			fileRef = C42DD6680547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		C42DD6790547264E00A800CF = {
+			fileRef = C42DD66A0547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD67B0547264E00A800CF = {
+			fileRef = C42DD66C0547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD67C0547264E00A800CF = {
+			fileRef = C42DD66D0547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		C42DD6810547264E00A800CF = {
+			fileRef = C42DD6720547264E00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD7110547294600A800CF = {
+			isa = PBXFrameworkReference;
+			name = SDL.framework;
+			path = /Users/jmt/Library/Frameworks/SDL.framework;
+			refType = 0;
+		};
+		C42DD7120547294600A800CF = {
+			fileRef = C42DD7110547294600A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD7130547297500A800CF = {
+			children = (
+				C42DD7110547294600A800CF,
+				C42DD71C0547298D00A800CF,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			refType = 4;
+		};
+		C42DD71C0547298D00A800CF = {
+			isa = PBXFrameworkReference;
+			name = OpenGL.framework;
+			path = /System/Library/Frameworks/OpenGL.framework;
+			refType = 0;
+		};
+		C42DD71D0547298D00A800CF = {
+			fileRef = C42DD71C0547298D00A800CF;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C42DD720054729DA00A800CF = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			generatedFileNames = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			neededFileNames = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# make frameworks directory if it doesn't already exist\nmkdir -p ~/Library/Frameworks\n# delete the old framework\nrm -rf ~/Library/Frameworks/sage.framework\n# copy framework to its home\n/Developer/Tools/CpMac -r build/sage.framework ~/Library/Frameworks/";
+		};
+	};
+	rootObject = C42DCF740547260900A800CF;
+}
