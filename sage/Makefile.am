@@ -33,6 +33,7 @@ libsage_HEADERS=\
 	sage.h \
 	utility.h \
 	glext_sage.h \
+	GL.h \
 	$(SAGE_GLX_H) $(SAGE_WGL_H) \
 	header.h
 
