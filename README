@@ -1,1 +1,6 @@
 Sage is an OpenGL extension library written to make use of SDL's mechanism for enabling OpenGL's extensions.
+
+
+How To Use
+
+Simply #include the required header for the OpenGL extension. The header name is the same as the name of the OpenGL extension. To use the extensions, first call initialise_EXTENSION_NAME() and check the return value. A value of 1 means that the extension was loaded, a value of 0 means that there was some error.
