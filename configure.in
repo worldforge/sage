@@ -9,14 +9,14 @@ AC_CANONICAL_TARGET
 
 dnl Initialise automake
 SAGE_MAJOR_VERSION=0
-SAGE_MINOR_VERSION=0
-SAGE_MICRO_VERSION=1
+SAGE_MINOR_VERSION=1
+SAGE_MICRO_VERSION=0
 SAGE_VERSION=$SAGE_MAJOR_VERSION.$SAGE_MINOR_VERSION.$SAGE_MICRO_VERSION
 
 AC_SUBST(SAGE_VERSION)
 
 SAGE_CURRENT=0
-SAGE_REVISION=0
+SAGE_REVISION=1
 SAGE_AGE=0
 SAGE_VERSION_INFO=$SAGE_CURRENT:$SAGE_REVISION:$SAGE_AGE
 
@@ -35,6 +35,8 @@ if test $cross_compiling == no; then
   dnl FLAGS='-Wall -ansi -I/usr/X11R6/include -I/usr/include'
   CFLAGS="$CFLAGS -I/usr/X11R6/include -Wall"
   LIBS="$LIBS -L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib"
+else
+  AC_CHECK_PROG(DLLWRAP, dllwrap)
 fi
 
 
@@ -55,12 +57,8 @@ dnl Check SDL
 SDL_VERSION=1.2.2
 AC_SUBST(SDL_VERSION)
 AM_PATH_SDL($SDL_VERSION, [
-  CFLAGS="$CFLAGS $SDL_CFLAGS"
-if test $cross_compiling == no; then
-  LIBS="$LIBS $SDL_LIBS"
-else
-  LIBS="$LIBS -lSDL -lSDL_main"
-fi
+CFLAGS="$CFLAGS $SDL_CFLAGS"
+LIBS="$LIBS $SDL_LIBS"
 ],
 [
   AC_MSG_ERROR(Couldn't find SDL or insufficent version found. Please goto http://www.libsdl.org/ and get at least version $SDL_VERSION)
@@ -96,6 +94,7 @@ dnl Generate files
 AC_OUTPUT([
 	Makefile
 	sage/Makefile
+	templates/Makefile
 	sage.spec
 	sage.pc
 ])

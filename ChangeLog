@@ -1,4 +1,8 @@
 13th March 2003 Simon Goodall <sage@simongoodall.co.uk>
+ * Slight updates to make it work
+ * Looks like we have our first working version!
+
+13th March 2003 Simon Goodall <sage@simongoodall.co.uk>
  * updated build_sage.pl to include a array which can be queired to see if a particular extension is supported
 
 13th March 2003 Simon Goodall <sage@simongoodall.co.uk>

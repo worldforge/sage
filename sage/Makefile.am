@@ -16,4 +16,5 @@ libsagedir = $(includedir)/sage
 libsage_HEADERS=\
 	sage.h \
 	utility.h \
-	glext_sage.h
+	glext_sage.h \
+	header.h

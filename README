@@ -1,3 +1,15 @@
 Sage is an OpenGL extension library written to make use of SDL's mechanism for enabling OpenGL's extensions.
 
 
+Usage
+-----
+To use this, make sure you include <sage/sage.h> before you include glext.h as sage uses a custom version of this file interally.
+
+To use opengl extensions, call sage_init(); 
+
+To check if an extension is supported, query the array, sage_ext[EXT] where EXT is the upper case version of the extension, e.g. GL_ARB_MULTITEXTURE. This will return 1 if supported, 0 otherwise.
+
+Source file generateion
+-----------------------
+
+If you want to update sage with a newer glext.h, then place glext.h into the top level sage dir, and run build_sage.pl. This will then generate the required source files. 
