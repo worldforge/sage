@@ -1,3 +1,8 @@
+2005-05-02  Simon Goodall <sage@simongoodall.co.uk>
+
+	* sage/glext_sage.h, sage/sage.c, sage/sage.h: Update to glext.h ver 27
+	* sage/header.h.in: Add #endif comment
+
 2004-11-29 Simon Goodall <sage@simongoodall.co.uk>
 
 	* autogen.sh: Use autoreconf if possible
@@ -6,7 +11,7 @@
 
 2004-08-26 Simon Goodall <sage@simongoodall.co.uk>
 
-        * sage/Makefile.am: Updates for dll building
+	* sage/Makefile.am: Updates for dll building
 
 
 29th June 2004, Simon Goodall <sage@simongoodall.co.uk>

@@ -25,4 +25,4 @@
   #define SAGEAPI EXTERN
 #endif
 
-#endif
+#endif // SAGE_HEADER
