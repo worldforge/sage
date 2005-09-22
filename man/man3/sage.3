@@ -1,0 +1,24 @@
+.TH sage 3 "September 22, 2005"
+.SH NAME
+sage \-  The SDL library for OpenGL extensions.
+
+.SH DESCRIPTION
+.B #include <sage/sage.h>
+
+Sage is a small C library providing Open GL extensions to applications using SDL. It has been automatically generated from the glext.h header file from the OpenGL website. The Sage source package comes with the Perl scripts to generate new sources from updated glext.h files.
+.PP
+Additionally, it provides a way of accessing the standard GL and GLU headers in a cross platform method. sage/GL.h and sage/GLU.h should be used in place of gl/GL.h and gl/GLU.h (or the equivalent on other platforms.)
+.PP
+To use Sage, an application must first call sage_init once the OpenGL context has been created. This checks for the existence of each extension it knows about and links up the appropriate function pointers. The array sage_ext sets each exension that is found to 1, and 0 otherwise. Applications should check the existence of the extension in sage_ext before using it.
+.PP
+Extensions can then be used by their name as defined in the spec.
+.SH BUGS
+Sage does not check to see of the OpenGL context is valid.
+.PP
+On some systems, the standard Open GL header causes problems with sage (namespace conflicts).
+.PP
+Apparently some broken GL implmentations may report the existence of an extension, but not actually provide it. Sage will not detect this.
+.SH AUTHOR
+Simon Goodall (simon (at) simongoodall.co.uk)
+.SH SEE ALSO
+sage_init(3)

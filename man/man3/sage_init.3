@@ -1,0 +1,18 @@
+.TH sage_init 3 "September 22, 2005"
+.SH NAME
+sage_init
+
+.SH SYNOPSIS
+
+void
+.B sage_init
+(void)
+
+.SH DESCRIPTION
+Initialise the Sage library. This function links up the function pointers to the extensions that are reported by glGetString(GL_EXTENSIONS) and sets the sage_ext array to 1 for existing extensions. 
+.PP
+Note that some Open GL implementations report an extension in the GL_EXTENSIONS string but do not have the function implemented.
+.SH AUTHOR
+Simon Goodall (simon (at) simongoodall.co.uk)
+.SH SEE ALSO
+sage(3)

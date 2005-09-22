@@ -1,3 +1,12 @@
+2005-09-22  Simon Goodall <sage@simongoodall.co.uk>
+
+	* configure.in, configure.ac: Rename to configure.ac
+
+	* sage/glext_sage.h, sage/sage.c, sage/sage.h: Update to glext.g ver 29.
+
+	* configure.ac, Makefile.am, man/Makefile.am, man/man3/Makefile.am,
+	  man/man3/sage.3, man/man3/sage_init.3: Add initial man pages for sage.
+
 2005-05-02  Simon Goodall <sage@simongoodall.co.uk>
 
 	* sage/glext_sage.h, sage/sage.c, sage/sage.h: Update to glext.h ver 27

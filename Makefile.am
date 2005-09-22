@@ -1,4 +1,4 @@
-SUBDIRS=templates sage
+SUBDIRS=templates sage man
 
 EXTRA_DIST = sage.spec sage.pc autogen.sh build_sage.pl
 

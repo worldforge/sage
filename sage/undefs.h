@@ -7,3 +7,4 @@
 #undef GL_VERSION_1_3
 #undef GL_VERSION_1_4
 #undef GL_VERSION_1_5
+#undef GL_VERSION_2_0

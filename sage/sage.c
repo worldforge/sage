@@ -155,6 +155,99 @@ PFNGLMAPBUFFERPROC SAGE_glMapBuffer = NULL;
 PFNGLUNMAPBUFFERPROC SAGE_glUnmapBuffer = NULL;
 PFNGLGETBUFFERPARAMETERIVPROC SAGE_glGetBufferParameteriv = NULL;
 PFNGLGETBUFFERPOINTERVPROC SAGE_glGetBufferPointerv = NULL;
+PFNGLBLENDEQUATIONSEPARATEPROC SAGE_glBlendEquationSeparate = NULL;
+PFNGLDRAWBUFFERSPROC SAGE_glDrawBuffers = NULL;
+PFNGLSTENCILOPSEPARATEPROC SAGE_glStencilOpSeparate = NULL;
+PFNGLSTENCILFUNCSEPARATEPROC SAGE_glStencilFuncSeparate = NULL;
+PFNGLSTENCILMASKSEPARATEPROC SAGE_glStencilMaskSeparate = NULL;
+PFNGLATTACHSHADERPROC SAGE_glAttachShader = NULL;
+PFNGLBINDATTRIBLOCATIONPROC SAGE_glBindAttribLocation = NULL;
+PFNGLCOMPILESHADERPROC SAGE_glCompileShader = NULL;
+PFNGLCREATEPROGRAMPROC SAGE_glCreateProgram = NULL;
+PFNGLCREATESHADERPROC SAGE_glCreateShader = NULL;
+PFNGLDELETEPROGRAMPROC SAGE_glDeleteProgram = NULL;
+PFNGLDELETESHADERPROC SAGE_glDeleteShader = NULL;
+PFNGLDETACHSHADERPROC SAGE_glDetachShader = NULL;
+PFNGLDISABLEVERTEXATTRIBARRAYPROC SAGE_glDisableVertexAttribArray = NULL;
+PFNGLENABLEVERTEXATTRIBARRAYPROC SAGE_glEnableVertexAttribArray = NULL;
+PFNGLGETACTIVEATTRIBPROC SAGE_glGetActiveAttrib = NULL;
+PFNGLGETACTIVEUNIFORMPROC SAGE_glGetActiveUniform = NULL;
+PFNGLGETATTACHEDSHADERSPROC SAGE_glGetAttachedShaders = NULL;
+PFNGLGETATTRIBLOCATIONPROC SAGE_glGetAttribLocation = NULL;
+PFNGLGETPROGRAMIVPROC SAGE_glGetProgramiv = NULL;
+PFNGLGETPROGRAMINFOLOGPROC SAGE_glGetProgramInfoLog = NULL;
+PFNGLGETSHADERIVPROC SAGE_glGetShaderiv = NULL;
+PFNGLGETSHADERINFOLOGPROC SAGE_glGetShaderInfoLog = NULL;
+PFNGLGETSHADERSOURCEPROC SAGE_glGetShaderSource = NULL;
+PFNGLGETUNIFORMLOCATIONPROC SAGE_glGetUniformLocation = NULL;
+PFNGLGETUNIFORMFVPROC SAGE_glGetUniformfv = NULL;
+PFNGLGETUNIFORMIVPROC SAGE_glGetUniformiv = NULL;
+PFNGLGETVERTEXATTRIBDVPROC SAGE_glGetVertexAttribdv = NULL;
+PFNGLGETVERTEXATTRIBFVPROC SAGE_glGetVertexAttribfv = NULL;
+PFNGLGETVERTEXATTRIBIVPROC SAGE_glGetVertexAttribiv = NULL;
+PFNGLGETVERTEXATTRIBPOINTERVPROC SAGE_glGetVertexAttribPointerv = NULL;
+PFNGLISPROGRAMPROC SAGE_glIsProgram = NULL;
+PFNGLISSHADERPROC SAGE_glIsShader = NULL;
+PFNGLLINKPROGRAMPROC SAGE_glLinkProgram = NULL;
+PFNGLSHADERSOURCEPROC SAGE_glShaderSource = NULL;
+PFNGLUSEPROGRAMPROC SAGE_glUseProgram = NULL;
+PFNGLUNIFORM1FPROC SAGE_glUniform1f = NULL;
+PFNGLUNIFORM2FPROC SAGE_glUniform2f = NULL;
+PFNGLUNIFORM3FPROC SAGE_glUniform3f = NULL;
+PFNGLUNIFORM4FPROC SAGE_glUniform4f = NULL;
+PFNGLUNIFORM1IPROC SAGE_glUniform1i = NULL;
+PFNGLUNIFORM2IPROC SAGE_glUniform2i = NULL;
+PFNGLUNIFORM3IPROC SAGE_glUniform3i = NULL;
+PFNGLUNIFORM4IPROC SAGE_glUniform4i = NULL;
+PFNGLUNIFORM1FVPROC SAGE_glUniform1fv = NULL;
+PFNGLUNIFORM2FVPROC SAGE_glUniform2fv = NULL;
+PFNGLUNIFORM3FVPROC SAGE_glUniform3fv = NULL;
+PFNGLUNIFORM4FVPROC SAGE_glUniform4fv = NULL;
+PFNGLUNIFORM1IVPROC SAGE_glUniform1iv = NULL;
+PFNGLUNIFORM2IVPROC SAGE_glUniform2iv = NULL;
+PFNGLUNIFORM3IVPROC SAGE_glUniform3iv = NULL;
+PFNGLUNIFORM4IVPROC SAGE_glUniform4iv = NULL;
+PFNGLUNIFORMMATRIX2FVPROC SAGE_glUniformMatrix2fv = NULL;
+PFNGLUNIFORMMATRIX3FVPROC SAGE_glUniformMatrix3fv = NULL;
+PFNGLUNIFORMMATRIX4FVPROC SAGE_glUniformMatrix4fv = NULL;
+PFNGLVALIDATEPROGRAMPROC SAGE_glValidateProgram = NULL;
+PFNGLVERTEXATTRIB1DPROC SAGE_glVertexAttrib1d = NULL;
+PFNGLVERTEXATTRIB1DVPROC SAGE_glVertexAttrib1dv = NULL;
+PFNGLVERTEXATTRIB1FPROC SAGE_glVertexAttrib1f = NULL;
+PFNGLVERTEXATTRIB1FVPROC SAGE_glVertexAttrib1fv = NULL;
+PFNGLVERTEXATTRIB1SPROC SAGE_glVertexAttrib1s = NULL;
+PFNGLVERTEXATTRIB1SVPROC SAGE_glVertexAttrib1sv = NULL;
+PFNGLVERTEXATTRIB2DPROC SAGE_glVertexAttrib2d = NULL;
+PFNGLVERTEXATTRIB2DVPROC SAGE_glVertexAttrib2dv = NULL;
+PFNGLVERTEXATTRIB2FPROC SAGE_glVertexAttrib2f = NULL;
+PFNGLVERTEXATTRIB2FVPROC SAGE_glVertexAttrib2fv = NULL;
+PFNGLVERTEXATTRIB2SPROC SAGE_glVertexAttrib2s = NULL;
+PFNGLVERTEXATTRIB2SVPROC SAGE_glVertexAttrib2sv = NULL;
+PFNGLVERTEXATTRIB3DPROC SAGE_glVertexAttrib3d = NULL;
+PFNGLVERTEXATTRIB3DVPROC SAGE_glVertexAttrib3dv = NULL;
+PFNGLVERTEXATTRIB3FPROC SAGE_glVertexAttrib3f = NULL;
+PFNGLVERTEXATTRIB3FVPROC SAGE_glVertexAttrib3fv = NULL;
+PFNGLVERTEXATTRIB3SPROC SAGE_glVertexAttrib3s = NULL;
+PFNGLVERTEXATTRIB3SVPROC SAGE_glVertexAttrib3sv = NULL;
+PFNGLVERTEXATTRIB4NBVPROC SAGE_glVertexAttrib4Nbv = NULL;
+PFNGLVERTEXATTRIB4NIVPROC SAGE_glVertexAttrib4Niv = NULL;
+PFNGLVERTEXATTRIB4NSVPROC SAGE_glVertexAttrib4Nsv = NULL;
+PFNGLVERTEXATTRIB4NUBPROC SAGE_glVertexAttrib4Nub = NULL;
+PFNGLVERTEXATTRIB4NUBVPROC SAGE_glVertexAttrib4Nubv = NULL;
+PFNGLVERTEXATTRIB4NUIVPROC SAGE_glVertexAttrib4Nuiv = NULL;
+PFNGLVERTEXATTRIB4NUSVPROC SAGE_glVertexAttrib4Nusv = NULL;
+PFNGLVERTEXATTRIB4BVPROC SAGE_glVertexAttrib4bv = NULL;
+PFNGLVERTEXATTRIB4DPROC SAGE_glVertexAttrib4d = NULL;
+PFNGLVERTEXATTRIB4DVPROC SAGE_glVertexAttrib4dv = NULL;
+PFNGLVERTEXATTRIB4FPROC SAGE_glVertexAttrib4f = NULL;
+PFNGLVERTEXATTRIB4FVPROC SAGE_glVertexAttrib4fv = NULL;
+PFNGLVERTEXATTRIB4IVPROC SAGE_glVertexAttrib4iv = NULL;
+PFNGLVERTEXATTRIB4SPROC SAGE_glVertexAttrib4s = NULL;
+PFNGLVERTEXATTRIB4SVPROC SAGE_glVertexAttrib4sv = NULL;
+PFNGLVERTEXATTRIB4UBVPROC SAGE_glVertexAttrib4ubv = NULL;
+PFNGLVERTEXATTRIB4UIVPROC SAGE_glVertexAttrib4uiv = NULL;
+PFNGLVERTEXATTRIB4USVPROC SAGE_glVertexAttrib4usv = NULL;
+PFNGLVERTEXATTRIBPOINTERPROC SAGE_glVertexAttribPointer = NULL;
 PFNGLACTIVETEXTUREARBPROC SAGE_glActiveTextureARB = NULL;
 PFNGLCLIENTACTIVETEXTUREARBPROC SAGE_glClientActiveTextureARB = NULL;
 PFNGLMULTITEXCOORD1DARBPROC SAGE_glMultiTexCoord1dARB = NULL;
@@ -358,6 +451,7 @@ PFNGLBINDATTRIBLOCATIONARBPROC SAGE_glBindAttribLocationARB = NULL;
 PFNGLGETACTIVEATTRIBARBPROC SAGE_glGetActiveAttribARB = NULL;
 PFNGLGETATTRIBLOCATIONARBPROC SAGE_glGetAttribLocationARB = NULL;
 PFNGLDRAWBUFFERSARBPROC SAGE_glDrawBuffersARB = NULL;
+PFNGLCLAMPCOLORARBPROC SAGE_glClampColorARB = NULL;
 PFNGLBLENDCOLOREXTPROC SAGE_glBlendColorEXT = NULL;
 PFNGLPOLYGONOFFSETEXTPROC SAGE_glPolygonOffsetEXT = NULL;
 PFNGLTEXIMAGE3DEXTPROC SAGE_glTexImage3DEXT = NULL;
@@ -981,6 +1075,24 @@ PFNGLGETVERTEXATTRIBARRAYOBJECTFVATIPROC SAGE_glGetVertexAttribArrayObjectfvATI 
 PFNGLGETVERTEXATTRIBARRAYOBJECTIVATIPROC SAGE_glGetVertexAttribArrayObjectivATI = NULL;
 PFNGLDEPTHBOUNDSEXTPROC SAGE_glDepthBoundsEXT = NULL;
 PFNGLBLENDEQUATIONSEPARATEEXTPROC SAGE_glBlendEquationSeparateEXT = NULL;
+PFNGLISRENDERBUFFEREXTPROC SAGE_glIsRenderbufferEXT = NULL;
+PFNGLBINDRENDERBUFFEREXTPROC SAGE_glBindRenderbufferEXT = NULL;
+PFNGLDELETERENDERBUFFERSEXTPROC SAGE_glDeleteRenderbuffersEXT = NULL;
+PFNGLGENRENDERBUFFERSEXTPROC SAGE_glGenRenderbuffersEXT = NULL;
+PFNGLRENDERBUFFERSTORAGEEXTPROC SAGE_glRenderbufferStorageEXT = NULL;
+PFNGLGETRENDERBUFFERPARAMETERIVEXTPROC SAGE_glGetRenderbufferParameterivEXT = NULL;
+PFNGLISFRAMEBUFFEREXTPROC SAGE_glIsFramebufferEXT = NULL;
+PFNGLBINDFRAMEBUFFEREXTPROC SAGE_glBindFramebufferEXT = NULL;
+PFNGLDELETEFRAMEBUFFERSEXTPROC SAGE_glDeleteFramebuffersEXT = NULL;
+PFNGLGENFRAMEBUFFERSEXTPROC SAGE_glGenFramebuffersEXT = NULL;
+PFNGLCHECKFRAMEBUFFERSTATUSEXTPROC SAGE_glCheckFramebufferStatusEXT = NULL;
+PFNGLFRAMEBUFFERTEXTURE1DEXTPROC SAGE_glFramebufferTexture1DEXT = NULL;
+PFNGLFRAMEBUFFERTEXTURE2DEXTPROC SAGE_glFramebufferTexture2DEXT = NULL;
+PFNGLFRAMEBUFFERTEXTURE3DEXTPROC SAGE_glFramebufferTexture3DEXT = NULL;
+PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC SAGE_glFramebufferRenderbufferEXT = NULL;
+PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC SAGE_glGetFramebufferAttachmentParameterivEXT = NULL;
+PFNGLGENERATEMIPMAPEXTPROC SAGE_glGenerateMipmapEXT = NULL;
+PFNGLSTRINGMARKERGREMEDYPROC SAGE_glStringMarkerGREMEDY = NULL;
 
 int sage_ext[SAGE_LAST_EXTENSION];
 
@@ -1140,6 +1252,101 @@ void sage_init(void) {
   SAGE_glUnmapBuffer = (PFNGLUNMAPBUFFERPROC)SDL_GL_GetProcAddress("glUnmapBuffer");
   SAGE_glGetBufferParameteriv = (PFNGLGETBUFFERPARAMETERIVPROC)SDL_GL_GetProcAddress("glGetBufferParameteriv");
   SAGE_glGetBufferPointerv = (PFNGLGETBUFFERPOINTERVPROC)SDL_GL_GetProcAddress("glGetBufferPointerv");
+#endif
+#ifdef SAGE_GL_VERSION_2_0
+  SAGE_glBlendEquationSeparate = (PFNGLBLENDEQUATIONSEPARATEPROC)SDL_GL_GetProcAddress("glBlendEquationSeparate");
+  SAGE_glDrawBuffers = (PFNGLDRAWBUFFERSPROC)SDL_GL_GetProcAddress("glDrawBuffers");
+  SAGE_glStencilOpSeparate = (PFNGLSTENCILOPSEPARATEPROC)SDL_GL_GetProcAddress("glStencilOpSeparate");
+  SAGE_glStencilFuncSeparate = (PFNGLSTENCILFUNCSEPARATEPROC)SDL_GL_GetProcAddress("glStencilFuncSeparate");
+  SAGE_glStencilMaskSeparate = (PFNGLSTENCILMASKSEPARATEPROC)SDL_GL_GetProcAddress("glStencilMaskSeparate");
+  SAGE_glAttachShader = (PFNGLATTACHSHADERPROC)SDL_GL_GetProcAddress("glAttachShader");
+  SAGE_glBindAttribLocation = (PFNGLBINDATTRIBLOCATIONPROC)SDL_GL_GetProcAddress("glBindAttribLocation");
+  SAGE_glCompileShader = (PFNGLCOMPILESHADERPROC)SDL_GL_GetProcAddress("glCompileShader");
+  SAGE_glCreateProgram = (PFNGLCREATEPROGRAMPROC)SDL_GL_GetProcAddress("glCreateProgram");
+  SAGE_glCreateShader = (PFNGLCREATESHADERPROC)SDL_GL_GetProcAddress("glCreateShader");
+  SAGE_glDeleteProgram = (PFNGLDELETEPROGRAMPROC)SDL_GL_GetProcAddress("glDeleteProgram");
+  SAGE_glDeleteShader = (PFNGLDELETESHADERPROC)SDL_GL_GetProcAddress("glDeleteShader");
+  SAGE_glDetachShader = (PFNGLDETACHSHADERPROC)SDL_GL_GetProcAddress("glDetachShader");
+  SAGE_glDisableVertexAttribArray = (PFNGLDISABLEVERTEXATTRIBARRAYPROC)SDL_GL_GetProcAddress("glDisableVertexAttribArray");
+  SAGE_glEnableVertexAttribArray = (PFNGLENABLEVERTEXATTRIBARRAYPROC)SDL_GL_GetProcAddress("glEnableVertexAttribArray");
+  SAGE_glGetActiveAttrib = (PFNGLGETACTIVEATTRIBPROC)SDL_GL_GetProcAddress("glGetActiveAttrib");
+  SAGE_glGetActiveUniform = (PFNGLGETACTIVEUNIFORMPROC)SDL_GL_GetProcAddress("glGetActiveUniform");
+  SAGE_glGetAttachedShaders = (PFNGLGETATTACHEDSHADERSPROC)SDL_GL_GetProcAddress("glGetAttachedShaders");
+  SAGE_glGetAttribLocation = (PFNGLGETATTRIBLOCATIONPROC)SDL_GL_GetProcAddress("glGetAttribLocation");
+  SAGE_glGetProgramiv = (PFNGLGETPROGRAMIVPROC)SDL_GL_GetProcAddress("glGetProgramiv");
+  SAGE_glGetProgramInfoLog = (PFNGLGETPROGRAMINFOLOGPROC)SDL_GL_GetProcAddress("glGetProgramInfoLog");
+  SAGE_glGetShaderiv = (PFNGLGETSHADERIVPROC)SDL_GL_GetProcAddress("glGetShaderiv");
+  SAGE_glGetShaderInfoLog = (PFNGLGETSHADERINFOLOGPROC)SDL_GL_GetProcAddress("glGetShaderInfoLog");
+  SAGE_glGetShaderSource = (PFNGLGETSHADERSOURCEPROC)SDL_GL_GetProcAddress("glGetShaderSource");
+  SAGE_glGetUniformLocation = (PFNGLGETUNIFORMLOCATIONPROC)SDL_GL_GetProcAddress("glGetUniformLocation");
+  SAGE_glGetUniformfv = (PFNGLGETUNIFORMFVPROC)SDL_GL_GetProcAddress("glGetUniformfv");
+  SAGE_glGetUniformiv = (PFNGLGETUNIFORMIVPROC)SDL_GL_GetProcAddress("glGetUniformiv");
+  SAGE_glGetVertexAttribdv = (PFNGLGETVERTEXATTRIBDVPROC)SDL_GL_GetProcAddress("glGetVertexAttribdv");
+  SAGE_glGetVertexAttribfv = (PFNGLGETVERTEXATTRIBFVPROC)SDL_GL_GetProcAddress("glGetVertexAttribfv");
+  SAGE_glGetVertexAttribiv = (PFNGLGETVERTEXATTRIBIVPROC)SDL_GL_GetProcAddress("glGetVertexAttribiv");
+  SAGE_glGetVertexAttribPointerv = (PFNGLGETVERTEXATTRIBPOINTERVPROC)SDL_GL_GetProcAddress("glGetVertexAttribPointerv");
+  SAGE_glIsProgram = (PFNGLISPROGRAMPROC)SDL_GL_GetProcAddress("glIsProgram");
+  SAGE_glIsShader = (PFNGLISSHADERPROC)SDL_GL_GetProcAddress("glIsShader");
+  SAGE_glLinkProgram = (PFNGLLINKPROGRAMPROC)SDL_GL_GetProcAddress("glLinkProgram");
+  SAGE_glShaderSource = (PFNGLSHADERSOURCEPROC)SDL_GL_GetProcAddress("glShaderSource");
+  SAGE_glUseProgram = (PFNGLUSEPROGRAMPROC)SDL_GL_GetProcAddress("glUseProgram");
+  SAGE_glUniform1f = (PFNGLUNIFORM1FPROC)SDL_GL_GetProcAddress("glUniform1f");
+  SAGE_glUniform2f = (PFNGLUNIFORM2FPROC)SDL_GL_GetProcAddress("glUniform2f");
+  SAGE_glUniform3f = (PFNGLUNIFORM3FPROC)SDL_GL_GetProcAddress("glUniform3f");
+  SAGE_glUniform4f = (PFNGLUNIFORM4FPROC)SDL_GL_GetProcAddress("glUniform4f");
+  SAGE_glUniform1i = (PFNGLUNIFORM1IPROC)SDL_GL_GetProcAddress("glUniform1i");
+  SAGE_glUniform2i = (PFNGLUNIFORM2IPROC)SDL_GL_GetProcAddress("glUniform2i");
+  SAGE_glUniform3i = (PFNGLUNIFORM3IPROC)SDL_GL_GetProcAddress("glUniform3i");
+  SAGE_glUniform4i = (PFNGLUNIFORM4IPROC)SDL_GL_GetProcAddress("glUniform4i");
+  SAGE_glUniform1fv = (PFNGLUNIFORM1FVPROC)SDL_GL_GetProcAddress("glUniform1fv");
+  SAGE_glUniform2fv = (PFNGLUNIFORM2FVPROC)SDL_GL_GetProcAddress("glUniform2fv");
+  SAGE_glUniform3fv = (PFNGLUNIFORM3FVPROC)SDL_GL_GetProcAddress("glUniform3fv");
+  SAGE_glUniform4fv = (PFNGLUNIFORM4FVPROC)SDL_GL_GetProcAddress("glUniform4fv");
+  SAGE_glUniform1iv = (PFNGLUNIFORM1IVPROC)SDL_GL_GetProcAddress("glUniform1iv");
+  SAGE_glUniform2iv = (PFNGLUNIFORM2IVPROC)SDL_GL_GetProcAddress("glUniform2iv");
+  SAGE_glUniform3iv = (PFNGLUNIFORM3IVPROC)SDL_GL_GetProcAddress("glUniform3iv");
+  SAGE_glUniform4iv = (PFNGLUNIFORM4IVPROC)SDL_GL_GetProcAddress("glUniform4iv");
+  SAGE_glUniformMatrix2fv = (PFNGLUNIFORMMATRIX2FVPROC)SDL_GL_GetProcAddress("glUniformMatrix2fv");
+  SAGE_glUniformMatrix3fv = (PFNGLUNIFORMMATRIX3FVPROC)SDL_GL_GetProcAddress("glUniformMatrix3fv");
+  SAGE_glUniformMatrix4fv = (PFNGLUNIFORMMATRIX4FVPROC)SDL_GL_GetProcAddress("glUniformMatrix4fv");
+  SAGE_glValidateProgram = (PFNGLVALIDATEPROGRAMPROC)SDL_GL_GetProcAddress("glValidateProgram");
+  SAGE_glVertexAttrib1d = (PFNGLVERTEXATTRIB1DPROC)SDL_GL_GetProcAddress("glVertexAttrib1d");
+  SAGE_glVertexAttrib1dv = (PFNGLVERTEXATTRIB1DVPROC)SDL_GL_GetProcAddress("glVertexAttrib1dv");
+  SAGE_glVertexAttrib1f = (PFNGLVERTEXATTRIB1FPROC)SDL_GL_GetProcAddress("glVertexAttrib1f");
+  SAGE_glVertexAttrib1fv = (PFNGLVERTEXATTRIB1FVPROC)SDL_GL_GetProcAddress("glVertexAttrib1fv");
+  SAGE_glVertexAttrib1s = (PFNGLVERTEXATTRIB1SPROC)SDL_GL_GetProcAddress("glVertexAttrib1s");
+  SAGE_glVertexAttrib1sv = (PFNGLVERTEXATTRIB1SVPROC)SDL_GL_GetProcAddress("glVertexAttrib1sv");
+  SAGE_glVertexAttrib2d = (PFNGLVERTEXATTRIB2DPROC)SDL_GL_GetProcAddress("glVertexAttrib2d");
+  SAGE_glVertexAttrib2dv = (PFNGLVERTEXATTRIB2DVPROC)SDL_GL_GetProcAddress("glVertexAttrib2dv");
+  SAGE_glVertexAttrib2f = (PFNGLVERTEXATTRIB2FPROC)SDL_GL_GetProcAddress("glVertexAttrib2f");
+  SAGE_glVertexAttrib2fv = (PFNGLVERTEXATTRIB2FVPROC)SDL_GL_GetProcAddress("glVertexAttrib2fv");
+  SAGE_glVertexAttrib2s = (PFNGLVERTEXATTRIB2SPROC)SDL_GL_GetProcAddress("glVertexAttrib2s");
+  SAGE_glVertexAttrib2sv = (PFNGLVERTEXATTRIB2SVPROC)SDL_GL_GetProcAddress("glVertexAttrib2sv");
+  SAGE_glVertexAttrib3d = (PFNGLVERTEXATTRIB3DPROC)SDL_GL_GetProcAddress("glVertexAttrib3d");
+  SAGE_glVertexAttrib3dv = (PFNGLVERTEXATTRIB3DVPROC)SDL_GL_GetProcAddress("glVertexAttrib3dv");
+  SAGE_glVertexAttrib3f = (PFNGLVERTEXATTRIB3FPROC)SDL_GL_GetProcAddress("glVertexAttrib3f");
+  SAGE_glVertexAttrib3fv = (PFNGLVERTEXATTRIB3FVPROC)SDL_GL_GetProcAddress("glVertexAttrib3fv");
+  SAGE_glVertexAttrib3s = (PFNGLVERTEXATTRIB3SPROC)SDL_GL_GetProcAddress("glVertexAttrib3s");
+  SAGE_glVertexAttrib3sv = (PFNGLVERTEXATTRIB3SVPROC)SDL_GL_GetProcAddress("glVertexAttrib3sv");
+  SAGE_glVertexAttrib4Nbv = (PFNGLVERTEXATTRIB4NBVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nbv");
+  SAGE_glVertexAttrib4Niv = (PFNGLVERTEXATTRIB4NIVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Niv");
+  SAGE_glVertexAttrib4Nsv = (PFNGLVERTEXATTRIB4NSVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nsv");
+  SAGE_glVertexAttrib4Nub = (PFNGLVERTEXATTRIB4NUBPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nub");
+  SAGE_glVertexAttrib4Nubv = (PFNGLVERTEXATTRIB4NUBVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nubv");
+  SAGE_glVertexAttrib4Nuiv = (PFNGLVERTEXATTRIB4NUIVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nuiv");
+  SAGE_glVertexAttrib4Nusv = (PFNGLVERTEXATTRIB4NUSVPROC)SDL_GL_GetProcAddress("glVertexAttrib4Nusv");
+  SAGE_glVertexAttrib4bv = (PFNGLVERTEXATTRIB4BVPROC)SDL_GL_GetProcAddress("glVertexAttrib4bv");
+  SAGE_glVertexAttrib4d = (PFNGLVERTEXATTRIB4DPROC)SDL_GL_GetProcAddress("glVertexAttrib4d");
+  SAGE_glVertexAttrib4dv = (PFNGLVERTEXATTRIB4DVPROC)SDL_GL_GetProcAddress("glVertexAttrib4dv");
+  SAGE_glVertexAttrib4f = (PFNGLVERTEXATTRIB4FPROC)SDL_GL_GetProcAddress("glVertexAttrib4f");
+  SAGE_glVertexAttrib4fv = (PFNGLVERTEXATTRIB4FVPROC)SDL_GL_GetProcAddress("glVertexAttrib4fv");
+  SAGE_glVertexAttrib4iv = (PFNGLVERTEXATTRIB4IVPROC)SDL_GL_GetProcAddress("glVertexAttrib4iv");
+  SAGE_glVertexAttrib4s = (PFNGLVERTEXATTRIB4SPROC)SDL_GL_GetProcAddress("glVertexAttrib4s");
+  SAGE_glVertexAttrib4sv = (PFNGLVERTEXATTRIB4SVPROC)SDL_GL_GetProcAddress("glVertexAttrib4sv");
+  SAGE_glVertexAttrib4ubv = (PFNGLVERTEXATTRIB4UBVPROC)SDL_GL_GetProcAddress("glVertexAttrib4ubv");
+  SAGE_glVertexAttrib4uiv = (PFNGLVERTEXATTRIB4UIVPROC)SDL_GL_GetProcAddress("glVertexAttrib4uiv");
+  SAGE_glVertexAttrib4usv = (PFNGLVERTEXATTRIB4USVPROC)SDL_GL_GetProcAddress("glVertexAttrib4usv");
+  SAGE_glVertexAttribPointer = (PFNGLVERTEXATTRIBPOINTERPROC)SDL_GL_GetProcAddress("glVertexAttribPointer");
 #endif
 #ifdef SAGE_GL_ARB_multitexture
   SAGE_glActiveTextureARB = (PFNGLACTIVETEXTUREARBPROC)SDL_GL_GetProcAddress("glActiveTextureARB");
@@ -1405,6 +1612,15 @@ void sage_init(void) {
   SAGE_glDrawBuffersARB = (PFNGLDRAWBUFFERSARBPROC)SDL_GL_GetProcAddress("glDrawBuffersARB");
 #endif
 #ifdef SAGE_GL_ARB_texture_rectangle
+#endif
+#ifdef SAGE_GL_ARB_color_buffer_float
+  SAGE_glClampColorARB = (PFNGLCLAMPCOLORARBPROC)SDL_GL_GetProcAddress("glClampColorARB");
+#endif
+#ifdef SAGE_GL_ARB_half_float_pixel
+#endif
+#ifdef SAGE_GL_ARB_texture_float
+#endif
+#ifdef SAGE_GL_ARB_pixel_buffer_object
 #endif
 #ifdef SAGE_GL_EXT_abgr
 #endif
@@ -2423,6 +2639,8 @@ void sage_init(void) {
   SAGE_glGetVertexAttribArrayObjectfvATI = (PFNGLGETVERTEXATTRIBARRAYOBJECTFVATIPROC)SDL_GL_GetProcAddress("glGetVertexAttribArrayObjectfvATI");
   SAGE_glGetVertexAttribArrayObjectivATI = (PFNGLGETVERTEXATTRIBARRAYOBJECTIVATIPROC)SDL_GL_GetProcAddress("glGetVertexAttribArrayObjectivATI");
 #endif
+#ifdef SAGE_GL_OES_read_format
+#endif
 #ifdef SAGE_GL_EXT_depth_bounds_test
   SAGE_glDepthBoundsEXT = (PFNGLDEPTHBOUNDSEXTPROC)SDL_GL_GetProcAddress("glDepthBoundsEXT");
 #endif
@@ -2444,6 +2662,28 @@ void sage_init(void) {
 #ifdef SAGE_GL_NV_vertex_program2_option
 #endif
 #ifdef SAGE_GL_NV_vertex_program3
+#endif
+#ifdef SAGE_GL_EXT_framebuffer_object
+  SAGE_glIsRenderbufferEXT = (PFNGLISRENDERBUFFEREXTPROC)SDL_GL_GetProcAddress("glIsRenderbufferEXT");
+  SAGE_glBindRenderbufferEXT = (PFNGLBINDRENDERBUFFEREXTPROC)SDL_GL_GetProcAddress("glBindRenderbufferEXT");
+  SAGE_glDeleteRenderbuffersEXT = (PFNGLDELETERENDERBUFFERSEXTPROC)SDL_GL_GetProcAddress("glDeleteRenderbuffersEXT");
+  SAGE_glGenRenderbuffersEXT = (PFNGLGENRENDERBUFFERSEXTPROC)SDL_GL_GetProcAddress("glGenRenderbuffersEXT");
+  SAGE_glRenderbufferStorageEXT = (PFNGLRENDERBUFFERSTORAGEEXTPROC)SDL_GL_GetProcAddress("glRenderbufferStorageEXT");
+  SAGE_glGetRenderbufferParameterivEXT = (PFNGLGETRENDERBUFFERPARAMETERIVEXTPROC)SDL_GL_GetProcAddress("glGetRenderbufferParameterivEXT");
+  SAGE_glIsFramebufferEXT = (PFNGLISFRAMEBUFFEREXTPROC)SDL_GL_GetProcAddress("glIsFramebufferEXT");
+  SAGE_glBindFramebufferEXT = (PFNGLBINDFRAMEBUFFEREXTPROC)SDL_GL_GetProcAddress("glBindFramebufferEXT");
+  SAGE_glDeleteFramebuffersEXT = (PFNGLDELETEFRAMEBUFFERSEXTPROC)SDL_GL_GetProcAddress("glDeleteFramebuffersEXT");
+  SAGE_glGenFramebuffersEXT = (PFNGLGENFRAMEBUFFERSEXTPROC)SDL_GL_GetProcAddress("glGenFramebuffersEXT");
+  SAGE_glCheckFramebufferStatusEXT = (PFNGLCHECKFRAMEBUFFERSTATUSEXTPROC)SDL_GL_GetProcAddress("glCheckFramebufferStatusEXT");
+  SAGE_glFramebufferTexture1DEXT = (PFNGLFRAMEBUFFERTEXTURE1DEXTPROC)SDL_GL_GetProcAddress("glFramebufferTexture1DEXT");
+  SAGE_glFramebufferTexture2DEXT = (PFNGLFRAMEBUFFERTEXTURE2DEXTPROC)SDL_GL_GetProcAddress("glFramebufferTexture2DEXT");
+  SAGE_glFramebufferTexture3DEXT = (PFNGLFRAMEBUFFERTEXTURE3DEXTPROC)SDL_GL_GetProcAddress("glFramebufferTexture3DEXT");
+  SAGE_glFramebufferRenderbufferEXT = (PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC)SDL_GL_GetProcAddress("glFramebufferRenderbufferEXT");
+  SAGE_glGetFramebufferAttachmentParameterivEXT = (PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC)SDL_GL_GetProcAddress("glGetFramebufferAttachmentParameterivEXT");
+  SAGE_glGenerateMipmapEXT = (PFNGLGENERATEMIPMAPEXTPROC)SDL_GL_GetProcAddress("glGenerateMipmapEXT");
+#endif
+#ifdef SAGE_GL_GREMEDY_string_marker
+  SAGE_glStringMarkerGREMEDY = (PFNGLSTRINGMARKERGREMEDYPROC)SDL_GL_GetProcAddress("glStringMarkerGREMEDY");
 #endif
  sage_ext[GL_ARB_MULTITEXTURE] = isExtensionSupported("GL_ARB_multitexture");
  sage_ext[GL_ARB_TRANSPOSE_MATRIX] = isExtensionSupported("GL_ARB_transpose_matrix");
@@ -2476,6 +2716,10 @@ void sage_init(void) {
  sage_ext[GL_ARB_FRAGMENT_PROGRAM_SHADOW] = isExtensionSupported("GL_ARB_fragment_program_shadow");
  sage_ext[GL_ARB_DRAW_BUFFERS] = isExtensionSupported("GL_ARB_draw_buffers");
  sage_ext[GL_ARB_TEXTURE_RECTANGLE] = isExtensionSupported("GL_ARB_texture_rectangle");
+ sage_ext[GL_ARB_COLOR_BUFFER_FLOAT] = isExtensionSupported("GL_ARB_color_buffer_float");
+ sage_ext[GL_ARB_HALF_FLOAT_PIXEL] = isExtensionSupported("GL_ARB_half_float_pixel");
+ sage_ext[GL_ARB_TEXTURE_FLOAT] = isExtensionSupported("GL_ARB_texture_float");
+ sage_ext[GL_ARB_PIXEL_BUFFER_OBJECT] = isExtensionSupported("GL_ARB_pixel_buffer_object");
  sage_ext[GL_EXT_ABGR] = isExtensionSupported("GL_EXT_abgr");
  sage_ext[GL_EXT_BLEND_COLOR] = isExtensionSupported("GL_EXT_blend_color");
  sage_ext[GL_EXT_POLYGON_OFFSET] = isExtensionSupported("GL_EXT_polygon_offset");
@@ -2674,6 +2918,7 @@ void sage_init(void) {
  sage_ext[GL_ATI_MAP_OBJECT_BUFFER] = isExtensionSupported("GL_ATI_map_object_buffer");
  sage_ext[GL_ATI_SEPARATE_STENCIL] = isExtensionSupported("GL_ATI_separate_stencil");
  sage_ext[GL_ATI_VERTEX_ATTRIB_ARRAY_OBJECT] = isExtensionSupported("GL_ATI_vertex_attrib_array_object");
+ sage_ext[GL_OES_READ_FORMAT] = isExtensionSupported("GL_OES_read_format");
  sage_ext[GL_EXT_DEPTH_BOUNDS_TEST] = isExtensionSupported("GL_EXT_depth_bounds_test");
  sage_ext[GL_EXT_TEXTURE_MIRROR_CLAMP] = isExtensionSupported("GL_EXT_texture_mirror_clamp");
  sage_ext[GL_EXT_BLEND_EQUATION_SEPARATE] = isExtensionSupported("GL_EXT_blend_equation_separate");
@@ -2684,4 +2929,6 @@ void sage_init(void) {
  sage_ext[GL_NV_FRAGMENT_PROGRAM2] = isExtensionSupported("GL_NV_fragment_program2");
  sage_ext[GL_NV_VERTEX_PROGRAM2_OPTION] = isExtensionSupported("GL_NV_vertex_program2_option");
  sage_ext[GL_NV_VERTEX_PROGRAM3] = isExtensionSupported("GL_NV_vertex_program3");
+ sage_ext[GL_EXT_FRAMEBUFFER_OBJECT] = isExtensionSupported("GL_EXT_framebuffer_object");
+ sage_ext[GL_GREMEDY_STRING_MARKER] = isExtensionSupported("GL_GREMEDY_string_marker");
 }

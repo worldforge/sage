@@ -136,4 +136,6 @@ AC_OUTPUT([
 	templates/Makefile
 	sage.spec
 	sage.pc
+	man/Makefile
+	man/man3/Makefile
 ])
