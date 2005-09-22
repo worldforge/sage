@@ -13,7 +13,7 @@
  * function Taken from OpenGL FAQ
  */
 
-static GLubyte *extensions = NULL;
+/*@null@*/static GLubyte *extensions = NULL;
 
 int isExtensionSupported(const char *extension) {
 //  const GLubyte *extensions = NULL;
@@ -22,7 +22,7 @@ int isExtensionSupported(const char *extension) {
 
   /* Extension names should not have spaces. */
   where = (GLubyte *) strchr(extension, ' ');
-  if (where || *extension == '\0')
+  if ((where != NULL) || *extension == '\0')
     return 0;
   
   if (extensions == NULL) extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
@@ -38,8 +38,8 @@ int isExtensionSupported(const char *extension) {
     if (!where)
       break;
     terminator = where + strlen(extension);
-    if (where == start || *(where - 1) == ' ')
-      if (*terminator == ' ' || * terminator == '\0')
+    if (where == start || *(where - 1) == (GLubyte)' ')
+      if (*terminator == (GLubyte)' ' || *terminator == (GLubyte)'\0')
         return 1;
     start = terminator;
   }

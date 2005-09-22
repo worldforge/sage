@@ -1,5 +1,9 @@
 2005-09-22  Simon Goodall <sage@simongoodall.co.uk>
 
+	* sage/check_extension.c: Fix some splint warnings.
+
+2005-09-22  Simon Goodall <sage@simongoodall.co.uk>
+
 	* configure.in, configure.ac: Rename to configure.ac
 
 	* sage/glext_sage.h, sage/sage.c, sage/sage.h: Update to glext.g ver 29.
