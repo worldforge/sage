@@ -7,7 +7,7 @@ Summary:	An OpenGL Extensions library using SDL
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Copyright:	LGPL
+License:	LGPL
 Group:		System Environment/Libraries
 Source:		%{name}-%{version}.tar.gz
 Requires:	SDL >= @SDL_VERSION@
@@ -22,7 +22,7 @@ Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to 
 %package devel
 Summary:	An OpenGL Extensions library using SDL
 Group:		Development/Libraries
-Requires:	%{name} = %{version} SDL-devel >= 1.2.2
+Requires:	%{name} = %{version} SDL-devel >= @SDL_VERSION@
 
 %description devel
 Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.
@@ -58,10 +58,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libsage.so
 %{_libdir}/libsage.la
 %{_libdir}/pkgconfig/sage.pc
+%{_mandir}/man3/sage.3.gz
+%{_mandir}/man3/sage_init.3.gz
 
 %changelog
+* Mon Oct 10 2005 Simon Goodall <sage@simongoodall.co.uk>
+- Add man pages to files section
+
 * Mon Jun 28 2004 Simon Goodall <sage@simongoodall.co.uk>
 - Replace _prefix with better macros
 - Add missing file entries
 - Ignore libGL.so.1 
-

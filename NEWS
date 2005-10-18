@@ -1,1 +1,6 @@
-Initial version of Sage
+2005-10-18  Simon Goodall  <sage@simongoodall.co.uk>
+ * Sage 0.1.2 Released. This version is built from glext.h version 29. The main difference to this version from 0.1.1 is that all functions defined by glext.h are built into the library. Previously the ones defined in the standard gl header were ignored.
+
+
+2004-03-02  Simon Goodall  <sage@simongoodall.co.uk>
+ * Initial version of Sage

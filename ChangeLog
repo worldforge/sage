@@ -1,3 +1,16 @@
+2005-10-18  Simon Goodall <sage@simongoodall.co.uk>
+
+	* configure.ac: Update some autoconf usuage. Bump version number to
+	  0.1.2 for release.
+
+	* sage/check_extension.c, sage/header.h, sage/sage.c, sage/sage,h, 
+	  sage/sage_glx.c, sage/sage_glx.h, sage/sage_wgl.c, sage/sage_wgl.h,
+	  sage/undefs.h, sage/utiliy.h, templates/license: Update copyright
+	  years.
+
+	* sage.spec.in: Add man pages to file section. Automatically add 
+	  SDL-devel version from configure.
+
 2005-09-22  Simon Goodall <sage@simongoodall.co.uk>
 
 	* sage/check_extension.c: Fix some splint warnings.
