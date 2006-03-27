@@ -1,3 +1,7 @@
+2006-03-27  Simon Goodall <sage@simongoodall.co.uk>
+
+	* sage/Makefile.am: Fix some dllwrap usage.
+
 2005-10-18  Simon Goodall <sage@simongoodall.co.uk>
 
 	* configure.ac: Update some autoconf usuage. Bump version number to
