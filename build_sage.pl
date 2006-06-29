@@ -122,7 +122,7 @@ for (@FUNCTION_HEADER) {
   print SAGE_HEADER $_;
 }
 #add the init function prototype
-print SAGE_HEADER "\nSAGEAPI void sage_init(void);\n\n";
+print SAGE_HEADER "\nSAGEAPI int sage_init(void);\n\n";
 #endif for header check
 print SAGE_HEADER "#endif\n";
 #close file handle
@@ -157,7 +157,12 @@ print SAGE_CODE "\n";
 
 #start writing the init function
 print SAGE_CODE "int sage_ext[SAGE_LAST_EXTENSION];\n\n";
-print SAGE_CODE "void sage_init(void) {\n";
+print SAGE_CODE "int sage_init(void) {\n";
+print SAGE_CODE "  if (getExtensionString()) {\n";
+print SAGE_CODE "    fprintf(stderr, \"Sage Error: Could not get extension string\\n\");\n";
+print SAGE_CODE "    return 1;\n";
+print SAGE_CODE "  }\n";
+
 for (@FUNCTION_INIT) {
   print SAGE_CODE $_;
 }
@@ -167,6 +172,7 @@ for (@BOOLS_DEF) {
   print SAGE_CODE " sage_ext[".uc($_)."] = isExtensionSupported(\"$_\");\n";
 }
 #write closing brace for function
+print SAGE_CODE "  return 0;\n";
 print SAGE_CODE "}\n";
 #close file handle
 close SAGE_CODE;

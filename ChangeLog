@@ -1,3 +1,16 @@
+2006-06-29  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* sage/sage.c, sage/sage.h, sage/utility.h, sage/check_extension.c: Fix
+	  bug where loss of context would destroy the extensions string which
+	  we stored a pointer too. This resulted in no extensions being found.
+	  I imagine this could also cause a crash. Also made sage_init return 0
+	  on success and 1 on failure to obtain the extensions string.
+
+	* templates/license: Update year.
+
+	* build_sage.pl: Update build script for the above changes in the 
+	  generated files.
+
 2006-03-27  Simon Goodall <sage@simongoodall.co.uk>
 
 	* sage/Makefile.am: Fix some dllwrap usage.

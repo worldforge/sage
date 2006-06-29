@@ -1,6 +1,6 @@
 // This file may be redistributed and modified only under the terms of
 // the GNU Lesser General Public License (See COPYING for details).
-// Copyright (C) 2003-2005 Simon Goodall
+// Copyright (C) 2003 - 2006 Simon Goodall
 
 #define __glext_h_ 1
 #include "GL.h"
@@ -15,6 +15,11 @@
 
 /*@null@*/static GLubyte *extensions = NULL;
 
+int getExtensionString() {
+  extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
+  return (extensions == NULL);
+}
+
 int isExtensionSupported(const char *extension) {
 //  const GLubyte *extensions = NULL;
   const GLubyte *start;
@@ -25,7 +30,7 @@ int isExtensionSupported(const char *extension) {
   if ((where != NULL) || *extension == '\0')
     return 0;
   
-  if (extensions == NULL) extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
+//  if (extensions == NULL) extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
   
   if (extensions == NULL) return 0;
   
