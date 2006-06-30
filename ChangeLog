@@ -1,5 +1,11 @@
 2006-06-30  Simon Goodall  <sage@simongoodall.co.uk>
 
+	* build_sage.pl, sage/sage.h: Add guard against __glext_h_ being defined
+	  and define it in the header file to stop any system glext.h being 
+	  included.
+
+2006-06-30  Simon Goodall  <sage@simongoodall.co.uk>
+
 	* sage/sage.c, sage/sage.h, sage/utility.h, sage/check_extension.c, 
 	  sage/undefs.h, sage/sage_fptr.h, sage/glext_sage.h, build_sage.pl:
 	  Redo build script to remove hacky workarounds that didn't really work.

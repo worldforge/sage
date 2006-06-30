@@ -124,6 +124,12 @@ print SAGE_HEADER "#ifndef SAGE_H\n";
 print SAGE_HEADER "#define SAGE_H 1\n";
 print SAGE_HEADER "\n";
 
+print SAGE_HEADER "#ifdef __glext_h_ \n";
+print SAGE_HEADER "#error glext.h has already been included.\n";
+print SAGE_HEADER "#endif\n\n";
+
+print SAGE_HEADER "#define __glext_h_ 1\n\n";
+
 # Write defines for use in extensions array
 $INDEX = 0; # Set counter to zero
 for (@BOOLS_ENUM) {

@@ -6,6 +6,12 @@
 #ifndef SAGE_H
 #define SAGE_H 1
 
+#ifdef __glext_h_ 
+#error glext.h has already been included.
+#endif
+
+#define __glext_h_ 1
+
 #define GL_ARB_MULTITEXTURE 0
 #define GL_ARB_TRANSPOSE_MATRIX 1
 #define GL_ARB_MULTISAMPLE 2
