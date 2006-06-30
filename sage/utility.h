@@ -7,7 +7,6 @@
 
 #include "sage/header.h"
 
-SAGEAPI int isExtensionSupported(const char *);
-SAGEAPI int getExtensionString();
+SAGEAPI int isExtensionSupported(const char *, const GLubyte *extensions);
 
 #endif

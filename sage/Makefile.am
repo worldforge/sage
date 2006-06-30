@@ -34,11 +34,10 @@ libsagedir = $(includedir)/sage
 libsage_HEADERS=\
 	sage.h \
 	utility.h \
-	glext_sage.h \
+	sage_fptr.h \
 	GL.h GLU.h \
 	$(SAGE_GLX_H) $(SAGE_WGL_H) \
-	header.h \
-	undefs.h
+	header.h
 
 # Stuff to build dll
 

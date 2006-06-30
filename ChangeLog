@@ -1,3 +1,14 @@
+2006-06-30  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* sage/sage.c, sage/sage.h, sage/utility.h, sage/check_extension.c, 
+	  sage/undefs.h, sage/sage_fptr.h, sage/glext_sage.h, build_sage.pl:
+	  Redo build script to remove hacky workarounds that didn't really work.
+	  Removed undefs.h as this was just plain bad. Removed modified glext.h
+	  file (glext_sage.h) as these changes are now incorporated within the
+	  other code file. sage_fptr.h Contains the funtion pointer prototypes.
+	  Removed internal pointer to the GL_EXTENSIONS string as this was also
+	  a bad idea.
+
 2006-06-29  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* sage/sage.c, sage/sage.h, sage/utility.h, sage/check_extension.c: Fix

@@ -13,14 +13,7 @@
  * function Taken from OpenGL FAQ
  */
 
-/*@null@*/static GLubyte *extensions = NULL;
-
-int getExtensionString() {
-  extensions = (GLubyte*)glGetString(GL_EXTENSIONS);
-  return (extensions == NULL);
-}
-
-int isExtensionSupported(const char *extension) {
+int isExtensionSupported(const char *extension, const GLubyte *extensions) {
 //  const GLubyte *extensions = NULL;
   const GLubyte *start;
   GLubyte *where, *terminator;
