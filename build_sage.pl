@@ -15,11 +15,11 @@ $SAGE_CODE_FILE="sage/sage.c";
 $LICENSE_FILE="templates/license";
 
 #regular expressions
-$FUNCTION_REGEXP="([A-Za-z]*) APIENTRY ([a-zA-Z0-9]*) (.*)";
+$FUNCTION_REGEXP="([A-Za-z*]*) APIENTRY ([a-zA-Z0-9]*) (.*)";
 $DEFINE_REGEXP="\#define (GL_[A-Za-z0-9_]*) 1\$";
 $VERSION_REGEXP="\#ifndef (GL_[A-Za-z0-9_]*)";
 $TOKEN_REGEXP="\#define (GL_[A-Za-z0-9_]*)[ \t]*((0x[0-9A-F]*)\|(GL_.*))\$";
-$TYPES_REGEXP="typedef ([ A-Za-z0-9_]*)[ \t]*(GL[A-Za-z0-9_]*);";
+$TYPES_REGEXP="typedef ([ A-Za-z0-9_*]*)[ \t]*(GL[A-Za-z0-9_]*);";
 
 #flag checking whether we need to add an endif or not
 $WAIT_FOR_ENDIF="false";
@@ -89,6 +89,10 @@ print GLEXT_SAGE "\n";
 print GLEXT_SAGE "#ifndef GLEXT_SAGE_H\n";
 print GLEXT_SAGE "#define GLEXT_SAGE_H 1\n";
 print GLEXT_SAGE "\n";
+
+print GLEXT_SAGE "#ifndef APIENTRY\n";
+print GLEXT_SAGE "#define APIENTRY\n";
+print GLEXT_SAGE "#endif\n\n";
 
 print GLEXT_SAGE "#ifndef APIENTRYP\n";
 print GLEXT_SAGE "#define APIENTRYP APIENTRY *\n";
