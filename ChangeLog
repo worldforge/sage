@@ -1,3 +1,11 @@
+2006-07-12  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* sage.spec.in: Update for current files. Use ldconfig. Bump version 
+	  and interface numbers in prep for release.
+
+	* configure.ac: Add a linux check for GL rather than assuming it will
+	  be available
+
 2006-07-11  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* build_sage.pl, sage/sage_fptr.h: Fix bug in regex that did not allow

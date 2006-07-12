@@ -10,14 +10,16 @@ Release:	%{release}
 License:	LGPL
 Group:		System Environment/Libraries
 Source:		%{name}-%{version}.tar.gz
+Url:		http://www.worldforge.org/
 Requires:	SDL >= @SDL_VERSION@
 BuildRequires:	SDL-devel >= @SDL_VERSION@
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-
+Prereq: /sbin/ldconfig
 AutoReqProv: no
 
 %description
-Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to connect OpenGL extension functions.
+Sage is an OpenGL extensions library using SDL's SDL_GetProcAddress function to 
+connect OpenGL extension functions.
 
 %package devel
 Summary:	An OpenGL Extensions library using SDL
@@ -40,6 +42,10 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
 %files
 %defattr(-,root,root)
 %{_libdir}/libsage.so.*
@@ -50,10 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/sage/sage.h
 %{_includedir}/sage/header.h
 %{_includedir}/sage/utility.h
-%{_includedir}/sage/glext_sage.h
+%{_includedir}/sage/sage_fptr.h
 %{_includedir}/sage/GL.h
 %{_includedir}/sage/GLU.h
-%{_includedir}/sage/undefs.h
 %{_libdir}/libsage.a
 %{_libdir}/libsage.so
 %{_libdir}/libsage.la

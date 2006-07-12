@@ -1,14 +1,14 @@
 dnl Initialise autoconf
 
-AC_INIT([sage], [0.1.2])
+AC_INIT([sage], [0.2.0])
 AC_CONFIG_HEADERS([config.h])
 
 dnl Detect the canonical host and target build environment
 AC_CANONICAL_SYSTEM
 
-SAGE_CURRENT=1
+SAGE_CURRENT=2
 SAGE_REVISION=0
-SAGE_AGE=1
+SAGE_AGE=0
 SAGE_VERSION_INFO=$SAGE_CURRENT:$SAGE_REVISION:$SAGE_AGE
 
 AC_SUBST(SAGE_VERSION_INFO)
@@ -26,13 +26,6 @@ AC_PROG_CC
 AC_EXEEXT
 
 case "$target" in
-  *-*-linux*)
-    AC_PATH_X
-    AC_PATH_XTRA
-    LIBS="$LIBS -lGL"
-esac
-
-case "$target" in
   *-*-darwin* | *-*-macos*)
   AC_TRY_COMPILE([
     #include <OpenGL/gl.h>
@@ -48,6 +41,16 @@ case "$target" in
     ],[
       AC_MSG_ERROR(Cannot find OpenGL)
     ])
+  ])
+  ;;
+  *-*-linux*)
+  AC_PATH_X
+  AC_PATH_XTRA
+
+  AC_CHECK_LIB(GL,glViewport, [
+    LIBS="$LIBS -lGL"
+  ],[
+    AC_MSG_ERROR(Couldn't find OpenGL)
   ])
 esac
 
