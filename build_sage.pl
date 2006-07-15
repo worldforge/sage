@@ -53,7 +53,7 @@ while (<GLEXT>) {
     } else  {
       push (@BOOLS, $DEF);
     }
-#    push(@FUNCTION_HEADER_DEF, $_); # write into header
+    push(@FUNCTION_HEADER_DEF, $_); # write into header
   } elsif  ($_ =~ m|$TOKEN_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
   # grab endif if required
