@@ -265,6 +265,7 @@
 #include <stddef.h>
 SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 
+#ifndef GL_VERSION_1_2
 #define GL_UNSIGNED_BYTE_3_3_2            0x8032
 #define GL_UNSIGNED_SHORT_4_4_4_4         0x8033
 #define GL_UNSIGNED_SHORT_5_5_5_1         0x8034
@@ -306,6 +307,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SMOOTH_LINE_WIDTH_GRANULARITY  0x0B23
 #define GL_ALIASED_POINT_SIZE_RANGE       0x846D
 #define GL_ALIASED_LINE_WIDTH_RANGE       0x846E
+#endif
+
+#ifndef GL_ARB_imaging
 #define GL_CONSTANT_COLOR                 0x8001
 #define GL_ONE_MINUS_CONSTANT_COLOR       0x8002
 #define GL_CONSTANT_ALPHA                 0x8003
@@ -381,6 +385,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_CONSTANT_BORDER                0x8151
 #define GL_REPLICATE_BORDER               0x8153
 #define GL_CONVOLUTION_BORDER_COLOR       0x8154
+#endif
+
+#ifndef GL_VERSION_1_3
 #define GL_TEXTURE0                       0x84C0
 #define GL_TEXTURE1                       0x84C1
 #define GL_TEXTURE2                       0x84C2
@@ -477,6 +484,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PREVIOUS                       0x8578
 #define GL_DOT3_RGB                       0x86AE
 #define GL_DOT3_RGBA                      0x86AF
+#endif
+
+#ifndef GL_VERSION_1_4
 #define GL_BLEND_DST_RGB                  0x80C8
 #define GL_BLEND_SRC_RGB                  0x80C9
 #define GL_BLEND_DST_ALPHA                0x80CA
@@ -516,6 +526,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_COMPARE_MODE           0x884C
 #define GL_TEXTURE_COMPARE_FUNC           0x884D
 #define GL_COMPARE_R_TO_TEXTURE           0x884E
+#endif
+
+#ifndef GL_VERSION_1_5
 #define GL_BUFFER_SIZE                    0x8764
 #define GL_BUFFER_USAGE                   0x8765
 #define GL_QUERY_COUNTER_BITS             0x8864
@@ -566,6 +579,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SRC0_ALPHA                     GL_SOURCE0_ALPHA
 #define GL_SRC1_ALPHA                     GL_SOURCE1_ALPHA
 #define GL_SRC2_ALPHA                     GL_SOURCE2_ALPHA
+#endif
+
+#ifndef GL_VERSION_2_0
 #define GL_BLEND_EQUATION_RGB             GL_BLEND_EQUATION
 #define GL_VERTEX_ATTRIB_ARRAY_ENABLED    0x8622
 #define GL_VERTEX_ATTRIB_ARRAY_SIZE       0x8623
@@ -650,6 +666,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_STENCIL_BACK_REF               0x8CA3
 #define GL_STENCIL_BACK_VALUE_MASK        0x8CA4
 #define GL_STENCIL_BACK_WRITEMASK         0x8CA5
+#endif
+
+#ifndef GL_ARB_multitexture
 #define GL_TEXTURE0_ARB                   0x84C0
 #define GL_TEXTURE1_ARB                   0x84C1
 #define GL_TEXTURE2_ARB                   0x84C2
@@ -685,10 +704,16 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_ACTIVE_TEXTURE_ARB             0x84E0
 #define GL_CLIENT_ACTIVE_TEXTURE_ARB      0x84E1
 #define GL_MAX_TEXTURE_UNITS_ARB          0x84E2
+#endif
+
+#ifndef GL_ARB_transpose_matrix
 #define GL_TRANSPOSE_MODELVIEW_MATRIX_ARB 0x84E3
 #define GL_TRANSPOSE_PROJECTION_MATRIX_ARB 0x84E4
 #define GL_TRANSPOSE_TEXTURE_MATRIX_ARB   0x84E5
 #define GL_TRANSPOSE_COLOR_MATRIX_ARB     0x84E6
+#endif
+
+#ifndef GL_ARB_multisample
 #define GL_MULTISAMPLE_ARB                0x809D
 #define GL_SAMPLE_ALPHA_TO_COVERAGE_ARB   0x809E
 #define GL_SAMPLE_ALPHA_TO_ONE_ARB        0x809F
@@ -698,6 +723,12 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SAMPLE_COVERAGE_VALUE_ARB      0x80AA
 #define GL_SAMPLE_COVERAGE_INVERT_ARB     0x80AB
 #define GL_MULTISAMPLE_BIT_ARB            0x20000000
+#endif
+
+#ifndef GL_ARB_texture_env_add
+#endif
+
+#ifndef GL_ARB_texture_cube_map
 #define GL_NORMAL_MAP_ARB                 0x8511
 #define GL_REFLECTION_MAP_ARB             0x8512
 #define GL_TEXTURE_CUBE_MAP_ARB           0x8513
@@ -710,6 +741,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB 0x851A
 #define GL_PROXY_TEXTURE_CUBE_MAP_ARB     0x851B
 #define GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB  0x851C
+#endif
+
+#ifndef GL_ARB_texture_compression
 #define GL_COMPRESSED_ALPHA_ARB           0x84E9
 #define GL_COMPRESSED_LUMINANCE_ARB       0x84EA
 #define GL_COMPRESSED_LUMINANCE_ALPHA_ARB 0x84EB
@@ -721,11 +755,20 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_COMPRESSED_ARB         0x86A1
 #define GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB 0x86A2
 #define GL_COMPRESSED_TEXTURE_FORMATS_ARB 0x86A3
+#endif
+
+#ifndef GL_ARB_texture_border_clamp
 #define GL_CLAMP_TO_BORDER_ARB            0x812D
+#endif
+
+#ifndef GL_ARB_point_parameters
 #define GL_POINT_SIZE_MIN_ARB             0x8126
 #define GL_POINT_SIZE_MAX_ARB             0x8127
 #define GL_POINT_FADE_THRESHOLD_SIZE_ARB  0x8128
 #define GL_POINT_DISTANCE_ATTENUATION_ARB 0x8129
+#endif
+
+#ifndef GL_ARB_vertex_blend
 #define GL_MAX_VERTEX_UNITS_ARB           0x86A4
 #define GL_ACTIVE_VERTEX_UNITS_ARB        0x86A5
 #define GL_WEIGHT_SUM_UNITY_ARB           0x86A6
@@ -768,6 +811,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MODELVIEW29_ARB                0x873D
 #define GL_MODELVIEW30_ARB                0x873E
 #define GL_MODELVIEW31_ARB                0x873F
+#endif
+
+#ifndef GL_ARB_matrix_palette
 #define GL_MATRIX_PALETTE_ARB             0x8840
 #define GL_MAX_MATRIX_PALETTE_STACK_DEPTH_ARB 0x8841
 #define GL_MAX_PALETTE_MATRICES_ARB       0x8842
@@ -778,6 +824,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MATRIX_INDEX_ARRAY_TYPE_ARB    0x8847
 #define GL_MATRIX_INDEX_ARRAY_STRIDE_ARB  0x8848
 #define GL_MATRIX_INDEX_ARRAY_POINTER_ARB 0x8849
+#endif
+
+#ifndef GL_ARB_texture_env_combine
 #define GL_COMBINE_ARB                    0x8570
 #define GL_COMBINE_RGB_ARB                0x8571
 #define GL_COMBINE_ALPHA_ARB              0x8572
@@ -800,18 +849,42 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_CONSTANT_ARB                   0x8576
 #define GL_PRIMARY_COLOR_ARB              0x8577
 #define GL_PREVIOUS_ARB                   0x8578
+#endif
+
+#ifndef GL_ARB_texture_env_crossbar
+#endif
+
+#ifndef GL_ARB_texture_env_dot3
 #define GL_DOT3_RGB_ARB                   0x86AE
 #define GL_DOT3_RGBA_ARB                  0x86AF
+#endif
+
+#ifndef GL_ARB_texture_mirrored_repeat
 #define GL_MIRRORED_REPEAT_ARB            0x8370
+#endif
+
+#ifndef GL_ARB_depth_texture
 #define GL_DEPTH_COMPONENT16_ARB          0x81A5
 #define GL_DEPTH_COMPONENT24_ARB          0x81A6
 #define GL_DEPTH_COMPONENT32_ARB          0x81A7
 #define GL_TEXTURE_DEPTH_SIZE_ARB         0x884A
 #define GL_DEPTH_TEXTURE_MODE_ARB         0x884B
+#endif
+
+#ifndef GL_ARB_shadow
 #define GL_TEXTURE_COMPARE_MODE_ARB       0x884C
 #define GL_TEXTURE_COMPARE_FUNC_ARB       0x884D
 #define GL_COMPARE_R_TO_TEXTURE_ARB       0x884E
+#endif
+
+#ifndef GL_ARB_shadow_ambient
 #define GL_TEXTURE_COMPARE_FAIL_VALUE_ARB 0x80BF
+#endif
+
+#ifndef GL_ARB_window_pos
+#endif
+
+#ifndef GL_ARB_vertex_program
 #define GL_COLOR_SUM_ARB                  0x8458
 #define GL_VERTEX_PROGRAM_ARB             0x8620
 #define GL_VERTEX_ATTRIB_ARRAY_ENABLED_ARB 0x8622
@@ -891,6 +964,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MATRIX29_ARB                   0x88DD
 #define GL_MATRIX30_ARB                   0x88DE
 #define GL_MATRIX31_ARB                   0x88DF
+#endif
+
+#ifndef GL_ARB_fragment_program
 #define GL_FRAGMENT_PROGRAM_ARB           0x8804
 #define GL_PROGRAM_ALU_INSTRUCTIONS_ARB   0x8805
 #define GL_PROGRAM_TEX_INSTRUCTIONS_ARB   0x8806
@@ -906,6 +982,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB 0x8810
 #define GL_MAX_TEXTURE_COORDS_ARB         0x8871
 #define GL_MAX_TEXTURE_IMAGE_UNITS_ARB    0x8872
+#endif
+
+#ifndef GL_ARB_vertex_buffer_object
 #define GL_BUFFER_SIZE_ARB                0x8764
 #define GL_BUFFER_USAGE_ARB               0x8765
 #define GL_ARRAY_BUFFER_ARB               0x8892
@@ -937,11 +1016,17 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_DYNAMIC_DRAW_ARB               0x88E8
 #define GL_DYNAMIC_READ_ARB               0x88E9
 #define GL_DYNAMIC_COPY_ARB               0x88EA
+#endif
+
+#ifndef GL_ARB_occlusion_query
 #define GL_QUERY_COUNTER_BITS_ARB         0x8864
 #define GL_CURRENT_QUERY_ARB              0x8865
 #define GL_QUERY_RESULT_ARB               0x8866
 #define GL_QUERY_RESULT_AVAILABLE_ARB     0x8867
 #define GL_SAMPLES_PASSED_ARB             0x8914
+#endif
+
+#ifndef GL_ARB_shader_objects
 #define GL_PROGRAM_OBJECT_ARB             0x8B40
 #define GL_SHADER_OBJECT_ARB              0x8B48
 #define GL_OBJECT_TYPE_ARB                0x8B4E
@@ -976,6 +1061,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_OBJECT_ACTIVE_UNIFORMS_ARB     0x8B86
 #define GL_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH_ARB 0x8B87
 #define GL_OBJECT_SHADER_SOURCE_LENGTH_ARB 0x8B88
+#endif
+
+#ifndef GL_ARB_vertex_shader
 #define GL_VERTEX_SHADER_ARB              0x8B31
 #define GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB 0x8B4A
 #define GL_MAX_VARYING_FLOATS_ARB         0x8B4B
@@ -983,12 +1071,30 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB 0x8B4D
 #define GL_OBJECT_ACTIVE_ATTRIBUTES_ARB   0x8B89
 #define GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB 0x8B8A
+#endif
+
+#ifndef GL_ARB_fragment_shader
 #define GL_FRAGMENT_SHADER_ARB            0x8B30
 #define GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB 0x8B49
 #define GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB 0x8B8B
+#endif
+
+#ifndef GL_ARB_shading_language_100
 #define GL_SHADING_LANGUAGE_VERSION_ARB   0x8B8C
+#endif
+
+#ifndef GL_ARB_texture_non_power_of_two
+#endif
+
+#ifndef GL_ARB_point_sprite
 #define GL_POINT_SPRITE_ARB               0x8861
 #define GL_COORD_REPLACE_ARB              0x8862
+#endif
+
+#ifndef GL_ARB_fragment_program_shadow
+#endif
+
+#ifndef GL_ARB_draw_buffers
 #define GL_MAX_DRAW_BUFFERS_ARB           0x8824
 #define GL_DRAW_BUFFER0_ARB               0x8825
 #define GL_DRAW_BUFFER1_ARB               0x8826
@@ -1006,16 +1112,28 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_DRAW_BUFFER13_ARB              0x8832
 #define GL_DRAW_BUFFER14_ARB              0x8833
 #define GL_DRAW_BUFFER15_ARB              0x8834
+#endif
+
+#ifndef GL_ARB_texture_rectangle
 #define GL_TEXTURE_RECTANGLE_ARB          0x84F5
 #define GL_TEXTURE_BINDING_RECTANGLE_ARB  0x84F6
 #define GL_PROXY_TEXTURE_RECTANGLE_ARB    0x84F7
 #define GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB 0x84F8
+#endif
+
+#ifndef GL_ARB_color_buffer_float
 #define GL_RGBA_FLOAT_MODE_ARB            0x8820
 #define GL_CLAMP_VERTEX_COLOR_ARB         0x891A
 #define GL_CLAMP_FRAGMENT_COLOR_ARB       0x891B
 #define GL_CLAMP_READ_COLOR_ARB           0x891C
 #define GL_FIXED_ONLY_ARB                 0x891D
+#endif
+
+#ifndef GL_ARB_half_float_pixel
 #define GL_HALF_FLOAT_ARB                 0x140B
+#endif
+
+#ifndef GL_ARB_texture_float
 #define GL_TEXTURE_RED_TYPE_ARB           0x8C10
 #define GL_TEXTURE_GREEN_TYPE_ARB         0x8C11
 #define GL_TEXTURE_BLUE_TYPE_ARB          0x8C12
@@ -1036,19 +1154,34 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_INTENSITY16F_ARB               0x881D
 #define GL_LUMINANCE16F_ARB               0x881E
 #define GL_LUMINANCE_ALPHA16F_ARB         0x881F
+#endif
+
+#ifndef GL_ARB_pixel_buffer_object
 #define GL_PIXEL_PACK_BUFFER_ARB          0x88EB
 #define GL_PIXEL_UNPACK_BUFFER_ARB        0x88EC
 #define GL_PIXEL_PACK_BUFFER_BINDING_ARB  0x88ED
 #define GL_PIXEL_UNPACK_BUFFER_BINDING_ARB 0x88EF
+#endif
+
+#ifndef GL_EXT_abgr
 #define GL_ABGR_EXT                       0x8000
+#endif
+
+#ifndef GL_EXT_blend_color
 #define GL_CONSTANT_COLOR_EXT             0x8001
 #define GL_ONE_MINUS_CONSTANT_COLOR_EXT   0x8002
 #define GL_CONSTANT_ALPHA_EXT             0x8003
 #define GL_ONE_MINUS_CONSTANT_ALPHA_EXT   0x8004
 #define GL_BLEND_COLOR_EXT                0x8005
+#endif
+
+#ifndef GL_EXT_polygon_offset
 #define GL_POLYGON_OFFSET_EXT             0x8037
 #define GL_POLYGON_OFFSET_FACTOR_EXT      0x8038
 #define GL_POLYGON_OFFSET_BIAS_EXT        0x8039
+#endif
+
+#ifndef GL_EXT_texture
 #define GL_ALPHA4_EXT                     0x803B
 #define GL_ALPHA8_EXT                     0x803C
 #define GL_ALPHA12_EXT                    0x803D
@@ -1092,6 +1225,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PROXY_TEXTURE_1D_EXT           0x8063
 #define GL_PROXY_TEXTURE_2D_EXT           0x8064
 #define GL_TEXTURE_TOO_LARGE_EXT          0x8065
+#endif
+
+#ifndef GL_EXT_texture3D
 #define GL_PACK_SKIP_IMAGES_EXT           0x806B
 #define GL_PACK_IMAGE_HEIGHT_EXT          0x806C
 #define GL_UNPACK_SKIP_IMAGES_EXT         0x806D
@@ -1101,8 +1237,20 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_DEPTH_EXT              0x8071
 #define GL_TEXTURE_WRAP_R_EXT             0x8072
 #define GL_MAX_3D_TEXTURE_SIZE_EXT        0x8073
+#endif
+
+#ifndef GL_SGIS_texture_filter4
 #define GL_FILTER4_SGIS                   0x8146
 #define GL_TEXTURE_FILTER4_SIZE_SGIS      0x8147
+#endif
+
+#ifndef GL_EXT_subtexture
+#endif
+
+#ifndef GL_EXT_copy_texture
+#endif
+
+#ifndef GL_EXT_histogram
 #define GL_HISTOGRAM_EXT                  0x8024
 #define GL_PROXY_HISTOGRAM_EXT            0x8025
 #define GL_HISTOGRAM_WIDTH_EXT            0x8026
@@ -1117,6 +1265,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MINMAX_FORMAT_EXT              0x802F
 #define GL_MINMAX_SINK_EXT                0x8030
 #define GL_TABLE_TOO_LARGE_EXT            0x8031
+#endif
+
+#ifndef GL_EXT_convolution
 #define GL_CONVOLUTION_1D_EXT             0x8010
 #define GL_CONVOLUTION_2D_EXT             0x8011
 #define GL_SEPARABLE_2D_EXT               0x8012
@@ -1137,6 +1288,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_POST_CONVOLUTION_GREEN_BIAS_EXT 0x8021
 #define GL_POST_CONVOLUTION_BLUE_BIAS_EXT 0x8022
 #define GL_POST_CONVOLUTION_ALPHA_BIAS_EXT 0x8023
+#endif
+
+#ifndef GL_SGI_color_matrix
 #define GL_COLOR_MATRIX_SGI               0x80B1
 #define GL_COLOR_MATRIX_STACK_DEPTH_SGI   0x80B2
 #define GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI 0x80B3
@@ -1148,6 +1302,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI 0x80B9
 #define GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI 0x80BA
 #define GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI 0x80BB
+#endif
+
+#ifndef GL_SGI_color_table
 #define GL_COLOR_TABLE_SGI                0x80D0
 #define GL_POST_CONVOLUTION_COLOR_TABLE_SGI 0x80D1
 #define GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI 0x80D2
@@ -1164,12 +1321,21 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_COLOR_TABLE_ALPHA_SIZE_SGI     0x80DD
 #define GL_COLOR_TABLE_LUMINANCE_SIZE_SGI 0x80DE
 #define GL_COLOR_TABLE_INTENSITY_SIZE_SGI 0x80DF
+#endif
+
+#ifndef GL_SGIS_pixel_texture
 #define GL_PIXEL_TEXTURE_SGIS             0x8353
 #define GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS 0x8354
 #define GL_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS 0x8355
 #define GL_PIXEL_GROUP_COLOR_SGIS         0x8356
+#endif
+
+#ifndef GL_SGIX_pixel_texture
 #define GL_PIXEL_TEX_GEN_SGIX             0x8139
 #define GL_PIXEL_TEX_GEN_MODE_SGIX        0x832B
+#endif
+
+#ifndef GL_SGIS_texture4D
 #define GL_PACK_SKIP_VOLUMES_SGIS         0x8130
 #define GL_PACK_IMAGE_DEPTH_SGIS          0x8131
 #define GL_UNPACK_SKIP_VOLUMES_SGIS       0x8132
@@ -1180,17 +1346,29 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_WRAP_Q_SGIS            0x8137
 #define GL_MAX_4D_TEXTURE_SIZE_SGIS       0x8138
 #define GL_TEXTURE_4D_BINDING_SGIS        0x814F
+#endif
+
+#ifndef GL_SGI_texture_color_table
 #define GL_TEXTURE_COLOR_TABLE_SGI        0x80BC
 #define GL_PROXY_TEXTURE_COLOR_TABLE_SGI  0x80BD
+#endif
+
+#ifndef GL_EXT_cmyka
 #define GL_CMYK_EXT                       0x800C
 #define GL_CMYKA_EXT                      0x800D
 #define GL_PACK_CMYK_HINT_EXT             0x800E
 #define GL_UNPACK_CMYK_HINT_EXT           0x800F
+#endif
+
+#ifndef GL_EXT_texture_object
 #define GL_TEXTURE_PRIORITY_EXT           0x8066
 #define GL_TEXTURE_RESIDENT_EXT           0x8067
 #define GL_TEXTURE_1D_BINDING_EXT         0x8068
 #define GL_TEXTURE_2D_BINDING_EXT         0x8069
 #define GL_TEXTURE_3D_BINDING_EXT         0x806A
+#endif
+
+#ifndef GL_SGIS_detail_texture
 #define GL_DETAIL_TEXTURE_2D_SGIS         0x8095
 #define GL_DETAIL_TEXTURE_2D_BINDING_SGIS 0x8096
 #define GL_LINEAR_DETAIL_SGIS             0x8097
@@ -1199,19 +1377,31 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_DETAIL_TEXTURE_LEVEL_SGIS      0x809A
 #define GL_DETAIL_TEXTURE_MODE_SGIS       0x809B
 #define GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS 0x809C
+#endif
+
+#ifndef GL_SGIS_sharpen_texture
 #define GL_LINEAR_SHARPEN_SGIS            0x80AD
 #define GL_LINEAR_SHARPEN_ALPHA_SGIS      0x80AE
 #define GL_LINEAR_SHARPEN_COLOR_SGIS      0x80AF
 #define GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS 0x80B0
+#endif
+
+#ifndef GL_EXT_packed_pixels
 #define GL_UNSIGNED_BYTE_3_3_2_EXT        0x8032
 #define GL_UNSIGNED_SHORT_4_4_4_4_EXT     0x8033
 #define GL_UNSIGNED_SHORT_5_5_5_1_EXT     0x8034
 #define GL_UNSIGNED_INT_8_8_8_8_EXT       0x8035
 #define GL_UNSIGNED_INT_10_10_10_2_EXT    0x8036
+#endif
+
+#ifndef GL_SGIS_texture_lod
 #define GL_TEXTURE_MIN_LOD_SGIS           0x813A
 #define GL_TEXTURE_MAX_LOD_SGIS           0x813B
 #define GL_TEXTURE_BASE_LEVEL_SGIS        0x813C
 #define GL_TEXTURE_MAX_LEVEL_SGIS         0x813D
+#endif
+
+#ifndef GL_SGIS_multisample
 #define GL_MULTISAMPLE_SGIS               0x809D
 #define GL_SAMPLE_ALPHA_TO_MASK_SGIS      0x809E
 #define GL_SAMPLE_ALPHA_TO_ONE_SGIS       0x809F
@@ -1228,7 +1418,13 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SAMPLE_MASK_VALUE_SGIS         0x80AA
 #define GL_SAMPLE_MASK_INVERT_SGIS        0x80AB
 #define GL_SAMPLE_PATTERN_SGIS            0x80AC
+#endif
+
+#ifndef GL_EXT_rescale_normal
 #define GL_RESCALE_NORMAL_EXT             0x803A
+#endif
+
+#ifndef GL_EXT_vertex_array
 #define GL_VERTEX_ARRAY_EXT               0x8074
 #define GL_NORMAL_ARRAY_EXT               0x8075
 #define GL_COLOR_ARRAY_EXT                0x8076
@@ -1261,8 +1457,17 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_INDEX_ARRAY_POINTER_EXT        0x8091
 #define GL_TEXTURE_COORD_ARRAY_POINTER_EXT 0x8092
 #define GL_EDGE_FLAG_ARRAY_POINTER_EXT    0x8093
+#endif
+
+#ifndef GL_EXT_misc_attribute
+#endif
+
+#ifndef GL_SGIS_generate_mipmap
 #define GL_GENERATE_MIPMAP_SGIS           0x8191
 #define GL_GENERATE_MIPMAP_HINT_SGIS      0x8192
+#endif
+
+#ifndef GL_SGIX_clipmap
 #define GL_LINEAR_CLIPMAP_LINEAR_SGIX     0x8170
 #define GL_TEXTURE_CLIPMAP_CENTER_SGIX    0x8171
 #define GL_TEXTURE_CLIPMAP_FRAME_SGIX     0x8172
@@ -1275,19 +1480,43 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_NEAREST_CLIPMAP_NEAREST_SGIX   0x844D
 #define GL_NEAREST_CLIPMAP_LINEAR_SGIX    0x844E
 #define GL_LINEAR_CLIPMAP_NEAREST_SGIX    0x844F
+#endif
+
+#ifndef GL_SGIX_shadow
 #define GL_TEXTURE_COMPARE_SGIX           0x819A
 #define GL_TEXTURE_COMPARE_OPERATOR_SGIX  0x819B
 #define GL_TEXTURE_LEQUAL_R_SGIX          0x819C
 #define GL_TEXTURE_GEQUAL_R_SGIX          0x819D
+#endif
+
+#ifndef GL_SGIS_texture_edge_clamp
 #define GL_CLAMP_TO_EDGE_SGIS             0x812F
+#endif
+
+#ifndef GL_SGIS_texture_border_clamp
 #define GL_CLAMP_TO_BORDER_SGIS           0x812D
+#endif
+
+#ifndef GL_EXT_blend_minmax
 #define GL_FUNC_ADD_EXT                   0x8006
 #define GL_MIN_EXT                        0x8007
 #define GL_MAX_EXT                        0x8008
 #define GL_BLEND_EQUATION_EXT             0x8009
+#endif
+
+#ifndef GL_EXT_blend_subtract
 #define GL_FUNC_SUBTRACT_EXT              0x800A
 #define GL_FUNC_REVERSE_SUBTRACT_EXT      0x800B
+#endif
+
+#ifndef GL_EXT_blend_logic_op
+#endif
+
+#ifndef GL_SGIX_interlace
 #define GL_INTERLACE_SGIX                 0x8094
+#endif
+
+#ifndef GL_SGIX_pixel_tiles
 #define GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX 0x813E
 #define GL_PIXEL_TILE_CACHE_INCREMENT_SGIX 0x813F
 #define GL_PIXEL_TILE_WIDTH_SGIX          0x8140
@@ -1296,6 +1525,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PIXEL_TILE_GRID_HEIGHT_SGIX    0x8143
 #define GL_PIXEL_TILE_GRID_DEPTH_SGIX     0x8144
 #define GL_PIXEL_TILE_CACHE_SIZE_SGIX     0x8145
+#endif
+
+#ifndef GL_SGIS_texture_select
 #define GL_DUAL_ALPHA4_SGIS               0x8110
 #define GL_DUAL_ALPHA8_SGIS               0x8111
 #define GL_DUAL_ALPHA12_SGIS              0x8112
@@ -1318,6 +1550,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_QUAD_INTENSITY8_SGIS           0x8123
 #define GL_DUAL_TEXTURE_SELECT_SGIS       0x8124
 #define GL_QUAD_TEXTURE_SELECT_SGIS       0x8125
+#endif
+
+#ifndef GL_SGIX_sprite
 #define GL_SPRITE_SGIX                    0x8148
 #define GL_SPRITE_MODE_SGIX               0x8149
 #define GL_SPRITE_AXIS_SGIX               0x814A
@@ -1325,40 +1560,85 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SPRITE_AXIAL_SGIX              0x814C
 #define GL_SPRITE_OBJECT_ALIGNED_SGIX     0x814D
 #define GL_SPRITE_EYE_ALIGNED_SGIX        0x814E
+#endif
+
+#ifndef GL_SGIX_texture_multi_buffer
 #define GL_TEXTURE_MULTI_BUFFER_HINT_SGIX 0x812E
+#endif
+
+#ifndef GL_EXT_point_parameters
 #define GL_POINT_SIZE_MIN_EXT             0x8126
 #define GL_POINT_SIZE_MAX_EXT             0x8127
 #define GL_POINT_FADE_THRESHOLD_SIZE_EXT  0x8128
 #define GL_DISTANCE_ATTENUATION_EXT       0x8129
+#endif
+
+#ifndef GL_SGIS_point_parameters
 #define GL_POINT_SIZE_MIN_SGIS            0x8126
 #define GL_POINT_SIZE_MAX_SGIS            0x8127
 #define GL_POINT_FADE_THRESHOLD_SIZE_SGIS 0x8128
 #define GL_DISTANCE_ATTENUATION_SGIS      0x8129
+#endif
+
+#ifndef GL_SGIX_instruments
 #define GL_INSTRUMENT_BUFFER_POINTER_SGIX 0x8180
 #define GL_INSTRUMENT_MEASUREMENTS_SGIX   0x8181
+#endif
+
+#ifndef GL_SGIX_texture_scale_bias
 #define GL_POST_TEXTURE_FILTER_BIAS_SGIX  0x8179
 #define GL_POST_TEXTURE_FILTER_SCALE_SGIX 0x817A
 #define GL_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX 0x817B
 #define GL_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX 0x817C
+#endif
+
+#ifndef GL_SGIX_framezoom
 #define GL_FRAMEZOOM_SGIX                 0x818B
 #define GL_FRAMEZOOM_FACTOR_SGIX          0x818C
 #define GL_MAX_FRAMEZOOM_FACTOR_SGIX      0x818D
+#endif
+
+#ifndef GL_SGIX_tag_sample_buffer
+#endif
+
+#ifndef GL_FfdMaskSGIX
 #define GL_TEXTURE_DEFORMATION_BIT_SGIX   0x00000001
 #define GL_GEOMETRY_DEFORMATION_BIT_SGIX  0x00000002
+#endif
+
+#ifndef GL_SGIX_polynomial_ffd
 #define GL_GEOMETRY_DEFORMATION_SGIX      0x8194
 #define GL_TEXTURE_DEFORMATION_SGIX       0x8195
 #define GL_DEFORMATIONS_MASK_SGIX         0x8196
 #define GL_MAX_DEFORMATION_ORDER_SGIX     0x8197
+#endif
+
+#ifndef GL_SGIX_reference_plane
 #define GL_REFERENCE_PLANE_SGIX           0x817D
 #define GL_REFERENCE_PLANE_EQUATION_SGIX  0x817E
+#endif
+
+#ifndef GL_SGIX_flush_raster
+#endif
+
+#ifndef GL_SGIX_depth_texture
 #define GL_DEPTH_COMPONENT16_SGIX         0x81A5
 #define GL_DEPTH_COMPONENT24_SGIX         0x81A6
 #define GL_DEPTH_COMPONENT32_SGIX         0x81A7
+#endif
+
+#ifndef GL_SGIS_fog_function
 #define GL_FOG_FUNC_SGIS                  0x812A
 #define GL_FOG_FUNC_POINTS_SGIS           0x812B
 #define GL_MAX_FOG_FUNC_POINTS_SGIS       0x812C
+#endif
+
+#ifndef GL_SGIX_fog_offset
 #define GL_FOG_OFFSET_SGIX                0x8198
 #define GL_FOG_OFFSET_VALUE_SGIX          0x8199
+#endif
+
+#ifndef GL_HP_image_transform
 #define GL_IMAGE_SCALE_X_HP               0x8155
 #define GL_IMAGE_SCALE_Y_HP               0x8156
 #define GL_IMAGE_TRANSLATE_X_HP           0x8157
@@ -1374,11 +1654,26 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_IMAGE_TRANSFORM_2D_HP          0x8161
 #define GL_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP 0x8162
 #define GL_PROXY_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP 0x8163
+#endif
+
+#ifndef GL_HP_convolution_border_modes
 #define GL_IGNORE_BORDER_HP               0x8150
 #define GL_CONSTANT_BORDER_HP             0x8151
 #define GL_REPLICATE_BORDER_HP            0x8153
 #define GL_CONVOLUTION_BORDER_COLOR_HP    0x8154
+#endif
+
+#ifndef GL_INGR_palette_buffer
+#endif
+
+#ifndef GL_SGIX_texture_add_env
 #define GL_TEXTURE_ENV_BIAS_SGIX          0x80BE
+#endif
+
+#ifndef GL_EXT_color_subtable
+#endif
+
+#ifndef GL_PGI_vertex_hints
 #define GL_VERTEX_DATA_HINT_PGI           0x1A22A
 #define GL_VERTEX_CONSISTENT_HINT_PGI     0x1A22B
 #define GL_MATERIAL_SIDE_HINT_PGI         0x1A22C
@@ -1401,6 +1696,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXCOORD4_BIT_PGI              0x80000000
 #define GL_VERTEX23_BIT_PGI               0x00000004
 #define GL_VERTEX4_BIT_PGI                0x00000008
+#endif
+
+#ifndef GL_PGI_misc_hints
 #define GL_PREFER_DOUBLEBUFFER_HINT_PGI   0x1A1F8
 #define GL_CONSERVE_MEMORY_HINT_PGI       0x1A1FD
 #define GL_RECLAIM_MEMORY_HINT_PGI        0x1A1FE
@@ -1421,6 +1719,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_CLIP_FAR_HINT_PGI              0x1A221
 #define GL_WIDE_LINE_HINT_PGI             0x1A222
 #define GL_BACK_NORMALS_HINT_PGI          0x1A223
+#endif
+
+#ifndef GL_EXT_paletted_texture
 #define GL_COLOR_INDEX1_EXT               0x80E2
 #define GL_COLOR_INDEX2_EXT               0x80E3
 #define GL_COLOR_INDEX4_EXT               0x80E4
@@ -1428,20 +1729,50 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_COLOR_INDEX12_EXT              0x80E6
 #define GL_COLOR_INDEX16_EXT              0x80E7
 #define GL_TEXTURE_INDEX_SIZE_EXT         0x80ED
+#endif
+
+#ifndef GL_EXT_clip_volume_hint
 #define GL_CLIP_VOLUME_CLIPPING_HINT_EXT  0x80F0
+#endif
+
+#ifndef GL_SGIX_list_priority
 #define GL_LIST_PRIORITY_SGIX             0x8182
+#endif
+
+#ifndef GL_SGIX_ir_instrument1
 #define GL_IR_INSTRUMENT1_SGIX            0x817F
+#endif
+
+#ifndef GL_SGIX_calligraphic_fragment
 #define GL_CALLIGRAPHIC_FRAGMENT_SGIX     0x8183
+#endif
+
+#ifndef GL_SGIX_texture_lod_bias
 #define GL_TEXTURE_LOD_BIAS_S_SGIX        0x818E
 #define GL_TEXTURE_LOD_BIAS_T_SGIX        0x818F
 #define GL_TEXTURE_LOD_BIAS_R_SGIX        0x8190
+#endif
+
+#ifndef GL_SGIX_shadow_ambient
 #define GL_SHADOW_AMBIENT_SGIX            0x80BF
+#endif
+
+#ifndef GL_EXT_index_texture
+#endif
+
+#ifndef GL_EXT_index_material
 #define GL_INDEX_MATERIAL_EXT             0x81B8
 #define GL_INDEX_MATERIAL_PARAMETER_EXT   0x81B9
 #define GL_INDEX_MATERIAL_FACE_EXT        0x81BA
+#endif
+
+#ifndef GL_EXT_index_func
 #define GL_INDEX_TEST_EXT                 0x81B5
 #define GL_INDEX_TEST_FUNC_EXT            0x81B6
 #define GL_INDEX_TEST_REF_EXT             0x81B7
+#endif
+
+#ifndef GL_EXT_index_array_formats
 #define GL_IUI_V2F_EXT                    0x81AD
 #define GL_IUI_V3F_EXT                    0x81AE
 #define GL_IUI_N3F_V2F_EXT                0x81AF
@@ -1450,13 +1781,25 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_T2F_IUI_V3F_EXT                0x81B2
 #define GL_T2F_IUI_N3F_V2F_EXT            0x81B3
 #define GL_T2F_IUI_N3F_V3F_EXT            0x81B4
+#endif
+
+#ifndef GL_EXT_compiled_vertex_array
 #define GL_ARRAY_ELEMENT_LOCK_FIRST_EXT   0x81A8
 #define GL_ARRAY_ELEMENT_LOCK_COUNT_EXT   0x81A9
+#endif
+
+#ifndef GL_EXT_cull_vertex
 #define GL_CULL_VERTEX_EXT                0x81AA
 #define GL_CULL_VERTEX_EYE_POSITION_EXT   0x81AB
 #define GL_CULL_VERTEX_OBJECT_POSITION_EXT 0x81AC
+#endif
+
+#ifndef GL_SGIX_ycrcb
 #define GL_YCRCB_422_SGIX                 0x81BB
 #define GL_YCRCB_444_SGIX                 0x81BC
+#endif
+
+#ifndef GL_SGIX_fragment_lighting
 #define GL_FRAGMENT_LIGHTING_SGIX         0x8400
 #define GL_FRAGMENT_COLOR_MATERIAL_SGIX   0x8401
 #define GL_FRAGMENT_COLOR_MATERIAL_FACE_SGIX 0x8402
@@ -1477,15 +1820,33 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_FRAGMENT_LIGHT5_SGIX           0x8411
 #define GL_FRAGMENT_LIGHT6_SGIX           0x8412
 #define GL_FRAGMENT_LIGHT7_SGIX           0x8413
+#endif
+
+#ifndef GL_IBM_rasterpos_clip
 #define GL_RASTER_POSITION_UNCLIPPED_IBM  0x19262
+#endif
+
+#ifndef GL_HP_texture_lighting
 #define GL_TEXTURE_LIGHTING_MODE_HP       0x8167
 #define GL_TEXTURE_POST_SPECULAR_HP       0x8168
 #define GL_TEXTURE_PRE_SPECULAR_HP        0x8169
+#endif
+
+#ifndef GL_EXT_draw_range_elements
 #define GL_MAX_ELEMENTS_VERTICES_EXT      0x80E8
 #define GL_MAX_ELEMENTS_INDICES_EXT       0x80E9
+#endif
+
+#ifndef GL_WIN_phong_shading
 #define GL_PHONG_WIN                      0x80EA
 #define GL_PHONG_HINT_WIN                 0x80EB
+#endif
+
+#ifndef GL_WIN_specular_fog
 #define GL_FOG_SPECULAR_TEXTURE_WIN       0x80EC
+#endif
+
+#ifndef GL_EXT_light_texture
 #define GL_FRAGMENT_MATERIAL_EXT          0x8349
 #define GL_FRAGMENT_NORMAL_EXT            0x834A
 #define GL_FRAGMENT_COLOR_EXT             0x834C
@@ -1495,8 +1856,14 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_LIGHT_EXT              0x8350
 #define GL_TEXTURE_MATERIAL_FACE_EXT      0x8351
 #define GL_TEXTURE_MATERIAL_PARAMETER_EXT 0x8352
+#endif
+
+#ifndef GL_SGIX_blend_alpha_minmax
 #define GL_ALPHA_MIN_SGIX                 0x8320
 #define GL_ALPHA_MAX_SGIX                 0x8321
+#endif
+
+#ifndef GL_SGIX_impact_pixel_texture
 #define GL_PIXEL_TEX_GEN_Q_CEILING_SGIX   0x8184
 #define GL_PIXEL_TEX_GEN_Q_ROUND_SGIX     0x8185
 #define GL_PIXEL_TEX_GEN_Q_FLOOR_SGIX     0x8186
@@ -1504,24 +1871,48 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PIXEL_TEX_GEN_ALPHA_NO_REPLACE_SGIX 0x8188
 #define GL_PIXEL_TEX_GEN_ALPHA_LS_SGIX    0x8189
 #define GL_PIXEL_TEX_GEN_ALPHA_MS_SGIX    0x818A
+#endif
+
+#ifndef GL_EXT_bgra
 #define GL_BGR_EXT                        0x80E0
 #define GL_BGRA_EXT                       0x80E1
+#endif
+
+#ifndef GL_SGIX_async
 #define GL_ASYNC_MARKER_SGIX              0x8329
+#endif
+
+#ifndef GL_SGIX_async_pixel
 #define GL_ASYNC_TEX_IMAGE_SGIX           0x835C
 #define GL_ASYNC_DRAW_PIXELS_SGIX         0x835D
 #define GL_ASYNC_READ_PIXELS_SGIX         0x835E
 #define GL_MAX_ASYNC_TEX_IMAGE_SGIX       0x835F
 #define GL_MAX_ASYNC_DRAW_PIXELS_SGIX     0x8360
 #define GL_MAX_ASYNC_READ_PIXELS_SGIX     0x8361
+#endif
+
+#ifndef GL_SGIX_async_histogram
 #define GL_ASYNC_HISTOGRAM_SGIX           0x832C
 #define GL_MAX_ASYNC_HISTOGRAM_SGIX       0x832D
+#endif
+
+#ifndef GL_INTEL_texture_scissor
+#endif
+
+#ifndef GL_INTEL_parallel_arrays
 #define GL_PARALLEL_ARRAYS_INTEL          0x83F4
 #define GL_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL 0x83F5
 #define GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL 0x83F6
 #define GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL 0x83F7
 #define GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL 0x83F8
+#endif
+
+#ifndef GL_HP_occlusion_test
 #define GL_OCCLUSION_TEST_HP              0x8165
 #define GL_OCCLUSION_TEST_RESULT_HP       0x8166
+#endif
+
+#ifndef GL_EXT_pixel_transform
 #define GL_PIXEL_TRANSFORM_2D_EXT         0x8330
 #define GL_PIXEL_MAG_FILTER_EXT           0x8331
 #define GL_PIXEL_MIN_FILTER_EXT           0x8332
@@ -1531,10 +1922,22 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT 0x8336
 #define GL_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT 0x8337
 #define GL_PIXEL_TRANSFORM_2D_MATRIX_EXT  0x8338
+#endif
+
+#ifndef GL_EXT_pixel_transform_color_table
+#endif
+
+#ifndef GL_EXT_shared_texture_palette
 #define GL_SHARED_TEXTURE_PALETTE_EXT     0x81FB
+#endif
+
+#ifndef GL_EXT_separate_specular_color
 #define GL_LIGHT_MODEL_COLOR_CONTROL_EXT  0x81F8
 #define GL_SINGLE_COLOR_EXT               0x81F9
 #define GL_SEPARATE_SPECULAR_COLOR_EXT    0x81FA
+#endif
+
+#ifndef GL_EXT_secondary_color
 #define GL_COLOR_SUM_EXT                  0x8458
 #define GL_CURRENT_SECONDARY_COLOR_EXT    0x8459
 #define GL_SECONDARY_COLOR_ARRAY_SIZE_EXT 0x845A
@@ -1542,8 +1945,17 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT 0x845C
 #define GL_SECONDARY_COLOR_ARRAY_POINTER_EXT 0x845D
 #define GL_SECONDARY_COLOR_ARRAY_EXT      0x845E
+#endif
+
+#ifndef GL_EXT_texture_perturb_normal
 #define GL_PERTURB_EXT                    0x85AE
 #define GL_TEXTURE_NORMAL_EXT             0x85AF
+#endif
+
+#ifndef GL_EXT_multi_draw_arrays
+#endif
+
+#ifndef GL_EXT_fog_coord
 #define GL_FOG_COORDINATE_SOURCE_EXT      0x8450
 #define GL_FOG_COORDINATE_EXT             0x8451
 #define GL_FRAGMENT_DEPTH_EXT             0x8452
@@ -1552,8 +1964,14 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_FOG_COORDINATE_ARRAY_STRIDE_EXT 0x8455
 #define GL_FOG_COORDINATE_ARRAY_POINTER_EXT 0x8456
 #define GL_FOG_COORDINATE_ARRAY_EXT       0x8457
+#endif
+
+#ifndef GL_REND_screen_coordinates
 #define GL_SCREEN_COORDINATES_REND        0x8490
 #define GL_INVERTED_SCREEN_W_REND         0x8491
+#endif
+
+#ifndef GL_EXT_coordinate_frame
 #define GL_TANGENT_ARRAY_EXT              0x8439
 #define GL_BINORMAL_ARRAY_EXT             0x843A
 #define GL_CURRENT_TANGENT_EXT            0x843B
@@ -1568,6 +1986,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MAP2_TANGENT_EXT               0x8445
 #define GL_MAP1_BINORMAL_EXT              0x8446
 #define GL_MAP2_BINORMAL_EXT              0x8447
+#endif
+
+#ifndef GL_EXT_texture_env_combine
 #define GL_COMBINE_EXT                    0x8570
 #define GL_COMBINE_RGB_EXT                0x8571
 #define GL_COMBINE_ALPHA_EXT              0x8572
@@ -1589,14 +2010,32 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_OPERAND0_ALPHA_EXT             0x8598
 #define GL_OPERAND1_ALPHA_EXT             0x8599
 #define GL_OPERAND2_ALPHA_EXT             0x859A
+#endif
+
+#ifndef GL_APPLE_specular_vector
 #define GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE 0x85B0
+#endif
+
+#ifndef GL_APPLE_transform_hint
 #define GL_TRANSFORM_HINT_APPLE           0x85B1
+#endif
+
+#ifndef GL_SGIX_fog_scale
 #define GL_FOG_SCALE_SGIX                 0x81FC
 #define GL_FOG_SCALE_VALUE_SGIX           0x81FD
+#endif
+
+#ifndef GL_SUNX_constant_data
 #define GL_UNPACK_CONSTANT_DATA_SUNX      0x81D5
 #define GL_TEXTURE_CONSTANT_DATA_SUNX     0x81D6
+#endif
+
+#ifndef GL_SUN_global_alpha
 #define GL_GLOBAL_ALPHA_SUN               0x81D9
 #define GL_GLOBAL_ALPHA_FACTOR_SUN        0x81DA
+#endif
+
+#ifndef GL_SUN_triangle_list
 #define GL_RESTART_SUN                    0x0001
 #define GL_REPLACE_MIDDLE_SUN             0x0002
 #define GL_REPLACE_OLDEST_SUN             0x0003
@@ -1614,10 +2053,19 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_R1UI_T2F_V3F_SUN               0x85C9
 #define GL_R1UI_T2F_N3F_V3F_SUN           0x85CA
 #define GL_R1UI_T2F_C4F_N3F_V3F_SUN       0x85CB
+#endif
+
+#ifndef GL_SUN_vertex
+#endif
+
+#ifndef GL_EXT_blend_func_separate
 #define GL_BLEND_DST_RGB_EXT              0x80C8
 #define GL_BLEND_SRC_RGB_EXT              0x80C9
 #define GL_BLEND_DST_ALPHA_EXT            0x80CA
 #define GL_BLEND_SRC_ALPHA_EXT            0x80CB
+#endif
+
+#ifndef GL_INGR_color_clamp
 #define GL_RED_MIN_CLAMP_INGR             0x8560
 #define GL_GREEN_MIN_CLAMP_INGR           0x8561
 #define GL_BLUE_MIN_CLAMP_INGR            0x8562
@@ -1626,15 +2074,30 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_GREEN_MAX_CLAMP_INGR           0x8565
 #define GL_BLUE_MAX_CLAMP_INGR            0x8566
 #define GL_ALPHA_MAX_CLAMP_INGR           0x8567
+#endif
+
+#ifndef GL_INGR_interlace_read
 #define GL_INTERLACE_READ_INGR            0x8568
+#endif
+
+#ifndef GL_EXT_stencil_wrap
 #define GL_INCR_WRAP_EXT                  0x8507
 #define GL_DECR_WRAP_EXT                  0x8508
+#endif
+
+#ifndef GL_EXT_422_pixels
 #define GL_422_EXT                        0x80CC
 #define GL_422_REV_EXT                    0x80CD
 #define GL_422_AVERAGE_EXT                0x80CE
 #define GL_422_REV_AVERAGE_EXT            0x80CF
+#endif
+
+#ifndef GL_NV_texgen_reflection
 #define GL_NORMAL_MAP_NV                  0x8511
 #define GL_REFLECTION_MAP_NV              0x8512
+#endif
+
+#ifndef GL_EXT_texture_cube_map
 #define GL_NORMAL_MAP_EXT                 0x8511
 #define GL_REFLECTION_MAP_EXT             0x8512
 #define GL_TEXTURE_CUBE_MAP_EXT           0x8513
@@ -1647,12 +2110,27 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_EXT 0x851A
 #define GL_PROXY_TEXTURE_CUBE_MAP_EXT     0x851B
 #define GL_MAX_CUBE_MAP_TEXTURE_SIZE_EXT  0x851C
+#endif
+
+#ifndef GL_SUN_convolution_border_modes
 #define GL_WRAP_BORDER_SUN                0x81D4
+#endif
+
+#ifndef GL_EXT_texture_env_add
+#endif
+
+#ifndef GL_EXT_texture_lod_bias
 #define GL_MAX_TEXTURE_LOD_BIAS_EXT       0x84FD
 #define GL_TEXTURE_FILTER_CONTROL_EXT     0x8500
 #define GL_TEXTURE_LOD_BIAS_EXT           0x8501
+#endif
+
+#ifndef GL_EXT_texture_filter_anisotropic
 #define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
 #define GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT 0x84FF
+#endif
+
+#ifndef GL_EXT_vertex_weighting
 #define GL_MODELVIEW0_STACK_DEPTH_EXT     GL_MODELVIEW_STACK_DEPTH
 #define GL_MODELVIEW1_STACK_DEPTH_EXT     0x8502
 #define GL_MODELVIEW0_MATRIX_EXT          GL_MODELVIEW_MATRIX
@@ -1666,13 +2144,22 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_VERTEX_WEIGHT_ARRAY_TYPE_EXT   0x850E
 #define GL_VERTEX_WEIGHT_ARRAY_STRIDE_EXT 0x850F
 #define GL_VERTEX_WEIGHT_ARRAY_POINTER_EXT 0x8510
+#endif
+
+#ifndef GL_NV_light_max_exponent
 #define GL_MAX_SHININESS_NV               0x8504
 #define GL_MAX_SPOT_EXPONENT_NV           0x8505
+#endif
+
+#ifndef GL_NV_vertex_array_range
 #define GL_VERTEX_ARRAY_RANGE_NV          0x851D
 #define GL_VERTEX_ARRAY_RANGE_LENGTH_NV   0x851E
 #define GL_VERTEX_ARRAY_RANGE_VALID_NV    0x851F
 #define GL_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV 0x8520
 #define GL_VERTEX_ARRAY_RANGE_POINTER_NV  0x8521
+#endif
+
+#ifndef GL_NV_register_combiners
 #define GL_REGISTER_COMBINERS_NV          0x8522
 #define GL_VARIABLE_A_NV                  0x8523
 #define GL_VARIABLE_B_NV                  0x8524
@@ -1724,37 +2211,91 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_COMBINER5_NV                   0x8555
 #define GL_COMBINER6_NV                   0x8556
 #define GL_COMBINER7_NV                   0x8557
+#endif
+
+#ifndef GL_NV_fog_distance
 #define GL_FOG_DISTANCE_MODE_NV           0x855A
 #define GL_EYE_RADIAL_NV                  0x855B
 #define GL_EYE_PLANE_ABSOLUTE_NV          0x855C
+#endif
+
+#ifndef GL_NV_texgen_emboss
 #define GL_EMBOSS_LIGHT_NV                0x855D
 #define GL_EMBOSS_CONSTANT_NV             0x855E
 #define GL_EMBOSS_MAP_NV                  0x855F
+#endif
+
+#ifndef GL_NV_blend_square
+#endif
+
+#ifndef GL_NV_texture_env_combine4
 #define GL_COMBINE4_NV                    0x8503
 #define GL_SOURCE3_RGB_NV                 0x8583
 #define GL_SOURCE3_ALPHA_NV               0x858B
 #define GL_OPERAND3_RGB_NV                0x8593
 #define GL_OPERAND3_ALPHA_NV              0x859B
+#endif
+
+#ifndef GL_MESA_resize_buffers
+#endif
+
+#ifndef GL_MESA_window_pos
+#endif
+
+#ifndef GL_EXT_texture_compression_s3tc
 #define GL_COMPRESSED_RGB_S3TC_DXT1_EXT   0x83F0
 #define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1
 #define GL_COMPRESSED_RGBA_S3TC_DXT3_EXT  0x83F2
 #define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3
+#endif
+
+#ifndef GL_IBM_cull_vertex
+#endif
+
+#ifndef GL_IBM_multimode_draw_arrays
+#endif
+
+#ifndef GL_IBM_vertex_array_lists
+#endif
+
+#ifndef GL_SGIX_subsample
 #define GL_PACK_SUBSAMPLE_RATE_SGIX       0x85A0
 #define GL_UNPACK_SUBSAMPLE_RATE_SGIX     0x85A1
 #define GL_PIXEL_SUBSAMPLE_4444_SGIX      0x85A2
 #define GL_PIXEL_SUBSAMPLE_2424_SGIX      0x85A3
 #define GL_PIXEL_SUBSAMPLE_4242_SGIX      0x85A4
+#endif
+
+#ifndef GL_SGIX_ycrcb_subsample
+#endif
+
+#ifndef GL_SGIX_ycrcba
 #define GL_YCRCB_SGIX                     0x8318
 #define GL_YCRCBA_SGIX                    0x8319
+#endif
+
+#ifndef GL_SGI_depth_pass_instrument
 #define GL_DEPTH_PASS_INSTRUMENT_SGIX     0x8310
 #define GL_DEPTH_PASS_INSTRUMENT_COUNTERS_SGIX 0x8311
 #define GL_DEPTH_PASS_INSTRUMENT_MAX_SGIX 0x8312
+#endif
+
+#ifndef GL_3DFX_texture_compression_FXT1
 #define GL_COMPRESSED_RGB_FXT1_3DFX       0x86B0
 #define GL_COMPRESSED_RGBA_FXT1_3DFX      0x86B1
+#endif
+
+#ifndef GL_3DFX_multisample
 #define GL_MULTISAMPLE_3DFX               0x86B2
 #define GL_SAMPLE_BUFFERS_3DFX            0x86B3
 #define GL_SAMPLES_3DFX                   0x86B4
 #define GL_MULTISAMPLE_BIT_3DFX           0x20000000
+#endif
+
+#ifndef GL_3DFX_tbuffer
+#endif
+
+#ifndef GL_EXT_multisample
 #define GL_MULTISAMPLE_EXT                0x809D
 #define GL_SAMPLE_ALPHA_TO_MASK_EXT       0x809E
 #define GL_SAMPLE_ALPHA_TO_ONE_EXT        0x809F
@@ -1772,14 +2313,26 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_SAMPLE_MASK_INVERT_EXT         0x80AB
 #define GL_SAMPLE_PATTERN_EXT             0x80AC
 #define GL_MULTISAMPLE_BIT_EXT            0x20000000
+#endif
+
+#ifndef GL_SGIX_vertex_preclip
 #define GL_VERTEX_PRECLIP_SGIX            0x83EE
 #define GL_VERTEX_PRECLIP_HINT_SGIX       0x83EF
+#endif
+
+#ifndef GL_SGIX_convolution_accuracy
 #define GL_CONVOLUTION_HINT_SGIX          0x8316
+#endif
+
+#ifndef GL_SGIX_resample
 #define GL_PACK_RESAMPLE_SGIX             0x842C
 #define GL_UNPACK_RESAMPLE_SGIX           0x842D
 #define GL_RESAMPLE_REPLICATE_SGIX        0x842E
 #define GL_RESAMPLE_ZERO_FILL_SGIX        0x842F
 #define GL_RESAMPLE_DECIMATE_SGIX         0x8430
+#endif
+
+#ifndef GL_SGIS_point_line_texgen
 #define GL_EYE_DISTANCE_TO_POINT_SGIS     0x81F0
 #define GL_OBJECT_DISTANCE_TO_POINT_SGIS  0x81F1
 #define GL_EYE_DISTANCE_TO_LINE_SGIS      0x81F2
@@ -1788,15 +2341,33 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_OBJECT_POINT_SGIS              0x81F5
 #define GL_EYE_LINE_SGIS                  0x81F6
 #define GL_OBJECT_LINE_SGIS               0x81F7
+#endif
+
+#ifndef GL_SGIS_texture_color_mask
 #define GL_TEXTURE_COLOR_WRITEMASK_SGIS   0x81EF
+#endif
+
+#ifndef GL_EXT_texture_env_dot3
 #define GL_DOT3_RGB_EXT                   0x8740
 #define GL_DOT3_RGBA_EXT                  0x8741
+#endif
+
+#ifndef GL_ATI_texture_mirror_once
 #define GL_MIRROR_CLAMP_ATI               0x8742
 #define GL_MIRROR_CLAMP_TO_EDGE_ATI       0x8743
+#endif
+
+#ifndef GL_NV_fence
 #define GL_ALL_COMPLETED_NV               0x84F2
 #define GL_FENCE_STATUS_NV                0x84F3
 #define GL_FENCE_CONDITION_NV             0x84F4
+#endif
+
+#ifndef GL_IBM_texture_mirrored_repeat
 #define GL_MIRRORED_REPEAT_IBM            0x8370
+#endif
+
+#ifndef GL_NV_evaluators
 #define GL_EVAL_2D_NV                     0x86C0
 #define GL_EVAL_TRIANGULAR_2D_NV          0x86C1
 #define GL_MAP_TESSELLATION_NV            0x86C2
@@ -1821,13 +2392,28 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_EVAL_VERTEX_ATTRIB15_NV        0x86D5
 #define GL_MAX_MAP_TESSELLATION_NV        0x86D6
 #define GL_MAX_RATIONAL_EVAL_ORDER_NV     0x86D7
+#endif
+
+#ifndef GL_NV_packed_depth_stencil
 #define GL_DEPTH_STENCIL_NV               0x84F9
 #define GL_UNSIGNED_INT_24_8_NV           0x84FA
+#endif
+
+#ifndef GL_NV_register_combiners2
 #define GL_PER_STAGE_CONSTANTS_NV         0x8535
+#endif
+
+#ifndef GL_NV_texture_compression_vtc
+#endif
+
+#ifndef GL_NV_texture_rectangle
 #define GL_TEXTURE_RECTANGLE_NV           0x84F5
 #define GL_TEXTURE_BINDING_RECTANGLE_NV   0x84F6
 #define GL_PROXY_TEXTURE_RECTANGLE_NV     0x84F7
 #define GL_MAX_RECTANGLE_TEXTURE_SIZE_NV  0x84F8
+#endif
+
+#ifndef GL_NV_texture_shader
 #define GL_OFFSET_TEXTURE_RECTANGLE_NV    0x864C
 #define GL_OFFSET_TEXTURE_RECTANGLE_SCALE_NV 0x864D
 #define GL_DOT_PRODUCT_TEXTURE_RECTANGLE_NV 0x864E
@@ -1901,8 +2487,17 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_DS_SIZE_NV             0x871D
 #define GL_TEXTURE_DT_SIZE_NV             0x871E
 #define GL_TEXTURE_MAG_SIZE_NV            0x871F
+#endif
+
+#ifndef GL_NV_texture_shader2
 #define GL_DOT_PRODUCT_TEXTURE_3D_NV      0x86EF
+#endif
+
+#ifndef GL_NV_vertex_array_range2
 #define GL_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV 0x8533
+#endif
+
+#ifndef GL_NV_vertex_program
 #define GL_VERTEX_PROGRAM_NV              0x8620
 #define GL_VERTEX_STATE_PROGRAM_NV        0x8621
 #define GL_ATTRIB_ARRAY_SIZE_NV           0x8623
@@ -1986,22 +2581,43 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_MAP2_VERTEX_ATTRIB13_4_NV      0x867D
 #define GL_MAP2_VERTEX_ATTRIB14_4_NV      0x867E
 #define GL_MAP2_VERTEX_ATTRIB15_4_NV      0x867F
+#endif
+
+#ifndef GL_SGIX_texture_coordinate_clamp
 #define GL_TEXTURE_MAX_CLAMP_S_SGIX       0x8369
 #define GL_TEXTURE_MAX_CLAMP_T_SGIX       0x836A
 #define GL_TEXTURE_MAX_CLAMP_R_SGIX       0x836B
+#endif
+
+#ifndef GL_SGIX_scalebias_hint
 #define GL_SCALEBIAS_HINT_SGIX            0x8322
+#endif
+
+#ifndef GL_OML_interlace
 #define GL_INTERLACE_OML                  0x8980
 #define GL_INTERLACE_READ_OML             0x8981
+#endif
+
+#ifndef GL_OML_subsample
 #define GL_FORMAT_SUBSAMPLE_24_24_OML     0x8982
 #define GL_FORMAT_SUBSAMPLE_244_244_OML   0x8983
+#endif
+
+#ifndef GL_OML_resample
 #define GL_PACK_RESAMPLE_OML              0x8984
 #define GL_UNPACK_RESAMPLE_OML            0x8985
 #define GL_RESAMPLE_REPLICATE_OML         0x8986
 #define GL_RESAMPLE_ZERO_FILL_OML         0x8987
 #define GL_RESAMPLE_AVERAGE_OML           0x8988
 #define GL_RESAMPLE_DECIMATE_OML          0x8989
+#endif
+
+#ifndef GL_NV_copy_depth_to_color
 #define GL_DEPTH_STENCIL_TO_RGBA_NV       0x886E
 #define GL_DEPTH_STENCIL_TO_BGRA_NV       0x886F
+#endif
+
+#ifndef GL_ATI_envmap_bumpmap
 #define GL_BUMP_ROT_MATRIX_ATI            0x8775
 #define GL_BUMP_ROT_MATRIX_SIZE_ATI       0x8776
 #define GL_BUMP_NUM_TEX_UNITS_ATI         0x8777
@@ -2010,6 +2626,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_DU8DV8_ATI                     0x877A
 #define GL_BUMP_ENVMAP_ATI                0x877B
 #define GL_BUMP_TARGET_ATI                0x877C
+#endif
+
+#ifndef GL_ATI_fragment_shader
 #define GL_FRAGMENT_SHADER_ATI            0x8920
 #define GL_REG_0_ATI                      0x8921
 #define GL_REG_1_ATI                      0x8922
@@ -2114,6 +2733,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_COMP_BIT_ATI                   0x00000002
 #define GL_NEGATE_BIT_ATI                 0x00000004
 #define GL_BIAS_BIT_ATI                   0x00000008
+#endif
+
+#ifndef GL_ATI_pn_triangles
 #define GL_PN_TRIANGLES_ATI               0x87F0
 #define GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI 0x87F1
 #define GL_PN_TRIANGLES_POINT_MODE_ATI    0x87F2
@@ -2123,6 +2745,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI 0x87F6
 #define GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI 0x87F7
 #define GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI 0x87F8
+#endif
+
+#ifndef GL_ATI_vertex_array_object
 #define GL_STATIC_ATI                     0x8760
 #define GL_DYNAMIC_ATI                    0x8761
 #define GL_PRESERVE_ATI                   0x8762
@@ -2131,6 +2756,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_OBJECT_BUFFER_USAGE_ATI        0x8765
 #define GL_ARRAY_OBJECT_BUFFER_ATI        0x8766
 #define GL_ARRAY_OBJECT_OFFSET_ATI        0x8767
+#endif
+
+#ifndef GL_EXT_vertex_shader
 #define GL_VERTEX_SHADER_EXT              0x8780
 #define GL_VERTEX_SHADER_BINDING_EXT      0x8781
 #define GL_OP_INDEX_EXT                   0x8782
@@ -2241,6 +2869,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_INVARIANT_DATATYPE_EXT         0x87EB
 #define GL_LOCAL_CONSTANT_VALUE_EXT       0x87EC
 #define GL_LOCAL_CONSTANT_DATATYPE_EXT    0x87ED
+#endif
+
+#ifndef GL_ATI_vertex_streams
 #define GL_MAX_VERTEX_STREAMS_ATI         0x876B
 #define GL_VERTEX_STREAM0_ATI             0x876C
 #define GL_VERTEX_STREAM1_ATI             0x876D
@@ -2251,21 +2882,45 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_VERTEX_STREAM6_ATI             0x8772
 #define GL_VERTEX_STREAM7_ATI             0x8773
 #define GL_VERTEX_SOURCE_ATI              0x8774
+#endif
+
+#ifndef GL_ATI_element_array
 #define GL_ELEMENT_ARRAY_ATI              0x8768
 #define GL_ELEMENT_ARRAY_TYPE_ATI         0x8769
 #define GL_ELEMENT_ARRAY_POINTER_ATI      0x876A
+#endif
+
+#ifndef GL_SUN_mesh_array
 #define GL_QUAD_MESH_SUN                  0x8614
 #define GL_TRIANGLE_MESH_SUN              0x8615
+#endif
+
+#ifndef GL_SUN_slice_accum
 #define GL_SLICE_ACCUM_SUN                0x85CC
+#endif
+
+#ifndef GL_NV_multisample_filter_hint
 #define GL_MULTISAMPLE_FILTER_HINT_NV     0x8534
+#endif
+
+#ifndef GL_NV_depth_clamp
 #define GL_DEPTH_CLAMP_NV                 0x864F
+#endif
+
+#ifndef GL_NV_occlusion_query
 #define GL_PIXEL_COUNTER_BITS_NV          0x8864
 #define GL_CURRENT_OCCLUSION_QUERY_ID_NV  0x8865
 #define GL_PIXEL_COUNT_NV                 0x8866
 #define GL_PIXEL_COUNT_AVAILABLE_NV       0x8867
+#endif
+
+#ifndef GL_NV_point_sprite
 #define GL_POINT_SPRITE_NV                0x8861
 #define GL_COORD_REPLACE_NV               0x8862
 #define GL_POINT_SPRITE_R_MODE_NV         0x8863
+#endif
+
+#ifndef GL_NV_texture_shader3
 #define GL_OFFSET_PROJECTIVE_TEXTURE_2D_NV 0x8850
 #define GL_OFFSET_PROJECTIVE_TEXTURE_2D_SCALE_NV 0x8851
 #define GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_NV 0x8852
@@ -2283,29 +2938,65 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_HILO8_NV                       0x885E
 #define GL_SIGNED_HILO8_NV                0x885F
 #define GL_FORCE_BLUE_TO_ONE_NV           0x8860
+#endif
+
+#ifndef GL_NV_vertex_program1_1
+#endif
+
+#ifndef GL_EXT_shadow_funcs
+#endif
+
+#ifndef GL_EXT_stencil_two_side
 #define GL_STENCIL_TEST_TWO_SIDE_EXT      0x8910
 #define GL_ACTIVE_STENCIL_FACE_EXT        0x8911
+#endif
+
+#ifndef GL_ATI_text_fragment_shader
 #define GL_TEXT_FRAGMENT_SHADER_ATI       0x8200
+#endif
+
+#ifndef GL_APPLE_client_storage
 #define GL_UNPACK_CLIENT_STORAGE_APPLE    0x85B2
+#endif
+
+#ifndef GL_APPLE_element_array
 #define GL_ELEMENT_ARRAY_APPLE            0x8768
 #define GL_ELEMENT_ARRAY_TYPE_APPLE       0x8769
 #define GL_ELEMENT_ARRAY_POINTER_APPLE    0x876A
+#endif
+
+#ifndef GL_APPLE_fence
 #define GL_DRAW_PIXELS_APPLE              0x8A0A
 #define GL_FENCE_APPLE                    0x8A0B
+#endif
+
+#ifndef GL_APPLE_vertex_array_object
 #define GL_VERTEX_ARRAY_BINDING_APPLE     0x85B5
+#endif
+
+#ifndef GL_APPLE_vertex_array_range
 #define GL_VERTEX_ARRAY_RANGE_APPLE       0x851D
 #define GL_VERTEX_ARRAY_RANGE_LENGTH_APPLE 0x851E
 #define GL_VERTEX_ARRAY_STORAGE_HINT_APPLE 0x851F
 #define GL_VERTEX_ARRAY_RANGE_POINTER_APPLE 0x8521
 #define GL_STORAGE_CACHED_APPLE           0x85BE
 #define GL_STORAGE_SHARED_APPLE           0x85BF
+#endif
+
+#ifndef GL_APPLE_ycbcr_422
 #define GL_YCBCR_422_APPLE                0x85B9
 #define GL_UNSIGNED_SHORT_8_8_APPLE       0x85BA
 #define GL_UNSIGNED_SHORT_8_8_REV_APPLE   0x85BB
+#endif
+
+#ifndef GL_S3_s3tc
 #define GL_RGB_S3TC                       0x83A0
 #define GL_RGB4_S3TC                      0x83A1
 #define GL_RGBA_S3TC                      0x83A2
 #define GL_RGBA4_S3TC                     0x83A3
+#endif
+
+#ifndef GL_ATI_draw_buffers
 #define GL_MAX_DRAW_BUFFERS_ATI           0x8824
 #define GL_DRAW_BUFFER0_ATI               0x8825
 #define GL_DRAW_BUFFER1_ATI               0x8826
@@ -2323,11 +3014,20 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_DRAW_BUFFER13_ATI              0x8832
 #define GL_DRAW_BUFFER14_ATI              0x8833
 #define GL_DRAW_BUFFER15_ATI              0x8834
+#endif
+
+#ifndef GL_ATI_pixel_format_float
 #define GL_TYPE_RGBA_FLOAT_ATI            0x8820
 #define GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI 0x8835
+#endif
+
+#ifndef GL_ATI_texture_env_combine3
 #define GL_MODULATE_ADD_ATI               0x8744
 #define GL_MODULATE_SIGNED_ADD_ATI        0x8745
 #define GL_MODULATE_SUBTRACT_ATI          0x8746
+#endif
+
+#ifndef GL_ATI_texture_float
 #define GL_RGBA_FLOAT32_ATI               0x8814
 #define GL_RGB_FLOAT32_ATI                0x8815
 #define GL_ALPHA_FLOAT32_ATI              0x8816
@@ -2340,6 +3040,9 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_INTENSITY_FLOAT16_ATI          0x881D
 #define GL_LUMINANCE_FLOAT16_ATI          0x881E
 #define GL_LUMINANCE_ALPHA_FLOAT16_ATI    0x881F
+#endif
+
+#ifndef GL_NV_float_buffer
 #define GL_FLOAT_R_NV                     0x8880
 #define GL_FLOAT_RG_NV                    0x8881
 #define GL_FLOAT_RGB_NV                   0x8882
@@ -2355,48 +3058,111 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_TEXTURE_FLOAT_COMPONENTS_NV    0x888C
 #define GL_FLOAT_CLEAR_COLOR_VALUE_NV     0x888D
 #define GL_FLOAT_RGBA_MODE_NV             0x888E
+#endif
+
+#ifndef GL_NV_fragment_program
 #define GL_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV 0x8868
 #define GL_FRAGMENT_PROGRAM_NV            0x8870
 #define GL_MAX_TEXTURE_COORDS_NV          0x8871
 #define GL_MAX_TEXTURE_IMAGE_UNITS_NV     0x8872
 #define GL_FRAGMENT_PROGRAM_BINDING_NV    0x8873
 #define GL_PROGRAM_ERROR_STRING_NV        0x8874
+#endif
+
+#ifndef GL_NV_half_float
 #define GL_HALF_FLOAT_NV                  0x140B
+#endif
+
+#ifndef GL_NV_pixel_data_range
 #define GL_WRITE_PIXEL_DATA_RANGE_NV      0x8878
 #define GL_READ_PIXEL_DATA_RANGE_NV       0x8879
 #define GL_WRITE_PIXEL_DATA_RANGE_LENGTH_NV 0x887A
 #define GL_READ_PIXEL_DATA_RANGE_LENGTH_NV 0x887B
 #define GL_WRITE_PIXEL_DATA_RANGE_POINTER_NV 0x887C
 #define GL_READ_PIXEL_DATA_RANGE_POINTER_NV 0x887D
+#endif
+
+#ifndef GL_NV_primitive_restart
 #define GL_PRIMITIVE_RESTART_NV           0x8558
 #define GL_PRIMITIVE_RESTART_INDEX_NV     0x8559
+#endif
+
+#ifndef GL_NV_texture_expand_normal
 #define GL_TEXTURE_UNSIGNED_REMAP_MODE_NV 0x888F
+#endif
+
+#ifndef GL_NV_vertex_program2
+#endif
+
+#ifndef GL_ATI_map_object_buffer
+#endif
+
+#ifndef GL_ATI_separate_stencil
 #define GL_STENCIL_BACK_FUNC_ATI          0x8800
 #define GL_STENCIL_BACK_FAIL_ATI          0x8801
 #define GL_STENCIL_BACK_PASS_DEPTH_FAIL_ATI 0x8802
 #define GL_STENCIL_BACK_PASS_DEPTH_PASS_ATI 0x8803
+#endif
+
+#ifndef GL_ATI_vertex_attrib_array_object
+#endif
+
+#ifndef GL_OES_read_format
 #define GL_IMPLEMENTATION_COLOR_READ_TYPE_OES 0x8B9A
 #define GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES 0x8B9B
+#endif
+
+#ifndef GL_EXT_depth_bounds_test
 #define GL_DEPTH_BOUNDS_TEST_EXT          0x8890
 #define GL_DEPTH_BOUNDS_EXT               0x8891
+#endif
+
+#ifndef GL_EXT_texture_mirror_clamp
 #define GL_MIRROR_CLAMP_EXT               0x8742
 #define GL_MIRROR_CLAMP_TO_EDGE_EXT       0x8743
 #define GL_MIRROR_CLAMP_TO_BORDER_EXT     0x8912
+#endif
+
+#ifndef GL_EXT_blend_equation_separate
 #define GL_BLEND_EQUATION_RGB_EXT         GL_BLEND_EQUATION
 #define GL_BLEND_EQUATION_ALPHA_EXT       0x883D
+#endif
+
+#ifndef GL_MESA_pack_invert
 #define GL_PACK_INVERT_MESA               0x8758
+#endif
+
+#ifndef GL_MESA_ycbcr_texture
 #define GL_UNSIGNED_SHORT_8_8_MESA        0x85BA
 #define GL_UNSIGNED_SHORT_8_8_REV_MESA    0x85BB
 #define GL_YCBCR_MESA                     0x8757
+#endif
+
+#ifndef GL_EXT_pixel_buffer_object
 #define GL_PIXEL_PACK_BUFFER_EXT          0x88EB
 #define GL_PIXEL_UNPACK_BUFFER_EXT        0x88EC
 #define GL_PIXEL_PACK_BUFFER_BINDING_EXT  0x88ED
 #define GL_PIXEL_UNPACK_BUFFER_BINDING_EXT 0x88EF
+#endif
+
+#ifndef GL_NV_fragment_program_option
+#endif
+
+#ifndef GL_NV_fragment_program2
 #define GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV 0x88F4
 #define GL_MAX_PROGRAM_CALL_DEPTH_NV      0x88F5
 #define GL_MAX_PROGRAM_IF_DEPTH_NV        0x88F6
 #define GL_MAX_PROGRAM_LOOP_DEPTH_NV      0x88F7
 #define GL_MAX_PROGRAM_LOOP_COUNT_NV      0x88F8
+#endif
+
+#ifndef GL_NV_vertex_program2_option
+#endif
+
+#ifndef GL_NV_vertex_program3
+#endif
+
+#ifndef GL_EXT_framebuffer_object
 #define GL_INVALID_FRAMEBUFFER_OPERATION_EXT 0x0506
 #define GL_MAX_RENDERBUFFER_SIZE_EXT      0x84E8
 #define GL_FRAMEBUFFER_BINDING_EXT        0x8CA6
@@ -2449,1352 +3215,5386 @@ SAGEAPI int sage_ext[SAGE_LAST_EXTENSION];
 #define GL_RENDERBUFFER_ALPHA_SIZE_EXT    0x8D53
 #define GL_RENDERBUFFER_DEPTH_SIZE_EXT    0x8D54
 #define GL_RENDERBUFFER_STENCIL_SIZE_EXT  0x8D55
+#endif
+
+#ifndef GL_GREMEDY_string_marker
+#endif
+
+#ifndef GL_VERSION_2_0
 typedef char GLchar;			/* native character */
+#endif
+
+#ifndef GL_VERSION_1_5
 typedef ptrdiff_t GLintptr;
 typedef ptrdiff_t GLsizeiptr;
+#endif
+
+#ifndef GL_ARB_vertex_buffer_object
 typedef ptrdiff_t GLintptrARB;
 typedef ptrdiff_t GLsizeiptrARB;
+#endif
+
+#ifndef GL_ARB_shader_objects
 typedef char GLcharARB;		/* native character */
 typedef unsigned int GLhandleARB;	/* shader object handle */
+#endif
+
+#ifndef GL_ARB_half_float_pixel
 typedef unsigned short GLhalfARB;
+#endif
+
+#ifndef GL_NV_half_float
 typedef unsigned short GLhalfNV;
+#endif
+
+#ifndef GL_VERSION_1_2
 #define GL_VERSION_1_2 1
+#ifndef glBlendColor
 #define glBlendColor SAGE_glBlendColor
+#endif
+
+#ifndef glBlendEquation
 #define glBlendEquation SAGE_glBlendEquation
+#endif
+
+#ifndef glDrawRangeElements
 #define glDrawRangeElements SAGE_glDrawRangeElements
+#endif
+
+#ifndef glColorTable
 #define glColorTable SAGE_glColorTable
+#endif
+
+#ifndef glColorTableParameterfv
 #define glColorTableParameterfv SAGE_glColorTableParameterfv
+#endif
+
+#ifndef glColorTableParameteriv
 #define glColorTableParameteriv SAGE_glColorTableParameteriv
+#endif
+
+#ifndef glCopyColorTable
 #define glCopyColorTable SAGE_glCopyColorTable
+#endif
+
+#ifndef glGetColorTable
 #define glGetColorTable SAGE_glGetColorTable
+#endif
+
+#ifndef glGetColorTableParameterfv
 #define glGetColorTableParameterfv SAGE_glGetColorTableParameterfv
+#endif
+
+#ifndef glGetColorTableParameteriv
 #define glGetColorTableParameteriv SAGE_glGetColorTableParameteriv
+#endif
+
+#ifndef glColorSubTable
 #define glColorSubTable SAGE_glColorSubTable
+#endif
+
+#ifndef glCopyColorSubTable
 #define glCopyColorSubTable SAGE_glCopyColorSubTable
+#endif
+
+#ifndef glConvolutionFilter1D
 #define glConvolutionFilter1D SAGE_glConvolutionFilter1D
+#endif
+
+#ifndef glConvolutionFilter2D
 #define glConvolutionFilter2D SAGE_glConvolutionFilter2D
+#endif
+
+#ifndef glConvolutionParameterf
 #define glConvolutionParameterf SAGE_glConvolutionParameterf
+#endif
+
+#ifndef glConvolutionParameterfv
 #define glConvolutionParameterfv SAGE_glConvolutionParameterfv
+#endif
+
+#ifndef glConvolutionParameteri
 #define glConvolutionParameteri SAGE_glConvolutionParameteri
+#endif
+
+#ifndef glConvolutionParameteriv
 #define glConvolutionParameteriv SAGE_glConvolutionParameteriv
+#endif
+
+#ifndef glCopyConvolutionFilter1D
 #define glCopyConvolutionFilter1D SAGE_glCopyConvolutionFilter1D
+#endif
+
+#ifndef glCopyConvolutionFilter2D
 #define glCopyConvolutionFilter2D SAGE_glCopyConvolutionFilter2D
+#endif
+
+#ifndef glGetConvolutionFilter
 #define glGetConvolutionFilter SAGE_glGetConvolutionFilter
+#endif
+
+#ifndef glGetConvolutionParameterfv
 #define glGetConvolutionParameterfv SAGE_glGetConvolutionParameterfv
+#endif
+
+#ifndef glGetConvolutionParameteriv
 #define glGetConvolutionParameteriv SAGE_glGetConvolutionParameteriv
+#endif
+
+#ifndef glGetSeparableFilter
 #define glGetSeparableFilter SAGE_glGetSeparableFilter
+#endif
+
+#ifndef glSeparableFilter2D
 #define glSeparableFilter2D SAGE_glSeparableFilter2D
+#endif
+
+#ifndef glGetHistogram
 #define glGetHistogram SAGE_glGetHistogram
+#endif
+
+#ifndef glGetHistogramParameterfv
 #define glGetHistogramParameterfv SAGE_glGetHistogramParameterfv
+#endif
+
+#ifndef glGetHistogramParameteriv
 #define glGetHistogramParameteriv SAGE_glGetHistogramParameteriv
+#endif
+
+#ifndef glGetMinmax
 #define glGetMinmax SAGE_glGetMinmax
+#endif
+
+#ifndef glGetMinmaxParameterfv
 #define glGetMinmaxParameterfv SAGE_glGetMinmaxParameterfv
+#endif
+
+#ifndef glGetMinmaxParameteriv
 #define glGetMinmaxParameteriv SAGE_glGetMinmaxParameteriv
+#endif
+
+#ifndef glHistogram
 #define glHistogram SAGE_glHistogram
+#endif
+
+#ifndef glMinmax
 #define glMinmax SAGE_glMinmax
+#endif
+
+#ifndef glResetHistogram
 #define glResetHistogram SAGE_glResetHistogram
+#endif
+
+#ifndef glResetMinmax
 #define glResetMinmax SAGE_glResetMinmax
+#endif
+
+#ifndef glTexImage3D
 #define glTexImage3D SAGE_glTexImage3D
+#endif
+
+#ifndef glTexSubImage3D
 #define glTexSubImage3D SAGE_glTexSubImage3D
+#endif
+
+#ifndef glCopyTexSubImage3D
 #define glCopyTexSubImage3D SAGE_glCopyTexSubImage3D
+#endif
+
+#endif
+
+#ifndef GL_VERSION_1_3
 #define GL_VERSION_1_3 1
+#ifndef glActiveTexture
 #define glActiveTexture SAGE_glActiveTexture
+#endif
+
+#ifndef glClientActiveTexture
 #define glClientActiveTexture SAGE_glClientActiveTexture
+#endif
+
+#ifndef glMultiTexCoord1d
 #define glMultiTexCoord1d SAGE_glMultiTexCoord1d
+#endif
+
+#ifndef glMultiTexCoord1dv
 #define glMultiTexCoord1dv SAGE_glMultiTexCoord1dv
+#endif
+
+#ifndef glMultiTexCoord1f
 #define glMultiTexCoord1f SAGE_glMultiTexCoord1f
+#endif
+
+#ifndef glMultiTexCoord1fv
 #define glMultiTexCoord1fv SAGE_glMultiTexCoord1fv
+#endif
+
+#ifndef glMultiTexCoord1i
 #define glMultiTexCoord1i SAGE_glMultiTexCoord1i
+#endif
+
+#ifndef glMultiTexCoord1iv
 #define glMultiTexCoord1iv SAGE_glMultiTexCoord1iv
+#endif
+
+#ifndef glMultiTexCoord1s
 #define glMultiTexCoord1s SAGE_glMultiTexCoord1s
+#endif
+
+#ifndef glMultiTexCoord1sv
 #define glMultiTexCoord1sv SAGE_glMultiTexCoord1sv
+#endif
+
+#ifndef glMultiTexCoord2d
 #define glMultiTexCoord2d SAGE_glMultiTexCoord2d
+#endif
+
+#ifndef glMultiTexCoord2dv
 #define glMultiTexCoord2dv SAGE_glMultiTexCoord2dv
+#endif
+
+#ifndef glMultiTexCoord2f
 #define glMultiTexCoord2f SAGE_glMultiTexCoord2f
+#endif
+
+#ifndef glMultiTexCoord2fv
 #define glMultiTexCoord2fv SAGE_glMultiTexCoord2fv
+#endif
+
+#ifndef glMultiTexCoord2i
 #define glMultiTexCoord2i SAGE_glMultiTexCoord2i
+#endif
+
+#ifndef glMultiTexCoord2iv
 #define glMultiTexCoord2iv SAGE_glMultiTexCoord2iv
+#endif
+
+#ifndef glMultiTexCoord2s
 #define glMultiTexCoord2s SAGE_glMultiTexCoord2s
+#endif
+
+#ifndef glMultiTexCoord2sv
 #define glMultiTexCoord2sv SAGE_glMultiTexCoord2sv
+#endif
+
+#ifndef glMultiTexCoord3d
 #define glMultiTexCoord3d SAGE_glMultiTexCoord3d
+#endif
+
+#ifndef glMultiTexCoord3dv
 #define glMultiTexCoord3dv SAGE_glMultiTexCoord3dv
+#endif
+
+#ifndef glMultiTexCoord3f
 #define glMultiTexCoord3f SAGE_glMultiTexCoord3f
+#endif
+
+#ifndef glMultiTexCoord3fv
 #define glMultiTexCoord3fv SAGE_glMultiTexCoord3fv
+#endif
+
+#ifndef glMultiTexCoord3i
 #define glMultiTexCoord3i SAGE_glMultiTexCoord3i
+#endif
+
+#ifndef glMultiTexCoord3iv
 #define glMultiTexCoord3iv SAGE_glMultiTexCoord3iv
+#endif
+
+#ifndef glMultiTexCoord3s
 #define glMultiTexCoord3s SAGE_glMultiTexCoord3s
+#endif
+
+#ifndef glMultiTexCoord3sv
 #define glMultiTexCoord3sv SAGE_glMultiTexCoord3sv
+#endif
+
+#ifndef glMultiTexCoord4d
 #define glMultiTexCoord4d SAGE_glMultiTexCoord4d
+#endif
+
+#ifndef glMultiTexCoord4dv
 #define glMultiTexCoord4dv SAGE_glMultiTexCoord4dv
+#endif
+
+#ifndef glMultiTexCoord4f
 #define glMultiTexCoord4f SAGE_glMultiTexCoord4f
+#endif
+
+#ifndef glMultiTexCoord4fv
 #define glMultiTexCoord4fv SAGE_glMultiTexCoord4fv
+#endif
+
+#ifndef glMultiTexCoord4i
 #define glMultiTexCoord4i SAGE_glMultiTexCoord4i
+#endif
+
+#ifndef glMultiTexCoord4iv
 #define glMultiTexCoord4iv SAGE_glMultiTexCoord4iv
+#endif
+
+#ifndef glMultiTexCoord4s
 #define glMultiTexCoord4s SAGE_glMultiTexCoord4s
+#endif
+
+#ifndef glMultiTexCoord4sv
 #define glMultiTexCoord4sv SAGE_glMultiTexCoord4sv
+#endif
+
+#ifndef glLoadTransposeMatrixf
 #define glLoadTransposeMatrixf SAGE_glLoadTransposeMatrixf
+#endif
+
+#ifndef glLoadTransposeMatrixd
 #define glLoadTransposeMatrixd SAGE_glLoadTransposeMatrixd
+#endif
+
+#ifndef glMultTransposeMatrixf
 #define glMultTransposeMatrixf SAGE_glMultTransposeMatrixf
+#endif
+
+#ifndef glMultTransposeMatrixd
 #define glMultTransposeMatrixd SAGE_glMultTransposeMatrixd
+#endif
+
+#ifndef glSampleCoverage
 #define glSampleCoverage SAGE_glSampleCoverage
+#endif
+
+#ifndef glCompressedTexImage3D
 #define glCompressedTexImage3D SAGE_glCompressedTexImage3D
+#endif
+
+#ifndef glCompressedTexImage2D
 #define glCompressedTexImage2D SAGE_glCompressedTexImage2D
+#endif
+
+#ifndef glCompressedTexImage1D
 #define glCompressedTexImage1D SAGE_glCompressedTexImage1D
+#endif
+
+#ifndef glCompressedTexSubImage3D
 #define glCompressedTexSubImage3D SAGE_glCompressedTexSubImage3D
+#endif
+
+#ifndef glCompressedTexSubImage2D
 #define glCompressedTexSubImage2D SAGE_glCompressedTexSubImage2D
+#endif
+
+#ifndef glCompressedTexSubImage1D
 #define glCompressedTexSubImage1D SAGE_glCompressedTexSubImage1D
+#endif
+
+#ifndef glGetCompressedTexImage
 #define glGetCompressedTexImage SAGE_glGetCompressedTexImage
+#endif
+
+#endif
+
+#ifndef GL_VERSION_1_4
 #define GL_VERSION_1_4 1
+#ifndef glBlendFuncSeparate
 #define glBlendFuncSeparate SAGE_glBlendFuncSeparate
+#endif
+
+#ifndef glFogCoordf
 #define glFogCoordf SAGE_glFogCoordf
+#endif
+
+#ifndef glFogCoordfv
 #define glFogCoordfv SAGE_glFogCoordfv
+#endif
+
+#ifndef glFogCoordd
 #define glFogCoordd SAGE_glFogCoordd
+#endif
+
+#ifndef glFogCoorddv
 #define glFogCoorddv SAGE_glFogCoorddv
+#endif
+
+#ifndef glFogCoordPointer
 #define glFogCoordPointer SAGE_glFogCoordPointer
+#endif
+
+#ifndef glMultiDrawArrays
 #define glMultiDrawArrays SAGE_glMultiDrawArrays
+#endif
+
+#ifndef glMultiDrawElements
 #define glMultiDrawElements SAGE_glMultiDrawElements
+#endif
+
+#ifndef glPointParameterf
 #define glPointParameterf SAGE_glPointParameterf
+#endif
+
+#ifndef glPointParameterfv
 #define glPointParameterfv SAGE_glPointParameterfv
+#endif
+
+#ifndef glPointParameteri
 #define glPointParameteri SAGE_glPointParameteri
+#endif
+
+#ifndef glPointParameteriv
 #define glPointParameteriv SAGE_glPointParameteriv
+#endif
+
+#ifndef glSecondaryColor3b
 #define glSecondaryColor3b SAGE_glSecondaryColor3b
+#endif
+
+#ifndef glSecondaryColor3bv
 #define glSecondaryColor3bv SAGE_glSecondaryColor3bv
+#endif
+
+#ifndef glSecondaryColor3d
 #define glSecondaryColor3d SAGE_glSecondaryColor3d
+#endif
+
+#ifndef glSecondaryColor3dv
 #define glSecondaryColor3dv SAGE_glSecondaryColor3dv
+#endif
+
+#ifndef glSecondaryColor3f
 #define glSecondaryColor3f SAGE_glSecondaryColor3f
+#endif
+
+#ifndef glSecondaryColor3fv
 #define glSecondaryColor3fv SAGE_glSecondaryColor3fv
+#endif
+
+#ifndef glSecondaryColor3i
 #define glSecondaryColor3i SAGE_glSecondaryColor3i
+#endif
+
+#ifndef glSecondaryColor3iv
 #define glSecondaryColor3iv SAGE_glSecondaryColor3iv
+#endif
+
+#ifndef glSecondaryColor3s
 #define glSecondaryColor3s SAGE_glSecondaryColor3s
+#endif
+
+#ifndef glSecondaryColor3sv
 #define glSecondaryColor3sv SAGE_glSecondaryColor3sv
+#endif
+
+#ifndef glSecondaryColor3ub
 #define glSecondaryColor3ub SAGE_glSecondaryColor3ub
+#endif
+
+#ifndef glSecondaryColor3ubv
 #define glSecondaryColor3ubv SAGE_glSecondaryColor3ubv
+#endif
+
+#ifndef glSecondaryColor3ui
 #define glSecondaryColor3ui SAGE_glSecondaryColor3ui
+#endif
+
+#ifndef glSecondaryColor3uiv
 #define glSecondaryColor3uiv SAGE_glSecondaryColor3uiv
+#endif
+
+#ifndef glSecondaryColor3us
 #define glSecondaryColor3us SAGE_glSecondaryColor3us
+#endif
+
+#ifndef glSecondaryColor3usv
 #define glSecondaryColor3usv SAGE_glSecondaryColor3usv
+#endif
+
+#ifndef glSecondaryColorPointer
 #define glSecondaryColorPointer SAGE_glSecondaryColorPointer
+#endif
+
+#ifndef glWindowPos2d
 #define glWindowPos2d SAGE_glWindowPos2d
+#endif
+
+#ifndef glWindowPos2dv
 #define glWindowPos2dv SAGE_glWindowPos2dv
+#endif
+
+#ifndef glWindowPos2f
 #define glWindowPos2f SAGE_glWindowPos2f
+#endif
+
+#ifndef glWindowPos2fv
 #define glWindowPos2fv SAGE_glWindowPos2fv
+#endif
+
+#ifndef glWindowPos2i
 #define glWindowPos2i SAGE_glWindowPos2i
+#endif
+
+#ifndef glWindowPos2iv
 #define glWindowPos2iv SAGE_glWindowPos2iv
+#endif
+
+#ifndef glWindowPos2s
 #define glWindowPos2s SAGE_glWindowPos2s
+#endif
+
+#ifndef glWindowPos2sv
 #define glWindowPos2sv SAGE_glWindowPos2sv
+#endif
+
+#ifndef glWindowPos3d
 #define glWindowPos3d SAGE_glWindowPos3d
+#endif
+
+#ifndef glWindowPos3dv
 #define glWindowPos3dv SAGE_glWindowPos3dv
+#endif
+
+#ifndef glWindowPos3f
 #define glWindowPos3f SAGE_glWindowPos3f
+#endif
+
+#ifndef glWindowPos3fv
 #define glWindowPos3fv SAGE_glWindowPos3fv
+#endif
+
+#ifndef glWindowPos3i
 #define glWindowPos3i SAGE_glWindowPos3i
+#endif
+
+#ifndef glWindowPos3iv
 #define glWindowPos3iv SAGE_glWindowPos3iv
+#endif
+
+#ifndef glWindowPos3s
 #define glWindowPos3s SAGE_glWindowPos3s
+#endif
+
+#ifndef glWindowPos3sv
 #define glWindowPos3sv SAGE_glWindowPos3sv
+#endif
+
+#endif
+
+#ifndef GL_VERSION_1_5
 #define GL_VERSION_1_5 1
+#ifndef glGenQueries
 #define glGenQueries SAGE_glGenQueries
+#endif
+
+#ifndef glDeleteQueries
 #define glDeleteQueries SAGE_glDeleteQueries
+#endif
+
+#ifndef glIsQuery
 #define glIsQuery SAGE_glIsQuery
+#endif
+
+#ifndef glBeginQuery
 #define glBeginQuery SAGE_glBeginQuery
+#endif
+
+#ifndef glEndQuery
 #define glEndQuery SAGE_glEndQuery
+#endif
+
+#ifndef glGetQueryiv
 #define glGetQueryiv SAGE_glGetQueryiv
+#endif
+
+#ifndef glGetQueryObjectiv
 #define glGetQueryObjectiv SAGE_glGetQueryObjectiv
+#endif
+
+#ifndef glGetQueryObjectuiv
 #define glGetQueryObjectuiv SAGE_glGetQueryObjectuiv
+#endif
+
+#ifndef glBindBuffer
 #define glBindBuffer SAGE_glBindBuffer
+#endif
+
+#ifndef glDeleteBuffers
 #define glDeleteBuffers SAGE_glDeleteBuffers
+#endif
+
+#ifndef glGenBuffers
 #define glGenBuffers SAGE_glGenBuffers
+#endif
+
+#ifndef glIsBuffer
 #define glIsBuffer SAGE_glIsBuffer
+#endif
+
+#ifndef glBufferData
 #define glBufferData SAGE_glBufferData
+#endif
+
+#ifndef glBufferSubData
 #define glBufferSubData SAGE_glBufferSubData
+#endif
+
+#ifndef glGetBufferSubData
 #define glGetBufferSubData SAGE_glGetBufferSubData
+#endif
+
+#ifndef glMapBuffer
 #define glMapBuffer SAGE_glMapBuffer
+#endif
+
+#ifndef glUnmapBuffer
 #define glUnmapBuffer SAGE_glUnmapBuffer
+#endif
+
+#ifndef glGetBufferParameteriv
 #define glGetBufferParameteriv SAGE_glGetBufferParameteriv
+#endif
+
+#ifndef glGetBufferPointerv
 #define glGetBufferPointerv SAGE_glGetBufferPointerv
+#endif
+
+#endif
+
+#ifndef GL_VERSION_2_0
 #define GL_VERSION_2_0 1
+#ifndef glBlendEquationSeparate
 #define glBlendEquationSeparate SAGE_glBlendEquationSeparate
+#endif
+
+#ifndef glDrawBuffers
 #define glDrawBuffers SAGE_glDrawBuffers
+#endif
+
+#ifndef glStencilOpSeparate
 #define glStencilOpSeparate SAGE_glStencilOpSeparate
+#endif
+
+#ifndef glStencilFuncSeparate
 #define glStencilFuncSeparate SAGE_glStencilFuncSeparate
+#endif
+
+#ifndef glStencilMaskSeparate
 #define glStencilMaskSeparate SAGE_glStencilMaskSeparate
+#endif
+
+#ifndef glAttachShader
 #define glAttachShader SAGE_glAttachShader
+#endif
+
+#ifndef glBindAttribLocation
 #define glBindAttribLocation SAGE_glBindAttribLocation
+#endif
+
+#ifndef glCompileShader
 #define glCompileShader SAGE_glCompileShader
+#endif
+
+#ifndef glCreateProgram
 #define glCreateProgram SAGE_glCreateProgram
+#endif
+
+#ifndef glCreateShader
 #define glCreateShader SAGE_glCreateShader
+#endif
+
+#ifndef glDeleteProgram
 #define glDeleteProgram SAGE_glDeleteProgram
+#endif
+
+#ifndef glDeleteShader
 #define glDeleteShader SAGE_glDeleteShader
+#endif
+
+#ifndef glDetachShader
 #define glDetachShader SAGE_glDetachShader
+#endif
+
+#ifndef glDisableVertexAttribArray
 #define glDisableVertexAttribArray SAGE_glDisableVertexAttribArray
+#endif
+
+#ifndef glEnableVertexAttribArray
 #define glEnableVertexAttribArray SAGE_glEnableVertexAttribArray
+#endif
+
+#ifndef glGetActiveAttrib
 #define glGetActiveAttrib SAGE_glGetActiveAttrib
+#endif
+
+#ifndef glGetActiveUniform
 #define glGetActiveUniform SAGE_glGetActiveUniform
+#endif
+
+#ifndef glGetAttachedShaders
 #define glGetAttachedShaders SAGE_glGetAttachedShaders
+#endif
+
+#ifndef glGetAttribLocation
 #define glGetAttribLocation SAGE_glGetAttribLocation
+#endif
+
+#ifndef glGetProgramiv
 #define glGetProgramiv SAGE_glGetProgramiv
+#endif
+
+#ifndef glGetProgramInfoLog
 #define glGetProgramInfoLog SAGE_glGetProgramInfoLog
+#endif
+
+#ifndef glGetShaderiv
 #define glGetShaderiv SAGE_glGetShaderiv
+#endif
+
+#ifndef glGetShaderInfoLog
 #define glGetShaderInfoLog SAGE_glGetShaderInfoLog
+#endif
+
+#ifndef glGetShaderSource
 #define glGetShaderSource SAGE_glGetShaderSource
+#endif
+
+#ifndef glGetUniformLocation
 #define glGetUniformLocation SAGE_glGetUniformLocation
+#endif
+
+#ifndef glGetUniformfv
 #define glGetUniformfv SAGE_glGetUniformfv
+#endif
+
+#ifndef glGetUniformiv
 #define glGetUniformiv SAGE_glGetUniformiv
+#endif
+
+#ifndef glGetVertexAttribdv
 #define glGetVertexAttribdv SAGE_glGetVertexAttribdv
+#endif
+
+#ifndef glGetVertexAttribfv
 #define glGetVertexAttribfv SAGE_glGetVertexAttribfv
+#endif
+
+#ifndef glGetVertexAttribiv
 #define glGetVertexAttribiv SAGE_glGetVertexAttribiv
+#endif
+
+#ifndef glGetVertexAttribPointerv
 #define glGetVertexAttribPointerv SAGE_glGetVertexAttribPointerv
+#endif
+
+#ifndef glIsProgram
 #define glIsProgram SAGE_glIsProgram
+#endif
+
+#ifndef glIsShader
 #define glIsShader SAGE_glIsShader
+#endif
+
+#ifndef glLinkProgram
 #define glLinkProgram SAGE_glLinkProgram
+#endif
+
+#ifndef glShaderSource
 #define glShaderSource SAGE_glShaderSource
+#endif
+
+#ifndef glUseProgram
 #define glUseProgram SAGE_glUseProgram
+#endif
+
+#ifndef glUniform1f
 #define glUniform1f SAGE_glUniform1f
+#endif
+
+#ifndef glUniform2f
 #define glUniform2f SAGE_glUniform2f
+#endif
+
+#ifndef glUniform3f
 #define glUniform3f SAGE_glUniform3f
+#endif
+
+#ifndef glUniform4f
 #define glUniform4f SAGE_glUniform4f
+#endif
+
+#ifndef glUniform1i
 #define glUniform1i SAGE_glUniform1i
+#endif
+
+#ifndef glUniform2i
 #define glUniform2i SAGE_glUniform2i
+#endif
+
+#ifndef glUniform3i
 #define glUniform3i SAGE_glUniform3i
+#endif
+
+#ifndef glUniform4i
 #define glUniform4i SAGE_glUniform4i
+#endif
+
+#ifndef glUniform1fv
 #define glUniform1fv SAGE_glUniform1fv
+#endif
+
+#ifndef glUniform2fv
 #define glUniform2fv SAGE_glUniform2fv
+#endif
+
+#ifndef glUniform3fv
 #define glUniform3fv SAGE_glUniform3fv
+#endif
+
+#ifndef glUniform4fv
 #define glUniform4fv SAGE_glUniform4fv
+#endif
+
+#ifndef glUniform1iv
 #define glUniform1iv SAGE_glUniform1iv
+#endif
+
+#ifndef glUniform2iv
 #define glUniform2iv SAGE_glUniform2iv
+#endif
+
+#ifndef glUniform3iv
 #define glUniform3iv SAGE_glUniform3iv
+#endif
+
+#ifndef glUniform4iv
 #define glUniform4iv SAGE_glUniform4iv
+#endif
+
+#ifndef glUniformMatrix2fv
 #define glUniformMatrix2fv SAGE_glUniformMatrix2fv
+#endif
+
+#ifndef glUniformMatrix3fv
 #define glUniformMatrix3fv SAGE_glUniformMatrix3fv
+#endif
+
+#ifndef glUniformMatrix4fv
 #define glUniformMatrix4fv SAGE_glUniformMatrix4fv
+#endif
+
+#ifndef glValidateProgram
 #define glValidateProgram SAGE_glValidateProgram
+#endif
+
+#ifndef glVertexAttrib1d
 #define glVertexAttrib1d SAGE_glVertexAttrib1d
+#endif
+
+#ifndef glVertexAttrib1dv
 #define glVertexAttrib1dv SAGE_glVertexAttrib1dv
+#endif
+
+#ifndef glVertexAttrib1f
 #define glVertexAttrib1f SAGE_glVertexAttrib1f
+#endif
+
+#ifndef glVertexAttrib1fv
 #define glVertexAttrib1fv SAGE_glVertexAttrib1fv
+#endif
+
+#ifndef glVertexAttrib1s
 #define glVertexAttrib1s SAGE_glVertexAttrib1s
+#endif
+
+#ifndef glVertexAttrib1sv
 #define glVertexAttrib1sv SAGE_glVertexAttrib1sv
+#endif
+
+#ifndef glVertexAttrib2d
 #define glVertexAttrib2d SAGE_glVertexAttrib2d
+#endif
+
+#ifndef glVertexAttrib2dv
 #define glVertexAttrib2dv SAGE_glVertexAttrib2dv
+#endif
+
+#ifndef glVertexAttrib2f
 #define glVertexAttrib2f SAGE_glVertexAttrib2f
+#endif
+
+#ifndef glVertexAttrib2fv
 #define glVertexAttrib2fv SAGE_glVertexAttrib2fv
+#endif
+
+#ifndef glVertexAttrib2s
 #define glVertexAttrib2s SAGE_glVertexAttrib2s
+#endif
+
+#ifndef glVertexAttrib2sv
 #define glVertexAttrib2sv SAGE_glVertexAttrib2sv
+#endif
+
+#ifndef glVertexAttrib3d
 #define glVertexAttrib3d SAGE_glVertexAttrib3d
+#endif
+
+#ifndef glVertexAttrib3dv
 #define glVertexAttrib3dv SAGE_glVertexAttrib3dv
+#endif
+
+#ifndef glVertexAttrib3f
 #define glVertexAttrib3f SAGE_glVertexAttrib3f
+#endif
+
+#ifndef glVertexAttrib3fv
 #define glVertexAttrib3fv SAGE_glVertexAttrib3fv
+#endif
+
+#ifndef glVertexAttrib3s
 #define glVertexAttrib3s SAGE_glVertexAttrib3s
+#endif
+
+#ifndef glVertexAttrib3sv
 #define glVertexAttrib3sv SAGE_glVertexAttrib3sv
+#endif
+
+#ifndef glVertexAttrib4Nbv
 #define glVertexAttrib4Nbv SAGE_glVertexAttrib4Nbv
+#endif
+
+#ifndef glVertexAttrib4Niv
 #define glVertexAttrib4Niv SAGE_glVertexAttrib4Niv
+#endif
+
+#ifndef glVertexAttrib4Nsv
 #define glVertexAttrib4Nsv SAGE_glVertexAttrib4Nsv
+#endif
+
+#ifndef glVertexAttrib4Nub
 #define glVertexAttrib4Nub SAGE_glVertexAttrib4Nub
+#endif
+
+#ifndef glVertexAttrib4Nubv
 #define glVertexAttrib4Nubv SAGE_glVertexAttrib4Nubv
+#endif
+
+#ifndef glVertexAttrib4Nuiv
 #define glVertexAttrib4Nuiv SAGE_glVertexAttrib4Nuiv
+#endif
+
+#ifndef glVertexAttrib4Nusv
 #define glVertexAttrib4Nusv SAGE_glVertexAttrib4Nusv
+#endif
+
+#ifndef glVertexAttrib4bv
 #define glVertexAttrib4bv SAGE_glVertexAttrib4bv
+#endif
+
+#ifndef glVertexAttrib4d
 #define glVertexAttrib4d SAGE_glVertexAttrib4d
+#endif
+
+#ifndef glVertexAttrib4dv
 #define glVertexAttrib4dv SAGE_glVertexAttrib4dv
+#endif
+
+#ifndef glVertexAttrib4f
 #define glVertexAttrib4f SAGE_glVertexAttrib4f
+#endif
+
+#ifndef glVertexAttrib4fv
 #define glVertexAttrib4fv SAGE_glVertexAttrib4fv
+#endif
+
+#ifndef glVertexAttrib4iv
 #define glVertexAttrib4iv SAGE_glVertexAttrib4iv
+#endif
+
+#ifndef glVertexAttrib4s
 #define glVertexAttrib4s SAGE_glVertexAttrib4s
+#endif
+
+#ifndef glVertexAttrib4sv
 #define glVertexAttrib4sv SAGE_glVertexAttrib4sv
+#endif
+
+#ifndef glVertexAttrib4ubv
 #define glVertexAttrib4ubv SAGE_glVertexAttrib4ubv
+#endif
+
+#ifndef glVertexAttrib4uiv
 #define glVertexAttrib4uiv SAGE_glVertexAttrib4uiv
+#endif
+
+#ifndef glVertexAttrib4usv
 #define glVertexAttrib4usv SAGE_glVertexAttrib4usv
+#endif
+
+#ifndef glVertexAttribPointer
 #define glVertexAttribPointer SAGE_glVertexAttribPointer
+#endif
+
+#endif
+
+#ifndef GL_ARB_multitexture
 #define GL_ARB_multitexture 1
+#ifndef glActiveTextureARB
 #define glActiveTextureARB SAGE_glActiveTextureARB
+#endif
+
+#ifndef glClientActiveTextureARB
 #define glClientActiveTextureARB SAGE_glClientActiveTextureARB
+#endif
+
+#ifndef glMultiTexCoord1dARB
 #define glMultiTexCoord1dARB SAGE_glMultiTexCoord1dARB
+#endif
+
+#ifndef glMultiTexCoord1dvARB
 #define glMultiTexCoord1dvARB SAGE_glMultiTexCoord1dvARB
+#endif
+
+#ifndef glMultiTexCoord1fARB
 #define glMultiTexCoord1fARB SAGE_glMultiTexCoord1fARB
+#endif
+
+#ifndef glMultiTexCoord1fvARB
 #define glMultiTexCoord1fvARB SAGE_glMultiTexCoord1fvARB
+#endif
+
+#ifndef glMultiTexCoord1iARB
 #define glMultiTexCoord1iARB SAGE_glMultiTexCoord1iARB
+#endif
+
+#ifndef glMultiTexCoord1ivARB
 #define glMultiTexCoord1ivARB SAGE_glMultiTexCoord1ivARB
+#endif
+
+#ifndef glMultiTexCoord1sARB
 #define glMultiTexCoord1sARB SAGE_glMultiTexCoord1sARB
+#endif
+
+#ifndef glMultiTexCoord1svARB
 #define glMultiTexCoord1svARB SAGE_glMultiTexCoord1svARB
+#endif
+
+#ifndef glMultiTexCoord2dARB
 #define glMultiTexCoord2dARB SAGE_glMultiTexCoord2dARB
+#endif
+
+#ifndef glMultiTexCoord2dvARB
 #define glMultiTexCoord2dvARB SAGE_glMultiTexCoord2dvARB
+#endif
+
+#ifndef glMultiTexCoord2fARB
 #define glMultiTexCoord2fARB SAGE_glMultiTexCoord2fARB
+#endif
+
+#ifndef glMultiTexCoord2fvARB
 #define glMultiTexCoord2fvARB SAGE_glMultiTexCoord2fvARB
+#endif
+
+#ifndef glMultiTexCoord2iARB
 #define glMultiTexCoord2iARB SAGE_glMultiTexCoord2iARB
+#endif
+
+#ifndef glMultiTexCoord2ivARB
 #define glMultiTexCoord2ivARB SAGE_glMultiTexCoord2ivARB
+#endif
+
+#ifndef glMultiTexCoord2sARB
 #define glMultiTexCoord2sARB SAGE_glMultiTexCoord2sARB
+#endif
+
+#ifndef glMultiTexCoord2svARB
 #define glMultiTexCoord2svARB SAGE_glMultiTexCoord2svARB
+#endif
+
+#ifndef glMultiTexCoord3dARB
 #define glMultiTexCoord3dARB SAGE_glMultiTexCoord3dARB
+#endif
+
+#ifndef glMultiTexCoord3dvARB
 #define glMultiTexCoord3dvARB SAGE_glMultiTexCoord3dvARB
+#endif
+
+#ifndef glMultiTexCoord3fARB
 #define glMultiTexCoord3fARB SAGE_glMultiTexCoord3fARB
+#endif
+
+#ifndef glMultiTexCoord3fvARB
 #define glMultiTexCoord3fvARB SAGE_glMultiTexCoord3fvARB
+#endif
+
+#ifndef glMultiTexCoord3iARB
 #define glMultiTexCoord3iARB SAGE_glMultiTexCoord3iARB
+#endif
+
+#ifndef glMultiTexCoord3ivARB
 #define glMultiTexCoord3ivARB SAGE_glMultiTexCoord3ivARB
+#endif
+
+#ifndef glMultiTexCoord3sARB
 #define glMultiTexCoord3sARB SAGE_glMultiTexCoord3sARB
+#endif
+
+#ifndef glMultiTexCoord3svARB
 #define glMultiTexCoord3svARB SAGE_glMultiTexCoord3svARB
+#endif
+
+#ifndef glMultiTexCoord4dARB
 #define glMultiTexCoord4dARB SAGE_glMultiTexCoord4dARB
+#endif
+
+#ifndef glMultiTexCoord4dvARB
 #define glMultiTexCoord4dvARB SAGE_glMultiTexCoord4dvARB
+#endif
+
+#ifndef glMultiTexCoord4fARB
 #define glMultiTexCoord4fARB SAGE_glMultiTexCoord4fARB
+#endif
+
+#ifndef glMultiTexCoord4fvARB
 #define glMultiTexCoord4fvARB SAGE_glMultiTexCoord4fvARB
+#endif
+
+#ifndef glMultiTexCoord4iARB
 #define glMultiTexCoord4iARB SAGE_glMultiTexCoord4iARB
+#endif
+
+#ifndef glMultiTexCoord4ivARB
 #define glMultiTexCoord4ivARB SAGE_glMultiTexCoord4ivARB
+#endif
+
+#ifndef glMultiTexCoord4sARB
 #define glMultiTexCoord4sARB SAGE_glMultiTexCoord4sARB
+#endif
+
+#ifndef glMultiTexCoord4svARB
 #define glMultiTexCoord4svARB SAGE_glMultiTexCoord4svARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_transpose_matrix
 #define GL_ARB_transpose_matrix 1
+#ifndef glLoadTransposeMatrixfARB
 #define glLoadTransposeMatrixfARB SAGE_glLoadTransposeMatrixfARB
+#endif
+
+#ifndef glLoadTransposeMatrixdARB
 #define glLoadTransposeMatrixdARB SAGE_glLoadTransposeMatrixdARB
+#endif
+
+#ifndef glMultTransposeMatrixfARB
 #define glMultTransposeMatrixfARB SAGE_glMultTransposeMatrixfARB
+#endif
+
+#ifndef glMultTransposeMatrixdARB
 #define glMultTransposeMatrixdARB SAGE_glMultTransposeMatrixdARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_multisample
 #define GL_ARB_multisample 1
+#ifndef glSampleCoverageARB
 #define glSampleCoverageARB SAGE_glSampleCoverageARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_texture_env_add
 #define GL_ARB_texture_env_add 1
+#endif
+
+#ifndef GL_ARB_texture_cube_map
 #define GL_ARB_texture_cube_map 1
+#endif
+
+#ifndef GL_ARB_texture_compression
 #define GL_ARB_texture_compression 1
+#ifndef glCompressedTexImage3DARB
 #define glCompressedTexImage3DARB SAGE_glCompressedTexImage3DARB
+#endif
+
+#ifndef glCompressedTexImage2DARB
 #define glCompressedTexImage2DARB SAGE_glCompressedTexImage2DARB
+#endif
+
+#ifndef glCompressedTexImage1DARB
 #define glCompressedTexImage1DARB SAGE_glCompressedTexImage1DARB
+#endif
+
+#ifndef glCompressedTexSubImage3DARB
 #define glCompressedTexSubImage3DARB SAGE_glCompressedTexSubImage3DARB
+#endif
+
+#ifndef glCompressedTexSubImage2DARB
 #define glCompressedTexSubImage2DARB SAGE_glCompressedTexSubImage2DARB
+#endif
+
+#ifndef glCompressedTexSubImage1DARB
 #define glCompressedTexSubImage1DARB SAGE_glCompressedTexSubImage1DARB
+#endif
+
+#ifndef glGetCompressedTexImageARB
 #define glGetCompressedTexImageARB SAGE_glGetCompressedTexImageARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_texture_border_clamp
 #define GL_ARB_texture_border_clamp 1
+#endif
+
+#ifndef GL_ARB_point_parameters
 #define GL_ARB_point_parameters 1
+#ifndef glPointParameterfARB
 #define glPointParameterfARB SAGE_glPointParameterfARB
+#endif
+
+#ifndef glPointParameterfvARB
 #define glPointParameterfvARB SAGE_glPointParameterfvARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_vertex_blend
 #define GL_ARB_vertex_blend 1
+#ifndef glWeightbvARB
 #define glWeightbvARB SAGE_glWeightbvARB
+#endif
+
+#ifndef glWeightsvARB
 #define glWeightsvARB SAGE_glWeightsvARB
+#endif
+
+#ifndef glWeightivARB
 #define glWeightivARB SAGE_glWeightivARB
+#endif
+
+#ifndef glWeightfvARB
 #define glWeightfvARB SAGE_glWeightfvARB
+#endif
+
+#ifndef glWeightdvARB
 #define glWeightdvARB SAGE_glWeightdvARB
+#endif
+
+#ifndef glWeightubvARB
 #define glWeightubvARB SAGE_glWeightubvARB
+#endif
+
+#ifndef glWeightusvARB
 #define glWeightusvARB SAGE_glWeightusvARB
+#endif
+
+#ifndef glWeightuivARB
 #define glWeightuivARB SAGE_glWeightuivARB
+#endif
+
+#ifndef glWeightPointerARB
 #define glWeightPointerARB SAGE_glWeightPointerARB
+#endif
+
+#ifndef glVertexBlendARB
 #define glVertexBlendARB SAGE_glVertexBlendARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_matrix_palette
 #define GL_ARB_matrix_palette 1
+#ifndef glCurrentPaletteMatrixARB
 #define glCurrentPaletteMatrixARB SAGE_glCurrentPaletteMatrixARB
+#endif
+
+#ifndef glMatrixIndexubvARB
 #define glMatrixIndexubvARB SAGE_glMatrixIndexubvARB
+#endif
+
+#ifndef glMatrixIndexusvARB
 #define glMatrixIndexusvARB SAGE_glMatrixIndexusvARB
+#endif
+
+#ifndef glMatrixIndexuivARB
 #define glMatrixIndexuivARB SAGE_glMatrixIndexuivARB
+#endif
+
+#ifndef glMatrixIndexPointerARB
 #define glMatrixIndexPointerARB SAGE_glMatrixIndexPointerARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_texture_env_combine
 #define GL_ARB_texture_env_combine 1
+#endif
+
+#ifndef GL_ARB_texture_env_crossbar
 #define GL_ARB_texture_env_crossbar 1
+#endif
+
+#ifndef GL_ARB_texture_env_dot3
 #define GL_ARB_texture_env_dot3 1
+#endif
+
+#ifndef GL_ARB_texture_mirrored_repeat
 #define GL_ARB_texture_mirrored_repeat 1
+#endif
+
+#ifndef GL_ARB_depth_texture
 #define GL_ARB_depth_texture 1
+#endif
+
+#ifndef GL_ARB_shadow
 #define GL_ARB_shadow 1
+#endif
+
+#ifndef GL_ARB_shadow_ambient
 #define GL_ARB_shadow_ambient 1
+#endif
+
+#ifndef GL_ARB_window_pos
 #define GL_ARB_window_pos 1
+#ifndef glWindowPos2dARB
 #define glWindowPos2dARB SAGE_glWindowPos2dARB
+#endif
+
+#ifndef glWindowPos2dvARB
 #define glWindowPos2dvARB SAGE_glWindowPos2dvARB
+#endif
+
+#ifndef glWindowPos2fARB
 #define glWindowPos2fARB SAGE_glWindowPos2fARB
+#endif
+
+#ifndef glWindowPos2fvARB
 #define glWindowPos2fvARB SAGE_glWindowPos2fvARB
+#endif
+
+#ifndef glWindowPos2iARB
 #define glWindowPos2iARB SAGE_glWindowPos2iARB
+#endif
+
+#ifndef glWindowPos2ivARB
 #define glWindowPos2ivARB SAGE_glWindowPos2ivARB
+#endif
+
+#ifndef glWindowPos2sARB
 #define glWindowPos2sARB SAGE_glWindowPos2sARB
+#endif
+
+#ifndef glWindowPos2svARB
 #define glWindowPos2svARB SAGE_glWindowPos2svARB
+#endif
+
+#ifndef glWindowPos3dARB
 #define glWindowPos3dARB SAGE_glWindowPos3dARB
+#endif
+
+#ifndef glWindowPos3dvARB
 #define glWindowPos3dvARB SAGE_glWindowPos3dvARB
+#endif
+
+#ifndef glWindowPos3fARB
 #define glWindowPos3fARB SAGE_glWindowPos3fARB
+#endif
+
+#ifndef glWindowPos3fvARB
 #define glWindowPos3fvARB SAGE_glWindowPos3fvARB
+#endif
+
+#ifndef glWindowPos3iARB
 #define glWindowPos3iARB SAGE_glWindowPos3iARB
+#endif
+
+#ifndef glWindowPos3ivARB
 #define glWindowPos3ivARB SAGE_glWindowPos3ivARB
+#endif
+
+#ifndef glWindowPos3sARB
 #define glWindowPos3sARB SAGE_glWindowPos3sARB
+#endif
+
+#ifndef glWindowPos3svARB
 #define glWindowPos3svARB SAGE_glWindowPos3svARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_vertex_program
 #define GL_ARB_vertex_program 1
+#ifndef glVertexAttrib1dARB
 #define glVertexAttrib1dARB SAGE_glVertexAttrib1dARB
+#endif
+
+#ifndef glVertexAttrib1dvARB
 #define glVertexAttrib1dvARB SAGE_glVertexAttrib1dvARB
+#endif
+
+#ifndef glVertexAttrib1fARB
 #define glVertexAttrib1fARB SAGE_glVertexAttrib1fARB
+#endif
+
+#ifndef glVertexAttrib1fvARB
 #define glVertexAttrib1fvARB SAGE_glVertexAttrib1fvARB
+#endif
+
+#ifndef glVertexAttrib1sARB
 #define glVertexAttrib1sARB SAGE_glVertexAttrib1sARB
+#endif
+
+#ifndef glVertexAttrib1svARB
 #define glVertexAttrib1svARB SAGE_glVertexAttrib1svARB
+#endif
+
+#ifndef glVertexAttrib2dARB
 #define glVertexAttrib2dARB SAGE_glVertexAttrib2dARB
+#endif
+
+#ifndef glVertexAttrib2dvARB
 #define glVertexAttrib2dvARB SAGE_glVertexAttrib2dvARB
+#endif
+
+#ifndef glVertexAttrib2fARB
 #define glVertexAttrib2fARB SAGE_glVertexAttrib2fARB
+#endif
+
+#ifndef glVertexAttrib2fvARB
 #define glVertexAttrib2fvARB SAGE_glVertexAttrib2fvARB
+#endif
+
+#ifndef glVertexAttrib2sARB
 #define glVertexAttrib2sARB SAGE_glVertexAttrib2sARB
+#endif
+
+#ifndef glVertexAttrib2svARB
 #define glVertexAttrib2svARB SAGE_glVertexAttrib2svARB
+#endif
+
+#ifndef glVertexAttrib3dARB
 #define glVertexAttrib3dARB SAGE_glVertexAttrib3dARB
+#endif
+
+#ifndef glVertexAttrib3dvARB
 #define glVertexAttrib3dvARB SAGE_glVertexAttrib3dvARB
+#endif
+
+#ifndef glVertexAttrib3fARB
 #define glVertexAttrib3fARB SAGE_glVertexAttrib3fARB
+#endif
+
+#ifndef glVertexAttrib3fvARB
 #define glVertexAttrib3fvARB SAGE_glVertexAttrib3fvARB
+#endif
+
+#ifndef glVertexAttrib3sARB
 #define glVertexAttrib3sARB SAGE_glVertexAttrib3sARB
+#endif
+
+#ifndef glVertexAttrib3svARB
 #define glVertexAttrib3svARB SAGE_glVertexAttrib3svARB
+#endif
+
+#ifndef glVertexAttrib4NbvARB
 #define glVertexAttrib4NbvARB SAGE_glVertexAttrib4NbvARB
+#endif
+
+#ifndef glVertexAttrib4NivARB
 #define glVertexAttrib4NivARB SAGE_glVertexAttrib4NivARB
+#endif
+
+#ifndef glVertexAttrib4NsvARB
 #define glVertexAttrib4NsvARB SAGE_glVertexAttrib4NsvARB
+#endif
+
+#ifndef glVertexAttrib4NubARB
 #define glVertexAttrib4NubARB SAGE_glVertexAttrib4NubARB
+#endif
+
+#ifndef glVertexAttrib4NubvARB
 #define glVertexAttrib4NubvARB SAGE_glVertexAttrib4NubvARB
+#endif
+
+#ifndef glVertexAttrib4NuivARB
 #define glVertexAttrib4NuivARB SAGE_glVertexAttrib4NuivARB
+#endif
+
+#ifndef glVertexAttrib4NusvARB
 #define glVertexAttrib4NusvARB SAGE_glVertexAttrib4NusvARB
+#endif
+
+#ifndef glVertexAttrib4bvARB
 #define glVertexAttrib4bvARB SAGE_glVertexAttrib4bvARB
+#endif
+
+#ifndef glVertexAttrib4dARB
 #define glVertexAttrib4dARB SAGE_glVertexAttrib4dARB
+#endif
+
+#ifndef glVertexAttrib4dvARB
 #define glVertexAttrib4dvARB SAGE_glVertexAttrib4dvARB
+#endif
+
+#ifndef glVertexAttrib4fARB
 #define glVertexAttrib4fARB SAGE_glVertexAttrib4fARB
+#endif
+
+#ifndef glVertexAttrib4fvARB
 #define glVertexAttrib4fvARB SAGE_glVertexAttrib4fvARB
+#endif
+
+#ifndef glVertexAttrib4ivARB
 #define glVertexAttrib4ivARB SAGE_glVertexAttrib4ivARB
+#endif
+
+#ifndef glVertexAttrib4sARB
 #define glVertexAttrib4sARB SAGE_glVertexAttrib4sARB
+#endif
+
+#ifndef glVertexAttrib4svARB
 #define glVertexAttrib4svARB SAGE_glVertexAttrib4svARB
+#endif
+
+#ifndef glVertexAttrib4ubvARB
 #define glVertexAttrib4ubvARB SAGE_glVertexAttrib4ubvARB
+#endif
+
+#ifndef glVertexAttrib4uivARB
 #define glVertexAttrib4uivARB SAGE_glVertexAttrib4uivARB
+#endif
+
+#ifndef glVertexAttrib4usvARB
 #define glVertexAttrib4usvARB SAGE_glVertexAttrib4usvARB
+#endif
+
+#ifndef glVertexAttribPointerARB
 #define glVertexAttribPointerARB SAGE_glVertexAttribPointerARB
+#endif
+
+#ifndef glEnableVertexAttribArrayARB
 #define glEnableVertexAttribArrayARB SAGE_glEnableVertexAttribArrayARB
+#endif
+
+#ifndef glDisableVertexAttribArrayARB
 #define glDisableVertexAttribArrayARB SAGE_glDisableVertexAttribArrayARB
+#endif
+
+#ifndef glProgramStringARB
 #define glProgramStringARB SAGE_glProgramStringARB
+#endif
+
+#ifndef glBindProgramARB
 #define glBindProgramARB SAGE_glBindProgramARB
+#endif
+
+#ifndef glDeleteProgramsARB
 #define glDeleteProgramsARB SAGE_glDeleteProgramsARB
+#endif
+
+#ifndef glGenProgramsARB
 #define glGenProgramsARB SAGE_glGenProgramsARB
+#endif
+
+#ifndef glProgramEnvParameter4dARB
 #define glProgramEnvParameter4dARB SAGE_glProgramEnvParameter4dARB
+#endif
+
+#ifndef glProgramEnvParameter4dvARB
 #define glProgramEnvParameter4dvARB SAGE_glProgramEnvParameter4dvARB
+#endif
+
+#ifndef glProgramEnvParameter4fARB
 #define glProgramEnvParameter4fARB SAGE_glProgramEnvParameter4fARB
+#endif
+
+#ifndef glProgramEnvParameter4fvARB
 #define glProgramEnvParameter4fvARB SAGE_glProgramEnvParameter4fvARB
+#endif
+
+#ifndef glProgramLocalParameter4dARB
 #define glProgramLocalParameter4dARB SAGE_glProgramLocalParameter4dARB
+#endif
+
+#ifndef glProgramLocalParameter4dvARB
 #define glProgramLocalParameter4dvARB SAGE_glProgramLocalParameter4dvARB
+#endif
+
+#ifndef glProgramLocalParameter4fARB
 #define glProgramLocalParameter4fARB SAGE_glProgramLocalParameter4fARB
+#endif
+
+#ifndef glProgramLocalParameter4fvARB
 #define glProgramLocalParameter4fvARB SAGE_glProgramLocalParameter4fvARB
+#endif
+
+#ifndef glGetProgramEnvParameterdvARB
 #define glGetProgramEnvParameterdvARB SAGE_glGetProgramEnvParameterdvARB
+#endif
+
+#ifndef glGetProgramEnvParameterfvARB
 #define glGetProgramEnvParameterfvARB SAGE_glGetProgramEnvParameterfvARB
+#endif
+
+#ifndef glGetProgramLocalParameterdvARB
 #define glGetProgramLocalParameterdvARB SAGE_glGetProgramLocalParameterdvARB
+#endif
+
+#ifndef glGetProgramLocalParameterfvARB
 #define glGetProgramLocalParameterfvARB SAGE_glGetProgramLocalParameterfvARB
+#endif
+
+#ifndef glGetProgramivARB
 #define glGetProgramivARB SAGE_glGetProgramivARB
+#endif
+
+#ifndef glGetProgramStringARB
 #define glGetProgramStringARB SAGE_glGetProgramStringARB
+#endif
+
+#ifndef glGetVertexAttribdvARB
 #define glGetVertexAttribdvARB SAGE_glGetVertexAttribdvARB
+#endif
+
+#ifndef glGetVertexAttribfvARB
 #define glGetVertexAttribfvARB SAGE_glGetVertexAttribfvARB
+#endif
+
+#ifndef glGetVertexAttribivARB
 #define glGetVertexAttribivARB SAGE_glGetVertexAttribivARB
+#endif
+
+#ifndef glGetVertexAttribPointervARB
 #define glGetVertexAttribPointervARB SAGE_glGetVertexAttribPointervARB
+#endif
+
+#ifndef glIsProgramARB
 #define glIsProgramARB SAGE_glIsProgramARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_fragment_program
 #define GL_ARB_fragment_program 1
+#endif
+
+#ifndef GL_ARB_vertex_buffer_object
 #define GL_ARB_vertex_buffer_object 1
+#ifndef glBindBufferARB
 #define glBindBufferARB SAGE_glBindBufferARB
+#endif
+
+#ifndef glDeleteBuffersARB
 #define glDeleteBuffersARB SAGE_glDeleteBuffersARB
+#endif
+
+#ifndef glGenBuffersARB
 #define glGenBuffersARB SAGE_glGenBuffersARB
+#endif
+
+#ifndef glIsBufferARB
 #define glIsBufferARB SAGE_glIsBufferARB
+#endif
+
+#ifndef glBufferDataARB
 #define glBufferDataARB SAGE_glBufferDataARB
+#endif
+
+#ifndef glBufferSubDataARB
 #define glBufferSubDataARB SAGE_glBufferSubDataARB
+#endif
+
+#ifndef glGetBufferSubDataARB
 #define glGetBufferSubDataARB SAGE_glGetBufferSubDataARB
+#endif
+
+#ifndef glMapBufferARB
 #define glMapBufferARB SAGE_glMapBufferARB
+#endif
+
+#ifndef glUnmapBufferARB
 #define glUnmapBufferARB SAGE_glUnmapBufferARB
+#endif
+
+#ifndef glGetBufferParameterivARB
 #define glGetBufferParameterivARB SAGE_glGetBufferParameterivARB
+#endif
+
+#ifndef glGetBufferPointervARB
 #define glGetBufferPointervARB SAGE_glGetBufferPointervARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_occlusion_query
 #define GL_ARB_occlusion_query 1
+#ifndef glGenQueriesARB
 #define glGenQueriesARB SAGE_glGenQueriesARB
+#endif
+
+#ifndef glDeleteQueriesARB
 #define glDeleteQueriesARB SAGE_glDeleteQueriesARB
+#endif
+
+#ifndef glIsQueryARB
 #define glIsQueryARB SAGE_glIsQueryARB
+#endif
+
+#ifndef glBeginQueryARB
 #define glBeginQueryARB SAGE_glBeginQueryARB
+#endif
+
+#ifndef glEndQueryARB
 #define glEndQueryARB SAGE_glEndQueryARB
+#endif
+
+#ifndef glGetQueryivARB
 #define glGetQueryivARB SAGE_glGetQueryivARB
+#endif
+
+#ifndef glGetQueryObjectivARB
 #define glGetQueryObjectivARB SAGE_glGetQueryObjectivARB
+#endif
+
+#ifndef glGetQueryObjectuivARB
 #define glGetQueryObjectuivARB SAGE_glGetQueryObjectuivARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_shader_objects
 #define GL_ARB_shader_objects 1
+#ifndef glDeleteObjectARB
 #define glDeleteObjectARB SAGE_glDeleteObjectARB
+#endif
+
+#ifndef glGetHandleARB
 #define glGetHandleARB SAGE_glGetHandleARB
+#endif
+
+#ifndef glDetachObjectARB
 #define glDetachObjectARB SAGE_glDetachObjectARB
+#endif
+
+#ifndef glCreateShaderObjectARB
 #define glCreateShaderObjectARB SAGE_glCreateShaderObjectARB
+#endif
+
+#ifndef glShaderSourceARB
 #define glShaderSourceARB SAGE_glShaderSourceARB
+#endif
+
+#ifndef glCompileShaderARB
 #define glCompileShaderARB SAGE_glCompileShaderARB
+#endif
+
+#ifndef glCreateProgramObjectARB
 #define glCreateProgramObjectARB SAGE_glCreateProgramObjectARB
+#endif
+
+#ifndef glAttachObjectARB
 #define glAttachObjectARB SAGE_glAttachObjectARB
+#endif
+
+#ifndef glLinkProgramARB
 #define glLinkProgramARB SAGE_glLinkProgramARB
+#endif
+
+#ifndef glUseProgramObjectARB
 #define glUseProgramObjectARB SAGE_glUseProgramObjectARB
+#endif
+
+#ifndef glValidateProgramARB
 #define glValidateProgramARB SAGE_glValidateProgramARB
+#endif
+
+#ifndef glUniform1fARB
 #define glUniform1fARB SAGE_glUniform1fARB
+#endif
+
+#ifndef glUniform2fARB
 #define glUniform2fARB SAGE_glUniform2fARB
+#endif
+
+#ifndef glUniform3fARB
 #define glUniform3fARB SAGE_glUniform3fARB
+#endif
+
+#ifndef glUniform4fARB
 #define glUniform4fARB SAGE_glUniform4fARB
+#endif
+
+#ifndef glUniform1iARB
 #define glUniform1iARB SAGE_glUniform1iARB
+#endif
+
+#ifndef glUniform2iARB
 #define glUniform2iARB SAGE_glUniform2iARB
+#endif
+
+#ifndef glUniform3iARB
 #define glUniform3iARB SAGE_glUniform3iARB
+#endif
+
+#ifndef glUniform4iARB
 #define glUniform4iARB SAGE_glUniform4iARB
+#endif
+
+#ifndef glUniform1fvARB
 #define glUniform1fvARB SAGE_glUniform1fvARB
+#endif
+
+#ifndef glUniform2fvARB
 #define glUniform2fvARB SAGE_glUniform2fvARB
+#endif
+
+#ifndef glUniform3fvARB
 #define glUniform3fvARB SAGE_glUniform3fvARB
+#endif
+
+#ifndef glUniform4fvARB
 #define glUniform4fvARB SAGE_glUniform4fvARB
+#endif
+
+#ifndef glUniform1ivARB
 #define glUniform1ivARB SAGE_glUniform1ivARB
+#endif
+
+#ifndef glUniform2ivARB
 #define glUniform2ivARB SAGE_glUniform2ivARB
+#endif
+
+#ifndef glUniform3ivARB
 #define glUniform3ivARB SAGE_glUniform3ivARB
+#endif
+
+#ifndef glUniform4ivARB
 #define glUniform4ivARB SAGE_glUniform4ivARB
+#endif
+
+#ifndef glUniformMatrix2fvARB
 #define glUniformMatrix2fvARB SAGE_glUniformMatrix2fvARB
+#endif
+
+#ifndef glUniformMatrix3fvARB
 #define glUniformMatrix3fvARB SAGE_glUniformMatrix3fvARB
+#endif
+
+#ifndef glUniformMatrix4fvARB
 #define glUniformMatrix4fvARB SAGE_glUniformMatrix4fvARB
+#endif
+
+#ifndef glGetObjectParameterfvARB
 #define glGetObjectParameterfvARB SAGE_glGetObjectParameterfvARB
+#endif
+
+#ifndef glGetObjectParameterivARB
 #define glGetObjectParameterivARB SAGE_glGetObjectParameterivARB
+#endif
+
+#ifndef glGetInfoLogARB
 #define glGetInfoLogARB SAGE_glGetInfoLogARB
+#endif
+
+#ifndef glGetAttachedObjectsARB
 #define glGetAttachedObjectsARB SAGE_glGetAttachedObjectsARB
+#endif
+
+#ifndef glGetUniformLocationARB
 #define glGetUniformLocationARB SAGE_glGetUniformLocationARB
+#endif
+
+#ifndef glGetActiveUniformARB
 #define glGetActiveUniformARB SAGE_glGetActiveUniformARB
+#endif
+
+#ifndef glGetUniformfvARB
 #define glGetUniformfvARB SAGE_glGetUniformfvARB
+#endif
+
+#ifndef glGetUniformivARB
 #define glGetUniformivARB SAGE_glGetUniformivARB
+#endif
+
+#ifndef glGetShaderSourceARB
 #define glGetShaderSourceARB SAGE_glGetShaderSourceARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_vertex_shader
 #define GL_ARB_vertex_shader 1
+#ifndef glBindAttribLocationARB
 #define glBindAttribLocationARB SAGE_glBindAttribLocationARB
+#endif
+
+#ifndef glGetActiveAttribARB
 #define glGetActiveAttribARB SAGE_glGetActiveAttribARB
+#endif
+
+#ifndef glGetAttribLocationARB
 #define glGetAttribLocationARB SAGE_glGetAttribLocationARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_fragment_shader
 #define GL_ARB_fragment_shader 1
+#endif
+
+#ifndef GL_ARB_shading_language_100
 #define GL_ARB_shading_language_100 1
+#endif
+
+#ifndef GL_ARB_texture_non_power_of_two
 #define GL_ARB_texture_non_power_of_two 1
+#endif
+
+#ifndef GL_ARB_point_sprite
 #define GL_ARB_point_sprite 1
+#endif
+
+#ifndef GL_ARB_fragment_program_shadow
 #define GL_ARB_fragment_program_shadow 1
+#endif
+
+#ifndef GL_ARB_draw_buffers
 #define GL_ARB_draw_buffers 1
+#ifndef glDrawBuffersARB
 #define glDrawBuffersARB SAGE_glDrawBuffersARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_texture_rectangle
 #define GL_ARB_texture_rectangle 1
+#endif
+
+#ifndef GL_ARB_color_buffer_float
 #define GL_ARB_color_buffer_float 1
+#ifndef glClampColorARB
 #define glClampColorARB SAGE_glClampColorARB
+#endif
+
+#endif
+
+#ifndef GL_ARB_half_float_pixel
 #define GL_ARB_half_float_pixel 1
+#endif
+
+#ifndef GL_ARB_texture_float
 #define GL_ARB_texture_float 1
+#endif
+
+#ifndef GL_ARB_pixel_buffer_object
 #define GL_ARB_pixel_buffer_object 1
+#endif
+
+#ifndef GL_EXT_abgr
 #define GL_EXT_abgr 1
+#endif
+
+#ifndef GL_EXT_blend_color
 #define GL_EXT_blend_color 1
+#ifndef glBlendColorEXT
 #define glBlendColorEXT SAGE_glBlendColorEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_polygon_offset
 #define GL_EXT_polygon_offset 1
+#ifndef glPolygonOffsetEXT
 #define glPolygonOffsetEXT SAGE_glPolygonOffsetEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_texture
 #define GL_EXT_texture 1
+#endif
+
+#ifndef GL_EXT_texture3D
 #define GL_EXT_texture3D 1
+#ifndef glTexImage3DEXT
 #define glTexImage3DEXT SAGE_glTexImage3DEXT
+#endif
+
+#ifndef glTexSubImage3DEXT
 #define glTexSubImage3DEXT SAGE_glTexSubImage3DEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIS_texture_filter4
 #define GL_SGIS_texture_filter4 1
+#ifndef glGetTexFilterFuncSGIS
 #define glGetTexFilterFuncSGIS SAGE_glGetTexFilterFuncSGIS
+#endif
+
+#ifndef glTexFilterFuncSGIS
 #define glTexFilterFuncSGIS SAGE_glTexFilterFuncSGIS
+#endif
+
+#endif
+
+#ifndef GL_EXT_subtexture
 #define GL_EXT_subtexture 1
+#ifndef glTexSubImage1DEXT
 #define glTexSubImage1DEXT SAGE_glTexSubImage1DEXT
+#endif
+
+#ifndef glTexSubImage2DEXT
 #define glTexSubImage2DEXT SAGE_glTexSubImage2DEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_copy_texture
 #define GL_EXT_copy_texture 1
+#ifndef glCopyTexImage1DEXT
 #define glCopyTexImage1DEXT SAGE_glCopyTexImage1DEXT
+#endif
+
+#ifndef glCopyTexImage2DEXT
 #define glCopyTexImage2DEXT SAGE_glCopyTexImage2DEXT
+#endif
+
+#ifndef glCopyTexSubImage1DEXT
 #define glCopyTexSubImage1DEXT SAGE_glCopyTexSubImage1DEXT
+#endif
+
+#ifndef glCopyTexSubImage2DEXT
 #define glCopyTexSubImage2DEXT SAGE_glCopyTexSubImage2DEXT
+#endif
+
+#ifndef glCopyTexSubImage3DEXT
 #define glCopyTexSubImage3DEXT SAGE_glCopyTexSubImage3DEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_histogram
 #define GL_EXT_histogram 1
+#ifndef glGetHistogramEXT
 #define glGetHistogramEXT SAGE_glGetHistogramEXT
+#endif
+
+#ifndef glGetHistogramParameterfvEXT
 #define glGetHistogramParameterfvEXT SAGE_glGetHistogramParameterfvEXT
+#endif
+
+#ifndef glGetHistogramParameterivEXT
 #define glGetHistogramParameterivEXT SAGE_glGetHistogramParameterivEXT
+#endif
+
+#ifndef glGetMinmaxEXT
 #define glGetMinmaxEXT SAGE_glGetMinmaxEXT
+#endif
+
+#ifndef glGetMinmaxParameterfvEXT
 #define glGetMinmaxParameterfvEXT SAGE_glGetMinmaxParameterfvEXT
+#endif
+
+#ifndef glGetMinmaxParameterivEXT
 #define glGetMinmaxParameterivEXT SAGE_glGetMinmaxParameterivEXT
+#endif
+
+#ifndef glHistogramEXT
 #define glHistogramEXT SAGE_glHistogramEXT
+#endif
+
+#ifndef glMinmaxEXT
 #define glMinmaxEXT SAGE_glMinmaxEXT
+#endif
+
+#ifndef glResetHistogramEXT
 #define glResetHistogramEXT SAGE_glResetHistogramEXT
+#endif
+
+#ifndef glResetMinmaxEXT
 #define glResetMinmaxEXT SAGE_glResetMinmaxEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_convolution
 #define GL_EXT_convolution 1
+#ifndef glConvolutionFilter1DEXT
 #define glConvolutionFilter1DEXT SAGE_glConvolutionFilter1DEXT
+#endif
+
+#ifndef glConvolutionFilter2DEXT
 #define glConvolutionFilter2DEXT SAGE_glConvolutionFilter2DEXT
+#endif
+
+#ifndef glConvolutionParameterfEXT
 #define glConvolutionParameterfEXT SAGE_glConvolutionParameterfEXT
+#endif
+
+#ifndef glConvolutionParameterfvEXT
 #define glConvolutionParameterfvEXT SAGE_glConvolutionParameterfvEXT
+#endif
+
+#ifndef glConvolutionParameteriEXT
 #define glConvolutionParameteriEXT SAGE_glConvolutionParameteriEXT
+#endif
+
+#ifndef glConvolutionParameterivEXT
 #define glConvolutionParameterivEXT SAGE_glConvolutionParameterivEXT
+#endif
+
+#ifndef glCopyConvolutionFilter1DEXT
 #define glCopyConvolutionFilter1DEXT SAGE_glCopyConvolutionFilter1DEXT
+#endif
+
+#ifndef glCopyConvolutionFilter2DEXT
 #define glCopyConvolutionFilter2DEXT SAGE_glCopyConvolutionFilter2DEXT
+#endif
+
+#ifndef glGetConvolutionFilterEXT
 #define glGetConvolutionFilterEXT SAGE_glGetConvolutionFilterEXT
+#endif
+
+#ifndef glGetConvolutionParameterfvEXT
 #define glGetConvolutionParameterfvEXT SAGE_glGetConvolutionParameterfvEXT
+#endif
+
+#ifndef glGetConvolutionParameterivEXT
 #define glGetConvolutionParameterivEXT SAGE_glGetConvolutionParameterivEXT
+#endif
+
+#ifndef glGetSeparableFilterEXT
 #define glGetSeparableFilterEXT SAGE_glGetSeparableFilterEXT
+#endif
+
+#ifndef glSeparableFilter2DEXT
 #define glSeparableFilter2DEXT SAGE_glSeparableFilter2DEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_color_matrix
 #define GL_EXT_color_matrix 1
+#endif
+
+#ifndef GL_SGI_color_table
 #define GL_SGI_color_table 1
+#ifndef glColorTableSGI
 #define glColorTableSGI SAGE_glColorTableSGI
+#endif
+
+#ifndef glColorTableParameterfvSGI
 #define glColorTableParameterfvSGI SAGE_glColorTableParameterfvSGI
+#endif
+
+#ifndef glColorTableParameterivSGI
 #define glColorTableParameterivSGI SAGE_glColorTableParameterivSGI
+#endif
+
+#ifndef glCopyColorTableSGI
 #define glCopyColorTableSGI SAGE_glCopyColorTableSGI
+#endif
+
+#ifndef glGetColorTableSGI
 #define glGetColorTableSGI SAGE_glGetColorTableSGI
+#endif
+
+#ifndef glGetColorTableParameterfvSGI
 #define glGetColorTableParameterfvSGI SAGE_glGetColorTableParameterfvSGI
+#endif
+
+#ifndef glGetColorTableParameterivSGI
 #define glGetColorTableParameterivSGI SAGE_glGetColorTableParameterivSGI
+#endif
+
+#endif
+
+#ifndef GL_SGIX_pixel_texture
 #define GL_SGIX_pixel_texture 1
+#ifndef glPixelTexGenSGIX
 #define glPixelTexGenSGIX SAGE_glPixelTexGenSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIS_pixel_texture
 #define GL_SGIS_pixel_texture 1
+#ifndef glPixelTexGenParameteriSGIS
 #define glPixelTexGenParameteriSGIS SAGE_glPixelTexGenParameteriSGIS
+#endif
+
+#ifndef glPixelTexGenParameterivSGIS
 #define glPixelTexGenParameterivSGIS SAGE_glPixelTexGenParameterivSGIS
+#endif
+
+#ifndef glPixelTexGenParameterfSGIS
 #define glPixelTexGenParameterfSGIS SAGE_glPixelTexGenParameterfSGIS
+#endif
+
+#ifndef glPixelTexGenParameterfvSGIS
 #define glPixelTexGenParameterfvSGIS SAGE_glPixelTexGenParameterfvSGIS
+#endif
+
+#ifndef glGetPixelTexGenParameterivSGIS
 #define glGetPixelTexGenParameterivSGIS SAGE_glGetPixelTexGenParameterivSGIS
+#endif
+
+#ifndef glGetPixelTexGenParameterfvSGIS
 #define glGetPixelTexGenParameterfvSGIS SAGE_glGetPixelTexGenParameterfvSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGIS_texture4D
 #define GL_SGIS_texture4D 1
+#ifndef glTexImage4DSGIS
 #define glTexImage4DSGIS SAGE_glTexImage4DSGIS
+#endif
+
+#ifndef glTexSubImage4DSGIS
 #define glTexSubImage4DSGIS SAGE_glTexSubImage4DSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGI_texture_color_table
 #define GL_SGI_texture_color_table 1
+#endif
+
+#ifndef GL_EXT_cmyka
 #define GL_EXT_cmyka 1
+#endif
+
+#ifndef GL_EXT_texture_object
 #define GL_EXT_texture_object 1
+#ifndef glAreTexturesResidentEXT
 #define glAreTexturesResidentEXT SAGE_glAreTexturesResidentEXT
+#endif
+
+#ifndef glBindTextureEXT
 #define glBindTextureEXT SAGE_glBindTextureEXT
+#endif
+
+#ifndef glDeleteTexturesEXT
 #define glDeleteTexturesEXT SAGE_glDeleteTexturesEXT
+#endif
+
+#ifndef glGenTexturesEXT
 #define glGenTexturesEXT SAGE_glGenTexturesEXT
+#endif
+
+#ifndef glIsTextureEXT
 #define glIsTextureEXT SAGE_glIsTextureEXT
+#endif
+
+#ifndef glPrioritizeTexturesEXT
 #define glPrioritizeTexturesEXT SAGE_glPrioritizeTexturesEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIS_detail_texture
 #define GL_SGIS_detail_texture 1
+#ifndef glDetailTexFuncSGIS
 #define glDetailTexFuncSGIS SAGE_glDetailTexFuncSGIS
+#endif
+
+#ifndef glGetDetailTexFuncSGIS
 #define glGetDetailTexFuncSGIS SAGE_glGetDetailTexFuncSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGIS_sharpen_texture
 #define GL_SGIS_sharpen_texture 1
+#ifndef glSharpenTexFuncSGIS
 #define glSharpenTexFuncSGIS SAGE_glSharpenTexFuncSGIS
+#endif
+
+#ifndef glGetSharpenTexFuncSGIS
 #define glGetSharpenTexFuncSGIS SAGE_glGetSharpenTexFuncSGIS
+#endif
+
+#endif
+
+#ifndef GL_EXT_packed_pixels
 #define GL_EXT_packed_pixels 1
+#endif
+
+#ifndef GL_SGIS_texture_lod
 #define GL_SGIS_texture_lod 1
+#endif
+
+#ifndef GL_SGIS_multisample
 #define GL_SGIS_multisample 1
+#ifndef glSampleMaskSGIS
 #define glSampleMaskSGIS SAGE_glSampleMaskSGIS
+#endif
+
+#ifndef glSamplePatternSGIS
 #define glSamplePatternSGIS SAGE_glSamplePatternSGIS
+#endif
+
+#endif
+
+#ifndef GL_EXT_rescale_normal
 #define GL_EXT_rescale_normal 1
+#endif
+
+#ifndef GL_EXT_vertex_array
 #define GL_EXT_vertex_array 1
+#ifndef glArrayElementEXT
 #define glArrayElementEXT SAGE_glArrayElementEXT
+#endif
+
+#ifndef glColorPointerEXT
 #define glColorPointerEXT SAGE_glColorPointerEXT
+#endif
+
+#ifndef glDrawArraysEXT
 #define glDrawArraysEXT SAGE_glDrawArraysEXT
+#endif
+
+#ifndef glEdgeFlagPointerEXT
 #define glEdgeFlagPointerEXT SAGE_glEdgeFlagPointerEXT
+#endif
+
+#ifndef glGetPointervEXT
 #define glGetPointervEXT SAGE_glGetPointervEXT
+#endif
+
+#ifndef glIndexPointerEXT
 #define glIndexPointerEXT SAGE_glIndexPointerEXT
+#endif
+
+#ifndef glNormalPointerEXT
 #define glNormalPointerEXT SAGE_glNormalPointerEXT
+#endif
+
+#ifndef glTexCoordPointerEXT
 #define glTexCoordPointerEXT SAGE_glTexCoordPointerEXT
+#endif
+
+#ifndef glVertexPointerEXT
 #define glVertexPointerEXT SAGE_glVertexPointerEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_misc_attribute
 #define GL_EXT_misc_attribute 1
+#endif
+
+#ifndef GL_SGIS_generate_mipmap
 #define GL_SGIS_generate_mipmap 1
+#endif
+
+#ifndef GL_SGIX_clipmap
 #define GL_SGIX_clipmap 1
+#endif
+
+#ifndef GL_SGIX_shadow
 #define GL_SGIX_shadow 1
+#endif
+
+#ifndef GL_SGIS_texture_edge_clamp
 #define GL_SGIS_texture_edge_clamp 1
+#endif
+
+#ifndef GL_SGIS_texture_border_clamp
 #define GL_SGIS_texture_border_clamp 1
+#endif
+
+#ifndef GL_EXT_blend_minmax
 #define GL_EXT_blend_minmax 1
+#ifndef glBlendEquationEXT
 #define glBlendEquationEXT SAGE_glBlendEquationEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_blend_subtract
 #define GL_EXT_blend_subtract 1
+#endif
+
+#ifndef GL_EXT_blend_logic_op
 #define GL_EXT_blend_logic_op 1
+#endif
+
+#ifndef GL_SGIX_interlace
 #define GL_SGIX_interlace 1
+#endif
+
+#ifndef GL_SGIX_pixel_tiles
 #define GL_SGIX_pixel_tiles 1
+#endif
+
+#ifndef GL_SGIX_texture_select
 #define GL_SGIX_texture_select 1
+#endif
+
+#ifndef GL_SGIX_sprite
 #define GL_SGIX_sprite 1
+#ifndef glSpriteParameterfSGIX
 #define glSpriteParameterfSGIX SAGE_glSpriteParameterfSGIX
+#endif
+
+#ifndef glSpriteParameterfvSGIX
 #define glSpriteParameterfvSGIX SAGE_glSpriteParameterfvSGIX
+#endif
+
+#ifndef glSpriteParameteriSGIX
 #define glSpriteParameteriSGIX SAGE_glSpriteParameteriSGIX
+#endif
+
+#ifndef glSpriteParameterivSGIX
 #define glSpriteParameterivSGIX SAGE_glSpriteParameterivSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_texture_multi_buffer
 #define GL_SGIX_texture_multi_buffer 1
+#endif
+
+#ifndef GL_EXT_point_parameters
 #define GL_EXT_point_parameters 1
+#ifndef glPointParameterfEXT
 #define glPointParameterfEXT SAGE_glPointParameterfEXT
+#endif
+
+#ifndef glPointParameterfvEXT
 #define glPointParameterfvEXT SAGE_glPointParameterfvEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIS_point_parameters
 #define GL_SGIS_point_parameters 1
+#ifndef glPointParameterfSGIS
 #define glPointParameterfSGIS SAGE_glPointParameterfSGIS
+#endif
+
+#ifndef glPointParameterfvSGIS
 #define glPointParameterfvSGIS SAGE_glPointParameterfvSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGIX_instruments
 #define GL_SGIX_instruments 1
+#ifndef glGetInstrumentsSGIX
 #define glGetInstrumentsSGIX SAGE_glGetInstrumentsSGIX
+#endif
+
+#ifndef glInstrumentsBufferSGIX
 #define glInstrumentsBufferSGIX SAGE_glInstrumentsBufferSGIX
+#endif
+
+#ifndef glPollInstrumentsSGIX
 #define glPollInstrumentsSGIX SAGE_glPollInstrumentsSGIX
+#endif
+
+#ifndef glReadInstrumentsSGIX
 #define glReadInstrumentsSGIX SAGE_glReadInstrumentsSGIX
+#endif
+
+#ifndef glStartInstrumentsSGIX
 #define glStartInstrumentsSGIX SAGE_glStartInstrumentsSGIX
+#endif
+
+#ifndef glStopInstrumentsSGIX
 #define glStopInstrumentsSGIX SAGE_glStopInstrumentsSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_texture_scale_bias
 #define GL_SGIX_texture_scale_bias 1
+#endif
+
+#ifndef GL_SGIX_framezoom
 #define GL_SGIX_framezoom 1
+#ifndef glFrameZoomSGIX
 #define glFrameZoomSGIX SAGE_glFrameZoomSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_tag_sample_buffer
 #define GL_SGIX_tag_sample_buffer 1
+#ifndef glTagSampleBufferSGIX
 #define glTagSampleBufferSGIX SAGE_glTagSampleBufferSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_polynomial_ffd
 #define GL_SGIX_polynomial_ffd 1
+#ifndef glDeformationMap3dSGIX
 #define glDeformationMap3dSGIX SAGE_glDeformationMap3dSGIX
+#endif
+
+#ifndef glDeformationMap3fSGIX
 #define glDeformationMap3fSGIX SAGE_glDeformationMap3fSGIX
+#endif
+
+#ifndef glDeformSGIX
 #define glDeformSGIX SAGE_glDeformSGIX
+#endif
+
+#ifndef glLoadIdentityDeformationMapSGIX
 #define glLoadIdentityDeformationMapSGIX SAGE_glLoadIdentityDeformationMapSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_reference_plane
 #define GL_SGIX_reference_plane 1
+#ifndef glReferencePlaneSGIX
 #define glReferencePlaneSGIX SAGE_glReferencePlaneSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_flush_raster
 #define GL_SGIX_flush_raster 1
+#ifndef glFlushRasterSGIX
 #define glFlushRasterSGIX SAGE_glFlushRasterSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_depth_texture
 #define GL_SGIX_depth_texture 1
+#endif
+
+#ifndef GL_SGIS_fog_function
 #define GL_SGIS_fog_function 1
+#ifndef glFogFuncSGIS
 #define glFogFuncSGIS SAGE_glFogFuncSGIS
+#endif
+
+#ifndef glGetFogFuncSGIS
 #define glGetFogFuncSGIS SAGE_glGetFogFuncSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGIX_fog_offset
 #define GL_SGIX_fog_offset 1
+#endif
+
+#ifndef GL_HP_image_transform
 #define GL_HP_image_transform 1
+#ifndef glImageTransformParameteriHP
 #define glImageTransformParameteriHP SAGE_glImageTransformParameteriHP
+#endif
+
+#ifndef glImageTransformParameterfHP
 #define glImageTransformParameterfHP SAGE_glImageTransformParameterfHP
+#endif
+
+#ifndef glImageTransformParameterivHP
 #define glImageTransformParameterivHP SAGE_glImageTransformParameterivHP
+#endif
+
+#ifndef glImageTransformParameterfvHP
 #define glImageTransformParameterfvHP SAGE_glImageTransformParameterfvHP
+#endif
+
+#ifndef glGetImageTransformParameterivHP
 #define glGetImageTransformParameterivHP SAGE_glGetImageTransformParameterivHP
+#endif
+
+#ifndef glGetImageTransformParameterfvHP
 #define glGetImageTransformParameterfvHP SAGE_glGetImageTransformParameterfvHP
+#endif
+
+#endif
+
+#ifndef GL_HP_convolution_border_modes
 #define GL_HP_convolution_border_modes 1
+#endif
+
+#ifndef GL_SGIX_texture_add_env
 #define GL_SGIX_texture_add_env 1
+#endif
+
+#ifndef GL_EXT_color_subtable
 #define GL_EXT_color_subtable 1
+#ifndef glColorSubTableEXT
 #define glColorSubTableEXT SAGE_glColorSubTableEXT
+#endif
+
+#ifndef glCopyColorSubTableEXT
 #define glCopyColorSubTableEXT SAGE_glCopyColorSubTableEXT
+#endif
+
+#endif
+
+#ifndef GL_PGI_vertex_hints
 #define GL_PGI_vertex_hints 1
+#endif
+
+#ifndef GL_PGI_misc_hints
 #define GL_PGI_misc_hints 1
+#ifndef glHintPGI
 #define glHintPGI SAGE_glHintPGI
+#endif
+
+#endif
+
+#ifndef GL_EXT_paletted_texture
 #define GL_EXT_paletted_texture 1
+#ifndef glColorTableEXT
 #define glColorTableEXT SAGE_glColorTableEXT
+#endif
+
+#ifndef glGetColorTableEXT
 #define glGetColorTableEXT SAGE_glGetColorTableEXT
+#endif
+
+#ifndef glGetColorTableParameterivEXT
 #define glGetColorTableParameterivEXT SAGE_glGetColorTableParameterivEXT
+#endif
+
+#ifndef glGetColorTableParameterfvEXT
 #define glGetColorTableParameterfvEXT SAGE_glGetColorTableParameterfvEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_clip_volume_hint
 #define GL_EXT_clip_volume_hint 1
+#endif
+
+#ifndef GL_SGIX_list_priority
 #define GL_SGIX_list_priority 1
+#ifndef glGetListParameterfvSGIX
 #define glGetListParameterfvSGIX SAGE_glGetListParameterfvSGIX
+#endif
+
+#ifndef glGetListParameterivSGIX
 #define glGetListParameterivSGIX SAGE_glGetListParameterivSGIX
+#endif
+
+#ifndef glListParameterfSGIX
 #define glListParameterfSGIX SAGE_glListParameterfSGIX
+#endif
+
+#ifndef glListParameterfvSGIX
 #define glListParameterfvSGIX SAGE_glListParameterfvSGIX
+#endif
+
+#ifndef glListParameteriSGIX
 #define glListParameteriSGIX SAGE_glListParameteriSGIX
+#endif
+
+#ifndef glListParameterivSGIX
 #define glListParameterivSGIX SAGE_glListParameterivSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_ir_instrument1
 #define GL_SGIX_ir_instrument1 1
+#endif
+
+#ifndef GL_SGIX_calligraphic_fragment
 #define GL_SGIX_calligraphic_fragment 1
+#endif
+
+#ifndef GL_SGIX_texture_lod_bias
 #define GL_SGIX_texture_lod_bias 1
+#endif
+
+#ifndef GL_SGIX_shadow_ambient
 #define GL_SGIX_shadow_ambient 1
+#endif
+
+#ifndef GL_EXT_index_texture
 #define GL_EXT_index_texture 1
+#endif
+
+#ifndef GL_EXT_index_material
 #define GL_EXT_index_material 1
+#ifndef glIndexMaterialEXT
 #define glIndexMaterialEXT SAGE_glIndexMaterialEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_index_func
 #define GL_EXT_index_func 1
+#ifndef glIndexFuncEXT
 #define glIndexFuncEXT SAGE_glIndexFuncEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_index_array_formats
 #define GL_EXT_index_array_formats 1
+#endif
+
+#ifndef GL_EXT_compiled_vertex_array
 #define GL_EXT_compiled_vertex_array 1
+#ifndef glLockArraysEXT
 #define glLockArraysEXT SAGE_glLockArraysEXT
+#endif
+
+#ifndef glUnlockArraysEXT
 #define glUnlockArraysEXT SAGE_glUnlockArraysEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_cull_vertex
 #define GL_EXT_cull_vertex 1
+#ifndef glCullParameterdvEXT
 #define glCullParameterdvEXT SAGE_glCullParameterdvEXT
+#endif
+
+#ifndef glCullParameterfvEXT
 #define glCullParameterfvEXT SAGE_glCullParameterfvEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIX_ycrcb
 #define GL_SGIX_ycrcb 1
+#endif
+
+#ifndef GL_SGIX_fragment_lighting
 #define GL_SGIX_fragment_lighting 1
+#ifndef glFragmentColorMaterialSGIX
 #define glFragmentColorMaterialSGIX SAGE_glFragmentColorMaterialSGIX
+#endif
+
+#ifndef glFragmentLightfSGIX
 #define glFragmentLightfSGIX SAGE_glFragmentLightfSGIX
+#endif
+
+#ifndef glFragmentLightfvSGIX
 #define glFragmentLightfvSGIX SAGE_glFragmentLightfvSGIX
+#endif
+
+#ifndef glFragmentLightiSGIX
 #define glFragmentLightiSGIX SAGE_glFragmentLightiSGIX
+#endif
+
+#ifndef glFragmentLightivSGIX
 #define glFragmentLightivSGIX SAGE_glFragmentLightivSGIX
+#endif
+
+#ifndef glFragmentLightModelfSGIX
 #define glFragmentLightModelfSGIX SAGE_glFragmentLightModelfSGIX
+#endif
+
+#ifndef glFragmentLightModelfvSGIX
 #define glFragmentLightModelfvSGIX SAGE_glFragmentLightModelfvSGIX
+#endif
+
+#ifndef glFragmentLightModeliSGIX
 #define glFragmentLightModeliSGIX SAGE_glFragmentLightModeliSGIX
+#endif
+
+#ifndef glFragmentLightModelivSGIX
 #define glFragmentLightModelivSGIX SAGE_glFragmentLightModelivSGIX
+#endif
+
+#ifndef glFragmentMaterialfSGIX
 #define glFragmentMaterialfSGIX SAGE_glFragmentMaterialfSGIX
+#endif
+
+#ifndef glFragmentMaterialfvSGIX
 #define glFragmentMaterialfvSGIX SAGE_glFragmentMaterialfvSGIX
+#endif
+
+#ifndef glFragmentMaterialiSGIX
 #define glFragmentMaterialiSGIX SAGE_glFragmentMaterialiSGIX
+#endif
+
+#ifndef glFragmentMaterialivSGIX
 #define glFragmentMaterialivSGIX SAGE_glFragmentMaterialivSGIX
+#endif
+
+#ifndef glGetFragmentLightfvSGIX
 #define glGetFragmentLightfvSGIX SAGE_glGetFragmentLightfvSGIX
+#endif
+
+#ifndef glGetFragmentLightivSGIX
 #define glGetFragmentLightivSGIX SAGE_glGetFragmentLightivSGIX
+#endif
+
+#ifndef glGetFragmentMaterialfvSGIX
 #define glGetFragmentMaterialfvSGIX SAGE_glGetFragmentMaterialfvSGIX
+#endif
+
+#ifndef glGetFragmentMaterialivSGIX
 #define glGetFragmentMaterialivSGIX SAGE_glGetFragmentMaterialivSGIX
+#endif
+
+#ifndef glLightEnviSGIX
 #define glLightEnviSGIX SAGE_glLightEnviSGIX
+#endif
+
+#endif
+
+#ifndef GL_IBM_rasterpos_clip
 #define GL_IBM_rasterpos_clip 1
+#endif
+
+#ifndef GL_HP_texture_lighting
 #define GL_HP_texture_lighting 1
+#endif
+
+#ifndef GL_EXT_draw_range_elements
 #define GL_EXT_draw_range_elements 1
+#ifndef glDrawRangeElementsEXT
 #define glDrawRangeElementsEXT SAGE_glDrawRangeElementsEXT
+#endif
+
+#endif
+
+#ifndef GL_WIN_phong_shading
 #define GL_WIN_phong_shading 1
+#endif
+
+#ifndef GL_WIN_specular_fog
 #define GL_WIN_specular_fog 1
+#endif
+
+#ifndef GL_EXT_light_texture
 #define GL_EXT_light_texture 1
+#ifndef glApplyTextureEXT
 #define glApplyTextureEXT SAGE_glApplyTextureEXT
+#endif
+
+#ifndef glTextureLightEXT
 #define glTextureLightEXT SAGE_glTextureLightEXT
+#endif
+
+#ifndef glTextureMaterialEXT
 #define glTextureMaterialEXT SAGE_glTextureMaterialEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIX_blend_alpha_minmax
 #define GL_SGIX_blend_alpha_minmax 1
+#endif
+
+#ifndef GL_EXT_bgra
 #define GL_EXT_bgra 1
+#endif
+
+#ifndef GL_SGIX_async
 #define GL_SGIX_async 1
+#ifndef glAsyncMarkerSGIX
 #define glAsyncMarkerSGIX SAGE_glAsyncMarkerSGIX
+#endif
+
+#ifndef glFinishAsyncSGIX
 #define glFinishAsyncSGIX SAGE_glFinishAsyncSGIX
+#endif
+
+#ifndef glPollAsyncSGIX
 #define glPollAsyncSGIX SAGE_glPollAsyncSGIX
+#endif
+
+#ifndef glGenAsyncMarkersSGIX
 #define glGenAsyncMarkersSGIX SAGE_glGenAsyncMarkersSGIX
+#endif
+
+#ifndef glDeleteAsyncMarkersSGIX
 #define glDeleteAsyncMarkersSGIX SAGE_glDeleteAsyncMarkersSGIX
+#endif
+
+#ifndef glIsAsyncMarkerSGIX
 #define glIsAsyncMarkerSGIX SAGE_glIsAsyncMarkerSGIX
+#endif
+
+#endif
+
+#ifndef GL_SGIX_async_pixel
 #define GL_SGIX_async_pixel 1
+#endif
+
+#ifndef GL_SGIX_async_histogram
 #define GL_SGIX_async_histogram 1
+#endif
+
+#ifndef GL_INTEL_parallel_arrays
 #define GL_INTEL_parallel_arrays 1
+#ifndef glVertexPointervINTEL
 #define glVertexPointervINTEL SAGE_glVertexPointervINTEL
+#endif
+
+#ifndef glNormalPointervINTEL
 #define glNormalPointervINTEL SAGE_glNormalPointervINTEL
+#endif
+
+#ifndef glColorPointervINTEL
 #define glColorPointervINTEL SAGE_glColorPointervINTEL
+#endif
+
+#ifndef glTexCoordPointervINTEL
 #define glTexCoordPointervINTEL SAGE_glTexCoordPointervINTEL
+#endif
+
+#endif
+
+#ifndef GL_HP_occlusion_test
 #define GL_HP_occlusion_test 1
+#endif
+
+#ifndef GL_EXT_pixel_transform
 #define GL_EXT_pixel_transform 1
+#ifndef glPixelTransformParameteriEXT
 #define glPixelTransformParameteriEXT SAGE_glPixelTransformParameteriEXT
+#endif
+
+#ifndef glPixelTransformParameterfEXT
 #define glPixelTransformParameterfEXT SAGE_glPixelTransformParameterfEXT
+#endif
+
+#ifndef glPixelTransformParameterivEXT
 #define glPixelTransformParameterivEXT SAGE_glPixelTransformParameterivEXT
+#endif
+
+#ifndef glPixelTransformParameterfvEXT
 #define glPixelTransformParameterfvEXT SAGE_glPixelTransformParameterfvEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_pixel_transform_color_table
 #define GL_EXT_pixel_transform_color_table 1
+#endif
+
+#ifndef GL_EXT_shared_texture_palette
 #define GL_EXT_shared_texture_palette 1
+#endif
+
+#ifndef GL_EXT_separate_specular_color
 #define GL_EXT_separate_specular_color 1
+#endif
+
+#ifndef GL_EXT_secondary_color
 #define GL_EXT_secondary_color 1
+#ifndef glSecondaryColor3bEXT
 #define glSecondaryColor3bEXT SAGE_glSecondaryColor3bEXT
+#endif
+
+#ifndef glSecondaryColor3bvEXT
 #define glSecondaryColor3bvEXT SAGE_glSecondaryColor3bvEXT
+#endif
+
+#ifndef glSecondaryColor3dEXT
 #define glSecondaryColor3dEXT SAGE_glSecondaryColor3dEXT
+#endif
+
+#ifndef glSecondaryColor3dvEXT
 #define glSecondaryColor3dvEXT SAGE_glSecondaryColor3dvEXT
+#endif
+
+#ifndef glSecondaryColor3fEXT
 #define glSecondaryColor3fEXT SAGE_glSecondaryColor3fEXT
+#endif
+
+#ifndef glSecondaryColor3fvEXT
 #define glSecondaryColor3fvEXT SAGE_glSecondaryColor3fvEXT
+#endif
+
+#ifndef glSecondaryColor3iEXT
 #define glSecondaryColor3iEXT SAGE_glSecondaryColor3iEXT
+#endif
+
+#ifndef glSecondaryColor3ivEXT
 #define glSecondaryColor3ivEXT SAGE_glSecondaryColor3ivEXT
+#endif
+
+#ifndef glSecondaryColor3sEXT
 #define glSecondaryColor3sEXT SAGE_glSecondaryColor3sEXT
+#endif
+
+#ifndef glSecondaryColor3svEXT
 #define glSecondaryColor3svEXT SAGE_glSecondaryColor3svEXT
+#endif
+
+#ifndef glSecondaryColor3ubEXT
 #define glSecondaryColor3ubEXT SAGE_glSecondaryColor3ubEXT
+#endif
+
+#ifndef glSecondaryColor3ubvEXT
 #define glSecondaryColor3ubvEXT SAGE_glSecondaryColor3ubvEXT
+#endif
+
+#ifndef glSecondaryColor3uiEXT
 #define glSecondaryColor3uiEXT SAGE_glSecondaryColor3uiEXT
+#endif
+
+#ifndef glSecondaryColor3uivEXT
 #define glSecondaryColor3uivEXT SAGE_glSecondaryColor3uivEXT
+#endif
+
+#ifndef glSecondaryColor3usEXT
 #define glSecondaryColor3usEXT SAGE_glSecondaryColor3usEXT
+#endif
+
+#ifndef glSecondaryColor3usvEXT
 #define glSecondaryColor3usvEXT SAGE_glSecondaryColor3usvEXT
+#endif
+
+#ifndef glSecondaryColorPointerEXT
 #define glSecondaryColorPointerEXT SAGE_glSecondaryColorPointerEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_texture_perturb_normal
 #define GL_EXT_texture_perturb_normal 1
+#ifndef glTextureNormalEXT
 #define glTextureNormalEXT SAGE_glTextureNormalEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_multi_draw_arrays
 #define GL_EXT_multi_draw_arrays 1
+#ifndef glMultiDrawArraysEXT
 #define glMultiDrawArraysEXT SAGE_glMultiDrawArraysEXT
+#endif
+
+#ifndef glMultiDrawElementsEXT
 #define glMultiDrawElementsEXT SAGE_glMultiDrawElementsEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_fog_coord
 #define GL_EXT_fog_coord 1
+#ifndef glFogCoordfEXT
 #define glFogCoordfEXT SAGE_glFogCoordfEXT
+#endif
+
+#ifndef glFogCoordfvEXT
 #define glFogCoordfvEXT SAGE_glFogCoordfvEXT
+#endif
+
+#ifndef glFogCoorddEXT
 #define glFogCoorddEXT SAGE_glFogCoorddEXT
+#endif
+
+#ifndef glFogCoorddvEXT
 #define glFogCoorddvEXT SAGE_glFogCoorddvEXT
+#endif
+
+#ifndef glFogCoordPointerEXT
 #define glFogCoordPointerEXT SAGE_glFogCoordPointerEXT
+#endif
+
+#endif
+
+#ifndef GL_REND_screen_coordinates
 #define GL_REND_screen_coordinates 1
+#endif
+
+#ifndef GL_EXT_coordinate_frame
 #define GL_EXT_coordinate_frame 1
+#ifndef glTangent3bEXT
 #define glTangent3bEXT SAGE_glTangent3bEXT
+#endif
+
+#ifndef glTangent3bvEXT
 #define glTangent3bvEXT SAGE_glTangent3bvEXT
+#endif
+
+#ifndef glTangent3dEXT
 #define glTangent3dEXT SAGE_glTangent3dEXT
+#endif
+
+#ifndef glTangent3dvEXT
 #define glTangent3dvEXT SAGE_glTangent3dvEXT
+#endif
+
+#ifndef glTangent3fEXT
 #define glTangent3fEXT SAGE_glTangent3fEXT
+#endif
+
+#ifndef glTangent3fvEXT
 #define glTangent3fvEXT SAGE_glTangent3fvEXT
+#endif
+
+#ifndef glTangent3iEXT
 #define glTangent3iEXT SAGE_glTangent3iEXT
+#endif
+
+#ifndef glTangent3ivEXT
 #define glTangent3ivEXT SAGE_glTangent3ivEXT
+#endif
+
+#ifndef glTangent3sEXT
 #define glTangent3sEXT SAGE_glTangent3sEXT
+#endif
+
+#ifndef glTangent3svEXT
 #define glTangent3svEXT SAGE_glTangent3svEXT
+#endif
+
+#ifndef glBinormal3bEXT
 #define glBinormal3bEXT SAGE_glBinormal3bEXT
+#endif
+
+#ifndef glBinormal3bvEXT
 #define glBinormal3bvEXT SAGE_glBinormal3bvEXT
+#endif
+
+#ifndef glBinormal3dEXT
 #define glBinormal3dEXT SAGE_glBinormal3dEXT
+#endif
+
+#ifndef glBinormal3dvEXT
 #define glBinormal3dvEXT SAGE_glBinormal3dvEXT
+#endif
+
+#ifndef glBinormal3fEXT
 #define glBinormal3fEXT SAGE_glBinormal3fEXT
+#endif
+
+#ifndef glBinormal3fvEXT
 #define glBinormal3fvEXT SAGE_glBinormal3fvEXT
+#endif
+
+#ifndef glBinormal3iEXT
 #define glBinormal3iEXT SAGE_glBinormal3iEXT
+#endif
+
+#ifndef glBinormal3ivEXT
 #define glBinormal3ivEXT SAGE_glBinormal3ivEXT
+#endif
+
+#ifndef glBinormal3sEXT
 #define glBinormal3sEXT SAGE_glBinormal3sEXT
+#endif
+
+#ifndef glBinormal3svEXT
 #define glBinormal3svEXT SAGE_glBinormal3svEXT
+#endif
+
+#ifndef glTangentPointerEXT
 #define glTangentPointerEXT SAGE_glTangentPointerEXT
+#endif
+
+#ifndef glBinormalPointerEXT
 #define glBinormalPointerEXT SAGE_glBinormalPointerEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_texture_env_combine
 #define GL_EXT_texture_env_combine 1
+#endif
+
+#ifndef GL_APPLE_specular_vector
 #define GL_APPLE_specular_vector 1
+#endif
+
+#ifndef GL_APPLE_transform_hint
 #define GL_APPLE_transform_hint 1
+#endif
+
+#ifndef GL_SGIX_fog_scale
 #define GL_SGIX_fog_scale 1
+#endif
+
+#ifndef GL_SUNX_constant_data
 #define GL_SUNX_constant_data 1
+#ifndef glFinishTextureSUNX
 #define glFinishTextureSUNX SAGE_glFinishTextureSUNX
+#endif
+
+#endif
+
+#ifndef GL_SUN_global_alpha
 #define GL_SUN_global_alpha 1
+#ifndef glGlobalAlphaFactorbSUN
 #define glGlobalAlphaFactorbSUN SAGE_glGlobalAlphaFactorbSUN
+#endif
+
+#ifndef glGlobalAlphaFactorsSUN
 #define glGlobalAlphaFactorsSUN SAGE_glGlobalAlphaFactorsSUN
+#endif
+
+#ifndef glGlobalAlphaFactoriSUN
 #define glGlobalAlphaFactoriSUN SAGE_glGlobalAlphaFactoriSUN
+#endif
+
+#ifndef glGlobalAlphaFactorfSUN
 #define glGlobalAlphaFactorfSUN SAGE_glGlobalAlphaFactorfSUN
+#endif
+
+#ifndef glGlobalAlphaFactordSUN
 #define glGlobalAlphaFactordSUN SAGE_glGlobalAlphaFactordSUN
+#endif
+
+#ifndef glGlobalAlphaFactorubSUN
 #define glGlobalAlphaFactorubSUN SAGE_glGlobalAlphaFactorubSUN
+#endif
+
+#ifndef glGlobalAlphaFactorusSUN
 #define glGlobalAlphaFactorusSUN SAGE_glGlobalAlphaFactorusSUN
+#endif
+
+#ifndef glGlobalAlphaFactoruiSUN
 #define glGlobalAlphaFactoruiSUN SAGE_glGlobalAlphaFactoruiSUN
+#endif
+
+#endif
+
+#ifndef GL_SUN_triangle_list
 #define GL_SUN_triangle_list 1
+#ifndef glReplacementCodeuiSUN
 #define glReplacementCodeuiSUN SAGE_glReplacementCodeuiSUN
+#endif
+
+#ifndef glReplacementCodeusSUN
 #define glReplacementCodeusSUN SAGE_glReplacementCodeusSUN
+#endif
+
+#ifndef glReplacementCodeubSUN
 #define glReplacementCodeubSUN SAGE_glReplacementCodeubSUN
+#endif
+
+#ifndef glReplacementCodeuivSUN
 #define glReplacementCodeuivSUN SAGE_glReplacementCodeuivSUN
+#endif
+
+#ifndef glReplacementCodeusvSUN
 #define glReplacementCodeusvSUN SAGE_glReplacementCodeusvSUN
+#endif
+
+#ifndef glReplacementCodeubvSUN
 #define glReplacementCodeubvSUN SAGE_glReplacementCodeubvSUN
+#endif
+
+#ifndef glReplacementCodePointerSUN
 #define glReplacementCodePointerSUN SAGE_glReplacementCodePointerSUN
+#endif
+
+#endif
+
+#ifndef GL_SUN_vertex
 #define GL_SUN_vertex 1
+#ifndef glColor4ubVertex2fSUN
 #define glColor4ubVertex2fSUN SAGE_glColor4ubVertex2fSUN
+#endif
+
+#ifndef glColor4ubVertex2fvSUN
 #define glColor4ubVertex2fvSUN SAGE_glColor4ubVertex2fvSUN
+#endif
+
+#ifndef glColor4ubVertex3fSUN
 #define glColor4ubVertex3fSUN SAGE_glColor4ubVertex3fSUN
+#endif
+
+#ifndef glColor4ubVertex3fvSUN
 #define glColor4ubVertex3fvSUN SAGE_glColor4ubVertex3fvSUN
+#endif
+
+#ifndef glColor3fVertex3fSUN
 #define glColor3fVertex3fSUN SAGE_glColor3fVertex3fSUN
+#endif
+
+#ifndef glColor3fVertex3fvSUN
 #define glColor3fVertex3fvSUN SAGE_glColor3fVertex3fvSUN
+#endif
+
+#ifndef glNormal3fVertex3fSUN
 #define glNormal3fVertex3fSUN SAGE_glNormal3fVertex3fSUN
+#endif
+
+#ifndef glNormal3fVertex3fvSUN
 #define glNormal3fVertex3fvSUN SAGE_glNormal3fVertex3fvSUN
+#endif
+
+#ifndef glColor4fNormal3fVertex3fSUN
 #define glColor4fNormal3fVertex3fSUN SAGE_glColor4fNormal3fVertex3fSUN
+#endif
+
+#ifndef glColor4fNormal3fVertex3fvSUN
 #define glColor4fNormal3fVertex3fvSUN SAGE_glColor4fNormal3fVertex3fvSUN
+#endif
+
+#ifndef glTexCoord2fVertex3fSUN
 #define glTexCoord2fVertex3fSUN SAGE_glTexCoord2fVertex3fSUN
+#endif
+
+#ifndef glTexCoord2fVertex3fvSUN
 #define glTexCoord2fVertex3fvSUN SAGE_glTexCoord2fVertex3fvSUN
+#endif
+
+#ifndef glTexCoord4fVertex4fSUN
 #define glTexCoord4fVertex4fSUN SAGE_glTexCoord4fVertex4fSUN
+#endif
+
+#ifndef glTexCoord4fVertex4fvSUN
 #define glTexCoord4fVertex4fvSUN SAGE_glTexCoord4fVertex4fvSUN
+#endif
+
+#ifndef glTexCoord2fColor4ubVertex3fSUN
 #define glTexCoord2fColor4ubVertex3fSUN SAGE_glTexCoord2fColor4ubVertex3fSUN
+#endif
+
+#ifndef glTexCoord2fColor4ubVertex3fvSUN
 #define glTexCoord2fColor4ubVertex3fvSUN SAGE_glTexCoord2fColor4ubVertex3fvSUN
+#endif
+
+#ifndef glTexCoord2fColor3fVertex3fSUN
 #define glTexCoord2fColor3fVertex3fSUN SAGE_glTexCoord2fColor3fVertex3fSUN
+#endif
+
+#ifndef glTexCoord2fColor3fVertex3fvSUN
 #define glTexCoord2fColor3fVertex3fvSUN SAGE_glTexCoord2fColor3fVertex3fvSUN
+#endif
+
+#ifndef glTexCoord2fNormal3fVertex3fSUN
 #define glTexCoord2fNormal3fVertex3fSUN SAGE_glTexCoord2fNormal3fVertex3fSUN
+#endif
+
+#ifndef glTexCoord2fNormal3fVertex3fvSUN
 #define glTexCoord2fNormal3fVertex3fvSUN SAGE_glTexCoord2fNormal3fVertex3fvSUN
+#endif
+
+#ifndef glTexCoord2fColor4fNormal3fVertex3fSUN
 #define glTexCoord2fColor4fNormal3fVertex3fSUN SAGE_glTexCoord2fColor4fNormal3fVertex3fSUN
+#endif
+
+#ifndef glTexCoord2fColor4fNormal3fVertex3fvSUN
 #define glTexCoord2fColor4fNormal3fVertex3fvSUN SAGE_glTexCoord2fColor4fNormal3fVertex3fvSUN
+#endif
+
+#ifndef glTexCoord4fColor4fNormal3fVertex4fSUN
 #define glTexCoord4fColor4fNormal3fVertex4fSUN SAGE_glTexCoord4fColor4fNormal3fVertex4fSUN
+#endif
+
+#ifndef glTexCoord4fColor4fNormal3fVertex4fvSUN
 #define glTexCoord4fColor4fNormal3fVertex4fvSUN SAGE_glTexCoord4fColor4fNormal3fVertex4fvSUN
+#endif
+
+#ifndef glReplacementCodeuiVertex3fSUN
 #define glReplacementCodeuiVertex3fSUN SAGE_glReplacementCodeuiVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiVertex3fvSUN
 #define glReplacementCodeuiVertex3fvSUN SAGE_glReplacementCodeuiVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiColor4ubVertex3fSUN
 #define glReplacementCodeuiColor4ubVertex3fSUN SAGE_glReplacementCodeuiColor4ubVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiColor4ubVertex3fvSUN
 #define glReplacementCodeuiColor4ubVertex3fvSUN SAGE_glReplacementCodeuiColor4ubVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiColor3fVertex3fSUN
 #define glReplacementCodeuiColor3fVertex3fSUN SAGE_glReplacementCodeuiColor3fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiColor3fVertex3fvSUN
 #define glReplacementCodeuiColor3fVertex3fvSUN SAGE_glReplacementCodeuiColor3fVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiNormal3fVertex3fSUN
 #define glReplacementCodeuiNormal3fVertex3fSUN SAGE_glReplacementCodeuiNormal3fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiNormal3fVertex3fvSUN
 #define glReplacementCodeuiNormal3fVertex3fvSUN SAGE_glReplacementCodeuiNormal3fVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiColor4fNormal3fVertex3fSUN
 #define glReplacementCodeuiColor4fNormal3fVertex3fSUN SAGE_glReplacementCodeuiColor4fNormal3fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiColor4fNormal3fVertex3fvSUN
 #define glReplacementCodeuiColor4fNormal3fVertex3fvSUN SAGE_glReplacementCodeuiColor4fNormal3fVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fVertex3fSUN
 #define glReplacementCodeuiTexCoord2fVertex3fSUN SAGE_glReplacementCodeuiTexCoord2fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fVertex3fvSUN
 #define glReplacementCodeuiTexCoord2fVertex3fvSUN SAGE_glReplacementCodeuiTexCoord2fVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN
 #define glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN SAGE_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN
 #define glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN SAGE_glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN
 #define glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN SAGE_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN
+#endif
+
+#ifndef glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN
 #define glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN SAGE_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN
+#endif
+
+#endif
+
+#ifndef GL_EXT_blend_func_separate
 #define GL_EXT_blend_func_separate 1
+#ifndef glBlendFuncSeparateEXT
 #define glBlendFuncSeparateEXT SAGE_glBlendFuncSeparateEXT
+#endif
+
+#endif
+
+#ifndef GL_INGR_blend_func_separate
 #define GL_INGR_blend_func_separate 1
+#ifndef glBlendFuncSeparateINGR
 #define glBlendFuncSeparateINGR SAGE_glBlendFuncSeparateINGR
+#endif
+
+#endif
+
+#ifndef GL_INGR_color_clamp
 #define GL_INGR_color_clamp 1
+#endif
+
+#ifndef GL_INGR_interlace_read
 #define GL_INGR_interlace_read 1
+#endif
+
+#ifndef GL_EXT_stencil_wrap
 #define GL_EXT_stencil_wrap 1
+#endif
+
+#ifndef GL_EXT_422_pixels
 #define GL_EXT_422_pixels 1
+#endif
+
+#ifndef GL_NV_texgen_reflection
 #define GL_NV_texgen_reflection 1
+#endif
+
+#ifndef GL_SUN_convolution_border_modes
 #define GL_SUN_convolution_border_modes 1
+#endif
+
+#ifndef GL_EXT_texture_env_add
 #define GL_EXT_texture_env_add 1
+#endif
+
+#ifndef GL_EXT_texture_lod_bias
 #define GL_EXT_texture_lod_bias 1
+#endif
+
+#ifndef GL_EXT_texture_filter_anisotropic
 #define GL_EXT_texture_filter_anisotropic 1
+#endif
+
+#ifndef GL_EXT_vertex_weighting
 #define GL_EXT_vertex_weighting 1
+#ifndef glVertexWeightfEXT
 #define glVertexWeightfEXT SAGE_glVertexWeightfEXT
+#endif
+
+#ifndef glVertexWeightfvEXT
 #define glVertexWeightfvEXT SAGE_glVertexWeightfvEXT
+#endif
+
+#ifndef glVertexWeightPointerEXT
 #define glVertexWeightPointerEXT SAGE_glVertexWeightPointerEXT
+#endif
+
+#endif
+
+#ifndef GL_NV_light_max_exponent
 #define GL_NV_light_max_exponent 1
+#endif
+
+#ifndef GL_NV_vertex_array_range
 #define GL_NV_vertex_array_range 1
+#ifndef glFlushVertexArrayRangeNV
 #define glFlushVertexArrayRangeNV SAGE_glFlushVertexArrayRangeNV
+#endif
+
+#ifndef glVertexArrayRangeNV
 #define glVertexArrayRangeNV SAGE_glVertexArrayRangeNV
+#endif
+
+#endif
+
+#ifndef GL_NV_register_combiners
 #define GL_NV_register_combiners 1
+#ifndef glCombinerParameterfvNV
 #define glCombinerParameterfvNV SAGE_glCombinerParameterfvNV
+#endif
+
+#ifndef glCombinerParameterfNV
 #define glCombinerParameterfNV SAGE_glCombinerParameterfNV
+#endif
+
+#ifndef glCombinerParameterivNV
 #define glCombinerParameterivNV SAGE_glCombinerParameterivNV
+#endif
+
+#ifndef glCombinerParameteriNV
 #define glCombinerParameteriNV SAGE_glCombinerParameteriNV
+#endif
+
+#ifndef glCombinerInputNV
 #define glCombinerInputNV SAGE_glCombinerInputNV
+#endif
+
+#ifndef glCombinerOutputNV
 #define glCombinerOutputNV SAGE_glCombinerOutputNV
+#endif
+
+#ifndef glFinalCombinerInputNV
 #define glFinalCombinerInputNV SAGE_glFinalCombinerInputNV
+#endif
+
+#ifndef glGetCombinerInputParameterfvNV
 #define glGetCombinerInputParameterfvNV SAGE_glGetCombinerInputParameterfvNV
+#endif
+
+#ifndef glGetCombinerInputParameterivNV
 #define glGetCombinerInputParameterivNV SAGE_glGetCombinerInputParameterivNV
+#endif
+
+#ifndef glGetCombinerOutputParameterfvNV
 #define glGetCombinerOutputParameterfvNV SAGE_glGetCombinerOutputParameterfvNV
+#endif
+
+#ifndef glGetCombinerOutputParameterivNV
 #define glGetCombinerOutputParameterivNV SAGE_glGetCombinerOutputParameterivNV
+#endif
+
+#ifndef glGetFinalCombinerInputParameterfvNV
 #define glGetFinalCombinerInputParameterfvNV SAGE_glGetFinalCombinerInputParameterfvNV
+#endif
+
+#ifndef glGetFinalCombinerInputParameterivNV
 #define glGetFinalCombinerInputParameterivNV SAGE_glGetFinalCombinerInputParameterivNV
+#endif
+
+#endif
+
+#ifndef GL_NV_fog_distance
 #define GL_NV_fog_distance 1
+#endif
+
+#ifndef GL_NV_texgen_emboss
 #define GL_NV_texgen_emboss 1
+#endif
+
+#ifndef GL_NV_blend_square
 #define GL_NV_blend_square 1
+#endif
+
+#ifndef GL_NV_texture_env_combine4
 #define GL_NV_texture_env_combine4 1
+#endif
+
+#ifndef GL_MESA_resize_buffers
 #define GL_MESA_resize_buffers 1
+#ifndef glResizeBuffersMESA
 #define glResizeBuffersMESA SAGE_glResizeBuffersMESA
+#endif
+
+#endif
+
+#ifndef GL_MESA_window_pos
 #define GL_MESA_window_pos 1
+#ifndef glWindowPos2dMESA
 #define glWindowPos2dMESA SAGE_glWindowPos2dMESA
+#endif
+
+#ifndef glWindowPos2dvMESA
 #define glWindowPos2dvMESA SAGE_glWindowPos2dvMESA
+#endif
+
+#ifndef glWindowPos2fMESA
 #define glWindowPos2fMESA SAGE_glWindowPos2fMESA
+#endif
+
+#ifndef glWindowPos2fvMESA
 #define glWindowPos2fvMESA SAGE_glWindowPos2fvMESA
+#endif
+
+#ifndef glWindowPos2iMESA
 #define glWindowPos2iMESA SAGE_glWindowPos2iMESA
+#endif
+
+#ifndef glWindowPos2ivMESA
 #define glWindowPos2ivMESA SAGE_glWindowPos2ivMESA
+#endif
+
+#ifndef glWindowPos2sMESA
 #define glWindowPos2sMESA SAGE_glWindowPos2sMESA
+#endif
+
+#ifndef glWindowPos2svMESA
 #define glWindowPos2svMESA SAGE_glWindowPos2svMESA
+#endif
+
+#ifndef glWindowPos3dMESA
 #define glWindowPos3dMESA SAGE_glWindowPos3dMESA
+#endif
+
+#ifndef glWindowPos3dvMESA
 #define glWindowPos3dvMESA SAGE_glWindowPos3dvMESA
+#endif
+
+#ifndef glWindowPos3fMESA
 #define glWindowPos3fMESA SAGE_glWindowPos3fMESA
+#endif
+
+#ifndef glWindowPos3fvMESA
 #define glWindowPos3fvMESA SAGE_glWindowPos3fvMESA
+#endif
+
+#ifndef glWindowPos3iMESA
 #define glWindowPos3iMESA SAGE_glWindowPos3iMESA
+#endif
+
+#ifndef glWindowPos3ivMESA
 #define glWindowPos3ivMESA SAGE_glWindowPos3ivMESA
+#endif
+
+#ifndef glWindowPos3sMESA
 #define glWindowPos3sMESA SAGE_glWindowPos3sMESA
+#endif
+
+#ifndef glWindowPos3svMESA
 #define glWindowPos3svMESA SAGE_glWindowPos3svMESA
+#endif
+
+#ifndef glWindowPos4dMESA
 #define glWindowPos4dMESA SAGE_glWindowPos4dMESA
+#endif
+
+#ifndef glWindowPos4dvMESA
 #define glWindowPos4dvMESA SAGE_glWindowPos4dvMESA
+#endif
+
+#ifndef glWindowPos4fMESA
 #define glWindowPos4fMESA SAGE_glWindowPos4fMESA
+#endif
+
+#ifndef glWindowPos4fvMESA
 #define glWindowPos4fvMESA SAGE_glWindowPos4fvMESA
+#endif
+
+#ifndef glWindowPos4iMESA
 #define glWindowPos4iMESA SAGE_glWindowPos4iMESA
+#endif
+
+#ifndef glWindowPos4ivMESA
 #define glWindowPos4ivMESA SAGE_glWindowPos4ivMESA
+#endif
+
+#ifndef glWindowPos4sMESA
 #define glWindowPos4sMESA SAGE_glWindowPos4sMESA
+#endif
+
+#ifndef glWindowPos4svMESA
 #define glWindowPos4svMESA SAGE_glWindowPos4svMESA
+#endif
+
+#endif
+
+#ifndef GL_IBM_cull_vertex
 #define GL_IBM_cull_vertex 1
+#endif
+
+#ifndef GL_IBM_multimode_draw_arrays
 #define GL_IBM_multimode_draw_arrays 1
+#ifndef glMultiModeDrawArraysIBM
 #define glMultiModeDrawArraysIBM SAGE_glMultiModeDrawArraysIBM
+#endif
+
+#ifndef glMultiModeDrawElementsIBM
 #define glMultiModeDrawElementsIBM SAGE_glMultiModeDrawElementsIBM
+#endif
+
+#endif
+
+#ifndef GL_IBM_vertex_array_lists
 #define GL_IBM_vertex_array_lists 1
+#ifndef glColorPointerListIBM
 #define glColorPointerListIBM SAGE_glColorPointerListIBM
+#endif
+
+#ifndef glSecondaryColorPointerListIBM
 #define glSecondaryColorPointerListIBM SAGE_glSecondaryColorPointerListIBM
+#endif
+
+#ifndef glEdgeFlagPointerListIBM
 #define glEdgeFlagPointerListIBM SAGE_glEdgeFlagPointerListIBM
+#endif
+
+#ifndef glFogCoordPointerListIBM
 #define glFogCoordPointerListIBM SAGE_glFogCoordPointerListIBM
+#endif
+
+#ifndef glIndexPointerListIBM
 #define glIndexPointerListIBM SAGE_glIndexPointerListIBM
+#endif
+
+#ifndef glNormalPointerListIBM
 #define glNormalPointerListIBM SAGE_glNormalPointerListIBM
+#endif
+
+#ifndef glTexCoordPointerListIBM
 #define glTexCoordPointerListIBM SAGE_glTexCoordPointerListIBM
+#endif
+
+#ifndef glVertexPointerListIBM
 #define glVertexPointerListIBM SAGE_glVertexPointerListIBM
+#endif
+
+#endif
+
+#ifndef GL_SGIX_subsample
 #define GL_SGIX_subsample 1
+#endif
+
+#ifndef GL_SGIX_ycrcba
 #define GL_SGIX_ycrcba 1
+#endif
+
+#ifndef GL_SGIX_ycrcb_subsample
 #define GL_SGIX_ycrcb_subsample 1
+#endif
+
+#ifndef GL_SGIX_depth_pass_instrument
 #define GL_SGIX_depth_pass_instrument 1
+#endif
+
+#ifndef GL_3DFX_texture_compression_FXT1
 #define GL_3DFX_texture_compression_FXT1 1
+#endif
+
+#ifndef GL_3DFX_multisample
 #define GL_3DFX_multisample 1
+#endif
+
+#ifndef GL_3DFX_tbuffer
 #define GL_3DFX_tbuffer 1
+#ifndef glTbufferMask3DFX
 #define glTbufferMask3DFX SAGE_glTbufferMask3DFX
+#endif
+
+#endif
+
+#ifndef GL_EXT_multisample
 #define GL_EXT_multisample 1
+#ifndef glSampleMaskEXT
 #define glSampleMaskEXT SAGE_glSampleMaskEXT
+#endif
+
+#ifndef glSamplePatternEXT
 #define glSamplePatternEXT SAGE_glSamplePatternEXT
+#endif
+
+#endif
+
+#ifndef GL_SGIX_vertex_preclip
 #define GL_SGIX_vertex_preclip 1
+#endif
+
+#ifndef GL_SGIX_convolution_accuracy
 #define GL_SGIX_convolution_accuracy 1
+#endif
+
+#ifndef GL_SGIX_resample
 #define GL_SGIX_resample 1
+#endif
+
+#ifndef GL_SGIS_point_line_texgen
 #define GL_SGIS_point_line_texgen 1
+#endif
+
+#ifndef GL_SGIS_texture_color_mask
 #define GL_SGIS_texture_color_mask 1
+#ifndef glTextureColorMaskSGIS
 #define glTextureColorMaskSGIS SAGE_glTextureColorMaskSGIS
+#endif
+
+#endif
+
+#ifndef GL_SGIX_igloo_interface
 #define GL_SGIX_igloo_interface 1
+#ifndef glIglooInterfaceSGIX
 #define glIglooInterfaceSGIX SAGE_glIglooInterfaceSGIX
+#endif
+
+#endif
+
+#ifndef GL_EXT_texture_env_dot3
 #define GL_EXT_texture_env_dot3 1
+#endif
+
+#ifndef GL_ATI_texture_mirror_once
 #define GL_ATI_texture_mirror_once 1
+#endif
+
+#ifndef GL_NV_fence
 #define GL_NV_fence 1
+#ifndef glDeleteFencesNV
 #define glDeleteFencesNV SAGE_glDeleteFencesNV
+#endif
+
+#ifndef glGenFencesNV
 #define glGenFencesNV SAGE_glGenFencesNV
+#endif
+
+#ifndef glIsFenceNV
 #define glIsFenceNV SAGE_glIsFenceNV
+#endif
+
+#ifndef glTestFenceNV
 #define glTestFenceNV SAGE_glTestFenceNV
+#endif
+
+#ifndef glGetFenceivNV
 #define glGetFenceivNV SAGE_glGetFenceivNV
+#endif
+
+#ifndef glFinishFenceNV
 #define glFinishFenceNV SAGE_glFinishFenceNV
+#endif
+
+#ifndef glSetFenceNV
 #define glSetFenceNV SAGE_glSetFenceNV
+#endif
+
+#endif
+
+#ifndef GL_NV_evaluators
 #define GL_NV_evaluators 1
+#ifndef glMapControlPointsNV
 #define glMapControlPointsNV SAGE_glMapControlPointsNV
+#endif
+
+#ifndef glMapParameterivNV
 #define glMapParameterivNV SAGE_glMapParameterivNV
+#endif
+
+#ifndef glMapParameterfvNV
 #define glMapParameterfvNV SAGE_glMapParameterfvNV
+#endif
+
+#ifndef glGetMapControlPointsNV
 #define glGetMapControlPointsNV SAGE_glGetMapControlPointsNV
+#endif
+
+#ifndef glGetMapParameterivNV
 #define glGetMapParameterivNV SAGE_glGetMapParameterivNV
+#endif
+
+#ifndef glGetMapParameterfvNV
 #define glGetMapParameterfvNV SAGE_glGetMapParameterfvNV
+#endif
+
+#ifndef glGetMapAttribParameterivNV
 #define glGetMapAttribParameterivNV SAGE_glGetMapAttribParameterivNV
+#endif
+
+#ifndef glGetMapAttribParameterfvNV
 #define glGetMapAttribParameterfvNV SAGE_glGetMapAttribParameterfvNV
+#endif
+
+#ifndef glEvalMapsNV
 #define glEvalMapsNV SAGE_glEvalMapsNV
+#endif
+
+#endif
+
+#ifndef GL_NV_packed_depth_stencil
 #define GL_NV_packed_depth_stencil 1
+#endif
+
+#ifndef GL_NV_register_combiners2
 #define GL_NV_register_combiners2 1
+#ifndef glCombinerStageParameterfvNV
 #define glCombinerStageParameterfvNV SAGE_glCombinerStageParameterfvNV
+#endif
+
+#ifndef glGetCombinerStageParameterfvNV
 #define glGetCombinerStageParameterfvNV SAGE_glGetCombinerStageParameterfvNV
+#endif
+
+#endif
+
+#ifndef GL_NV_texture_compression_vtc
 #define GL_NV_texture_compression_vtc 1
+#endif
+
+#ifndef GL_NV_texture_rectangle
 #define GL_NV_texture_rectangle 1
+#endif
+
+#ifndef GL_NV_texture_shader
 #define GL_NV_texture_shader 1
+#endif
+
+#ifndef GL_NV_texture_shader2
 #define GL_NV_texture_shader2 1
+#endif
+
+#ifndef GL_NV_vertex_array_range2
 #define GL_NV_vertex_array_range2 1
+#endif
+
+#ifndef GL_NV_vertex_program
 #define GL_NV_vertex_program 1
+#ifndef glAreProgramsResidentNV
 #define glAreProgramsResidentNV SAGE_glAreProgramsResidentNV
+#endif
+
+#ifndef glBindProgramNV
 #define glBindProgramNV SAGE_glBindProgramNV
+#endif
+
+#ifndef glDeleteProgramsNV
 #define glDeleteProgramsNV SAGE_glDeleteProgramsNV
+#endif
+
+#ifndef glExecuteProgramNV
 #define glExecuteProgramNV SAGE_glExecuteProgramNV
+#endif
+
+#ifndef glGenProgramsNV
 #define glGenProgramsNV SAGE_glGenProgramsNV
+#endif
+
+#ifndef glGetProgramParameterdvNV
 #define glGetProgramParameterdvNV SAGE_glGetProgramParameterdvNV
+#endif
+
+#ifndef glGetProgramParameterfvNV
 #define glGetProgramParameterfvNV SAGE_glGetProgramParameterfvNV
+#endif
+
+#ifndef glGetProgramivNV
 #define glGetProgramivNV SAGE_glGetProgramivNV
+#endif
+
+#ifndef glGetProgramStringNV
 #define glGetProgramStringNV SAGE_glGetProgramStringNV
+#endif
+
+#ifndef glGetTrackMatrixivNV
 #define glGetTrackMatrixivNV SAGE_glGetTrackMatrixivNV
+#endif
+
+#ifndef glGetVertexAttribdvNV
 #define glGetVertexAttribdvNV SAGE_glGetVertexAttribdvNV
+#endif
+
+#ifndef glGetVertexAttribfvNV
 #define glGetVertexAttribfvNV SAGE_glGetVertexAttribfvNV
+#endif
+
+#ifndef glGetVertexAttribivNV
 #define glGetVertexAttribivNV SAGE_glGetVertexAttribivNV
+#endif
+
+#ifndef glGetVertexAttribPointervNV
 #define glGetVertexAttribPointervNV SAGE_glGetVertexAttribPointervNV
+#endif
+
+#ifndef glIsProgramNV
 #define glIsProgramNV SAGE_glIsProgramNV
+#endif
+
+#ifndef glLoadProgramNV
 #define glLoadProgramNV SAGE_glLoadProgramNV
+#endif
+
+#ifndef glProgramParameter4dNV
 #define glProgramParameter4dNV SAGE_glProgramParameter4dNV
+#endif
+
+#ifndef glProgramParameter4dvNV
 #define glProgramParameter4dvNV SAGE_glProgramParameter4dvNV
+#endif
+
+#ifndef glProgramParameter4fNV
 #define glProgramParameter4fNV SAGE_glProgramParameter4fNV
+#endif
+
+#ifndef glProgramParameter4fvNV
 #define glProgramParameter4fvNV SAGE_glProgramParameter4fvNV
+#endif
+
+#ifndef glProgramParameters4dvNV
 #define glProgramParameters4dvNV SAGE_glProgramParameters4dvNV
+#endif
+
+#ifndef glProgramParameters4fvNV
 #define glProgramParameters4fvNV SAGE_glProgramParameters4fvNV
+#endif
+
+#ifndef glRequestResidentProgramsNV
 #define glRequestResidentProgramsNV SAGE_glRequestResidentProgramsNV
+#endif
+
+#ifndef glTrackMatrixNV
 #define glTrackMatrixNV SAGE_glTrackMatrixNV
+#endif
+
+#ifndef glVertexAttribPointerNV
 #define glVertexAttribPointerNV SAGE_glVertexAttribPointerNV
+#endif
+
+#ifndef glVertexAttrib1dNV
 #define glVertexAttrib1dNV SAGE_glVertexAttrib1dNV
+#endif
+
+#ifndef glVertexAttrib1dvNV
 #define glVertexAttrib1dvNV SAGE_glVertexAttrib1dvNV
+#endif
+
+#ifndef glVertexAttrib1fNV
 #define glVertexAttrib1fNV SAGE_glVertexAttrib1fNV
+#endif
+
+#ifndef glVertexAttrib1fvNV
 #define glVertexAttrib1fvNV SAGE_glVertexAttrib1fvNV
+#endif
+
+#ifndef glVertexAttrib1sNV
 #define glVertexAttrib1sNV SAGE_glVertexAttrib1sNV
+#endif
+
+#ifndef glVertexAttrib1svNV
 #define glVertexAttrib1svNV SAGE_glVertexAttrib1svNV
+#endif
+
+#ifndef glVertexAttrib2dNV
 #define glVertexAttrib2dNV SAGE_glVertexAttrib2dNV
+#endif
+
+#ifndef glVertexAttrib2dvNV
 #define glVertexAttrib2dvNV SAGE_glVertexAttrib2dvNV
+#endif
+
+#ifndef glVertexAttrib2fNV
 #define glVertexAttrib2fNV SAGE_glVertexAttrib2fNV
+#endif
+
+#ifndef glVertexAttrib2fvNV
 #define glVertexAttrib2fvNV SAGE_glVertexAttrib2fvNV
+#endif
+
+#ifndef glVertexAttrib2sNV
 #define glVertexAttrib2sNV SAGE_glVertexAttrib2sNV
+#endif
+
+#ifndef glVertexAttrib2svNV
 #define glVertexAttrib2svNV SAGE_glVertexAttrib2svNV
+#endif
+
+#ifndef glVertexAttrib3dNV
 #define glVertexAttrib3dNV SAGE_glVertexAttrib3dNV
+#endif
+
+#ifndef glVertexAttrib3dvNV
 #define glVertexAttrib3dvNV SAGE_glVertexAttrib3dvNV
+#endif
+
+#ifndef glVertexAttrib3fNV
 #define glVertexAttrib3fNV SAGE_glVertexAttrib3fNV
+#endif
+
+#ifndef glVertexAttrib3fvNV
 #define glVertexAttrib3fvNV SAGE_glVertexAttrib3fvNV
+#endif
+
+#ifndef glVertexAttrib3sNV
 #define glVertexAttrib3sNV SAGE_glVertexAttrib3sNV
+#endif
+
+#ifndef glVertexAttrib3svNV
 #define glVertexAttrib3svNV SAGE_glVertexAttrib3svNV
+#endif
+
+#ifndef glVertexAttrib4dNV
 #define glVertexAttrib4dNV SAGE_glVertexAttrib4dNV
+#endif
+
+#ifndef glVertexAttrib4dvNV
 #define glVertexAttrib4dvNV SAGE_glVertexAttrib4dvNV
+#endif
+
+#ifndef glVertexAttrib4fNV
 #define glVertexAttrib4fNV SAGE_glVertexAttrib4fNV
+#endif
+
+#ifndef glVertexAttrib4fvNV
 #define glVertexAttrib4fvNV SAGE_glVertexAttrib4fvNV
+#endif
+
+#ifndef glVertexAttrib4sNV
 #define glVertexAttrib4sNV SAGE_glVertexAttrib4sNV
+#endif
+
+#ifndef glVertexAttrib4svNV
 #define glVertexAttrib4svNV SAGE_glVertexAttrib4svNV
+#endif
+
+#ifndef glVertexAttrib4ubNV
 #define glVertexAttrib4ubNV SAGE_glVertexAttrib4ubNV
+#endif
+
+#ifndef glVertexAttrib4ubvNV
 #define glVertexAttrib4ubvNV SAGE_glVertexAttrib4ubvNV
+#endif
+
+#ifndef glVertexAttribs1dvNV
 #define glVertexAttribs1dvNV SAGE_glVertexAttribs1dvNV
+#endif
+
+#ifndef glVertexAttribs1fvNV
 #define glVertexAttribs1fvNV SAGE_glVertexAttribs1fvNV
+#endif
+
+#ifndef glVertexAttribs1svNV
 #define glVertexAttribs1svNV SAGE_glVertexAttribs1svNV
+#endif
+
+#ifndef glVertexAttribs2dvNV
 #define glVertexAttribs2dvNV SAGE_glVertexAttribs2dvNV
+#endif
+
+#ifndef glVertexAttribs2fvNV
 #define glVertexAttribs2fvNV SAGE_glVertexAttribs2fvNV
+#endif
+
+#ifndef glVertexAttribs2svNV
 #define glVertexAttribs2svNV SAGE_glVertexAttribs2svNV
+#endif
+
+#ifndef glVertexAttribs3dvNV
 #define glVertexAttribs3dvNV SAGE_glVertexAttribs3dvNV
+#endif
+
+#ifndef glVertexAttribs3fvNV
 #define glVertexAttribs3fvNV SAGE_glVertexAttribs3fvNV
+#endif
+
+#ifndef glVertexAttribs3svNV
 #define glVertexAttribs3svNV SAGE_glVertexAttribs3svNV
+#endif
+
+#ifndef glVertexAttribs4dvNV
 #define glVertexAttribs4dvNV SAGE_glVertexAttribs4dvNV
+#endif
+
+#ifndef glVertexAttribs4fvNV
 #define glVertexAttribs4fvNV SAGE_glVertexAttribs4fvNV
+#endif
+
+#ifndef glVertexAttribs4svNV
 #define glVertexAttribs4svNV SAGE_glVertexAttribs4svNV
+#endif
+
+#ifndef glVertexAttribs4ubvNV
 #define glVertexAttribs4ubvNV SAGE_glVertexAttribs4ubvNV
+#endif
+
+#endif
+
+#ifndef GL_SGIX_texture_coordinate_clamp
 #define GL_SGIX_texture_coordinate_clamp 1
+#endif
+
+#ifndef GL_SGIX_scalebias_hint
 #define GL_SGIX_scalebias_hint 1
+#endif
+
+#ifndef GL_OML_interlace
 #define GL_OML_interlace 1
+#endif
+
+#ifndef GL_OML_subsample
 #define GL_OML_subsample 1
+#endif
+
+#ifndef GL_OML_resample
 #define GL_OML_resample 1
+#endif
+
+#ifndef GL_NV_copy_depth_to_color
 #define GL_NV_copy_depth_to_color 1
+#endif
+
+#ifndef GL_ATI_envmap_bumpmap
 #define GL_ATI_envmap_bumpmap 1
+#ifndef glTexBumpParameterivATI
 #define glTexBumpParameterivATI SAGE_glTexBumpParameterivATI
+#endif
+
+#ifndef glTexBumpParameterfvATI
 #define glTexBumpParameterfvATI SAGE_glTexBumpParameterfvATI
+#endif
+
+#ifndef glGetTexBumpParameterivATI
 #define glGetTexBumpParameterivATI SAGE_glGetTexBumpParameterivATI
+#endif
+
+#ifndef glGetTexBumpParameterfvATI
 #define glGetTexBumpParameterfvATI SAGE_glGetTexBumpParameterfvATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_fragment_shader
 #define GL_ATI_fragment_shader 1
+#ifndef glGenFragmentShadersATI
 #define glGenFragmentShadersATI SAGE_glGenFragmentShadersATI
+#endif
+
+#ifndef glBindFragmentShaderATI
 #define glBindFragmentShaderATI SAGE_glBindFragmentShaderATI
+#endif
+
+#ifndef glDeleteFragmentShaderATI
 #define glDeleteFragmentShaderATI SAGE_glDeleteFragmentShaderATI
+#endif
+
+#ifndef glBeginFragmentShaderATI
 #define glBeginFragmentShaderATI SAGE_glBeginFragmentShaderATI
+#endif
+
+#ifndef glEndFragmentShaderATI
 #define glEndFragmentShaderATI SAGE_glEndFragmentShaderATI
+#endif
+
+#ifndef glPassTexCoordATI
 #define glPassTexCoordATI SAGE_glPassTexCoordATI
+#endif
+
+#ifndef glSampleMapATI
 #define glSampleMapATI SAGE_glSampleMapATI
+#endif
+
+#ifndef glColorFragmentOp1ATI
 #define glColorFragmentOp1ATI SAGE_glColorFragmentOp1ATI
+#endif
+
+#ifndef glColorFragmentOp2ATI
 #define glColorFragmentOp2ATI SAGE_glColorFragmentOp2ATI
+#endif
+
+#ifndef glColorFragmentOp3ATI
 #define glColorFragmentOp3ATI SAGE_glColorFragmentOp3ATI
+#endif
+
+#ifndef glAlphaFragmentOp1ATI
 #define glAlphaFragmentOp1ATI SAGE_glAlphaFragmentOp1ATI
+#endif
+
+#ifndef glAlphaFragmentOp2ATI
 #define glAlphaFragmentOp2ATI SAGE_glAlphaFragmentOp2ATI
+#endif
+
+#ifndef glAlphaFragmentOp3ATI
 #define glAlphaFragmentOp3ATI SAGE_glAlphaFragmentOp3ATI
+#endif
+
+#ifndef glSetFragmentShaderConstantATI
 #define glSetFragmentShaderConstantATI SAGE_glSetFragmentShaderConstantATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_pn_triangles
 #define GL_ATI_pn_triangles 1
+#ifndef glPNTrianglesiATI
 #define glPNTrianglesiATI SAGE_glPNTrianglesiATI
+#endif
+
+#ifndef glPNTrianglesfATI
 #define glPNTrianglesfATI SAGE_glPNTrianglesfATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_vertex_array_object
 #define GL_ATI_vertex_array_object 1
+#ifndef glNewObjectBufferATI
 #define glNewObjectBufferATI SAGE_glNewObjectBufferATI
+#endif
+
+#ifndef glIsObjectBufferATI
 #define glIsObjectBufferATI SAGE_glIsObjectBufferATI
+#endif
+
+#ifndef glUpdateObjectBufferATI
 #define glUpdateObjectBufferATI SAGE_glUpdateObjectBufferATI
+#endif
+
+#ifndef glGetObjectBufferfvATI
 #define glGetObjectBufferfvATI SAGE_glGetObjectBufferfvATI
+#endif
+
+#ifndef glGetObjectBufferivATI
 #define glGetObjectBufferivATI SAGE_glGetObjectBufferivATI
+#endif
+
+#ifndef glFreeObjectBufferATI
 #define glFreeObjectBufferATI SAGE_glFreeObjectBufferATI
+#endif
+
+#ifndef glArrayObjectATI
 #define glArrayObjectATI SAGE_glArrayObjectATI
+#endif
+
+#ifndef glGetArrayObjectfvATI
 #define glGetArrayObjectfvATI SAGE_glGetArrayObjectfvATI
+#endif
+
+#ifndef glGetArrayObjectivATI
 #define glGetArrayObjectivATI SAGE_glGetArrayObjectivATI
+#endif
+
+#ifndef glVariantArrayObjectATI
 #define glVariantArrayObjectATI SAGE_glVariantArrayObjectATI
+#endif
+
+#ifndef glGetVariantArrayObjectfvATI
 #define glGetVariantArrayObjectfvATI SAGE_glGetVariantArrayObjectfvATI
+#endif
+
+#ifndef glGetVariantArrayObjectivATI
 #define glGetVariantArrayObjectivATI SAGE_glGetVariantArrayObjectivATI
+#endif
+
+#endif
+
+#ifndef GL_EXT_vertex_shader
 #define GL_EXT_vertex_shader 1
+#ifndef glBeginVertexShaderEXT
 #define glBeginVertexShaderEXT SAGE_glBeginVertexShaderEXT
+#endif
+
+#ifndef glEndVertexShaderEXT
 #define glEndVertexShaderEXT SAGE_glEndVertexShaderEXT
+#endif
+
+#ifndef glBindVertexShaderEXT
 #define glBindVertexShaderEXT SAGE_glBindVertexShaderEXT
+#endif
+
+#ifndef glGenVertexShadersEXT
 #define glGenVertexShadersEXT SAGE_glGenVertexShadersEXT
+#endif
+
+#ifndef glDeleteVertexShaderEXT
 #define glDeleteVertexShaderEXT SAGE_glDeleteVertexShaderEXT
+#endif
+
+#ifndef glShaderOp1EXT
 #define glShaderOp1EXT SAGE_glShaderOp1EXT
+#endif
+
+#ifndef glShaderOp2EXT
 #define glShaderOp2EXT SAGE_glShaderOp2EXT
+#endif
+
+#ifndef glShaderOp3EXT
 #define glShaderOp3EXT SAGE_glShaderOp3EXT
+#endif
+
+#ifndef glSwizzleEXT
 #define glSwizzleEXT SAGE_glSwizzleEXT
+#endif
+
+#ifndef glWriteMaskEXT
 #define glWriteMaskEXT SAGE_glWriteMaskEXT
+#endif
+
+#ifndef glInsertComponentEXT
 #define glInsertComponentEXT SAGE_glInsertComponentEXT
+#endif
+
+#ifndef glExtractComponentEXT
 #define glExtractComponentEXT SAGE_glExtractComponentEXT
+#endif
+
+#ifndef glGenSymbolsEXT
 #define glGenSymbolsEXT SAGE_glGenSymbolsEXT
+#endif
+
+#ifndef glSetInvariantEXT
 #define glSetInvariantEXT SAGE_glSetInvariantEXT
+#endif
+
+#ifndef glSetLocalConstantEXT
 #define glSetLocalConstantEXT SAGE_glSetLocalConstantEXT
+#endif
+
+#ifndef glVariantbvEXT
 #define glVariantbvEXT SAGE_glVariantbvEXT
+#endif
+
+#ifndef glVariantsvEXT
 #define glVariantsvEXT SAGE_glVariantsvEXT
+#endif
+
+#ifndef glVariantivEXT
 #define glVariantivEXT SAGE_glVariantivEXT
+#endif
+
+#ifndef glVariantfvEXT
 #define glVariantfvEXT SAGE_glVariantfvEXT
+#endif
+
+#ifndef glVariantdvEXT
 #define glVariantdvEXT SAGE_glVariantdvEXT
+#endif
+
+#ifndef glVariantubvEXT
 #define glVariantubvEXT SAGE_glVariantubvEXT
+#endif
+
+#ifndef glVariantusvEXT
 #define glVariantusvEXT SAGE_glVariantusvEXT
+#endif
+
+#ifndef glVariantuivEXT
 #define glVariantuivEXT SAGE_glVariantuivEXT
+#endif
+
+#ifndef glVariantPointerEXT
 #define glVariantPointerEXT SAGE_glVariantPointerEXT
+#endif
+
+#ifndef glEnableVariantClientStateEXT
 #define glEnableVariantClientStateEXT SAGE_glEnableVariantClientStateEXT
+#endif
+
+#ifndef glDisableVariantClientStateEXT
 #define glDisableVariantClientStateEXT SAGE_glDisableVariantClientStateEXT
+#endif
+
+#ifndef glBindLightParameterEXT
 #define glBindLightParameterEXT SAGE_glBindLightParameterEXT
+#endif
+
+#ifndef glBindMaterialParameterEXT
 #define glBindMaterialParameterEXT SAGE_glBindMaterialParameterEXT
+#endif
+
+#ifndef glBindTexGenParameterEXT
 #define glBindTexGenParameterEXT SAGE_glBindTexGenParameterEXT
+#endif
+
+#ifndef glBindTextureUnitParameterEXT
 #define glBindTextureUnitParameterEXT SAGE_glBindTextureUnitParameterEXT
+#endif
+
+#ifndef glBindParameterEXT
 #define glBindParameterEXT SAGE_glBindParameterEXT
+#endif
+
+#ifndef glIsVariantEnabledEXT
 #define glIsVariantEnabledEXT SAGE_glIsVariantEnabledEXT
+#endif
+
+#ifndef glGetVariantBooleanvEXT
 #define glGetVariantBooleanvEXT SAGE_glGetVariantBooleanvEXT
+#endif
+
+#ifndef glGetVariantIntegervEXT
 #define glGetVariantIntegervEXT SAGE_glGetVariantIntegervEXT
+#endif
+
+#ifndef glGetVariantFloatvEXT
 #define glGetVariantFloatvEXT SAGE_glGetVariantFloatvEXT
+#endif
+
+#ifndef glGetVariantPointervEXT
 #define glGetVariantPointervEXT SAGE_glGetVariantPointervEXT
+#endif
+
+#ifndef glGetInvariantBooleanvEXT
 #define glGetInvariantBooleanvEXT SAGE_glGetInvariantBooleanvEXT
+#endif
+
+#ifndef glGetInvariantIntegervEXT
 #define glGetInvariantIntegervEXT SAGE_glGetInvariantIntegervEXT
+#endif
+
+#ifndef glGetInvariantFloatvEXT
 #define glGetInvariantFloatvEXT SAGE_glGetInvariantFloatvEXT
+#endif
+
+#ifndef glGetLocalConstantBooleanvEXT
 #define glGetLocalConstantBooleanvEXT SAGE_glGetLocalConstantBooleanvEXT
+#endif
+
+#ifndef glGetLocalConstantIntegervEXT
 #define glGetLocalConstantIntegervEXT SAGE_glGetLocalConstantIntegervEXT
+#endif
+
+#ifndef glGetLocalConstantFloatvEXT
 #define glGetLocalConstantFloatvEXT SAGE_glGetLocalConstantFloatvEXT
+#endif
+
+#endif
+
+#ifndef GL_ATI_vertex_streams
 #define GL_ATI_vertex_streams 1
+#ifndef glVertexStream1sATI
 #define glVertexStream1sATI SAGE_glVertexStream1sATI
+#endif
+
+#ifndef glVertexStream1svATI
 #define glVertexStream1svATI SAGE_glVertexStream1svATI
+#endif
+
+#ifndef glVertexStream1iATI
 #define glVertexStream1iATI SAGE_glVertexStream1iATI
+#endif
+
+#ifndef glVertexStream1ivATI
 #define glVertexStream1ivATI SAGE_glVertexStream1ivATI
+#endif
+
+#ifndef glVertexStream1fATI
 #define glVertexStream1fATI SAGE_glVertexStream1fATI
+#endif
+
+#ifndef glVertexStream1fvATI
 #define glVertexStream1fvATI SAGE_glVertexStream1fvATI
+#endif
+
+#ifndef glVertexStream1dATI
 #define glVertexStream1dATI SAGE_glVertexStream1dATI
+#endif
+
+#ifndef glVertexStream1dvATI
 #define glVertexStream1dvATI SAGE_glVertexStream1dvATI
+#endif
+
+#ifndef glVertexStream2sATI
 #define glVertexStream2sATI SAGE_glVertexStream2sATI
+#endif
+
+#ifndef glVertexStream2svATI
 #define glVertexStream2svATI SAGE_glVertexStream2svATI
+#endif
+
+#ifndef glVertexStream2iATI
 #define glVertexStream2iATI SAGE_glVertexStream2iATI
+#endif
+
+#ifndef glVertexStream2ivATI
 #define glVertexStream2ivATI SAGE_glVertexStream2ivATI
+#endif
+
+#ifndef glVertexStream2fATI
 #define glVertexStream2fATI SAGE_glVertexStream2fATI
+#endif
+
+#ifndef glVertexStream2fvATI
 #define glVertexStream2fvATI SAGE_glVertexStream2fvATI
+#endif
+
+#ifndef glVertexStream2dATI
 #define glVertexStream2dATI SAGE_glVertexStream2dATI
+#endif
+
+#ifndef glVertexStream2dvATI
 #define glVertexStream2dvATI SAGE_glVertexStream2dvATI
+#endif
+
+#ifndef glVertexStream3sATI
 #define glVertexStream3sATI SAGE_glVertexStream3sATI
+#endif
+
+#ifndef glVertexStream3svATI
 #define glVertexStream3svATI SAGE_glVertexStream3svATI
+#endif
+
+#ifndef glVertexStream3iATI
 #define glVertexStream3iATI SAGE_glVertexStream3iATI
+#endif
+
+#ifndef glVertexStream3ivATI
 #define glVertexStream3ivATI SAGE_glVertexStream3ivATI
+#endif
+
+#ifndef glVertexStream3fATI
 #define glVertexStream3fATI SAGE_glVertexStream3fATI
+#endif
+
+#ifndef glVertexStream3fvATI
 #define glVertexStream3fvATI SAGE_glVertexStream3fvATI
+#endif
+
+#ifndef glVertexStream3dATI
 #define glVertexStream3dATI SAGE_glVertexStream3dATI
+#endif
+
+#ifndef glVertexStream3dvATI
 #define glVertexStream3dvATI SAGE_glVertexStream3dvATI
+#endif
+
+#ifndef glVertexStream4sATI
 #define glVertexStream4sATI SAGE_glVertexStream4sATI
+#endif
+
+#ifndef glVertexStream4svATI
 #define glVertexStream4svATI SAGE_glVertexStream4svATI
+#endif
+
+#ifndef glVertexStream4iATI
 #define glVertexStream4iATI SAGE_glVertexStream4iATI
+#endif
+
+#ifndef glVertexStream4ivATI
 #define glVertexStream4ivATI SAGE_glVertexStream4ivATI
+#endif
+
+#ifndef glVertexStream4fATI
 #define glVertexStream4fATI SAGE_glVertexStream4fATI
+#endif
+
+#ifndef glVertexStream4fvATI
 #define glVertexStream4fvATI SAGE_glVertexStream4fvATI
+#endif
+
+#ifndef glVertexStream4dATI
 #define glVertexStream4dATI SAGE_glVertexStream4dATI
+#endif
+
+#ifndef glVertexStream4dvATI
 #define glVertexStream4dvATI SAGE_glVertexStream4dvATI
+#endif
+
+#ifndef glNormalStream3bATI
 #define glNormalStream3bATI SAGE_glNormalStream3bATI
+#endif
+
+#ifndef glNormalStream3bvATI
 #define glNormalStream3bvATI SAGE_glNormalStream3bvATI
+#endif
+
+#ifndef glNormalStream3sATI
 #define glNormalStream3sATI SAGE_glNormalStream3sATI
+#endif
+
+#ifndef glNormalStream3svATI
 #define glNormalStream3svATI SAGE_glNormalStream3svATI
+#endif
+
+#ifndef glNormalStream3iATI
 #define glNormalStream3iATI SAGE_glNormalStream3iATI
+#endif
+
+#ifndef glNormalStream3ivATI
 #define glNormalStream3ivATI SAGE_glNormalStream3ivATI
+#endif
+
+#ifndef glNormalStream3fATI
 #define glNormalStream3fATI SAGE_glNormalStream3fATI
+#endif
+
+#ifndef glNormalStream3fvATI
 #define glNormalStream3fvATI SAGE_glNormalStream3fvATI
+#endif
+
+#ifndef glNormalStream3dATI
 #define glNormalStream3dATI SAGE_glNormalStream3dATI
+#endif
+
+#ifndef glNormalStream3dvATI
 #define glNormalStream3dvATI SAGE_glNormalStream3dvATI
+#endif
+
+#ifndef glClientActiveVertexStreamATI
 #define glClientActiveVertexStreamATI SAGE_glClientActiveVertexStreamATI
+#endif
+
+#ifndef glVertexBlendEnviATI
 #define glVertexBlendEnviATI SAGE_glVertexBlendEnviATI
+#endif
+
+#ifndef glVertexBlendEnvfATI
 #define glVertexBlendEnvfATI SAGE_glVertexBlendEnvfATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_element_array
 #define GL_ATI_element_array 1
+#ifndef glElementPointerATI
 #define glElementPointerATI SAGE_glElementPointerATI
+#endif
+
+#ifndef glDrawElementArrayATI
 #define glDrawElementArrayATI SAGE_glDrawElementArrayATI
+#endif
+
+#ifndef glDrawRangeElementArrayATI
 #define glDrawRangeElementArrayATI SAGE_glDrawRangeElementArrayATI
+#endif
+
+#endif
+
+#ifndef GL_SUN_mesh_array
 #define GL_SUN_mesh_array 1
+#ifndef glDrawMeshArraysSUN
 #define glDrawMeshArraysSUN SAGE_glDrawMeshArraysSUN
+#endif
+
+#endif
+
+#ifndef GL_SUN_slice_accum
 #define GL_SUN_slice_accum 1
+#endif
+
+#ifndef GL_NV_multisample_filter_hint
 #define GL_NV_multisample_filter_hint 1
+#endif
+
+#ifndef GL_NV_depth_clamp
 #define GL_NV_depth_clamp 1
+#endif
+
+#ifndef GL_NV_occlusion_query
 #define GL_NV_occlusion_query 1
+#ifndef glGenOcclusionQueriesNV
 #define glGenOcclusionQueriesNV SAGE_glGenOcclusionQueriesNV
+#endif
+
+#ifndef glDeleteOcclusionQueriesNV
 #define glDeleteOcclusionQueriesNV SAGE_glDeleteOcclusionQueriesNV
+#endif
+
+#ifndef glIsOcclusionQueryNV
 #define glIsOcclusionQueryNV SAGE_glIsOcclusionQueryNV
+#endif
+
+#ifndef glBeginOcclusionQueryNV
 #define glBeginOcclusionQueryNV SAGE_glBeginOcclusionQueryNV
+#endif
+
+#ifndef glEndOcclusionQueryNV
 #define glEndOcclusionQueryNV SAGE_glEndOcclusionQueryNV
+#endif
+
+#ifndef glGetOcclusionQueryivNV
 #define glGetOcclusionQueryivNV SAGE_glGetOcclusionQueryivNV
+#endif
+
+#ifndef glGetOcclusionQueryuivNV
 #define glGetOcclusionQueryuivNV SAGE_glGetOcclusionQueryuivNV
+#endif
+
+#endif
+
+#ifndef GL_NV_point_sprite
 #define GL_NV_point_sprite 1
+#ifndef glPointParameteriNV
 #define glPointParameteriNV SAGE_glPointParameteriNV
+#endif
+
+#ifndef glPointParameterivNV
 #define glPointParameterivNV SAGE_glPointParameterivNV
+#endif
+
+#endif
+
+#ifndef GL_NV_texture_shader3
 #define GL_NV_texture_shader3 1
+#endif
+
+#ifndef GL_NV_vertex_program1_1
 #define GL_NV_vertex_program1_1 1
+#endif
+
+#ifndef GL_EXT_shadow_funcs
 #define GL_EXT_shadow_funcs 1
+#endif
+
+#ifndef GL_EXT_stencil_two_side
 #define GL_EXT_stencil_two_side 1
+#ifndef glActiveStencilFaceEXT
 #define glActiveStencilFaceEXT SAGE_glActiveStencilFaceEXT
+#endif
+
+#endif
+
+#ifndef GL_ATI_text_fragment_shader
 #define GL_ATI_text_fragment_shader 1
+#endif
+
+#ifndef GL_APPLE_client_storage
 #define GL_APPLE_client_storage 1
+#endif
+
+#ifndef GL_APPLE_element_array
 #define GL_APPLE_element_array 1
+#ifndef glElementPointerAPPLE
 #define glElementPointerAPPLE SAGE_glElementPointerAPPLE
+#endif
+
+#ifndef glDrawElementArrayAPPLE
 #define glDrawElementArrayAPPLE SAGE_glDrawElementArrayAPPLE
+#endif
+
+#ifndef glDrawRangeElementArrayAPPLE
 #define glDrawRangeElementArrayAPPLE SAGE_glDrawRangeElementArrayAPPLE
+#endif
+
+#ifndef glMultiDrawElementArrayAPPLE
 #define glMultiDrawElementArrayAPPLE SAGE_glMultiDrawElementArrayAPPLE
+#endif
+
+#ifndef glMultiDrawRangeElementArrayAPPLE
 #define glMultiDrawRangeElementArrayAPPLE SAGE_glMultiDrawRangeElementArrayAPPLE
+#endif
+
+#endif
+
+#ifndef GL_APPLE_fence
 #define GL_APPLE_fence 1
+#ifndef glGenFencesAPPLE
 #define glGenFencesAPPLE SAGE_glGenFencesAPPLE
+#endif
+
+#ifndef glDeleteFencesAPPLE
 #define glDeleteFencesAPPLE SAGE_glDeleteFencesAPPLE
+#endif
+
+#ifndef glSetFenceAPPLE
 #define glSetFenceAPPLE SAGE_glSetFenceAPPLE
+#endif
+
+#ifndef glIsFenceAPPLE
 #define glIsFenceAPPLE SAGE_glIsFenceAPPLE
+#endif
+
+#ifndef glTestFenceAPPLE
 #define glTestFenceAPPLE SAGE_glTestFenceAPPLE
+#endif
+
+#ifndef glFinishFenceAPPLE
 #define glFinishFenceAPPLE SAGE_glFinishFenceAPPLE
+#endif
+
+#ifndef glTestObjectAPPLE
 #define glTestObjectAPPLE SAGE_glTestObjectAPPLE
+#endif
+
+#ifndef glFinishObjectAPPLE
 #define glFinishObjectAPPLE SAGE_glFinishObjectAPPLE
+#endif
+
+#endif
+
+#ifndef GL_APPLE_vertex_array_object
 #define GL_APPLE_vertex_array_object 1
+#ifndef glBindVertexArrayAPPLE
 #define glBindVertexArrayAPPLE SAGE_glBindVertexArrayAPPLE
+#endif
+
+#ifndef glDeleteVertexArraysAPPLE
 #define glDeleteVertexArraysAPPLE SAGE_glDeleteVertexArraysAPPLE
+#endif
+
+#ifndef glGenVertexArraysAPPLE
 #define glGenVertexArraysAPPLE SAGE_glGenVertexArraysAPPLE
+#endif
+
+#ifndef glIsVertexArrayAPPLE
 #define glIsVertexArrayAPPLE SAGE_glIsVertexArrayAPPLE
+#endif
+
+#endif
+
+#ifndef GL_APPLE_vertex_array_range
 #define GL_APPLE_vertex_array_range 1
+#ifndef glVertexArrayRangeAPPLE
 #define glVertexArrayRangeAPPLE SAGE_glVertexArrayRangeAPPLE
+#endif
+
+#ifndef glFlushVertexArrayRangeAPPLE
 #define glFlushVertexArrayRangeAPPLE SAGE_glFlushVertexArrayRangeAPPLE
+#endif
+
+#ifndef glVertexArrayParameteriAPPLE
 #define glVertexArrayParameteriAPPLE SAGE_glVertexArrayParameteriAPPLE
+#endif
+
+#endif
+
+#ifndef GL_APPLE_ycbcr_422
 #define GL_APPLE_ycbcr_422 1
+#endif
+
+#ifndef GL_S3_s3tc
 #define GL_S3_s3tc 1
+#endif
+
+#ifndef GL_ATI_draw_buffers
 #define GL_ATI_draw_buffers 1
+#ifndef glDrawBuffersATI
 #define glDrawBuffersATI SAGE_glDrawBuffersATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_pixel_format_float
 #define GL_ATI_pixel_format_float 1
+#endif
+
+#ifndef GL_ATI_texture_env_combine3
 #define GL_ATI_texture_env_combine3 1
+#endif
+
+#ifndef GL_ATI_texture_float
 #define GL_ATI_texture_float 1
+#endif
+
+#ifndef GL_NV_float_buffer
 #define GL_NV_float_buffer 1
+#endif
+
+#ifndef GL_NV_fragment_program
 #define GL_NV_fragment_program 1
+#ifndef glProgramNamedParameter4fNV
 #define glProgramNamedParameter4fNV SAGE_glProgramNamedParameter4fNV
+#endif
+
+#ifndef glProgramNamedParameter4dNV
 #define glProgramNamedParameter4dNV SAGE_glProgramNamedParameter4dNV
+#endif
+
+#ifndef glProgramNamedParameter4fvNV
 #define glProgramNamedParameter4fvNV SAGE_glProgramNamedParameter4fvNV
+#endif
+
+#ifndef glProgramNamedParameter4dvNV
 #define glProgramNamedParameter4dvNV SAGE_glProgramNamedParameter4dvNV
+#endif
+
+#ifndef glGetProgramNamedParameterfvNV
 #define glGetProgramNamedParameterfvNV SAGE_glGetProgramNamedParameterfvNV
+#endif
+
+#ifndef glGetProgramNamedParameterdvNV
 #define glGetProgramNamedParameterdvNV SAGE_glGetProgramNamedParameterdvNV
+#endif
+
+#endif
+
+#ifndef GL_NV_half_float
 #define GL_NV_half_float 1
+#ifndef glVertex2hNV
 #define glVertex2hNV SAGE_glVertex2hNV
+#endif
+
+#ifndef glVertex2hvNV
 #define glVertex2hvNV SAGE_glVertex2hvNV
+#endif
+
+#ifndef glVertex3hNV
 #define glVertex3hNV SAGE_glVertex3hNV
+#endif
+
+#ifndef glVertex3hvNV
 #define glVertex3hvNV SAGE_glVertex3hvNV
+#endif
+
+#ifndef glVertex4hNV
 #define glVertex4hNV SAGE_glVertex4hNV
+#endif
+
+#ifndef glVertex4hvNV
 #define glVertex4hvNV SAGE_glVertex4hvNV
+#endif
+
+#ifndef glNormal3hNV
 #define glNormal3hNV SAGE_glNormal3hNV
+#endif
+
+#ifndef glNormal3hvNV
 #define glNormal3hvNV SAGE_glNormal3hvNV
+#endif
+
+#ifndef glColor3hNV
 #define glColor3hNV SAGE_glColor3hNV
+#endif
+
+#ifndef glColor3hvNV
 #define glColor3hvNV SAGE_glColor3hvNV
+#endif
+
+#ifndef glColor4hNV
 #define glColor4hNV SAGE_glColor4hNV
+#endif
+
+#ifndef glColor4hvNV
 #define glColor4hvNV SAGE_glColor4hvNV
+#endif
+
+#ifndef glTexCoord1hNV
 #define glTexCoord1hNV SAGE_glTexCoord1hNV
+#endif
+
+#ifndef glTexCoord1hvNV
 #define glTexCoord1hvNV SAGE_glTexCoord1hvNV
+#endif
+
+#ifndef glTexCoord2hNV
 #define glTexCoord2hNV SAGE_glTexCoord2hNV
+#endif
+
+#ifndef glTexCoord2hvNV
 #define glTexCoord2hvNV SAGE_glTexCoord2hvNV
+#endif
+
+#ifndef glTexCoord3hNV
 #define glTexCoord3hNV SAGE_glTexCoord3hNV
+#endif
+
+#ifndef glTexCoord3hvNV
 #define glTexCoord3hvNV SAGE_glTexCoord3hvNV
+#endif
+
+#ifndef glTexCoord4hNV
 #define glTexCoord4hNV SAGE_glTexCoord4hNV
+#endif
+
+#ifndef glTexCoord4hvNV
 #define glTexCoord4hvNV SAGE_glTexCoord4hvNV
+#endif
+
+#ifndef glMultiTexCoord1hNV
 #define glMultiTexCoord1hNV SAGE_glMultiTexCoord1hNV
+#endif
+
+#ifndef glMultiTexCoord1hvNV
 #define glMultiTexCoord1hvNV SAGE_glMultiTexCoord1hvNV
+#endif
+
+#ifndef glMultiTexCoord2hNV
 #define glMultiTexCoord2hNV SAGE_glMultiTexCoord2hNV
+#endif
+
+#ifndef glMultiTexCoord2hvNV
 #define glMultiTexCoord2hvNV SAGE_glMultiTexCoord2hvNV
+#endif
+
+#ifndef glMultiTexCoord3hNV
 #define glMultiTexCoord3hNV SAGE_glMultiTexCoord3hNV
+#endif
+
+#ifndef glMultiTexCoord3hvNV
 #define glMultiTexCoord3hvNV SAGE_glMultiTexCoord3hvNV
+#endif
+
+#ifndef glMultiTexCoord4hNV
 #define glMultiTexCoord4hNV SAGE_glMultiTexCoord4hNV
+#endif
+
+#ifndef glMultiTexCoord4hvNV
 #define glMultiTexCoord4hvNV SAGE_glMultiTexCoord4hvNV
+#endif
+
+#ifndef glFogCoordhNV
 #define glFogCoordhNV SAGE_glFogCoordhNV
+#endif
+
+#ifndef glFogCoordhvNV
 #define glFogCoordhvNV SAGE_glFogCoordhvNV
+#endif
+
+#ifndef glSecondaryColor3hNV
 #define glSecondaryColor3hNV SAGE_glSecondaryColor3hNV
+#endif
+
+#ifndef glSecondaryColor3hvNV
 #define glSecondaryColor3hvNV SAGE_glSecondaryColor3hvNV
+#endif
+
+#ifndef glVertexWeighthNV
 #define glVertexWeighthNV SAGE_glVertexWeighthNV
+#endif
+
+#ifndef glVertexWeighthvNV
 #define glVertexWeighthvNV SAGE_glVertexWeighthvNV
+#endif
+
+#ifndef glVertexAttrib1hNV
 #define glVertexAttrib1hNV SAGE_glVertexAttrib1hNV
+#endif
+
+#ifndef glVertexAttrib1hvNV
 #define glVertexAttrib1hvNV SAGE_glVertexAttrib1hvNV
+#endif
+
+#ifndef glVertexAttrib2hNV
 #define glVertexAttrib2hNV SAGE_glVertexAttrib2hNV
+#endif
+
+#ifndef glVertexAttrib2hvNV
 #define glVertexAttrib2hvNV SAGE_glVertexAttrib2hvNV
+#endif
+
+#ifndef glVertexAttrib3hNV
 #define glVertexAttrib3hNV SAGE_glVertexAttrib3hNV
+#endif
+
+#ifndef glVertexAttrib3hvNV
 #define glVertexAttrib3hvNV SAGE_glVertexAttrib3hvNV
+#endif
+
+#ifndef glVertexAttrib4hNV
 #define glVertexAttrib4hNV SAGE_glVertexAttrib4hNV
+#endif
+
+#ifndef glVertexAttrib4hvNV
 #define glVertexAttrib4hvNV SAGE_glVertexAttrib4hvNV
+#endif
+
+#ifndef glVertexAttribs1hvNV
 #define glVertexAttribs1hvNV SAGE_glVertexAttribs1hvNV
+#endif
+
+#ifndef glVertexAttribs2hvNV
 #define glVertexAttribs2hvNV SAGE_glVertexAttribs2hvNV
+#endif
+
+#ifndef glVertexAttribs3hvNV
 #define glVertexAttribs3hvNV SAGE_glVertexAttribs3hvNV
+#endif
+
+#ifndef glVertexAttribs4hvNV
 #define glVertexAttribs4hvNV SAGE_glVertexAttribs4hvNV
+#endif
+
+#endif
+
+#ifndef GL_NV_pixel_data_range
 #define GL_NV_pixel_data_range 1
+#ifndef glPixelDataRangeNV
 #define glPixelDataRangeNV SAGE_glPixelDataRangeNV
+#endif
+
+#ifndef glFlushPixelDataRangeNV
 #define glFlushPixelDataRangeNV SAGE_glFlushPixelDataRangeNV
+#endif
+
+#endif
+
+#ifndef GL_NV_primitive_restart
 #define GL_NV_primitive_restart 1
+#ifndef glPrimitiveRestartNV
 #define glPrimitiveRestartNV SAGE_glPrimitiveRestartNV
+#endif
+
+#ifndef glPrimitiveRestartIndexNV
 #define glPrimitiveRestartIndexNV SAGE_glPrimitiveRestartIndexNV
+#endif
+
+#endif
+
+#ifndef GL_NV_texture_expand_normal
 #define GL_NV_texture_expand_normal 1
+#endif
+
+#ifndef GL_NV_vertex_program2
 #define GL_NV_vertex_program2 1
+#endif
+
+#ifndef GL_ATI_map_object_buffer
 #define GL_ATI_map_object_buffer 1
+#ifndef glMapObjectBufferATI
 #define glMapObjectBufferATI SAGE_glMapObjectBufferATI
+#endif
+
+#ifndef glUnmapObjectBufferATI
 #define glUnmapObjectBufferATI SAGE_glUnmapObjectBufferATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_separate_stencil
 #define GL_ATI_separate_stencil 1
+#ifndef glStencilOpSeparateATI
 #define glStencilOpSeparateATI SAGE_glStencilOpSeparateATI
+#endif
+
+#ifndef glStencilFuncSeparateATI
 #define glStencilFuncSeparateATI SAGE_glStencilFuncSeparateATI
+#endif
+
+#endif
+
+#ifndef GL_ATI_vertex_attrib_array_object
 #define GL_ATI_vertex_attrib_array_object 1
+#ifndef glVertexAttribArrayObjectATI
 #define glVertexAttribArrayObjectATI SAGE_glVertexAttribArrayObjectATI
+#endif
+
+#ifndef glGetVertexAttribArrayObjectfvATI
 #define glGetVertexAttribArrayObjectfvATI SAGE_glGetVertexAttribArrayObjectfvATI
+#endif
+
+#ifndef glGetVertexAttribArrayObjectivATI
 #define glGetVertexAttribArrayObjectivATI SAGE_glGetVertexAttribArrayObjectivATI
+#endif
+
+#endif
+
+#ifndef GL_OES_read_format
 #define GL_OES_read_format 1
+#endif
+
+#ifndef GL_EXT_depth_bounds_test
 #define GL_EXT_depth_bounds_test 1
+#ifndef glDepthBoundsEXT
 #define glDepthBoundsEXT SAGE_glDepthBoundsEXT
+#endif
+
+#endif
+
+#ifndef GL_EXT_texture_mirror_clamp
 #define GL_EXT_texture_mirror_clamp 1
+#endif
+
+#ifndef GL_EXT_blend_equation_separate
 #define GL_EXT_blend_equation_separate 1
+#ifndef glBlendEquationSeparateEXT
 #define glBlendEquationSeparateEXT SAGE_glBlendEquationSeparateEXT
+#endif
+
+#endif
+
+#ifndef GL_MESA_pack_invert
 #define GL_MESA_pack_invert 1
+#endif
+
+#ifndef GL_MESA_ycbcr_texture
 #define GL_MESA_ycbcr_texture 1
+#endif
+
+#ifndef GL_EXT_pixel_buffer_object
 #define GL_EXT_pixel_buffer_object 1
+#endif
+
+#ifndef GL_NV_fragment_program_option
 #define GL_NV_fragment_program_option 1
+#endif
+
+#ifndef GL_NV_fragment_program2
 #define GL_NV_fragment_program2 1
+#endif
+
+#ifndef GL_NV_vertex_program2_option
 #define GL_NV_vertex_program2_option 1
+#endif
+
+#ifndef GL_NV_vertex_program3
 #define GL_NV_vertex_program3 1
+#endif
+
+#ifndef GL_EXT_framebuffer_object
 #define GL_EXT_framebuffer_object 1
+#ifndef glIsRenderbufferEXT
 #define glIsRenderbufferEXT SAGE_glIsRenderbufferEXT
+#endif
+
+#ifndef glBindRenderbufferEXT
 #define glBindRenderbufferEXT SAGE_glBindRenderbufferEXT
+#endif
+
+#ifndef glDeleteRenderbuffersEXT
 #define glDeleteRenderbuffersEXT SAGE_glDeleteRenderbuffersEXT
+#endif
+
+#ifndef glGenRenderbuffersEXT
 #define glGenRenderbuffersEXT SAGE_glGenRenderbuffersEXT
+#endif
+
+#ifndef glRenderbufferStorageEXT
 #define glRenderbufferStorageEXT SAGE_glRenderbufferStorageEXT
+#endif
+
+#ifndef glGetRenderbufferParameterivEXT
 #define glGetRenderbufferParameterivEXT SAGE_glGetRenderbufferParameterivEXT
+#endif
+
+#ifndef glIsFramebufferEXT
 #define glIsFramebufferEXT SAGE_glIsFramebufferEXT
+#endif
+
+#ifndef glBindFramebufferEXT
 #define glBindFramebufferEXT SAGE_glBindFramebufferEXT
+#endif
+
+#ifndef glDeleteFramebuffersEXT
 #define glDeleteFramebuffersEXT SAGE_glDeleteFramebuffersEXT
+#endif
+
+#ifndef glGenFramebuffersEXT
 #define glGenFramebuffersEXT SAGE_glGenFramebuffersEXT
+#endif
+
+#ifndef glCheckFramebufferStatusEXT
 #define glCheckFramebufferStatusEXT SAGE_glCheckFramebufferStatusEXT
+#endif
+
+#ifndef glFramebufferTexture1DEXT
 #define glFramebufferTexture1DEXT SAGE_glFramebufferTexture1DEXT
+#endif
+
+#ifndef glFramebufferTexture2DEXT
 #define glFramebufferTexture2DEXT SAGE_glFramebufferTexture2DEXT
+#endif
+
+#ifndef glFramebufferTexture3DEXT
 #define glFramebufferTexture3DEXT SAGE_glFramebufferTexture3DEXT
+#endif
+
+#ifndef glFramebufferRenderbufferEXT
 #define glFramebufferRenderbufferEXT SAGE_glFramebufferRenderbufferEXT
+#endif
+
+#ifndef glGetFramebufferAttachmentParameterivEXT
 #define glGetFramebufferAttachmentParameterivEXT SAGE_glGetFramebufferAttachmentParameterivEXT
+#endif
+
+#ifndef glGenerateMipmapEXT
 #define glGenerateMipmapEXT SAGE_glGenerateMipmapEXT
+#endif
+
+#endif
+
+#ifndef GL_GREMEDY_string_marker
 #define GL_GREMEDY_string_marker 1
+#ifndef glStringMarkerGREMEDY
 #define glStringMarkerGREMEDY SAGE_glStringMarkerGREMEDY
+#endif
+
+#endif
+
 
 #include <sage/sage_fptr.h>
 

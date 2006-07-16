@@ -1,3 +1,20 @@
+2006-07-16  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* build_sage.pl, sage/GL.h, sage/sage.h: Rollback 2006-07-15 changes as
+	  these do not work on the Mac.
+
+2006-07-15  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* build_sage.pl, sage/GL.h, sage/sage.h: Some fixes related to using
+	  SDL's gl header.
+
+2006-07-15  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* build_sage.pl, sage/GL.h, sage/sage.h: Some changes to use SDL's 
+	  opengl header instead of the system defined one. This means that we
+	  always use function pointers for gl functions to try and preservce
+	  binary compatibility between opengl versions.
+
 2006-07-12  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* sage.spec.in: Update for current files. Use ldconfig. Bump version 

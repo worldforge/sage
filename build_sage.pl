@@ -29,20 +29,20 @@ open (GLEXT, "<$GLEXT_FILE") or die "Cannot open $GLEXT_FILE\n";
 #loop through every line in glext.h
 while (<GLEXT>) {
   if  ($_ =~ m|$VERSION_REGEXP|) {
-#    push(@FUNCTION_HEADER_DEF, $_); # write into header
-#    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    push(@FUNCTION_HEADER_DEF, $_); # write into header
+    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
   } elsif  ($_ =~ m|$TYPES_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
-#    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
   } elsif ($_ =~ m|$FUNCTION_REGEXP|) {
     ($RET, $FUNCTION, $ARGS) = ($_ =~ m|$FUNCTION_REGEXP|); # Extract function name
     $PFN_FUNCTION = "SAGE_PFN".uc($FUNCTION)."PROC"; # make the typedef name
     push(@TYPEDEFS, "typedef $RET (APIENTRYP $PFN_FUNCTION) $ARGS\n");
 
     push(@FUNCTION_HEADER_FPTR , "SAGEAPI $PFN_FUNCTION SAGE_$FUNCTION;\n"); # declare function for header
-#    push(@FUNCTION_HEADER_DEF, "#ifndef $FUNCTION\n");
+    push(@FUNCTION_HEADER_DEF, "#ifndef $FUNCTION\n");
     push(@FUNCTION_HEADER_DEF, "#define $FUNCTION SAGE_$FUNCTION\n");
-#    push(@FUNCTION_HEADER_DEF, "#endif\n\n");
+    push(@FUNCTION_HEADER_DEF, "#endif\n\n");
     push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = NULL;\n"); # declaraion of function in c file
     push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
   # Grab #defines
