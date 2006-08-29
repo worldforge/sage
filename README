@@ -6,8 +6,15 @@ Usage
 To use this, make sure you include <sage/sage.h> before you include glext.h as sage uses a custom version of this file interally.
 
 To use opengl extensions, call sage_init(); 
+This should ideally be called everytime a context is created.
 
 To check if an extension is supported, query the array, sage_ext[EXT] where EXT is the upper case version of the extension, e.g. GL_ARB_MULTITEXTURE. This will return 1 if supported, 0 otherwise.
+
+You can then call functions either like glActiveTextureARB or as SAGE_glActiveTextureARB. The SAGE_ version uses function pointers to access the function. The first method will use the actual function if GL_ARB_MULTITEXTURE has already been defined otherwise it is a #define to the SAGE_ form.
+As there is a slight overhead in using a function pointer, the glActiveTextureARB form should be faster on platforms where it is possible to use it. However #defines are configured based on the Open GL header available at the time of compiling the client application (or library) that uses sage. This means that if you compile using an Open GL header file defining Open GL 1.5 functions, you may find that when you run the program on a driver that only supports 1.3 or 1.4 functions that it will crash as the 1.5 functions do not exist.
+
+When compiling and running on the same machine, this should not be a problem. If you then distribute the compiled binary, then this may become a problem. To alleviate this problem, you should use the SAGE_ form of the function declarations, or make sure you use the extension form of the functions. (e.g. glActiveTextureARB instead of glActiveTexture). A final suggestion is to make sure your open gl headers define the version of open gl your are targeting as the minimum for your distribution.
+
 
 Source file generation
 -----------------------

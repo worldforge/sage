@@ -43,8 +43,10 @@ while (<GLEXT>) {
     push(@FUNCTION_HEADER_DEF, "#ifndef $FUNCTION\n");
     push(@FUNCTION_HEADER_DEF, "#define $FUNCTION SAGE_$FUNCTION\n");
     push(@FUNCTION_HEADER_DEF, "#endif\n\n");
-    push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = NULL;\n"); # declaraion of function in c file
-    push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
+#    push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = NULL;\n"); # declaraion of function in c file
+    push (@FUNCTION_CODE, "$PFN_FUNCTION SAGE_$FUNCTION = ($PFN_FUNCTION)&badfunc;\n"); # declaraion of function in c file
+#    push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)SDL_GL_GetProcAddress(\"$FUNCTION\");\n"); # linkup function ptr 
+    push (@FUNCTION_INIT,"  SAGE_$FUNCTION = ($PFN_FUNCTION)getPtr(\"$FUNCTION\");\n"); # linkup function ptr 
   # Grab #defines
   } elsif  ($_ =~ m|$DEFINE_REGEXP|) {
     ($DEF) = ($_ =~ m|$DEFINE_REGEXP|); # extract #define name
@@ -194,6 +196,19 @@ print SAGE_CODE "\n";
 print SAGE_CODE "#include <$SAGE_HEADER_FILE>\n";
 print SAGE_CODE "#include \"SDL.h\"\n";
 print SAGE_CODE "#include <sage/utility.h>\n";
+print SAGE_CODE "#include <stdlib.h>\n";
+print SAGE_CODE "\n";
+print SAGE_CODE "static void badfunc(void*v, ...) {\n";
+print SAGE_CODE "  fprintf(stderr, \"Error: You have tried to call a sage function pointer that is NULL.\\n\");\n";
+print SAGE_CODE "  fflush(stderr);\n";
+print SAGE_CODE "  abort();\n";
+print SAGE_CODE "}\n";
+print SAGE_CODE "\n";
+print SAGE_CODE "static void* getPtr(const char *func) {\n";
+print SAGE_CODE "  void *p = SDL_GL_GetProcAddress(func);\n";
+print SAGE_CODE "  if (p == NULL) p = &badfunc;\n";
+print SAGE_CODE "  return p;\n";
+print SAGE_CODE "}\n";
 print SAGE_CODE "\n";
 
 #start writing the function pointer declarations

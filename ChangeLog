@@ -1,3 +1,10 @@
+2006-08-29  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* build_sage.pl, sage/sage.c: Create a function, badfunc which spits out
+	  an error message and call abort if it is called. Make this the default
+	  function pointer before sage_init is called and when a requested
+	  function does not exist rather than NULL.
+
 2006-07-16  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* build_sage.pl, sage/GL.h, sage/sage.h: Rollback 2006-07-15 changes as
