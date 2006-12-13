@@ -1,3 +1,6 @@
+2006-12-13 Simon Goodall  <sage@simongoodall.co.uk>
+ * Sage 0.2.0 released. Re-write of build scripts to improve support on mac.
+
 2005-10-18  Simon Goodall  <sage@simongoodall.co.uk>
  * Sage 0.1.2 Released. This version is built from glext.h version 29. The main difference to this version from 0.1.1 is that all functions defined by glext.h are built into the library. Previously the ones defined in the standard gl header were ignored.
 

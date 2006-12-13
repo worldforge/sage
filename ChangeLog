@@ -1,3 +1,7 @@
+2006-12-13  Simon Goodall  <sage@simongoodall.co.uk>
+
+	* 0.2.0 Release.
+
 2006-08-29  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* build_sage.pl, sage/sage.c: Create a function, badfunc which spits out
