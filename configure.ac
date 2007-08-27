@@ -95,24 +95,14 @@ CFLAGS="$CFLAGS -DSAGE_COMPILE"
 
 dnl Check SDL
 SDL_VERSION=1.2.2
-AC_SUBST(SDL_VERSION)
-AM_PATH_SDL($SDL_VERSION, [
-CFLAGS="$CFLAGS $SDL_CFLAGS"
-LIBS="$LIBS $SDL_LIBS"
-],
-[
-  AC_MSG_ERROR(Couldn't find SDL or insufficent version found. Please goto http://www.libsdl.org/ and get at least version $SDL_VERSION)
-])
-
-
-#AC_CHECK_HEADER(windows.h, [], [])
-#AM_CONDITIONAL(BUILD_WGL, test "$ac_cv_header_windows_h" == "yes")
-AM_CONDITIONAL(BUILD_WGL, false)
-
-AC_CHECK_HEADER(X11/Xlib.h, [], [])
-AM_CONDITIONAL(BUILD_GLX, test "$ac_cv_header_X11_Xlib_h" == "yes")
-AM_CONDITIONAL(BUILD_GLX, false)
-
+PKG_CHECK_MODULES(SDLPKG, sdl >= $SDL_VERSION,
+        [
+                CFLAGS="$CFLAGS $SDLPKG_CFLAGS"
+                LIBS="$LIBS $SDLPKG_LIBS"
+        ],
+	AC_MSG_ERROR(Couldn't find SDL or insufficent version found  ($SDLPKG_PKG_ERRORS). Please goto http://www.libsdl.org/ and get at least version $SDL_VERSION)
+)
+  
 SAGE_LIBS="-lsage"
 SAGE_CFLAGS=""
 

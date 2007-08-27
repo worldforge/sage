@@ -8,24 +8,7 @@ if BUILD_DLL
 libsage_la_CFLAGS=-DBUILD_SAGE_DLL
 endif
 
-if BUILD_WGL
-SAGE_WGL_C = sage_wgl.c
-SAGE_WGL_H = sage_wgl.h wglext_sage.h
-else
-SAGE_WGL_C=
-SAGE_WGL_H=
-endif
-
-if BUILD_GLX
-SAGE_GLX_C = sage_glx.c
-SAGE_GLX_H = sage_glx.h glxext_sage.h
-else
-SAGE_GLX_C=
-SAGE_GLX_H=
-endif
-
 libsage_la_SOURCES = \
-	$(SAGE_GLX_C) $(SAGE_WGL_C) \
 	check_extension.c \
 	sage.c
 	
@@ -36,7 +19,6 @@ libsage_HEADERS=\
 	utility.h \
 	sage_fptr.h \
 	GL.h GLU.h \
-	$(SAGE_GLX_H) $(SAGE_WGL_H) \
 	header.h
 
 # Stuff to build dll

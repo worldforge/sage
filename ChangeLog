@@ -1,3 +1,13 @@
+2007-08-27  Simon Goodall  <simon@simongoodall.co.uk>
+
+	* configure.ac: Use pkgconfig for SDL. Removed defunc conditional
+	  checks for glx and wgl headers.
+	 
+	* sage/Makefile.am, sage/sage_glx.c, sage/sage_glx.h,
+	  sage/glxext_sage.h, sage/sage_wgl.c, sage/sage_wgl.h,
+	  sage/wglext_sage.h: Remove old glx and wgl generated code files due
+	  to license compatibility problems.
+
 2006-12-13  Simon Goodall  <sage@simongoodall.co.uk>
 
 	* 0.2.0 Release.
