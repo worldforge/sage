@@ -20,6 +20,7 @@ $DEFINE_REGEXP="\#define (GL_[A-Za-z0-9_]*) 1\$";
 $VERSION_REGEXP="\#ifndef (GL_[A-Za-z0-9_]*)";
 $TOKEN_REGEXP="\#define (GL_[A-Za-z0-9_]*)[ \t]*((0x[0-9A-F]*)\|(GL_.*))\$";
 $TYPES_REGEXP="typedef ([ A-Za-z0-9_*]*)[ \t]*(GL[A-Za-z0-9_]*);";
+$SIXTYFOUR_REGEXP="\#ifndef GLEXT_64_TYPES_DEFINED";
 
 #flag checking whether we need to add an endif or not
 $WAIT_FOR_ENDIF="false";
@@ -27,13 +28,27 @@ $WAIT_FOR_ENDIF="false";
 # Open glext.h for input
 open (GLEXT, "<$GLEXT_FILE") or die "Cannot open $GLEXT_FILE\n";
 #loop through every line in glext.h
+$IF_DEPTH=0;
+$WAIT_DEPTH=-1;
+$GRAB_LINE=False;
 while (<GLEXT>) {
+  if ($_ =~ m|#if|) {
+    $IF_DEPTH++;
+  }
   if  ($_ =~ m|$VERSION_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
     $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    $WAIT_DEPTH=$IF_DEPTH;
   } elsif  ($_ =~ m|$TYPES_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
     $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    $WAIT_DEPTH=$IF_DEPTH;
+  } elsif  ($_ =~ m|$SIXTYFOUR_REGEXP|) {
+    ## We need to pull in the 64 bit type definitions
+    ## push(@FUNCTION_HEADER_DEF, $_); # GRAB_LINE will cause this line to be written
+    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    $WAIT_DEPTH=$IF_DEPTH;
+    $GRAB_LINE=True;
   } elsif ($_ =~ m|$FUNCTION_REGEXP|) {
     ($RET, $FUNCTION, $ARGS) = ($_ =~ m|$FUNCTION_REGEXP|); # Extract function name
     $PFN_FUNCTION = "SAGE_PFN".uc($FUNCTION)."PROC"; # make the typedef name
@@ -59,11 +74,25 @@ while (<GLEXT>) {
   } elsif  ($_ =~ m|$TOKEN_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
   # grab endif if required
-  } elsif ($_ =~ m|\#endif|) { # write the endif now we have it
-    if ($WAIT_FOR_ENDIF eq "true") {
-      $WAIT_FOR_ENDIF="false";
-      push(@FUNCTION_HEADER_DEF, "#endif\n\n");
+  }
+  ## Grab all the content when GRAB_LINE is True
+  if ($GRAB_LINE eq True) {
+    push(@FUNCTION_HEADER_DEF, $_); # write into header
+  }
+
+  if ($_ =~ m|\#endif|) { # write the endif now we have it
+    if ($IF_DEPTH == $WAIT_DEPTH) {
+      if ($WAIT_FOR_ENDIF eq "true") {
+        $WAIT_DEPTH=-1;
+        $WAIT_FOR_ENDIF="false";
+        if ($GRAB_LINE eq False) {
+          ## Already written when GRAB_LINE is True
+          push(@FUNCTION_HEADER_DEF, "#endif\n\n");
+        }
+        $GRAB_LINE=False;
+      }
     }
+    $IF_DEPTH--;
   }
 }
 #copy into two arrays - we use this twice (prob a better way to do this)
