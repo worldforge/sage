@@ -1,5 +1,6 @@
 Makefile
 Makefile.in
+*.o
 *.lo
 *.la
 .deps
@@ -7,3 +8,4 @@ Makefile.in
 sage.h
 sage.c
 glext_sage.h
+header.h
