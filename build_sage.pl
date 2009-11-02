@@ -39,6 +39,13 @@ while (<GLEXT>) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
     $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
     $WAIT_DEPTH=$IF_DEPTH;
+
+  ## Special case detected in glext.h ver 56. This token appears to be missing
+  ## the GL_ prefix on the declaration
+  } elsif ($_ =~ m|ARB_sync|) {
+    push(@FUNCTION_HEADER_DEF, $_); # write into header
+    $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
+    $WAIT_DEPTH=$IF_DEPTH;
   } elsif  ($_ =~ m|$TYPES_REGEXP|) {
     push(@FUNCTION_HEADER_DEF, $_); # write into header
     $WAIT_FOR_ENDIF="true"; # we now need to write a corresponding endif when its next found
