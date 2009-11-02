@@ -1,7 +1,9 @@
 dnl Initialise autoconf
 
 AC_INIT([sage], [0.2.0])
+AC_CONFIG_SRCDIR([sage/sage.c])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 
 dnl Detect the canonical host and target build environment
 AC_CANONICAL_SYSTEM

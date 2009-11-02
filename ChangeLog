@@ -1,5 +1,9 @@
 2009-11-02  Simon Goodall  <simon@worldforge.org>
 
+	* configure.ac, Makefile.am: Updated for m4 changes.
+
+2009-11-02  Simon Goodall  <simon@worldforge.org>
+
 	* build_sage.pl, sage/sage.c, sage/sage.h, sage/sage_fptr.h: Update
 	  for glext.h version 56. This includes modifications to the build
 	  script to handle odd "ARB_sync" conditional name.
