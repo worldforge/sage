@@ -316,7 +316,7 @@ typedef void (APIENTRYP SAGE_PFNGLCLEARBUFFERIVPROC) (GLenum, GLint, const GLint
 typedef void (APIENTRYP SAGE_PFNGLCLEARBUFFERUIVPROC) (GLenum, GLint, const GLuint *);
 typedef void (APIENTRYP SAGE_PFNGLCLEARBUFFERFVPROC) (GLenum, GLint, const GLfloat *);
 typedef void (APIENTRYP SAGE_PFNGLCLEARBUFFERFIPROC) (GLenum, GLint, GLfloat, GLint);
-typedef * (APIENTRYP SAGE_PFNGLGETSTRINGIPROC) (GLenum, GLuint);
+typedef GLvoid* (APIENTRYP SAGE_PFNGLGETSTRINGIPROC) (GLenum, GLuint);
 typedef void (APIENTRYP SAGE_PFNGLDRAWARRAYSINSTANCEDPROC) (GLenum, GLint, GLsizei, GLsizei);
 typedef void (APIENTRYP SAGE_PFNGLDRAWELEMENTSINSTANCEDPROC) (GLenum, GLsizei, GLenum, const GLvoid *, GLsizei);
 typedef void (APIENTRYP SAGE_PFNGLTEXBUFFERPROC) (GLenum, GLenum, GLuint);
